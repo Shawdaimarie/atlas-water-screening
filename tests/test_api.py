@@ -21,6 +21,10 @@ def test_study_area_endpoint_returns_candidates_and_discloses_metadata_only():
     assert sum(area['region'] == 'International' for area in body['areas']) == 8
     assert all(area['analysis_ready'] is False for area in body['areas'])
     assert all(area['metadata_acquisition_dates'] >= 90 for area in body['areas'])
+    assert all(area['empirical_evidence'] for area in body['areas'])
+    assert all(area['public_value_dimensions'] for area in body['areas'])
+    assert all(area['validation_path'] for area in body['areas'])
+    assert all(area['evidence_limit'] for area in body['areas'])
     assert 'does not establish QA-valid pixels' in body['disclaimer']
 
 def test_cors_deployment_setting_requires_exact_origins(monkeypatch):

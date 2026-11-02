@@ -10,7 +10,7 @@ Open `dist/index.html` in a browser, or serve it with:
 python3 -m http.server 8000 --directory dist
 ```
 
-The page supports scenario selection, single-observation vs quality-aware aggregate comparison, asset ranking, asset details, and CSV export. It also contains an interactive 16-area candidate evidence register backed by a standardized NASA CMR metadata search. Candidate-area metadata is separate from the synthetic event walkthrough; no live raster or real flood values are shown. All exports include a synthetic-fixture marker.
+The page supports scenario selection, single-observation vs quality-aware aggregate comparison, asset ranking, asset details, and CSV export. It also contains an interactive 16-area candidate evidence register backed by a standardized NASA CMR metadata search and equal-depth profiles of documented public management/research need, value dimensions, validation paths, and evidence limits. Candidate-area metadata is separate from the synthetic event walkthrough; no live raster or real flood values are shown. All exports include a synthetic-fixture marker. Public-sector need is not customer demand; the project has no customer interviews, purchase intent, or procurement evidence.
 
 ## Run the local API
 
@@ -23,7 +23,7 @@ pip install -r requirements-dev.txt
 uvicorn api.main:app --reload --port 8001
 ```
 
-The API exposes the 16-area metadata-only candidate register at `GET /api/study-areas`; analysis endpoints continue to return clearly labeled synthetic fixtures. To check it:
+The API exposes the 16-area metadata-only candidate register and matched public-evidence profiles at `GET /api/study-areas`; analysis endpoints continue to return clearly labeled synthetic fixtures. To check it:
 
 ```sh
 python -m pytest -q

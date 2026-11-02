@@ -126,12 +126,16 @@ DATA = [
 _REGISTER_PATH = Path(__file__).resolve().parents[1] / "data" / "study_area_register.json"
 _REGISTER = json.loads(_REGISTER_PATH.read_text())
 _STUDY_AREAS = _REGISTER.get("results", [])
+_EVIDENCE_PATH = Path(__file__).resolve().parents[1] / "data" / "study_area_evidence.json"
+_EVIDENCE = json.loads(_EVIDENCE_PATH.read_text()).get("records", [])
+_EVIDENCE_BY_CITY = {record["city"]: record for record in _EVIDENCE}
 if (
     len(_STUDY_AREAS) != 16
     or sum(area.get("region") == "United States" for area in _STUDY_AREAS) != 8
     or sum(area.get("region") == "International" for area in _STUDY_AREAS) != 8
+    or set(_EVIDENCE_BY_CITY) != {area.get("city") for area in _STUDY_AREAS}
 ):
-    raise RuntimeError("Study-area register must contain exactly 8 U.S. and 8 international candidates")
+    raise RuntimeError("Study-area register and evidence profiles must match exactly 8 U.S. and 8 international candidates")
 
 
 def make_rows(req: AnalysisRequest):
@@ -184,6 +188,12 @@ async def study_areas(request: Request):
         "rationale": "screening_rationale",
         "value_integration_question": "value_integration_question",
         "evidence_url": "evidence_url",
+        "need_evidence_type": "need_evidence_type",
+        "empirical_evidence": "empirical_evidence",
+        "public_value_dimensions": "public_value_dimensions",
+        "validation_path": "validation_path",
+        "evidence_limit": "evidence_limit",
+        "supporting_evidence_url": "supporting_evidence_url",
         "aoi_bbox_wgs84": "aoi_bbox_wgs84",
         "aoi_area_km2": "aoi_area_km2",
         "collection": "collection",
@@ -199,7 +209,16 @@ async def study_areas(request: Request):
         "analysis_ready": False,
         "disclaimer": "CMR metadata discovery does not establish QA-valid pixels, flood-event coverage, or independent reference labels.",
         "areas": [
-            {**{output: area[source] for output, source in fields.items()}, "analysis_ready": False}
+            {
+                **{output: area[source] for output, source in fields.items() if source in area},
+                "need_evidence_type": _EVIDENCE_BY_CITY[area["city"]]["evidence_type"],
+                "empirical_evidence": _EVIDENCE_BY_CITY[area["city"]]["empirical_evidence"],
+                "public_value_dimensions": _EVIDENCE_BY_CITY[area["city"]]["value_dimensions"],
+                "validation_path": _EVIDENCE_BY_CITY[area["city"]]["validation_path"],
+                "evidence_limit": _EVIDENCE_BY_CITY[area["city"]]["scope_limit"],
+                "supporting_evidence_url": _EVIDENCE_BY_CITY[area["city"]].get("secondary_evidence_url"),
+                "analysis_ready": False,
+            }
             for area in _STUDY_AREAS
         ],
     })

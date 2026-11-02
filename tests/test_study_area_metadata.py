@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from scripts.audit_temporal_overlap import summarize
+from scripts.update_site_study_register import update as update_site_register
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,3 +38,16 @@ def test_saved_audit_matches_recomputed_result():
     expected = summarize(REGISTER)
     saved = json.loads((ROOT / "data/temporal_overlap_audit.json").read_text())
     assert saved == expected
+
+
+def test_site_evidence_register_is_complete_and_idempotent():
+    site_html = (ROOT / "dist/index.html").read_text()
+    updated = update_site_register(site_html, AREAS)
+    assert updated == site_html
+    embedded = updated.split("const studyAreas=", 1)[1].split(";let selectedStudyArea=", 1)[0]
+    profiles = json.loads(embedded)
+    assert len(profiles) == 16
+    assert sum(area["region"] == "United States" for area in profiles) == 8
+    assert sum(area["region"] == "International" for area in profiles) == 8
+    assert all(area["empirical_evidence"] and area["validation_path"] for area in profiles)
+    assert updated.count("Demand distinction:") == 1
