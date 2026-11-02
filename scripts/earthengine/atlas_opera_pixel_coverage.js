@@ -55,7 +55,8 @@ function summarizeArea(area) {
   var rows = dayStrings.map(function(dayString) {
     dayString = ee.String(dayString);
     var day = ee.Date.parse('YYYY-MM-dd', dayString);
-    var mosaic = local.filterDate(day, day.advance(1, 'day')).mosaic();
+    var dayCollection = local.filterDate(day, day.advance(1, 'day'));
+    var mosaic = dayCollection.mosaic();
     var bwtr = mosaic.select('BWTR_Binary_water');
     var valid = bwtr.eq(0).or(bwtr.eq(1));
     var water = bwtr.eq(1).updateMask(valid);
@@ -80,8 +81,9 @@ function summarizeArea(area) {
       .set({
         acquisition_date_utc: dayString,
         source_collection: 'OPERA/DSWX/L3_V1/S1',
-        source_product_version: mosaic.get('DSWX_PRODUCT_VERSION'),
-        source_image_count: local.filterDate(day, day.advance(1, 'day')).size(),
+        source_product_versions: ee.List(dayCollection.aggregate_array('DSWX_PRODUCT_VERSION'))
+          .distinct().sort().join(','),
+        source_image_count: dayCollection.size(),
         scale_m: SCALE_M,
         valid_area_m2: validM2,
         water_area_m2: waterM2,
