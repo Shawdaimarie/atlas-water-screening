@@ -36,6 +36,9 @@ release_contract:
   provider_control_plane_audit_logs_required: true
   workload_secrets_must_use_provider_secret_manager: true
   private_cluster_api_required: true
+  provider_connected_deploy_runner_required: true
+  deploy_runner_must_be_ephemeral: true
+  deploy_runner_must_not_execute_untrusted_pull_requests: true
   default_deny_egress_or_documented_allowlist_required: true
   registry_must_be_private_and_scan_images: true
   deploy_must_verify_signature_and_provenance: true
@@ -54,6 +57,7 @@ release_contract:
     - registry_os_scan_with_no_blocking_findings
     - kubernetes_policy_validation
     - identity_positive_and_negative_tests
+    - private_cluster_dns_and_runner_route_allow_deny_tests
     - private_network_and_ingress_verification
     - secret_mount_and_rotation_verification
     - audit_log_delivery_verification
@@ -79,6 +83,7 @@ release_contract:
     - missing_or_invalid_sbom_signature_or_provenance
     - critical_or_high_exploitable_vulnerability
     - public_cluster_api_or_unauthenticated_application_ingress
+    - missing_private_runner_route_or_external_endpoint_exposure
     - missing_audit_logs_or_secret_management
     - failed_staging_smoke_or_authenticated_user_flow
     - untested_recovery_or_rollback_target
@@ -111,6 +116,8 @@ providers:
       - organization_policy_and_project_iam_export
       - workload_identity_federation_claim_allow_deny_log
       - private_gke_endpoint_and_control_plane_audit_log_check
+      - ephemeral_runner_private_dns_and_route_allow_deny_test
+      - cloud_build_private_pool_or_runner_network_cost_review
       - artifact_analysis_scan_and_registry_iam_check
       - cloud_kms_secret_manager_and_vpc_firewall_check
     readiness: pending_account_and_trust_configuration
@@ -130,6 +137,8 @@ providers:
       - organization_scp_and_iam_policy_review
       - github_oidc_role_allow_deny_cloudtrail_events
       - private_eks_endpoint_and_control_plane_audit_log_check
+      - ephemeral_runner_private_dns_and_route_allow_deny_test
+      - codebuild_vpc_or_runner_network_cost_review
       - ecr_scan_results_and_repository_policy_check
       - kms_secrets_manager_and_security_group_check
     readiness: pending_account_and_trust_configuration
@@ -149,6 +158,8 @@ providers:
       - management_group_policy_and_role_assignment_review
       - entra_federation_allow_deny_sign_in_logs
       - private_aks_api_and_control_plane_diagnostic_logs
+      - ephemeral_runner_private_dns_and_route_allow_deny_test
+      - managed_devops_pool_or_runner_network_cost_review
       - acr_scan_and_approved_registry_policy_check
       - key_vault_managed_identity_and_network_policy_check
     readiness: pending_account_and_trust_configuration
@@ -170,6 +181,8 @@ providers:
       - github_oidc_cluster_authentication_allow_deny_log
       - separate_registry_publish_identity_proof
       - private_oke_endpoint_and_audit_log_check
+      - ephemeral_runner_private_dns_and_route_allow_deny_test
+      - managed_build_private_vcn_or_runner_network_cost_review
       - ocir_vulnerability_scan_results_and_repository_policy_check
       - vault_kms_nsg_and_network_policy_check
     readiness: pending_account_identity_and_registry_validation

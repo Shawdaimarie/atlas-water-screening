@@ -166,3 +166,19 @@ The Kubernetes sample now includes a required API hostname placeholder for `ATLA
 - The source is in the private GitHub repository `Shawdaimarie/atlas-water-screening`. CI passed on commit `1e49ce0f4062ec7ea2a258d15dd7cfbffd5abc55` ([run 41542660251](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41542660251)): unit tests, container build, container HTTP smoke, and dependency audit succeeded.
 - That CI run validates the local container candidate only. No cloud account readiness, provider identity federation, registry, cluster, staging, or production deployment has been verified for any of the four providers.
 - Account creation is still owner-managed and remains unverified by ATLAS. Continue using the shared security and release contract; Apple Account sign-in, if used in an account flow, does not substitute for provider-native account/billing readiness.
+
+## Private-cluster runner connectivity review (2026-11-02)
+
+A green GitHub-hosted build does not prove a deployment job can reach a private cluster API. Added an explicit provider-connected, ephemeral runner gate to the shared release runbook and machine-readable provider matrix. The runner must have private DNS/routing to its cluster, pass allowed and denied network tests, request only the trusted job's OIDC identity, and never run untrusted pull-request code.
+
+- Google documents private-pool access to GKE private control planes and notes that a VPN/Private Service Connect path can be required because VPC peering is not transitive: [Cloud Build private pools for private GKE](https://docs.cloud.google.com/build/docs/private-pools/accessing-private-gke-clusters-with-cloud-build-private-pools).
+- AWS CodeBuild can reach a VPC when explicitly attached to private subnets/security groups; NAT or service endpoints may also be needed: [CodeBuild VPC access](https://docs.aws.amazon.com/codebuild/latest/userguide/vpc-support.html).
+- Microsoft documents that private AKS API access requires a network-connected agent and that Microsoft-hosted Azure Pipelines agents do not support private AKS: [AKS security](https://learn.microsoft.com/en-us/azure/aks/concepts-security).
+- OCI DevOps managed build stages can be configured for private VCN access and require appropriate private routing: [OCI managed build stage](https://docs.oracle.com/en-us/iaas/Content/devops/using/managed_buildstage.htm).
+
+These are architecture options, not configured or costed deployments. Runner, VPN/NAT, endpoint, and cluster costs depend on the owner-approved region and budget; no resources were created. Current score remains 50/100 provisional.
+
+## Current local parity checks (2026-11-02)
+
+- Added three CI tests for the four-provider common contract, owner-input template nonsecret/default state, and restricted Kubernetes workload manifest. The full local suite passes **31 tests**; secret scan and whitespace checks pass.
+- Added explicit ephemeral private-runner, private-DNS, routing, allow/deny, and cost review gates. Provider-specific runner networking remains unprovisioned and unverified. These static checks do not count as cloud deployment evidence or increase the score.
