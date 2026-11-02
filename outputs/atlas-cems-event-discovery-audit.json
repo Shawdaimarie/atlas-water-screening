@@ -1,0 +1,9 @@
+{
+  "source": "Copernicus EMS Rapid Mapping public activations API",
+  "retrieved": "2026-11-02",
+  "catalog_count": 268,
+  "flood_activations": 90,
+  "match_rule": "AOI WKT bounding box overlaps 25km x 25km study-area bounding box; coarse candidate discovery only, not exact polygon intersection or verified label coverage.",
+  "note": "Product imagery sensors listed where available. Same Sentinel-1-derived product is not independent validation; optical imagery and government/field evidence require provenance, classification QA, and blinded label audit before qualification. Event mapping availability does not establish >=3 repeated valid acquisitions per period.",
+  "matches": []
+}
