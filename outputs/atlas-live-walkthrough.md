@@ -1,8 +1,11 @@
 # ATLAS live walkthrough
 
-**Production Site:** [Open ATLAS](https://atlas-water-screening.shawdaimarie.chatgpt.site/)  
-**Verified version:** 12  
-**Access:** private; sign in with the authorized owner account.  
+**Production Site:** [Open ATLAS](https://atlas-water-screening.shawdaimarie.chatgpt.site/)
+
+**Verified version:** 12
+
+**Access:** private; sign in with the authorized owner account.
+
 **Current score:** 55/100 provisional; no 100/100 claim.
 
 The page is an interactive research walkthrough with synthetic analysis fixtures and an evidence-backed 8 U.S. + 8 international candidate register. It does not connect to the local raster-analysis pipeline, the cloud API, or live OPERA water-class data. Candidate archive dates are metadata-discovery evidence only.
