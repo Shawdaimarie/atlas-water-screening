@@ -261,6 +261,14 @@ This status supersedes the earlier version 10/11 entries below; those are retain
 - The live Site only demonstrates the synthetic walkthrough and candidate evidence profiles. The API is not connected to the Site or deployed to a cloud provider. No Google Cloud, AWS, Azure, or OCI staging or production environment has passed deployment checks.
 - Current documented score is **55/100 provisional** under the canonical rubric. CI and Site deployment do not establish real-scene pixel validity, independent ground truth, operational demand, or cross-provider deployment.
 
+## OPERA pixel-audit preparation refresh (2026-11-02)
+
+- Official catalog review confirmed Earth Engine exposes `OPERA/DSWX/L3_V1/S1` with the documented 30 m `BWTR_Binary_water` classes (0 valid non-water, 1 water, 250 HAND-masked, 251 layover/shadow-masked); the public catalog snapshot was current through 2026-10-28 UTC. ATLAS's existing CMR metadata screen runs through 2026-11-02, so the planned pixel diagnostic deliberately uses the shorter common catalog window.
+- Added `scripts/earthengine/atlas_opera_pixel_coverage.js` and `outputs/atlas-earth-engine-pixel-audit-guide.md`. The script covers the 16 registered boxes, mosaics same-day tiles, reports per-date valid-pixel area, water area, known invalid area, class histogram and source metadata, and flags dates below 80% AOI validity. It only prints results; no Earth Engine task, export, project registration, or billing action was performed.
+- Owner execution requires a selected Google Cloud project with Earth Engine API access and approved commercial/noncommercial registration. No suitable project or eligibility was verified; therefore there are still no pixel-coverage results, and the diagnostic earns no score points yet.
+- Added offline checks that compare the script's 16 locations/bounds against the canonical JSON register and assert the documented validity/coverage gates. Current local suite: `.venv/bin/python -m pytest -q` — **38 passed in 0.99s**, with one environment warning that urllib3 is running against LibreSSL. `git diff --check` passed.
+- This prepares actual pixel QA but does not satisfy any event-level, data-quality, or independent-label validation requirement until an owner-run Earth Engine result is reviewed. Score remains **55/100 provisional**.
+
 
 ## Clean-checkout reproduction (2026-11-02)
 
