@@ -118,6 +118,13 @@ The authenticated browser is left open on the live Site with the Houston/Beryl s
 
 - On 2026-11-02, Sites readback confirmed production deployment `appgdep_6ae8feb057fc819198db222b7d3f638c` is `succeeded`, URL is the private ATLAS production URL, Site is active at version 9, and access remains custom owner-only.
 - The local test suite was rerun after the latest source changes: 14 passed in 0.98s. The latest local benchmark is captured in `atlas-performance-benchmark.json`; values above reflect that run.
+
+## Current checkout verification refresh (2026-11-02)
+
+- Read-only Sites state: active production Site version 12, custom allowlist with one allowed viewer (the owner), zero external visitors.
+- After the GFD/Landsat point-coverage audit was added, `.venv/bin/python scripts/audit_gfd_validation_coverage.py` regenerated the pinned-source report with 33,141 points, 123 events, and matches in 1/16 AOIs; that Sacramento match is temporally unsuitable and under-sampled.
+- The first default pytest run recursively collected duplicate modules from `work/atlas-clean-checkout/` and failed during collection. Added `pytest.ini` with `testpaths = tests` to keep the archived reproduction out of current test discovery. Re-running `.venv/bin/python -m pytest -q` passed all 31 tests in 0.88s.
+- Remote CI passed for the then-latest source/docs commit in [run 41546869394](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41546869394). A subsequent pytest-configuration commit is pending its own CI result until pushed.
 - The browser control could not reattach to the existing in-app tab during this refresh, so no new screenshot-based UI assertion was made. The prior v9 production E2E run and each check above remain author-run evidence; a new full UI replay and an independent reproduction are still pending.
 
 
