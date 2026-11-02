@@ -17,6 +17,10 @@ All 16 areas were selected as a purposive, stratified set rather than ranked by 
 
 The evidence register records the evidence class, an attributable empirical fact or program measure, a common value-integration frame, a proposed independent validation path, and a scope limitation for every location. Project cost, pump capacity, sensor count, or target population establishes public management activity or research need; none is evidence of ATLAS buyer demand, purchase intent, endorsement, realized benefit, or reduced flood loss. The available sources do not establish market demand. Customer demand needs separate interviews, procurement records, or other direct market evidence.
 
+## Independent reference-data lead
+
+NASA/JPL's OPERA DSWx-S1 CalVal Database V1 is a candidate source of reference classifications. The anonymous CMR record reports one ZIP granule (~181.6 MB) covering September 2021 and links it to a `podaac-ops-cumulus-protected` object; NASA's data-access documentation requires an Earthdata Login account to download/stream DAAC files. The database's global metadata envelope includes the candidate cities, but no per-city label coverage, provenance, dates, or licensing has been verified. See the [reference-data access audit](atlas-independent-reference-data-plan.md). Treat this as a lead only until the package is retrieved and its reference sources are audited; it adds no validation result.
+
 ## High-principle value integration
 
 The analysis follows a five-step public-value chain and keeps each quantity separate:
