@@ -1,0 +1,99 @@
+{
+  "retrieved_utc_date": "2026-11-02",
+  "source_repository": "https://github.com/cloudtostreet/MODIS_GlobalFloodDatabase",
+  "source_commit": "0d20b91d124b5a9987d40392b5e3463d78f1f894",
+  "source_files": {
+    "validation_points": "https://raw.githubusercontent.com/cloudtostreet/MODIS_GlobalFloodDatabase/0d20b91d124b5a9987d40392b5e3463d78f1f894/data/gfd_validation_points_2018_12_17.csv",
+    "quality_control_database": "https://raw.githubusercontent.com/cloudtostreet/MODIS_GlobalFloodDatabase/0d20b91d124b5a9987d40392b5e3463d78f1f894/data/gfd_qcdatabase_2019_08_01.csv",
+    "validation_metrics": "https://raw.githubusercontent.com/cloudtostreet/MODIS_GlobalFloodDatabase/0d20b91d124b5a9987d40392b5e3463d78f1f894/data/gfd_validation_metrics.csv"
+  },
+  "registered_aoi_rule": "Exact WGS84 point-in-rectangle check using each registered 25 km x 25 km AOI bounds.",
+  "dataset_totals": {
+    "validation_point_records": 33141,
+    "distinct_dfo_events": 123,
+    "label_values": {
+      "0": 11590,
+      "1": 19095,
+      "99": 557,
+      "-99": 1565,
+      "": 334
+    }
+  },
+  "area_match_counts": {
+    "United States/Houston": 0,
+    "United States/Miami": 0,
+    "United States/Tampa": 0,
+    "United States/New Orleans": 0,
+    "United States/New York City": 0,
+    "United States/Sacramento": 8,
+    "United States/Atlanta": 0,
+    "United States/St. Louis": 0,
+    "International/Jakarta": 0,
+    "International/Singapore": 0,
+    "International/Dubai": 0,
+    "International/Mumbai": 0,
+    "International/Bangkok": 0,
+    "International/Tokyo": 0,
+    "International/Manila": 0,
+    "International/S\u00e3o Paulo": 0
+  },
+  "sacramento_candidate": {
+    "point_count": 8,
+    "dfo_event_id": "4444",
+    "point_reference_labels": {
+      "1": 7,
+      "0": 1
+    },
+    "reference_imagery_dates_utc": [
+      "2018-06-26"
+    ],
+    "cataloged_event_interval": {
+      "start": "2017-02-16",
+      "end": "2017-03-03"
+    },
+    "reported_event_location": {
+      "country": "USA",
+      "longitude": "-120.824584",
+      "latitude": "38.803959",
+      "cause": "Heavy Rain",
+      "validation_source": "News"
+    },
+    "event_level_published_metrics": [
+      {
+        "method": "std_3day",
+        "overall_accuracy": "0.789189189",
+        "precision": "0.859375",
+        "recall": "0.839694656",
+        "counts": "242"
+      },
+      {
+        "method": "otsu_3day",
+        "overall_accuracy": "0.789189189",
+        "precision": "0.870967742",
+        "recall": "0.824427481",
+        "counts": "242"
+      },
+      {
+        "method": "std_2day",
+        "overall_accuracy": "0.8",
+        "precision": "0.861538462",
+        "recall": "0.854961832",
+        "counts": "242"
+      },
+      {
+        "method": "otsu_2day",
+        "overall_accuracy": "0.8",
+        "precision": "0.8671875",
+        "recall": "0.847328244",
+        "counts": "242"
+      }
+    ],
+    "assessment": "Not eligible as contemporaneous event validation: all matched point references are dated more than a year after the reported flood interval, and their count is below the study's adequate site/event sampling requirement. Retain as a discovery lead only; do not count as a passed site or ATLAS accuracy result."
+  },
+  "limits": [
+    "The Global Flood Database is a MODIS flood-event archive from 2000-2018; its project repository describes validation points as analyst interpretations of Landsat imagery.",
+    "Point-in-AOI coverage is not equivalent to independent site validation: temporal match, label protocol, geolocation uncertainty, spatial sampling adequacy, image provenance, and held-out status must all pass.",
+    "No registered study area currently has qualifying contemporaneous independent reference labels from these files.",
+    "The published event-level metrics summarize larger samples and cannot be attributed to a study AOI or ATLAS."
+  ]
+}
