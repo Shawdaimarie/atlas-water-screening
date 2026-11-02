@@ -158,3 +158,11 @@ The Kubernetes sample now includes a required API hostname placeholder for `ATLA
 - Clarified that artifact integrity must be preserved and admission-verified after each registry transfer on all providers; Google Artifact Analysis and Oracle registry scanning must be explicitly enabled and their results retained.
 - Changes strengthen deployment preparation only; they do not prove provider accounts, remote CI, cloud resources, deployed workflows, or higher project score. Product score remains 50/100 provisional.
 - Current rerun on this checkout: 27 tests passed in 0.80s; local restricted-container smoke passed 11/11; provider parity matrix parsed and passed the four-target/common-contract consistency check. The current enrollment and scoring records remain unchanged because cloud staging and scientific validation have not occurred.
+
+
+## Verified state refresh (2026-11-02)
+
+- ATLAS private Sites walkthrough is deployed at version 12 and remains owner-only. It is separate from the cloud API runtime.
+- The source is in the private GitHub repository `Shawdaimarie/atlas-water-screening`. CI passed on commit `1e49ce0f4062ec7ea2a258d15dd7cfbffd5abc55` ([run 41542660251](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41542660251)): unit tests, container build, container HTTP smoke, and dependency audit succeeded.
+- That CI run validates the local container candidate only. No cloud account readiness, provider identity federation, registry, cluster, staging, or production deployment has been verified for any of the four providers.
+- Account creation is still owner-managed and remains unverified by ATLAS. Continue using the shared security and release contract; Apple Account sign-in, if used in an account flow, does not substitute for provider-native account/billing readiness.

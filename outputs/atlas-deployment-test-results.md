@@ -221,3 +221,15 @@ The shared blueprint v1.1 clarification requires each rubric item to earn 5 poin
 - Current checkout suite: `.venv/bin/python -m pytest -q` — **27 passed in 0.80s**.
 - Ran the current `atlas-api:goal-2026-11-02` container locally with a read-only root filesystem, dropped capabilities, no-new-privileges, and bounded CPU/memory. `scripts/smoke_container.py` passed **11/11** HTTP checks.
 - Local checks passed; no cloud account sign-in, remote GitHub CI, cloud resources, or provider-hosted test was available. Owner reports account creation is in progress under `shawdaimarie@gmail.com`; account IDs, MFA, billing, regions, and budgets remain unverified.
+
+
+## Latest live deployment and CI verification (2026-11-02)
+
+This status supersedes the earlier version 10/11 entries below; those are retained as release history.
+
+- The private Sites deployment is active at **version 12**, from source commit `af1c7a315447588f6893279605f5c7b7ddbaa240`. Deployment `appgdep_6ae9164a45bc81919f19e1af0750b143` succeeded. Access readback remains custom owner-only (`shawdaimarie@gmail.com`) with zero external visitors.
+- Live browser review of the current page confirmed the Houston/Beryl synthetic scenario, exposure summary, evidence export control, and 16-area candidate register. Candidate records disclose that pixel QA and independent labels remain pending. The Site remains separate from the API.
+- The current local suite passes: `.venv/bin/python -m pytest -q` — **28 passed**. Secret scan and `git diff --check` passed.
+- Private GitHub CI passed on commit `1e49ce0f4062ec7ea2a258d15dd7cfbffd5abc55`: [run 41542660251](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41542660251). The run passed unit/fixture tests, container build, container HTTP smoke, and dependency audit. An earlier run exposed missing `study_area_evidence.json` in the Docker build context; `.dockerignore` and Dockerfile were corrected before the successful run.
+- The live Site only demonstrates the synthetic walkthrough and candidate evidence profiles. The API is not connected to the Site or deployed to a cloud provider. No Google Cloud, AWS, Azure, or OCI staging or production environment has passed deployment checks.
+- Current documented score remains **50/100 provisional** under the canonical rubric. CI and Site deployment do not establish real-scene pixel validity, independent ground truth, operational demand, or cross-provider deployment.
