@@ -1,30 +1,24 @@
 # ATLAS live walkthrough
 
-**Live private Site:** https://atlas-water-screening.shawdaimarie.chatgpt.site/\
-**Verified published version:** 9\
-**Access:** owner-only; sign in with the authorized account.
+**Production Site:** [Open ATLAS](https://atlas-water-screening.shawdaimarie.chatgpt.site/)  
+**Verified version:** 12  
+**Access:** private; sign in with the authorized owner account.  
+**Current score:** 55/100 provisional; no 100/100 claim.
 
-The deployed page is a research walkthrough using labeled synthetic fixtures. The local OPERA raster analysis scripts are not connected to this page or its API.
+The page is an interactive research walkthrough with synthetic analysis fixtures and an evidence-backed 8 U.S. + 8 international candidate register. It does not connect to the local raster-analysis pipeline, the cloud API, or live OPERA water-class data. Candidate archive dates are metadata-discovery evidence only.
 
-## Follow this path in the live page
+## Guided walkthrough
 
-1. **Explore the screening view.** Open the page and review its research framing and synthetic-data notice. Select the baseline/event method controls and observe the lead fixture asset’s displayed percentages change. The documented author-run check changed the lead asset estimate from 28.6% to 21.4%, elevated count from 4 to 3, and median from 7.7% to 6.8%.
-2. **Change the area and event.** Select the Baton Rouge / Hurricane Ida preset. Confirm the area, event label, date windows, map labels, and synthetic asset identifiers update together.
-3. **Inspect an asset.** Choose an asset row and review the evidence details. The details should track the selected row and remain marked as synthetic.
-4. **Review an international candidate.** Open the study-area register and select Singapore or Mumbai. Review the location rationale, value-integration question, CMR metadata count, and explicit pending-validation status. Metadata counts indicate archive discovery only, not valid observations.
-5. **Export the candidate register.** Use “Download area register.” The page should show its CSV download confirmation. The export contains the 8 U.S. and 8 international candidates and their metadata/date evidence.
-6. **Export evidence.** Use the evidence export and confirm the download message. These exports document the candidate screen and synthetic walkthrough; they do not contain verified pixel-level results.
-7. **Reset.** Use Reset and confirm the method returns to the single-observation baseline. The selected area/event scenario remains in place.
+1. Open the production Site and review the synthetic-data and candidate-only notices.
+2. In the study-area panel, select **Singapore** or **Mumbai**. Review the location rationale, public source, value-integration question, metadata count, and pending pixel-QA/independent-label status. Try a U.S. candidate such as **Houston** and compare its evidence profile.
+3. Use **Download area register**. The CSV contains all 16 candidates, per-area CMR date evidence, AOI bounds, screening dates, rationale, and validation status.
+4. In the analysis panel, change the method from the single-scene baseline to **Quality-aware aggregate**. The current synthetic fixture changes the lead overlap estimate from 28.6% to 21.4%, the elevated-fixture count from 4 to 3, and the median from 7.7% to 6.8%.
+5. Change the scenario to **Baton Rouge / Hurricane Ida**. Confirm the area, event, time windows, labels, and fixture assets update together. These are illustrative synthetic values.
+6. Select an asset row to open its evidence details, then use the evidence export and confirm the success message and synthetic label.
+7. Use **Reset** to restore the baseline, then return to a preferred study-area profile.
 
-## What has been verified
+## Verified live workflows
 
-The latest author-run production replay visited all 16 candidate profiles, switched methods, changed to Baton Rouge/Hurricane Ida, downloaded both CSVs, parsed their contents, and reset to the single-observation baseline. The exact live downloads are [the 16-area register](atlas-live-area-register-v9.csv) and [the Baton Rouge synthetic evidence export](atlas-baton-id-aggregate-fixture-export.csv). The register has 8 U.S. and 8 international records; the evidence export has 12 asset rows and marks every row synthetic. Version 9 deployment status is `succeeded`; Sites readback confirms an active private owner-only publication. The browser walkthrough is a bounded functional check, not independent reproduction or scientific validation.
+The latest recorded production replay selected all 16 profiles, switched analysis methods, changed to Baton Rouge/Hurricane Ida, inspected an asset, downloaded both CSV exports, and reset the view. Sites readback confirms the Site is active at version 12, with owner-only access and zero external visitors. These author-run checks demonstrate the walkthrough interactions only; they do not verify real raster coverage, scientific accuracy, a connected production API, or cloud-provider deployment.
 
-## Related evidence
-
-- [Deployment and test results](atlas-deployment-test-results.md)
-- [Current scorecard](atlas-scorecard.md)
-- [Study-area program and selection criteria](atlas-study-area-program.md)
-- [Evidence register](atlas-evidence-register.md)
-- [Local analysis input template](atlas-study-package-template.json)
-- [Four-cloud release preparation](atlas-multicloud-deployment-preparation.md)
+For test detail, see [deployment and test results](atlas-deployment-test-results.md). For the current rubric evidence, see the [scorecard](atlas-scorecard.md). For the cloud prerequisites, see the [four-cloud release runbook](atlas-cloud-release-runbook.md).
