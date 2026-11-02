@@ -123,7 +123,7 @@ The authenticated browser is left open on the live Site with the Houston/Beryl s
 
 - Read-only Sites state: active production Site version 12, custom allowlist with one allowed viewer (the owner), zero external visitors.
 - After the GFD/Landsat point-coverage audit was added, `.venv/bin/python scripts/audit_gfd_validation_coverage.py` regenerated the pinned-source report with 33,141 points, 123 events, and matches in 1/16 AOIs; that Sacramento match is temporally unsuitable and under-sampled.
-- The first default pytest run recursively collected duplicate modules from `work/atlas-clean-checkout/` and failed during collection. Added `pytest.ini` with `testpaths = tests` to keep the archived reproduction out of current test discovery. Re-running `.venv/bin/python -m pytest -q` passed all 31 tests in 0.88s.
+- The first default pytest run recursively collected duplicate modules from `work/atlas-clean-checkout/` and failed during collection. Added `pytest.ini` with `testpaths = tests` to keep the archived reproduction out of current test discovery. Re-running `.venv/bin/python -m pytest -q` passed all 31 core tests; after adding the offline STAC pagination/date-deduplication check, the current suite passes 32 tests in 0.88s.
 - Remote CI passed on the latest published documentation/configuration commit `caf4e7a4305934da9abac6d33f9418370198272e` in [run 41547250626](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41547250626).
 - The browser control could not reattach to the existing in-app tab during this refresh, so no new screenshot-based UI assertion was made. The prior v9 production E2E run and each check above remain author-run evidence; a new full UI replay and an independent reproduction are still pending.
 
