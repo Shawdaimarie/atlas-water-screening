@@ -1,0 +1,71 @@
+# ATLAS multi-cloud release runbook
+
+**Status:** preparation only. The owner reports that Google Cloud, AWS, Azure, and Oracle Cloud accounts are being created; ATLAS has not verified account readiness. No cluster is configured. The same release contract applies to GKE, EKS, AKS, and OKE; see `provider-matrix.yaml` for the machine-readable matrix.
+
+## Account and environment bootstrap
+
+Use the owner-created accounts associated with `shawdaimarie@gmail.com`; account registration, identity proofing, MFA, billing, and acceptance of provider terms stay in the provider consoles with the account owner. Do not put credentials or recovery material in this repository, tickets, email, or the hosted Site. Account creation does not establish deployment readiness.
+
+Before creating resources, record only non-secret identifiers and owner decisions in a private inventory: provider account/project/tenant/subscription/tenancy and compartment IDs, approved region, billing ceiling and alert recipients, environment, support contact, and approved API hostname. Confirm data residency and account ownership. If a provider supports it, keep production separate from staging at the account/project/subscription/compartment boundary. Turn on MFA for named human administrators, document a monitored break-glass route, and enable control-plane audit logs before provisioning.
+
+Create resources through reviewed, versioned IaC with encrypted remote state, state locking, restricted state access, and a recovery copy. Set budgets, service quotas, region policy, and alerts first. Default to private cluster control planes, private worker nodes, private registries, no public database, and no public API. Any exception requires a written threat and access review before provisioning. Do not create paid resources just to validate an account.
+
+### Owner onboarding handoff
+
+While accounts are being created, no credential or console access is needed in this project. Once setup is complete, the owner can provide non-secret account/project/tenant/subscription/tenancy and compartment identifiers, chosen region, billing ceiling and alert destination, data-residency decision, and approved staging/production boundary. Confirm MFA, recovery, and billing directly in each provider console. Do not send passwords, codes, payment data, access keys, or private keys. After those inputs are recorded in an owner-controlled private inventory, validate organization-level policy and repository OIDC trust before provisioning. Use one identical acceptance checklist for each provider; do not declare a provider ready from account creation alone.
+
+## Parity requirements
+
+Each provider must pass the same acceptance outcomes. A native service name is not proof by itself; retain the allow/deny test and configuration evidence for the actual resource.
+
+| Control | Required result on GKE, EKS, AKS, OKE |
+|---|---|
+| CI identity | GitHub OIDC only; issuer, audience, exact repository, protected branch, workflow, and environment constrained; untrusted fork/branch job denied. No long-lived cloud key, service-principal secret, or OCI auth token. |
+| Privilege separation | Separate staging and production identities; separate image publish and cluster deploy permissions; deployment role cannot administer IAM, billing, network policy, or organization settings. Human production approval is required. |
+| Network | Private control plane and nodes; no direct public Service; application ingress requires authentication and TLS 1.2+; network policy limits pod traffic; egress uses a documented allowlist. Verify from approved and unapproved networks. |
+| Image and provenance | Private registry; publish one immutable digest; generate and verify SBOM, build provenance, and signature; verify digest equality and attached evidence after registry copy; enforce signature/provenance policy at admission; scan at build and in the registry; block critical/high findings unless a time-bounded exception is approved. |
+| Runtime | Restricted Pod Security Admission, non-root, read-only root filesystem, no privilege escalation/capabilities, seccomp RuntimeDefault, resource requests/limits, no automatic token unless an explicit workload identity requires it, supported Kubernetes version and patch channel. |
+| Secrets and data | Provider secret manager and KMS; workload identity scoped to one service and required resources; encryption in transit and at rest; prove rotation/revocation; no credentials or sensitive asset identifiers in logs. |
+| Detection | Control-plane audit events and workload logs reach a retained, access-controlled destination; alert on unauthorized identity attempts, policy changes, failed readiness, 5xx, latency, and budget thresholds. |
+| Recovery | Restore IaC state, secrets, registry artifact, and (when introduced) data from documented backups; prove recovery objectives and rollback to the previously verified digest. |
+
+Provider substitutions must meet these same outcomes:
+
+| Provider | CI federation and runtime identity | Registry, scan, and network evidence |
+|---|---|---|
+| Google Cloud | GitHub OIDC → Workload Identity Federation with attribute conditions scoped to trusted GitHub organization/repository and deployment claims; distinct minimal service accounts. GKE Workload Identity Federation gives each pod only required Google API access. Keep node image-pull identity separate. | Private Artifact Registry with repository scanning explicitly enabled and Artifact Analysis evidence; GKE private endpoint, VPC firewall/network policy, Cloud KMS/Secret Manager, and Cloud Audit Logs. Google documents GitHub as a multi-tenant IdP: issuer check alone is insufficient; attribute condition and audience must be tested. |
+| AWS | GitHub OIDC → separate IAM roles for publish and deploy with exact `sub` and audience; EKS Pod Identity (or IRSA) per workload; separate node role for ECR image pulls. | Private ECR with enhanced scanning enabled for selected repositories; private EKS endpoint, security groups, VPC endpoints where appropriate, Secrets Manager/KMS, and CloudTrail. Capture ECR/Inspector scan output and prove the public endpoint is disabled. |
+| Microsoft Azure | GitHub OIDC → Microsoft Entra federated credentials with exact issuer, subject, and audience; separate scoped identities for publish and deploy. AKS Workload ID per pod and a separate kubelet managed identity with ACR pull. | Private ACR and Defender for Containers/registry scan evidence; private AKS API, Azure Policy restricted pod/image controls, Key Vault, managed disk encryption, and diagnostic logs. Use Notary Project signing/verification; Azure documents Docker Content Trust enablement as closed to new registries since 2026-05-31 and removal on 2028-03-31. |
+| Oracle Cloud | GitHub OIDC → OKE cluster access with exact repository/workflow/branch claims, plus least-privilege OCI IAM/dynamic groups and per-workload Kubernetes RBAC. OKE cluster OIDC does not establish OCI Registry publishing; prove a separate short-lived or managed CI identity before use. | Private OCIR with an OCI Vulnerability Scanning configuration explicitly enabled on the repository and results retained; private OKE endpoint/nodes, NSGs plus Kubernetes network policies, Vault/KMS, and OCI Audit. Reject a static OCI auth token as a shortcut. |
+
+## Release flow
+
+1. Merge a reviewed commit after the shared verification workflow passes. The existing workflow tests, builds, smoke-checks, and audits the local candidate. It does not authenticate to a cloud or publish a release.
+2. Produce one release image from that exact commit. Generate an SBOM and provenance, scan the source, dependencies, and image OS packages, sign the image, and store all records with the release. Reject a mutable tag as the deployment identity; record the registry and digest.
+3. Use GitHub Actions OIDC with a protected `atlas-staging-<provider>` environment. Configure a provider trust condition for the exact repository, protected branch, workflow/environment, and audience. Verify an unauthorized branch, fork pull request, wrong audience, and wrong environment are denied. Pin every GitHub Action to a full commit SHA, give jobs minimum permissions, and never expose deployment identity to pull-request workflows. Do not use cloud access keys or saved service-principal credentials.
+4. Publish or mirror the same image digest into the provider registry. Verify the registry digest, signature, SBOM, and provenance remain attached and valid after transfer, and enforce signature/provenance policy at admission. For OCI, separately validate registry publishing authentication; OKE cluster OIDC alone does not prove registry push access.
+5. Deploy the digest to staging with the shared `deployment/k8s/` baseline and provider-specific policy admission. Supply only reviewed bindings: namespace, authenticated ingress, TLS, private networking, secret manager, KMS, workload identity, logging, registry policy, and health telemetry. Keep the API private behind authenticated ingress.
+6. Run the same authenticated end-to-end suite against every provider. Check `/api/health`, `/api/areas`, `/api/study-areas`, analysis, CSV export, invalid input, request size, host/CORS boundaries, identity allow and deny cases, network reachability from approved and unapproved networks, secret rotation, image policy, audit logs, and required user workflows. Confirm the observed runtime image digest equals the approved digest. Label API results fixture-only until real data and user authentication are implemented.
+7. Record the staging evidence and obtain human approval in `atlas-production-<provider>`. Promote the same digest; do not rebuild. Observe error rate, latency, saturation, and spend for 15 minutes.
+8. Roll back to the recorded previous digest when readiness fails, a required workflow fails, 5xx exceeds 1% for 5 minutes, or p95 latency exceeds twice the approved baseline for 10 minutes. Run a rollback drill before first production use.
+
+## Provider setup evidence required
+
+| Provider | Identity and registry proof | Cluster and network proof |
+|---|---|---|
+| Google Cloud | Exact WIF allow/deny claims, least-privilege publish/deploy accounts, separate node image-pull identity, Artifact Analysis result, digest/signature/SBOM/provenance preserved and admission-verified. | Private GKE endpoint, per-service-account workload binding, authenticated ingress, VPC/network policy, audit logs, Secret Manager/KMS, restore evidence. |
+| AWS | Exact OIDC allow/deny claims, separate ECR publish/EKS deploy roles, node image-pull role, ECR scan result, digest/signature/SBOM/provenance preserved and admission-verified. | Private EKS endpoint, Pod Identity/IRSA per workload, authenticated ingress, security groups/network policy, CloudTrail, Secrets Manager/KMS, restore evidence. |
+| Microsoft Azure | Exact Entra federation allow/deny claims, separate ACR publisher/AKS deploy roles, kubelet ACR-pull identity, registry scan, Notation verification, and digest/SBOM/provenance admission evidence. | Private AKS API, Entra user/workload identity, authenticated ingress, Azure Policy/network policy, diagnostic logs, Key Vault, restore evidence. |
+| Oracle Cloud | Exact OKE OIDC allow/deny claims, separate proof of registry publishing identity, least-privilege OCI IAM, OCI scan result, digest/signature/SBOM/provenance preserved and admission-verified. | Private OKE endpoint/nodes, workload RBAC and node pull scope, authenticated ingress, NSGs/network policy, OCI Audit, Vault/KMS, restore evidence. |
+
+## Evidence record
+
+For each provider, retain the commit, workflow run, test/audit reports, image digest, SBOM, signature verification, provenance, policy scan, OIDC denial/allow test, staging smoke output, authenticated E2E results, deployment revision, 15-minute health/spend observation, approver, and rollback drill result. Record only non-secret account, project/subscription, region, cluster, registry, environment, and identity identifiers. Never put passwords, MFA codes, payment data, private keys, OIDC tokens, or registry auth tokens in this repository.
+
+## Current readiness
+
+- Shared locked test, API smoke, dependency audit, secret scan, container restrictions, and Kubernetes manifest are prepared and have local author-run evidence recorded in `outputs/atlas-deployment-test-results.md`.
+- The local smoke is not a staging test: it covers a synthetic fixture API and does not prove cloud identity, access control, networking, persistence, or real geospatial workflows.
+- No provider CI deploy workflows, account-specific IaC, OIDC trust policies, registries, clusters, or staging environments exist yet. The repository has no configured Git remote, so the shared CI workflow has not been run on GitHub.
+- Account creation for Google Cloud, AWS, Microsoft Azure, and Oracle Cloud has been reported as in progress by the owner. ATLAS has not verified account status, billing setup, MFA, provider identifiers, or region selections. Do not infer readiness from account creation; record only non-secret IDs and decisions after the owner confirms readiness. Preparation remains no-cost; provision resources only after account, billing, region, quota, and budget gates are recorded. The per-provider readiness fields remain pending until the same evidence gates pass in each provider.
+- Do not use this runbook to release the fixture API as a real flood analysis service. Real-data ingest, event validation, independent labels, and authorization remain separate research release gates.

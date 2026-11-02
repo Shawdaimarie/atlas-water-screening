@@ -1,0 +1,42 @@
+{
+  "query_window": [
+    "2024-09-01T00:00:00Z",
+    "2026-11-02T23:59:59Z"
+  ],
+  "collection": "OPERA_L3_DSWX-S1_V1",
+  "areas": 16,
+  "exact_acquisition_dates_common_to_all_areas": 0,
+  "common_acquisition_dates": [],
+  "year_month_periods_with_at_least_one_metadata_acquisition_in_every_area": 24,
+  "common_year_months": [
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-09",
+    "2026-10"
+  ],
+  "year_month_periods_with_any_area_metadata_acquisition": 26,
+  "shared_month_coverage_fraction": 0.9231,
+  "per_area_date_count_min": 99,
+  "per_area_date_count_max": 403,
+  "limits": "Date metadata only; does not test event alignment, granule downloads, QA masks, valid-pixel percent, or independent labels."
+}

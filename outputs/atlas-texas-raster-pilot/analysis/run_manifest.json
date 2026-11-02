@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "run_started_at": "2026-11-02T22:30:42.809103+00:00",
+  "run_completed_at": "2026-11-02T22:30:42.945608+00:00",
+  "analysis_script_sha256": "a84b511a20bb61dc53f96bb9beb6acd274929642e31670f3580accf7257aff15",
+  "data_mode": "local_user_supplied_opera_file_unverified",
+  "inputs": {
+    "manifest": {
+      "file": "manifest.csv",
+      "sha256": "10b80563b8a6507ce0c05c3241644630620dcbee7b055ada55eb78a1dba84557"
+    },
+    "aoi": {
+      "file": "aoi.geojson",
+      "sha256": "3884bf3b5d4d81cbb65221a990515ed4569c0ffed31efc0a97e47dfc2b7349f2"
+    },
+    "assets": {
+      "file": "assets.geojson",
+      "sha256": "a991b5cf0b942ed9978e58edcae7df503b59abec6e6df73dbd23390ecd178e81"
+    },
+    "observations": [
+      {
+        "granule_id": "OPERA_L3_DSWX-S1_V1_BWTR_2025-06-17_mosaic.tif",
+        "acquired_at": "2025-06-17",
+        "period": "baseline",
+        "file": "OPERA_L3_DSWX-S1_V1_BWTR_2025-06-17_mosaic.tif",
+        "sha256": "0eb881673a6c5a724241ad67b7f951627aff4c1d887db416f0c236d0e6f7216f",
+        "product_version": "OPERA_L3_DSWX-S1_V1",
+        "processing_version": "not_reported_in_aria_share_mosaic_metadata",
+        "retrieved_at": "2026-11-02T22:30:23.438260+00:00"
+      },
+      {
+        "granule_id": "OPERA_L3_DSWX-S1_V1_BWTR_2025-06-19_mosaic.tif",
+        "acquired_at": "2025-06-19",
+        "period": "baseline",
+        "file": "OPERA_L3_DSWX-S1_V1_BWTR_2025-06-19_mosaic.tif",
+        "sha256": "901c1ed952808c62afb92aedf1297919276d7dd4d7aa281eb5c228519236c630",
+        "product_version": "OPERA_L3_DSWX-S1_V1",
+        "processing_version": "not_reported_in_aria_share_mosaic_metadata",
+        "retrieved_at": "2026-11-02T22:30:23.438260+00:00"
+      },
+      {
+        "granule_id": "OPERA_L3_DSWX-S1_V1_BWTR_2025-06-22_mosaic.tif",
+        "acquired_at": "2025-06-22",
+        "period": "baseline",
+        "file": "OPERA_L3_DSWX-S1_V1_BWTR_2025-06-22_mosaic.tif",
+        "sha256": "5aba54fba7ea3510f085faa9e17b7c04e1027a81f3814b5530667be6af163980",
+        "product_version": "OPERA_L3_DSWX-S1_V1",
+        "processing_version": "not_reported_in_aria_share_mosaic_metadata",
+        "retrieved_at": "2026-11-02T22:30:23.438260+00:00"
+      },
+      {
+        "granule_id": "OPERA_L3_DSWX-S1_V1_BWTR_2025-07-01_mosaic.tif",
+        "acquired_at": "2025-07-01",
+        "period": "event",
+        "file": "OPERA_L3_DSWX-S1_V1_BWTR_2025-07-01_mosaic.tif",
+        "sha256": "cef2903998ef56b846a96005dfa308c36d9dc36c8e69a2244e87ff37e7db4f97",
+        "product_version": "OPERA_L3_DSWX-S1_V1",
+        "processing_version": "not_reported_in_aria_share_mosaic_metadata",
+        "retrieved_at": "2026-11-02T22:30:23.438260+00:00"
+      },
+      {
+        "granule_id": "OPERA_L3_DSWX-S1_V1_BWTR_2025-07-04_mosaic.tif",
+        "acquired_at": "2025-07-04",
+        "period": "event",
+        "file": "OPERA_L3_DSWX-S1_V1_BWTR_2025-07-04_mosaic.tif",
+        "sha256": "911df6de00d347ba6cde0ad4bc1d3fed671c2b75b9b3cdfef6ad3842a2f4f319",
+        "product_version": "OPERA_L3_DSWX-S1_V1",
+        "processing_version": "not_reported_in_aria_share_mosaic_metadata",
+        "retrieved_at": "2026-11-02T22:30:23.438260+00:00"
+      },
+      {
+        "granule_id": "OPERA_L3_DSWX-S1_V1_BWTR_2025-07-11_mosaic.tif",
+        "acquired_at": "2025-07-11",
+        "period": "event",
+        "file": "OPERA_L3_DSWX-S1_V1_BWTR_2025-07-11_mosaic.tif",
+        "sha256": "5aa315c6608ce69a15df91c860ce78162b6841519a5ae597658895985bf4d925",
+        "product_version": "OPERA_L3_DSWX-S1_V1",
+        "processing_version": "not_reported_in_aria_share_mosaic_metadata",
+        "retrieved_at": "2026-11-02T22:30:23.438260+00:00"
+      }
+    ]
+  },
+  "analysis": {
+    "product_doi": "https://doi.org/10.5067/OPDSWS1-L3V1",
+    "min_valid_fraction": 0.8,
+    "min_dates_per_period": 3,
+    "aoi_crs": "EPSG:4326",
+    "assets_crs": "EPSG:4326",
+    "wtr_water_classes": [
+      1,
+      3
+    ],
+    "wtr_valid_classes": [
+      0,
+      1,
+      3
+    ],
+    "wtr_mask_classes": [
+      250,
+      251,
+      255
+    ]
+  },
+  "outputs": {
+    "observation_qa.csv": "f18a9c04f80f72bbd3bda0429e258021284bb1180fa72f28e9eb1ad8d9622567",
+    "asset_event_baseline_comparison.csv": "6cb70154410b698be219ad55b5f1fc5172ff519ed72d865dbdd3526ed3753716"
+  },
+  "independent_label_validation_performed": false
+}

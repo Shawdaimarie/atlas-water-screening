@@ -1,0 +1,18 @@
+{
+  "target": {
+    "sequential_p95_ms_lt": 100
+  },
+  "environment": "local Uvicorn API at 127.0.0.1:8017; synthetic 12-row payload",
+  "command": ".venv/bin/python scripts/benchmark_fixture_api.py",
+  "warmups": 25,
+  "sequential_requests": 500,
+  "sequential_median_ms": 1.087,
+  "sequential_p95_ms": 3.246,
+  "concurrent_requests": 1000,
+  "concurrency": 8,
+  "concurrent_elapsed_s": 1.451,
+  "concurrent_requests_per_second": 689.07,
+  "concurrent_p95_ms": 21.275,
+  "result": "PASS",
+  "limitations": "No raster workload, cloud network, billed cost, or production capacity is represented."
+}

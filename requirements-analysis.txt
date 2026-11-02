@@ -1,0 +1,2 @@
+rasterio==1.5.2
+affine==3.0.1

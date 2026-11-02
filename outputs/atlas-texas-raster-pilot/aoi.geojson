@@ -1,0 +1,39 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -99.26936327212647,
+              29.936991556104033
+            ],
+            [
+              -99.01031941111843,
+              29.937266364038923
+            ],
+            [
+              -99.01034282743045,
+              30.1628799127854
+            ],
+            [
+              -99.26997448930115,
+              30.162602609654787
+            ],
+            [
+              -99.26936327212647,
+              29.936991556104033
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Kerrville-area technical pilot",
+        "purpose": "analysis QA only; not a registered study-area result"
+      }
+    }
+  ]
+}

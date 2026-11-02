@@ -1,0 +1,39 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -99.14310815399732,
+              30.04728929576034
+            ],
+            [
+              -99.13688423033257,
+              30.047295920366743
+            ],
+            [
+              -99.13689167671605,
+              30.05271063020597
+            ],
+            [
+              -99.14311593895408,
+              30.052704004162322
+            ],
+            [
+              -99.14310815399732,
+              30.04728929576034
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "asset_id": "pilot_cell_001",
+        "asset_name": "technical QA cell; not an infrastructure asset"
+      }
+    }
+  ]
+}

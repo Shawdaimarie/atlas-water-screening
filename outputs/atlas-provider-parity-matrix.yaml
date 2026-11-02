@@ -1,0 +1,175 @@
+schema_version: 1
+application: atlas-api
+status: preparation_only
+account_onboarding:
+  owner_report: accounts_being_created
+  verified_by_atlas: false
+  credentials_requested_or_stored: false
+  resources_provisioned: false
+  required_before_resource_creation:
+    - provider_account_and_billing_owner_confirmed
+    - mfa_and_recovery_confirmed_by_owner
+    - non_secret_account_or_project_identifier
+    - approved_region_and_data_residency
+    - budget_ceiling_and_alert_recipients
+    - staging_and_production_boundary_decided
+    - repository_and_oidc_subject_available
+  never_collect:
+    - passwords
+    - mfa_codes_or_recovery_codes
+    - payment_details
+    - access_keys_or_service_principal_secrets
+    - private_keys_or_auth_tokens
+runtime_contract: kubernetes
+release_contract:
+  build_once: true
+  deploy_by_digest: true
+  static_cloud_credentials: forbidden
+  identity_provider: github_actions_oidc
+  workflow_permissions_default: read_only
+  deployment_workflow_permissions: explicit_minimum_per_job
+  protected_environment_required: true
+  separate_staging_and_production_identities: true
+  pull_requests_from_forks_may_not_authenticate_to_cloud: true
+  actions_must_be_pinned_to_full_commit_sha: true
+  terraform_state_must_be_encrypted_and_access_restricted: true
+  provider_control_plane_audit_logs_required: true
+  workload_secrets_must_use_provider_secret_manager: true
+  private_cluster_api_required: true
+  default_deny_egress_or_documented_allowlist_required: true
+  registry_must_be_private_and_scan_images: true
+  deploy_must_verify_signature_and_provenance: true
+  k8s_admission_must_enforce_restricted_pod_security: true
+  rollback_must_redeploy_prior_verified_digest: true
+  required_checks:
+    - locked_dependency_install
+    - unit_and_fixture_tests
+    - container_build
+    - container_http_smoke
+    - dependency_audit
+    - secret_scan
+    - image_os_scan
+    - sbom_generation_and_verification
+    - image_signature_and_provenance_verification
+    - registry_os_scan_with_no_blocking_findings
+    - kubernetes_policy_validation
+    - identity_positive_and_negative_tests
+    - private_network_and_ingress_verification
+    - secret_mount_and_rotation_verification
+    - audit_log_delivery_verification
+    - staging_authenticated_e2e
+    - recovery_and_restore_drill
+    - rollback_drill
+  production_approval_required: true
+  ingress_must_be_private_or_authenticated: true
+  tls_minimum: "1.2"
+  wildcard_cors_or_host_allowlists_forbidden: true
+  pod_security:
+    non_root: true
+    read_only_root_filesystem: true
+    privilege_escalation: false
+    drop_all_capabilities: true
+    seccomp: RuntimeDefault
+    service_account_token: false
+    resource_requests_and_limits: required
+  release_blockers:
+    - untrusted_oidc_subject_or_audience
+    - cloud_access_from_pull_request_or_unprotected_environment
+    - mutable_or_unverifiable_image_reference
+    - missing_or_invalid_sbom_signature_or_provenance
+    - critical_or_high_exploitable_vulnerability
+    - public_cluster_api_or_unauthenticated_application_ingress
+    - missing_audit_logs_or_secret_management
+    - failed_staging_smoke_or_authenticated_user_flow
+    - untested_recovery_or_rollback_target
+
+account_baseline:
+  environment_separation: separate_provider_account_project_subscription_or_compartment_for_production
+  owner_identity: human_owner_with_mfa_and_recovery_methods
+  admin_access: minimum_named_human_administrators_and_audited_break_glass
+  billing: budget_cap_and_alerts_required_before_resource_creation
+  regions: approved_region_recorded_before_provisioning
+  default_exposure: private_cluster_api_private_nodes_private_registry
+  encryption: provider_kms_for_secrets_state_backups_and_persistent_data
+  cost_guardrails: quotas_and_budget_alerts_required
+  data_residency: confirm_before_real_study_data_is_loaded
+
+providers:
+  google_cloud:
+    display_name: Google Cloud
+    cluster: GKE
+    registry: Artifact Registry
+    ci_identity: Workload Identity Federation from GitHub Actions OIDC
+    cluster_workload_identity: Workload Identity Federation for GKE
+    trust_restrictions:
+      - exact_github_repository
+      - protected_branch
+      - protected_environment
+      - expected_audience
+    image_pull_identity: least_privilege_node_service_account
+    security_evidence:
+      - organization_policy_and_project_iam_export
+      - workload_identity_federation_claim_allow_deny_log
+      - private_gke_endpoint_and_control_plane_audit_log_check
+      - artifact_analysis_scan_and_registry_iam_check
+      - cloud_kms_secret_manager_and_vpc_firewall_check
+    readiness: pending_account_and_trust_configuration
+  aws:
+    display_name: AWS
+    cluster: EKS
+    registry: ECR
+    ci_identity: GitHub Actions OIDC assuming a scoped IAM role
+    cluster_workload_identity: EKS Pod Identity or IAM Roles for Service Accounts, scoped per workload
+    trust_restrictions:
+      - exact_github_repository
+      - protected_branch
+      - protected_environment
+      - expected_audience
+    image_pull_identity: least_privilege_node_role
+    security_evidence:
+      - organization_scp_and_iam_policy_review
+      - github_oidc_role_allow_deny_cloudtrail_events
+      - private_eks_endpoint_and_control_plane_audit_log_check
+      - ecr_scan_results_and_repository_policy_check
+      - kms_secrets_manager_and_security_group_check
+    readiness: pending_account_and_trust_configuration
+  microsoft_azure:
+    display_name: Microsoft Azure
+    cluster: AKS
+    registry: ACR
+    ci_identity: Microsoft Entra federated credential for GitHub Actions OIDC
+    cluster_workload_identity: AKS Workload Identity with Microsoft Entra federation
+    trust_restrictions:
+      - exact_github_repository
+      - protected_branch
+      - protected_environment
+      - expected_audience
+    image_pull_identity: managed_identity_with_acr_pull
+    security_evidence:
+      - management_group_policy_and_role_assignment_review
+      - entra_federation_allow_deny_sign_in_logs
+      - private_aks_api_and_control_plane_diagnostic_logs
+      - acr_scan_and_approved_registry_policy_check
+      - key_vault_managed_identity_and_network_policy_check
+    readiness: pending_account_and_trust_configuration
+  oracle_cloud:
+    display_name: Oracle Cloud Infrastructure
+    cluster: OKE
+    registry: OCI Container Registry
+    ci_identity: OKE GitHub OIDC for cluster authentication; separately validate registry publishing federation
+    cluster_workload_identity: OKE workload identity / Kubernetes RBAC, least privilege per workload
+    trust_restrictions:
+      - exact_github_repository
+      - protected_branch
+      - protected_environment
+      - exact_issuer_and_audience
+    image_pull_identity: least_privilege_node_or_workload_identity
+    registry_authentication_gate: must_use_verified_short_lived_authentication_or_managed_ci; static_user_auth_tokens_are_not_approved
+    security_evidence:
+      - compartment_policy_and_dynamic_group_review
+      - github_oidc_cluster_authentication_allow_deny_log
+      - separate_registry_publish_identity_proof
+      - private_oke_endpoint_and_audit_log_check
+      - ocir_vulnerability_scan_results_and_repository_policy_check
+      - vault_kms_nsg_and_network_policy_check
+    readiness: pending_account_identity_and_registry_validation

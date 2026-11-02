@@ -1,0 +1,50 @@
+name: ATLAS verification
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  tests-and-image:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - name: Install hash-locked development dependencies
+        run: python -m pip install --require-hashes -r requirements-dev.lock
+      - name: Run unit and fixture tests
+        run: python -m pytest -q
+      - name: Build the same container candidate
+        run: docker build --tag atlas-api:${{ github.sha }} .
+      - name: Smoke-test the built container
+        run: |
+          set -eu
+          _container_id=$(docker run -d --rm --read-only -p 127.0.0.1:18081:8080 \
+            -e ATLAS_ALLOWED_HOSTS=127.0.0.1,localhost \
+            -e ATLAS_CORS_ORIGINS=http://localhost:8000 \
+            atlas-api:${{ github.sha }})
+          trap 'docker stop "$_container_id" >/dev/null' EXIT
+          python scripts/smoke_container.py
+      - name: Audit the built runtime image
+        run: docker run --rm --user 0 -v ${{ github.workspace }}:/audit --entrypoint sh atlas-api:${{ github.sha }} -c 'python -m pip install --require-hashes -r /audit/requirements-audit.lock && pip-audit'
+
+  dependency-security:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - name: Install hash-locked runtime and audit dependencies
+        run: python -m pip install --require-hashes -r requirements-dev.lock
+      - name: Block known vulnerable runtime, audit, or development dependencies
+        run: python -m pip_audit

@@ -1,0 +1,89 @@
+{
+  "status": "technical pipeline pilot only; not an enrolled 8+8 study result",
+  "dataset": "NASA JPL/Caltech ARIA/OPERA Central Texas July 4, 2025 flood response DSWx-S1 BWTR mosaics",
+  "source_page": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202507_FLOOD_TX/202507_opera_dswx_hls/ImageServer",
+  "download_root": "https://aria-share.jpl.nasa.gov/20250704_Texas_Floods/DSWx-S1/",
+  "site": "25 km square near Kerrville, Texas; not one of the registered 16 city-center candidates",
+  "asset_geometry": "600 m square technical QA cell, explicitly not an infrastructure asset",
+  "analysis_contract": {
+    "minimum_valid_fraction": 0.8,
+    "minimum_dates_per_period": 3,
+    "baseline_dates": [
+      "2025-06-17",
+      "2025-06-19",
+      "2025-06-22"
+    ],
+    "event_dates": [
+      "2025-07-01",
+      "2025-07-04",
+      "2025-07-11"
+    ]
+  },
+  "aoi_valid_fraction_by_date": {
+    "2025-06-17": 0.999922,
+    "2025-06-19": 0.0,
+    "2025-06-22": 1.0,
+    "2025-07-01": 0.0,
+    "2025-07-04": 1.0,
+    "2025-07-11": 0.999929
+  },
+  "asset_valid_fraction_by_date": {
+    "2025-06-17": 1.0,
+    "2025-06-19": 0.0,
+    "2025-06-22": 1.0,
+    "2025-07-01": 0.0,
+    "2025-07-04": 1.0,
+    "2025-07-11": 1.0
+  },
+  "qualifying_dates": {
+    "baseline": 2,
+    "event": 2
+  },
+  "result": "unknown_insufficient_qa_valid_dates",
+  "comparison_emitted": false,
+  "unknown_processing_metadata": "ARIA Share page and GeoTIFF tags do not provide a software processing version; manifest marks this explicitly instead of inventing one.",
+  "validation_limits": [
+    "NASA labels the response mosaics preliminary/unvalidated and provides no warranty.",
+    "Binary BWTR response mosaics are not original individual granule WTR products.",
+    "No independently verified flood labels were used.",
+    "No infrastructure geometry was used.",
+    "No comparison met the 3-date-per-period coverage gate."
+  ],
+  "input_files": [
+    {
+      "path": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-06-17_mosaic.tif",
+      "bytes": 808967,
+      "sha256": "0eb881673a6c5a724241ad67b7f951627aff4c1d887db416f0c236d0e6f7216f"
+    },
+    {
+      "path": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-06-19_mosaic.tif",
+      "bytes": 250371,
+      "sha256": "901c1ed952808c62afb92aedf1297919276d7dd4d7aa281eb5c228519236c630"
+    },
+    {
+      "path": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-06-22_mosaic.tif",
+      "bytes": 617624,
+      "sha256": "5aba54fba7ea3510f085faa9e17b7c04e1027a81f3814b5530667be6af163980"
+    },
+    {
+      "path": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-07-01_mosaic.tif",
+      "bytes": 247526,
+      "sha256": "cef2903998ef56b846a96005dfa308c36d9dc36c8e69a2244e87ff37e7db4f97"
+    },
+    {
+      "path": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-07-04_mosaic.tif",
+      "bytes": 578772,
+      "sha256": "911df6de00d347ba6cde0ad4bc1d3fed671c2b75b9b3cdfef6ad3842a2f4f319"
+    },
+    {
+      "path": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-07-11_mosaic.tif",
+      "bytes": 1784905,
+      "sha256": "5aa315c6608ce69a15df91c860ce78162b6841519a5ae597658895985bf4d925"
+    }
+  ],
+  "outputs": {
+    "observation_qa.csv": "f18a9c04f80f72bbd3bda0429e258021284bb1180fa72f28e9eb1ad8d9622567",
+    "asset_event_baseline_comparison.csv": "6cb70154410b698be219ad55b5f1fc5172ff519ed72d865dbdd3526ed3753716",
+    "run_manifest.json": "b10f3af82458d47d0ccb995a1e21d526abcb84c09eee9ad6f61bfc37a473ca00"
+  }
+}
