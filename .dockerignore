@@ -8,6 +8,7 @@ outputs
 data/*
 !data/
 !data/study_area_register.json
+!data/study_area_evidence.json
 tests
 *.py[cod]
 .env
