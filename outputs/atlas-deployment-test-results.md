@@ -125,7 +125,7 @@ The authenticated browser is left open on the live Site with the Houston/Beryl s
 - After the GFD/Landsat point-coverage audit was added, `.venv/bin/python scripts/audit_gfd_validation_coverage.py` regenerated the pinned-source report with 33,141 points, 123 events, and matches in 1/16 AOIs; that Sacramento match is temporally unsuitable and under-sampled.
 - The first default pytest run recursively collected duplicate modules from `work/atlas-clean-checkout/` and failed during collection. Added `pytest.ini` with `testpaths = tests` to keep the archived reproduction out of current test discovery. The current suite passes 36 tests in 0.70s, including the STAC audit and cloud-input preflight tests.
 - The four-provider preflight command against the blank example failed closed with 25 missing/invalid setup requirements and reported that no resources were created. The owner-only local handoff file does not exist, so no provider account readiness, billing, region, Apple-account role, or budget choice is verified.
-- Remote CI passed on the latest published documentation/configuration commit `caf4e7a4305934da9abac6d33f9418370198272e` in [run 41547250626](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41547250626).
+- Remote CI passed on the current source, audit, and cloud-preflight commit `84089a48a53fc17e3c800605726d5cab5c519e00` in [run 41548693104](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41548693104).
 - The browser control could not reattach to the existing in-app tab during this refresh, so no new screenshot-based UI assertion was made. The prior v9 production E2E run and each check above remain author-run evidence; a new full UI replay and an independent reproduction are still pending.
 
 
