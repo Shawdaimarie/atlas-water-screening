@@ -147,7 +147,7 @@ The Kubernetes sample now includes a required API hostname placeholder for `ATLA
 - Published review copies at `outputs/atlas-cloud-release-runbook.md` and `outputs/atlas-provider-parity-matrix.yaml` for easy access.
 - Used the four providers' official identity and deployment documentation to identify the provider bindings. OCI OKE OIDC is explicitly scoped to cluster authentication; registry publication requires an independent tested short-lived identity path.
 - No provider accounts were accessed, no credentials stored, and no infrastructure or cloud deployment was created. The account owner must complete account and billing terms directly; when accounts are ready, only non-secret IDs/region choices are needed to finish the provider bindings.
-- This is preparation evidence only and adds no product score points. Current score remains 50/100 provisional; no cloud end-to-end workflow has been run.
+- At this preparation-only milestone, the score was 50/100 provisional; no cloud end-to-end workflow had been run.
 
 ### Four-provider parity update (2026-11-02)
 
@@ -156,7 +156,7 @@ The Kubernetes sample now includes a required API hostname placeholder for `ATLA
 - Owner reports Google Cloud, AWS, Azure, and Oracle Cloud account creation is in progress under `shawdaimarie@gmail.com`. Account signup, terms, billing, MFA, regions, and identity setup are owner-managed and unverified by ATLAS. We have not asked for or received passwords, recovery codes, payment details, access keys, or cloud credentials.
 - Added a non-secret onboarding handoff and machine-readable status record. It requires the same owner confirmation, approved region/data-residency decision, cost ceiling and alerts, staging/production boundary, and OIDC setup before any resources are provisioned.
 - Clarified that artifact integrity must be preserved and admission-verified after each registry transfer on all providers; Google Artifact Analysis and Oracle registry scanning must be explicitly enabled and their results retained.
-- Changes strengthen deployment preparation only; they do not prove provider accounts, remote CI, cloud resources, deployed workflows, or higher project score. Product score remains 50/100 provisional.
+- Changes strengthen deployment preparation only; they do not prove provider accounts, remote CI, cloud resources, deployed workflows, or higher project score. Product score at this historical update was 50/100 provisional.
 - Current rerun on this checkout: 27 tests passed in 0.80s; local restricted-container smoke passed 11/11; provider parity matrix parsed and passed the four-target/common-contract consistency check. The current enrollment and scoring records remain unchanged because cloud staging and scientific validation have not occurred.
 
 
@@ -176,11 +176,11 @@ A green GitHub-hosted build does not prove a deployment job can reach a private 
 - Microsoft documents that private AKS API access requires a network-connected agent and that Microsoft-hosted Azure Pipelines agents do not support private AKS: [AKS security](https://learn.microsoft.com/en-us/azure/aks/concepts-security).
 - OCI DevOps managed build stages can be configured for private VCN access and require appropriate private routing: [OCI managed build stage](https://docs.oracle.com/en-us/iaas/Content/devops/using/managed_buildstage.htm).
 
-These are architecture options, not configured or costed deployments. Runner, VPN/NAT, endpoint, and cluster costs depend on the owner-approved region and budget; no resources were created. Current score remains 50/100 provisional.
+These are architecture options, not configured or costed deployments. Runner, VPN/NAT, endpoint, and cluster costs depend on the owner-approved region and budget; no resources were created. Score at this historical update was 50/100 provisional.
 
 ## Current local parity checks (2026-11-02)
 
 - Added three CI tests for the four-provider common contract, owner-input template nonsecret/default state, and restricted Kubernetes workload manifest. The full local suite passes **31 tests**; secret scan and whitespace checks pass.
-- Added explicit ephemeral private-runner, private-DNS, routing, allow/deny, and cost review gates. Provider-specific runner networking remains unprovisioned and unverified. These static checks do not count as cloud deployment evidence or increase the score.
+- Added explicit ephemeral private-runner, private-DNS, routing, allow/deny, and cost review gates. Provider-specific runner networking remains unprovisioned and unverified. These static checks do not count as cloud deployment evidence. The score increased from 50 to 55/100 only after the separate clean-checkout reproducibility criterion passed; no cloud or scientific criterion changed.
 
 Remote CI on commit `ad459345be5450117a1611c360b158a11a0f6a59` passed all 31 tests, the container build and HTTP smoke, and dependency audit: [run 41544022836](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41544022836). This verifies declared safeguards only; no provider-connected runner or cloud stage has been provisioned.

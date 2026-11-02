@@ -42,7 +42,7 @@ The private static Site is deployed (version 10) and the study-area candidate re
 
 ## Open requirements before a 100/100 claim
 
-Real pinned OPERA raster ingest and provenance; event-specific QA coverage for each enrolled site; independent reference labels and a held-out event; asset geometries with reviewed licensing; deployed/connected geospatial API; recovery/restore evidence; deployed-API authorization and dependency/secret checks; cloud throughput/cost benchmark; accessibility/usability review; declared-load/capacity evidence; and clean-checkout plus independent reproduction. The strict current rubric score is 50/100, provisional and author-verified, as shown in `SCORECARD.md`.
+Real pinned OPERA raster ingest and provenance; event-specific QA coverage for each enrolled site; independent reference labels and a held-out event; asset geometries with reviewed licensing; deployed/connected geospatial API; recovery/restore evidence; deployed-API authorization and dependency/secret checks; cloud throughput/cost benchmark; accessibility/usability review; declared-load/capacity evidence; and independent reproduction. The strict current rubric score is 55/100, provisional and author-verified, as shown in `SCORECARD.md`.
 
 ## Guided walkthrough
 
@@ -212,7 +212,7 @@ The shared blueprint v1.1 clarification requires each rubric item to earn 5 poin
 - Live v10 checks passed: selected Jakarta and confirmed its profile/rationale/source; changed method and observed the expected synthetic aggregate ranking; selected Hurricane Ida and observed Baton Rouge dates, schematic label, and `LA-` asset IDs; downloaded the area register and evidence export (both success messages); reset and observed the single-scene baseline (4 elevated assets; median 7.7%).
 - Browser page was left open to the private v10 walkthrough with Jakarta selected and Baton Rouge/Hurricane Ida active. The dashboard and profile are visibly synthetic; this validates only the walkthrough, not scientific analysis.
 - Synchronized the published source’s `dist/index.html` back to the current workspace. Python tests are unchanged from the latest 27-pass run; this static-copy change does not affect the API or its test suite.
-- The current score remains **50/100 provisional**. No cloud-provider environment or scientific validation gate passed from this Site release.
+- At this version 10 release milestone, the score was **50/100 provisional**. No cloud-provider environment or scientific validation gate passed from that Site release.
 
 
 ## Current multi-cloud preparation rerun (2026-11-02)
@@ -232,4 +232,13 @@ This status supersedes the earlier version 10/11 entries below; those are retain
 - The current local suite passes: `.venv/bin/python -m pytest -q` — **31 passed**, including three checks for provider-parity policy, the nonsecret owner-input template, and restricted Kubernetes manifests. Secret scan and `git diff --check` passed.
 - Private GitHub CI passed on commit `ad459345be5450117a1611c360b158a11a0f6a59`: [run 41544022836](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41544022836). The run passed the 31-test suite, container build, container HTTP smoke, and dependency audit, including the new provider-policy and Kubernetes manifest checks. An earlier run exposed missing `study_area_evidence.json` in the Docker build context; `.dockerignore` and Dockerfile were corrected before the successful run.
 - The live Site only demonstrates the synthetic walkthrough and candidate evidence profiles. The API is not connected to the Site or deployed to a cloud provider. No Google Cloud, AWS, Azure, or OCI staging or production environment has passed deployment checks.
-- Current documented score remains **50/100 provisional** under the canonical rubric. CI and Site deployment do not establish real-scene pixel validity, independent ground truth, operational demand, or cross-provider deployment.
+- Current documented score is **55/100 provisional** under the canonical rubric. CI and Site deployment do not establish real-scene pixel validity, independent ground truth, operational demand, or cross-provider deployment.
+
+
+## Clean-checkout reproduction (2026-11-02)
+
+- Created a fresh detached Git worktree at commit `73eac66103db64c61f54172ad76fba8157a6b10c`.
+- In a new Python 3.12 ARM64 container (`python:3.12-bookworm@sha256:a5bab0ff300f91231c2e68bf73a8a8d60762ac39ce1c50eaf6803e4c38a9062b`), installed all locked development dependencies with `python -m pip install --require-hashes -r requirements-dev.lock`.
+- Ran `python -m pytest -q`: **31 passed in 0.70s**. This was author-run from a clean checkout; an independent reviewer reproduction remains pending.
+- The failed first attempt in the separate `python:3.12-slim-bookworm` image lacked `libexpat.so.1`, required by the optional Rasterio package. The successful reproducibility result used the standard Bookworm Python image; this does not change the runtime API image or establish any real-area scientific result.
+- The canonical score rises from 50 to **55/100** only because the documented clean-checkout reproduction item is now evidenced. Cloud, usability, capacity, held-out-event, and independent-label criteria remain pending.

@@ -46,7 +46,7 @@ The shared 100-point scorecard is adopted with criteria pending. Before implemen
 - Documentation/reproducibility 15: clean-checkout reproduction; API/operator docs; complete evidence provenance.
 - Scalability 10: declared workload/load test and capacity/cost model within stated bounds.
 
-Current score: 45/100, author-verified and provisional. See SCORECARD.md for per-item evidence, exact test command, environment and outstanding criteria. The deployed demo uses synthetic fixtures; no score implies scientific validity or commercial confidence.
+Current score: 55/100, author-verified and provisional. See SCORECARD.md for per-item evidence, exact test command, environment and outstanding criteria. The deployed demo uses synthetic fixtures; no score implies scientific validity or commercial confidence.
 
 ## Release criteria and gaps
 
