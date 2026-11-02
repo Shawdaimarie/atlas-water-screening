@@ -2,13 +2,13 @@
 
 **Run date:** 2026-11-02\
 **Production Site:** [ATLAS | Water Exposure Screening](https://atlas-water-screening.shawdaimarie.chatgpt.site/) (private owner-only access)\
-**Current published Site version:** 10
-**Current source commit deployed:** `807abdea007ccd694f920b769ef9c644b7dc3947`
-**Version provenance:** Sites readback matched version 10 to this source commit and deployment `appgdep_6ae910bcef608191bb2063553a735c4e`; archive hash `sha256:53b7799645e9acbfa4c2ccc373b99ef7f11d27cb9a088da57e5f443426bd4d3c`.
+**Current published Site version:** 12
+**Current source commit deployed:** `af1c7a315447588f6893279605f5c7b7ddbaa240`
+**Version provenance:** Sites readback matched version 12 to this source commit and deployment `appgdep_6ae9164a45bc81919f19e1af0750b143`; archive hash `sha256:077b62bb99cdc3503f970af4878bac95bc0bdf9666e36b0492ac7a7946173844`.
 
 ## Result summary
 
-The private static Site is deployed (version 10) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. The register is an archive metadata discovery screen; its scenes have not been downloaded or pixel-QA audited for the 16 enrolled candidates. Therefore the project is **not 100/100** and the study areas are not yet fully validated.
+The private static Site is deployed (version 12) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. The register is an archive metadata discovery screen; its scenes have not been downloaded or pixel-QA audited for the 16 enrolled candidates. Therefore the project is **not 100/100** and the study areas are not yet fully validated.
 
 ## Checks completed
 
@@ -92,6 +92,25 @@ The shared blueprint v1.1 clarification requires each rubric item to earn 5 poin
 - Rebuild the full-date CSV: `python3 scripts/export_study_area_register.py`.
 - Test all saved counts/intersections offline: `.venv/bin/python -m pytest -q`.
 - The exact per-area CMR dates are in `atlas-study-area-register.json` and CSV; the cross-area audit is in `atlas-temporal-overlap-audit.json`. This is archive metadata evidence only, not observational QA.
+
+## Current live version 12 walkthrough verification
+
+**Run date:** 2026-11-02. **Production version:** 12. **Deployment:** `appgdep_6ae9164a45bc81919f19e1af0750b143` (`succeeded`). **Deployed source:** `af1c7a315447588f6893279605f5c7b7ddbaa240`. Browser check used the authenticated owner session on the live production Site; this is author-run, not independent.
+
+| Live action | Result |
+|---|---|
+| Load and inspect the version 12 Site | Pass. Houston/Beryl dashboard and all 16 candidate choices rendered. The UI explicitly labels analysis inputs synthetic and candidate areas metadata-only with pixel QA and independent labels pending. |
+| Select each candidate profile | Pass, 16/16. Each U.S. and international profile became selected and showed its matching city heading; the final panel retained pending-validation and demand-limit disclosures. |
+| Select Singapore | Pass. Profile displayed PUB rationale, value-integration question, 231 metadata hits, 163 distinct dates, and the 625 km² nominal box. |
+| Change analysis method | Pass. Quality-aware aggregate changed the lead synthetic overlap from 28.6% to 21.4%, elevated fixture count from 4 to 3, and median from 7.7% to 6.8%; the interface disclosed the result was experimental and synthetic. |
+| Change scenario to Baton Rouge / Hurricane Ida | Pass. Selected area/event, event and baseline windows, scenario heading, schematic map label and fixture portfolio changed together. |
+| Export evidence | Pass. UI reported “Evidence export downloaded with synthetic-data label and method.” |
+| Export candidate register | Pass. UI reported “Study area register downloaded as CSV.” The retained local register is separately count-checked at 16 rows (8 U.S., 8 international). |
+| Reset and restore the starting walkthrough | Pass. Reset returned the method to the single-scene baseline (median 7.7%, 4 elevated fixtures); the scenario selectors were then restored to Houston/Beryl. |
+| Verify publication/access | Pass. Sites readback reports active version 12, successful production deployment, custom owner-only allowlist for `shawdaimarie@gmail.com`, and zero external visitors. |
+| Latest source CI | Pass. [GitHub Actions run 41544931776](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41544931776) succeeded on commit `58acb5a6ccd86c49d8091901faa5f361f36255c0`. |
+
+The authenticated browser is left open on the live Site with the Houston/Beryl synthetic analysis visible and the São Paulo candidate profile selected. These checks demonstrate the deployed walkthrough and its exports; they do not demonstrate cloud-hosted API behavior, real water observations, candidate-area pixel QA, or independent labels. No additional rubric points are awarded by this replay; the score remains 55/100 provisional.
 
 
 

@@ -167,6 +167,10 @@ The Kubernetes sample now includes a required API hostname placeholder for `ATLA
 - That CI run validates the local container candidate only. No cloud account readiness, provider identity federation, registry, cluster, staging, or production deployment has been verified for any of the four providers.
 - Account creation is still owner-managed and remains unverified by ATLAS. Continue using the shared security and release contract; Apple Account sign-in, if used in an account flow, does not substitute for provider-native account/billing readiness.
 
+## Account-provider clarification (2026-11-02)
+
+- The owner indicates an existing Apple Account will be used while setting up accounts. Apple Account may serve as an identity/sign-in method where a provider offers it, but it does not create or host ATLAS on Google Cloud, AWS, Microsoft Azure, or Oracle Cloud. Each deployment still needs its own provider account/project/tenant, billing readiness, approved region, and cloud-native identity bindings. This clarification provisions nothing and does not require sharing Apple credentials with ATLAS.
+
 ## Private-cluster runner connectivity review (2026-11-02)
 
 A green GitHub-hosted build does not prove a deployment job can reach a private cluster API. Added an explicit provider-connected, ephemeral runner gate to the shared release runbook and machine-readable provider matrix. The runner must have private DNS/routing to its cluster, pass allowed and denied network tests, request only the trusted job's OIDC identity, and never run untrusted pull-request code.
