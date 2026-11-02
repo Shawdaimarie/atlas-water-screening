@@ -182,3 +182,5 @@ These are architecture options, not configured or costed deployments. Runner, VP
 
 - Added three CI tests for the four-provider common contract, owner-input template nonsecret/default state, and restricted Kubernetes workload manifest. The full local suite passes **31 tests**; secret scan and whitespace checks pass.
 - Added explicit ephemeral private-runner, private-DNS, routing, allow/deny, and cost review gates. Provider-specific runner networking remains unprovisioned and unverified. These static checks do not count as cloud deployment evidence or increase the score.
+
+Remote CI on commit `ad459345be5450117a1611c360b158a11a0f6a59` passed all 31 tests, the container build and HTTP smoke, and dependency audit: [run 41544022836](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41544022836). This verifies declared safeguards only; no provider-connected runner or cloud stage has been provisioned.
