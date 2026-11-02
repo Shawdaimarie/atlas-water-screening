@@ -1,0 +1,45 @@
+# Copy to owner-inputs.local.yaml and complete in a private local workspace.
+# This file contains non-secret identifiers and owner choices only.
+# Never place passwords, MFA/recovery codes, payment data, keys, or tokens here.
+schema_version: 1
+
+owner:
+  contact_email: null
+  apple_account_role: undecided
+  data_residency_decision: pending
+  staging_production_boundary: pending
+  approved_api_hostname: null
+
+budget:
+  currency: null
+  monthly_ceiling: null
+  alert_thresholds_percent: []
+  alert_recipient_emails: []
+
+providers:
+  google_cloud:
+    account_ready: false
+    project_id: null
+    billing_account_confirmed: false
+    region: null
+    workload_identity_provider_ready: false
+  aws:
+    account_ready: false
+    account_id: null
+    billing_confirmed: false
+    region: null
+    github_oidc_role_ready: false
+  microsoft_azure:
+    account_ready: false
+    tenant_id: null
+    subscription_id: null
+    billing_confirmed: false
+    region: null
+    entra_federated_identity_ready: false
+  oracle_cloud:
+    account_ready: false
+    tenancy_ocid: null
+    compartment_ocid: null
+    billing_confirmed: false
+    home_region: null
+    github_oidc_and_registry_identity_ready: false

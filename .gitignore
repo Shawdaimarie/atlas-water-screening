@@ -7,4 +7,7 @@ __pycache__/
 .sites-open/
 work/
 
+# Owner-only provider identifiers, regions, and budget settings.
+deployment/cloud/owner-inputs.local.yaml
+
 # Generated research deliverables are tracked intentionally.
