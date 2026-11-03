@@ -37,9 +37,9 @@ Updated: 2026-11-03
 
 ## Latest verified deployment state (2026-11-03 UTC)
 
-- Private Sites version 18 is deployed and owner-only. The live walkthrough verifies the replicated Sentinel-1 availability panel, 16-area table, profile selection, synthetic method switch, Hurricane Ida scenario and reset, CSV export, and evidence export confirmation.
+- Private Sites version 19 is deployed and owner-only. The live walkthrough verifies the replicated Sentinel-1 availability panel, 16-area table, profile selection, synthetic method switch, Hurricane Ida scenario and reset, CSV export, and evidence export confirmation.
 - Paired exploratory coverage samples: 121 unique area/orbit groups after seven repeats; 102/121 groups pass the 80% finite/non-nodata spatial screen and 10/16 areas pass all eight sampled groups. Independent labels and confirmatory enrollment remain 0/16.
-- Local and Python 3.12 hash-locked suites each pass 56 tests. The latest live Site package is verified. The full current source/documentation sync to private GitHub and its CI are still pending. Four cloud deployments remain blocked on 30 missing/invalid preflight inputs. An existing Apple Account is not web hosting for this multi-cloud release; the private Sites demonstration remains available separately. Current evidence-backed score: 55/100 provisional.
+- The current hash-locked Python 3.12 suite passes 67 tests. Site v19 remains active, private, and deployment-succeeded; its source commit is 8bb66aa0cecfb900cc84bcb7a3a3fd86cee92225, and its deployed dist/index.html matches the current walkthrough source by SHA-256. Evidence refresh commit 67f68d82c48b9679cfb1184b383599398717fff0 passed GitHub Actions run 41646127573: 67 tests, 16-area footprint screen, container build, 11/11 HTTP smoke, runtime image audit, and dependency scan. The blank-example four-provider release preflight reports 30 missing or invalid requirements; no provider resources were created. Apple distribution is a separate app path, not web hosting. Current evidence-backed score: 55/100 provisional.
 
 - Site v18 was published with the compact paired coverage download; live readback confirms all 16 profiles, all 128 sample records, NYC profile data, and the download link. The paired JSON preserves per-sample IDs and checksums while the complete source reports remain separate.
 

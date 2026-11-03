@@ -17,7 +17,7 @@ Updated: 2026-11-03. Scope: privately hosted synthetic walkthrough plus local fi
 
 ## Verification record
 
-- Current v19 checks (2026-11-03): local suite **56 passed**; Python 3.12 Bookworm hash-locked rerun **56 passed**. The active owner-only Site reports successful version 19 deployment; live browser checks selected New York City and exposed two below-floor sampled quarters, switched to the synthetic quality-aware aggregate, and triggered both register and evidence exports. These remain walkthrough/fixture checks; score stays 55/100 pending scientific, user-study, cloud, capacity, and independent-reproduction criteria.
+- Current v19 checks (2026-11-03): the hash-locked Python 3.12 Bookworm suite passes **67 tests in 1.22s**. Site control-plane readback confirms deployment success, owner-only access, and source commit 8bb66aa0cecfb900cc84bcb7a3a3fd86cee92225; the current local dist/index.html SHA-256 matches the saved Site source. Prior live browser replay verified the 16 area profiles, paired sample panel, synthetic comparison, event/reset controls, and both exports. These remain walkthrough/fixture checks; score stays 55/100 pending scientific, user-study, cloud, capacity, and independent-reproduction criteria.
 
 - Initial local API smoke/test snapshot: `.venv/bin/python -m pytest -q` — **7 passed** on macOS/Python 3.9, project commit `44741a7`. Superseded by the current 31-test suite and the clean-checkout run below; retained as historical evidence.
 - Live local API smoke: `/api/health` returned 200 with `live_nasa_ingestion:false`; aggregate analysis returned 200 with 12 synthetic records; CSV export returned 200 with 12 records plus header.
