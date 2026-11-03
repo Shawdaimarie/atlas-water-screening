@@ -6,6 +6,8 @@ Updated: 2026-11-03. Scope: privately hosted synthetic walkthrough plus local fi
 
 **Latest deployment check (2026-11-03):** private Site v23 is successful; authenticated production replay shows the 8+8 readiness ledger and its live JSON route returns all 16 areas. The hash-locked Python 3.12 suite passed 77 tests. These are demo and engineering checks only; the score remains 55/100 because real matched event observations, independent labels, confirmatory enrollment, cloud deployments, and independent reproduction remain unmet.
 
+Private GitHub main has the matching evidence/source sync at `f105bd9296a15f8e65afa67f5bc4afaae236ddd3`; its CI run [41657160927](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41657160927) passed 77 tests, GEOID-Flood footprint check, container build/audit, 11/11 HTTP smoke tests, and dependency scanning.
+
 | Category | Points | Evidence and result |
 |---|---:|---|
 | Functionality | 15/20 | Three bounded demo criteria pass: supported scenario/area interaction; synthetic method comparison and asset inspection; labeled CSV exports. The 5-point real pinned historical-observation workflow is pending; no real raster or event has been reproduced. |

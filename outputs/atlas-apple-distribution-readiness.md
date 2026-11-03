@@ -23,7 +23,7 @@ To make an Apple release buildable and reviewable:
 
 ## Readiness gate
 
-Apple distribution is **not ready and has not been attempted**. The current private web deployment is Site v22 and remains available as a browser demo. To distribute an app with the existing account, its Developer Program/App Store Connect access must be verified and a full Xcode installation and iOS app target are needed. This Apple track does not change the ATLAS research score or count as a Google Cloud, AWS, Azure, or Oracle deployment.
+Apple distribution is **not ready and has not been attempted**. The current private web deployment is Site v23 and remains available as a browser demo. To distribute an app with the existing account, its Developer Program/App Store Connect access must be verified and a full Xcode installation and iOS app target are needed. This Apple track does not change the ATLAS research score or count as a Google Cloud, AWS, Azure, or Oracle deployment.
 
 ## Apple references
 
