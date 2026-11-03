@@ -92,3 +92,17 @@ def test_site_discloses_independent_reference_coverage_gaps():
     assert "no current area passes the independent-label gate" in site_html
     assert 'href="https://registry.opendata.aws/c2smsfloods/"' in site_html
     assert 'href="https://zenodo.org/records/23426661"' in site_html
+
+
+def test_site_protocol_panel_matches_proposed_validation_contract():
+    site_html = (ROOT / "dist/index.html").read_text()
+    assert 'aria-labelledby="protocolTitle"' in site_html
+    assert "Shared validation protocol" in site_html
+    assert "Proposed design—not externally preregistered" in site_html
+    assert "three valid scenes and 80% scene validity are feasibility checks only" in site_html
+    assert "Confirmatory enrollment: 0 / 16" in site_html
+    assert "385 independent units" in site_html
+    assert "Invalid masks and no-data are missing, never dry" in site_html
+    assert "the 3-date/80% thresholds as final criteria" not in site_html
+    assert "Final enrollment requires 3 QA-valid scenes in each event and baseline period" not in site_html
+    assert 'href="https://github.com/Shawdaimarie/atlas-water-screening/blob/main/outputs/atlas-preregistered-validation-protocol.md"' in site_html
