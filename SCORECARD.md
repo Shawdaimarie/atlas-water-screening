@@ -89,3 +89,5 @@ Complete held-out real-event data and labels; actual raster ingest and provenanc
 - Site v19 live JSON verification confirms the source-declared nodata value (`-32768`) and all sample records. Local and Python 3.12 hash-locked suites pass 56 tests. This is an evidence-reporting correction only; score remains 55/100 provisional.
 
 - Corrected private main commit `f2a3b938c7c84c4de9b8da62f26f8c18ba849b04` passed [Actions run 41578752221](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41578752221): 56 tests, all-area reference footprint audit, container build, 11/11 HTTP checks, runtime image audit, and dependency security. This confirms code/release candidate checks, not four-cloud deployment or scientific validation.
+
+- GFD MODIS map audit (2026-11-03): selected event-map pixels are classifiable in 13/16 AOIs, but only 8/16 contain event-flood candidate pixels after excluding JRC permanent water. The archive is 2007–2018, coarse MODIS, and CC BY-NC 4.0; it does not validate the current OPERA window. No score change; canonical score remains 55/100 provisional.

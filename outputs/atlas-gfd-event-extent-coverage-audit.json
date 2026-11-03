@@ -1,0 +1,1190 @@
+{
+  "areas": [
+    {
+      "city": "Houston",
+      "map_screen": {
+        "aoi_raster_pixels": 11500,
+        "classified_fraction_of_aoi": 0.99713,
+        "clear_perc_ge_80pct_pixels": 11467,
+        "clear_perc_ge_90pct_pixels": 11467,
+        "clear_perc_valid_pixels": 11467,
+        "duration_valid_event_flood_candidate_pixels": 0,
+        "event_flood_candidate_fraction_of_nonpermanent_classified": 0.0,
+        "event_flood_candidate_pixels": 0,
+        "flood_classified_pixels": 11467,
+        "gfd_missing_pixels": 33,
+        "gfd_object_name": "DFO_4359_From_20160526_to_20160624.zip",
+        "gfd_zip_bytes": 16519091,
+        "gfd_zip_md5_hash_base64": "iJiZUvfznAsuZTaoQBltdw==",
+        "gfd_zip_sha256": "ebc2e4c1863d84b12f68d43b894ac6eceb1c8936cce00b3c7b233a68f54ffee8",
+        "jrc_permanent_water_pixels": 82,
+        "jrc_permanent_water_valid_pixels": 11467,
+        "license_text_contains_noncommercial": true,
+        "mapped_water_pixels_including_permanent": 0,
+        "nonpermanent_classified_pixels": 11385,
+        "nonwater_pixels": 11467,
+        "properties": {
+          "began": "2016-05-26",
+          "cc": "USA, MEX",
+          "composite_type": "3Day",
+          "countries": "United States, Mexico",
+          "dfo_centroid_x": -95.536729,
+          "dfo_centroid_y": 30.857441,
+          "dfo_country": "USA",
+          "dfo_dead": 11,
+          "dfo_displaced": 0,
+          "dfo_main_cause": "Heavy Rain",
+          "dfo_other_country": "",
+          "dfo_severity": 1.5,
+          "dfo_validation_type": "Flood List",
+          "ended": "2016-06-24",
+          "gfd_country_code": "['US', 'MX']",
+          "gfd_country_name": "['UNITED STATES', 'MEXICO']",
+          "glide_index": "FL-2016-000056-USA",
+          "id": 4359,
+          "slope_threshold": 5,
+          "threshold_b1b2": 0.7,
+          "threshold_b7": 675,
+          "threshold_type": "standard"
+        },
+        "raster": {
+          "bands": [
+            "flooded",
+            "duration",
+            "clear_views",
+            "clear_perc",
+            "jrc_perm_water"
+          ],
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.002245788210298804,
+            0.002245788210298804
+          ],
+          "tile_count": 1
+        },
+        "raster_tiles": [
+          {
+            "name": "DFO_4359_From_20160526_to_20160624.tif",
+            "sha256": "3257cf68c49c1f177a7070c8f77ef2f8f315f656129cce2c657d2da269ab5205"
+          }
+        ]
+      },
+      "region": "United States",
+      "selected_event": {
+        "area_km2": 160371.39069131232,
+        "country": "USA",
+        "event_end": "2016-06-24",
+        "event_id": 4359,
+        "event_start": "2016-05-26",
+        "gfd_object": {
+          "crc32c_base64": "baYcHw==",
+          "md5_hash_base64": "iJiZUvfznAsuZTaoQBltdw==",
+          "name": "DFO_4359_From_20160526_to_20160624.zip",
+          "size_bytes": 16519091
+        },
+        "main_cause": "Heavy Rain",
+        "severity": 1.5
+      }
+    },
+    {
+      "city": "Miami",
+      "map_screen": {
+        "aoi_raster_pixels": 11100,
+        "classified_fraction_of_aoi": 0.568018,
+        "clear_perc_ge_80pct_pixels": 6305,
+        "clear_perc_ge_90pct_pixels": 6295,
+        "clear_perc_valid_pixels": 6305,
+        "duration_valid_event_flood_candidate_pixels": 61,
+        "event_flood_candidate_fraction_of_nonpermanent_classified": 0.01202,
+        "event_flood_candidate_pixels": 61,
+        "flood_classified_pixels": 6305,
+        "gfd_missing_pixels": 4795,
+        "gfd_object_name": "DFO_4516_From_20170908_to_20170919.zip",
+        "gfd_zip_bytes": 15716932,
+        "gfd_zip_md5_hash_base64": "4VbCmK0TNnZ0J7MQ2LFHLA==",
+        "gfd_zip_sha256": "ace54a2acf4aef53bb2cf972599ee952c87557f75e7ff62106cad5766d92f70f",
+        "jrc_permanent_water_pixels": 1230,
+        "jrc_permanent_water_valid_pixels": 6305,
+        "license_text_contains_noncommercial": true,
+        "mapped_water_pixels_including_permanent": 885,
+        "nonpermanent_classified_pixels": 5075,
+        "nonwater_pixels": 5420,
+        "properties": {
+          "began": "2017-09-08",
+          "cc": "USA, CUB, BHS, DOM, HTI, TCA",
+          "composite_type": "3Day",
+          "countries": "United States, Cuba, Bahamas, The, Dominican Republic, Haiti, Turks and Caicos Islands",
+          "dfo_centroid_x": -81.625156,
+          "dfo_centroid_y": 28.594245,
+          "dfo_country": "USA",
+          "dfo_dead": 84,
+          "dfo_displaced": 3000,
+          "dfo_main_cause": "Tropical Storm Irma",
+          "dfo_other_country": "Cuba",
+          "dfo_severity": 2,
+          "dfo_validation_type": "News",
+          "ended": "2017-09-19",
+          "gfd_country_code": "['US', 'CU', 'BF', 'TK', 'DR', 'HA', 'BQ', 'CJ']",
+          "gfd_country_name": "['UNITED STATES', 'CUBA', 'THE BAHAMAS', 'Turks & Caicos Islands (UK)', 'DOMINICAN REPUBLIC', 'HAITI', 'Navassa Island (US)', 'Cayman Islands (UK)']",
+          "glide_index": "TC-2017-000132-CUB",
+          "id": 4516,
+          "slope_threshold": 5,
+          "threshold_b1b2": 0.7,
+          "threshold_b7": 675,
+          "threshold_type": "standard"
+        },
+        "raster": {
+          "bands": [
+            "flooded",
+            "duration",
+            "clear_views",
+            "clear_perc",
+            "jrc_perm_water"
+          ],
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.002245788210298804,
+            0.002245788210298804
+          ],
+          "tile_count": 1
+        },
+        "raster_tiles": [
+          {
+            "name": "DFO_4516_From_20170908_to_20170919.tif",
+            "sha256": "1ae90b7c62dde29c38823139d23e4f1ce2e5914e14eaa4422f74e570fa88cd31"
+          }
+        ]
+      },
+      "region": "United States",
+      "selected_event": {
+        "area_km2": 219532.8532985475,
+        "country": "USA",
+        "event_end": "2017-09-19",
+        "event_id": 4516,
+        "event_start": "2017-09-08",
+        "gfd_object": {
+          "crc32c_base64": "PiDERQ==",
+          "md5_hash_base64": "4VbCmK0TNnZ0J7MQ2LFHLA==",
+          "name": "DFO_4516_From_20170908_to_20170919.zip",
+          "size_bytes": 15716932
+        },
+        "main_cause": "Tropical Storm Irma",
+        "severity": 2.0
+      }
+    },
+    {
+      "city": "Tampa",
+      "map_screen": {
+        "aoi_raster_pixels": 11300,
+        "classified_fraction_of_aoi": 0.826726,
+        "clear_perc_ge_80pct_pixels": 9342,
+        "clear_perc_ge_90pct_pixels": 9301,
+        "clear_perc_valid_pixels": 9342,
+        "duration_valid_event_flood_candidate_pixels": 18,
+        "event_flood_candidate_fraction_of_nonpermanent_classified": 0.002175,
+        "event_flood_candidate_pixels": 18,
+        "flood_classified_pixels": 9342,
+        "gfd_missing_pixels": 1958,
+        "gfd_object_name": "DFO_4516_From_20170908_to_20170919.zip",
+        "gfd_zip_bytes": 15716932,
+        "gfd_zip_md5_hash_base64": "4VbCmK0TNnZ0J7MQ2LFHLA==",
+        "gfd_zip_sha256": "ace54a2acf4aef53bb2cf972599ee952c87557f75e7ff62106cad5766d92f70f",
+        "jrc_permanent_water_pixels": 1066,
+        "jrc_permanent_water_valid_pixels": 9342,
+        "license_text_contains_noncommercial": true,
+        "mapped_water_pixels_including_permanent": 497,
+        "nonpermanent_classified_pixels": 8276,
+        "nonwater_pixels": 8845,
+        "properties": {
+          "began": "2017-09-08",
+          "cc": "USA, CUB, BHS, DOM, HTI, TCA",
+          "composite_type": "3Day",
+          "countries": "United States, Cuba, Bahamas, The, Dominican Republic, Haiti, Turks and Caicos Islands",
+          "dfo_centroid_x": -81.625156,
+          "dfo_centroid_y": 28.594245,
+          "dfo_country": "USA",
+          "dfo_dead": 84,
+          "dfo_displaced": 3000,
+          "dfo_main_cause": "Tropical Storm Irma",
+          "dfo_other_country": "Cuba",
+          "dfo_severity": 2,
+          "dfo_validation_type": "News",
+          "ended": "2017-09-19",
+          "gfd_country_code": "['US', 'CU', 'BF', 'TK', 'DR', 'HA', 'BQ', 'CJ']",
+          "gfd_country_name": "['UNITED STATES', 'CUBA', 'THE BAHAMAS', 'Turks & Caicos Islands (UK)', 'DOMINICAN REPUBLIC', 'HAITI', 'Navassa Island (US)', 'Cayman Islands (UK)']",
+          "glide_index": "TC-2017-000132-CUB",
+          "id": 4516,
+          "slope_threshold": 5,
+          "threshold_b1b2": 0.7,
+          "threshold_b7": 675,
+          "threshold_type": "standard"
+        },
+        "raster": {
+          "bands": [
+            "flooded",
+            "duration",
+            "clear_views",
+            "clear_perc",
+            "jrc_perm_water"
+          ],
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.002245788210298804,
+            0.002245788210298804
+          ],
+          "tile_count": 1
+        },
+        "raster_tiles": [
+          {
+            "name": "DFO_4516_From_20170908_to_20170919.tif",
+            "sha256": "1ae90b7c62dde29c38823139d23e4f1ce2e5914e14eaa4422f74e570fa88cd31"
+          }
+        ]
+      },
+      "region": "United States",
+      "selected_event": {
+        "area_km2": 219532.8532985475,
+        "country": "USA",
+        "event_end": "2017-09-19",
+        "event_id": 4516,
+        "event_start": "2017-09-08",
+        "gfd_object": {
+          "crc32c_base64": "PiDERQ==",
+          "md5_hash_base64": "4VbCmK0TNnZ0J7MQ2LFHLA==",
+          "name": "DFO_4516_From_20170908_to_20170919.zip",
+          "size_bytes": 15716932
+        },
+        "main_cause": "Tropical Storm Irma",
+        "severity": 2.0
+      }
+    },
+    {
+      "city": "New Orleans",
+      "map_screen": {
+        "aoi_raster_pixels": 11500,
+        "classified_fraction_of_aoi": 0.997304,
+        "clear_perc_ge_80pct_pixels": 11469,
+        "clear_perc_ge_90pct_pixels": 11469,
+        "clear_perc_valid_pixels": 11469,
+        "duration_valid_event_flood_candidate_pixels": 76,
+        "event_flood_candidate_fraction_of_nonpermanent_classified": 0.008664,
+        "event_flood_candidate_pixels": 76,
+        "flood_classified_pixels": 11469,
+        "gfd_missing_pixels": 31,
+        "gfd_object_name": "DFO_3977_From_20120828_to_20120907.zip",
+        "gfd_zip_bytes": 10660779,
+        "gfd_zip_md5_hash_base64": "5+M08ZJM1yKhDsVwLY1qAg==",
+        "gfd_zip_sha256": "86e2b5a286bd8c433ce26d07a67ecd896968ed53455b6c760e961e67706d26e1",
+        "jrc_permanent_water_pixels": 2697,
+        "jrc_permanent_water_valid_pixels": 11469,
+        "license_text_contains_noncommercial": true,
+        "mapped_water_pixels_including_permanent": 1931,
+        "nonpermanent_classified_pixels": 8772,
+        "nonwater_pixels": 9538,
+        "properties": {
+          "began": "2012-08-28",
+          "cc": "USA",
+          "composite_type": "3Day",
+          "countries": "United States",
+          "dfo_centroid_x": -89.346018,
+          "dfo_centroid_y": 30.503005,
+          "dfo_country": "USA",
+          "dfo_dead": 1,
+          "dfo_displaced": 60000,
+          "dfo_main_cause": "Hurricane Isaac",
+          "dfo_other_country": "",
+          "dfo_severity": 1.5,
+          "dfo_validation_type": "News",
+          "ended": "2012-09-07",
+          "gfd_country_code": "['US']",
+          "gfd_country_name": "['UNITED STATES']",
+          "glide_index": "",
+          "id": 3977,
+          "slope_threshold": 5,
+          "threshold_b1b2": 0.7,
+          "threshold_b7": 675,
+          "threshold_type": "standard"
+        },
+        "raster": {
+          "bands": [
+            "flooded",
+            "duration",
+            "clear_views",
+            "clear_perc",
+            "jrc_perm_water"
+          ],
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.002245788210298804,
+            0.002245788210298804
+          ],
+          "tile_count": 1
+        },
+        "raster_tiles": [
+          {
+            "name": "DFO_3977_From_20120828_to_20120907.tif",
+            "sha256": "15bc07dccf75091a9e60a1ace34a4d6f52706bcdb562de93fbd9e41c2f099f37"
+          }
+        ]
+      },
+      "region": "United States",
+      "selected_event": {
+        "area_km2": 83938.23377329759,
+        "country": "USA",
+        "event_end": "2012-09-07",
+        "event_id": 3977,
+        "event_start": "2012-08-28",
+        "gfd_object": {
+          "crc32c_base64": "ewdRLA==",
+          "md5_hash_base64": "5+M08ZJM1yKhDsVwLY1qAg==",
+          "name": "DFO_3977_From_20120828_to_20120907.zip",
+          "size_bytes": 10660779
+        },
+        "main_cause": "Hurricane Isaac",
+        "severity": 1.5
+      }
+    },
+    {
+      "city": "New York City",
+      "map_screen": {
+        "aoi_raster_pixels": 13200,
+        "classified_fraction_of_aoi": 0.883333,
+        "clear_perc_ge_80pct_pixels": 11660,
+        "clear_perc_ge_90pct_pixels": 11660,
+        "clear_perc_valid_pixels": 11660,
+        "duration_valid_event_flood_candidate_pixels": 254,
+        "event_flood_candidate_fraction_of_nonpermanent_classified": 0.026695,
+        "event_flood_candidate_pixels": 254,
+        "flood_classified_pixels": 11660,
+        "gfd_missing_pixels": 1540,
+        "gfd_object_name": "DFO_3861_From_20110827_to_20110913.zip",
+        "gfd_zip_bytes": 22044083,
+        "gfd_zip_md5_hash_base64": "34vD7clRvCOsWGAXG9K+Jg==",
+        "gfd_zip_sha256": "d7c2cd4be6ae9488276a338094435f60902fb860af13285c9e9e01ef2e6eebaf",
+        "jrc_permanent_water_pixels": 2145,
+        "jrc_permanent_water_valid_pixels": 11660,
+        "license_text_contains_noncommercial": true,
+        "mapped_water_pixels_including_permanent": 1701,
+        "nonpermanent_classified_pixels": 9515,
+        "nonwater_pixels": 9959,
+        "properties": {
+          "began": "2011-08-27",
+          "cc": "CAN, USA",
+          "composite_type": "3Day",
+          "countries": "Canada, United States",
+          "dfo_centroid_x": -74.062065,
+          "dfo_centroid_y": 40.186216,
+          "dfo_country": "USA",
+          "dfo_dead": 20,
+          "dfo_displaced": 370000,
+          "dfo_main_cause": "Tropical Storm Irene",
+          "dfo_other_country": "",
+          "dfo_severity": 2,
+          "dfo_validation_type": "News",
+          "ended": "2011-09-13",
+          "gfd_country_code": "['CA', 'US']",
+          "gfd_country_name": "['CANADA', 'UNITED STATES']",
+          "glide_index": "",
+          "id": 3861,
+          "slope_threshold": 5,
+          "threshold_b1b2": 0.7,
+          "threshold_b7": 675,
+          "threshold_type": "standard"
+        },
+        "raster": {
+          "bands": [
+            "flooded",
+            "duration",
+            "clear_views",
+            "clear_perc",
+            "jrc_perm_water"
+          ],
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.002245788210298804,
+            0.002245788210298804
+          ],
+          "tile_count": 1
+        },
+        "raster_tiles": [
+          {
+            "name": "DFO_3861_From_20110827_to_20110913.tif",
+            "sha256": "bebaa947b017f8be791937c201849cfa6e2581250919ce11a1bdd0a25840151d"
+          }
+        ]
+      },
+      "region": "United States",
+      "selected_event": {
+        "area_km2": 252912.88511807495,
+        "country": "USA",
+        "event_end": "2011-09-13",
+        "event_id": 3861,
+        "event_start": "2011-08-27",
+        "gfd_object": {
+          "crc32c_base64": "IjvqLw==",
+          "md5_hash_base64": "34vD7clRvCOsWGAXG9K+Jg==",
+          "name": "DFO_3861_From_20110827_to_20110913.zip",
+          "size_bytes": 22044083
+        },
+        "main_cause": "Tropical Storm Irene",
+        "severity": 2.0
+      }
+    },
+    {
+      "city": "Sacramento",
+      "map_screen": {
+        "aoi_raster_pixels": 12800,
+        "classified_fraction_of_aoi": 0.999687,
+        "clear_perc_ge_80pct_pixels": 12796,
+        "clear_perc_ge_90pct_pixels": 12783,
+        "clear_perc_valid_pixels": 12796,
+        "duration_valid_event_flood_candidate_pixels": 375,
+        "event_flood_candidate_fraction_of_nonpermanent_classified": 0.030508,
+        "event_flood_candidate_pixels": 375,
+        "flood_classified_pixels": 12796,
+        "gfd_missing_pixels": 4,
+        "gfd_object_name": "DFO_4589_From_20180321_to_20180324.zip",
+        "gfd_zip_bytes": 9904398,
+        "gfd_zip_md5_hash_base64": "2RRROrCunfL2WQaHinlG8Q==",
+        "gfd_zip_sha256": "9902c0d9089f62ff931ae14508b924227abed205a79781a00e70bf6d2aaec6f4",
+        "jrc_permanent_water_pixels": 504,
+        "jrc_permanent_water_valid_pixels": 12796,
+        "license_text_contains_noncommercial": true,
+        "mapped_water_pixels_including_permanent": 377,
+        "nonpermanent_classified_pixels": 12292,
+        "nonwater_pixels": 12419,
+        "properties": {
+          "began": "2018-03-21",
+          "cc": "USA, MEX",
+          "composite_type": "3Day",
+          "countries": "United States, Mexico",
+          "dfo_centroid_x": -121.121506,
+          "dfo_centroid_y": 37.911751,
+          "dfo_country": "USA",
+          "dfo_dead": 0,
+          "dfo_displaced": 30000,
+          "dfo_main_cause": "Heavy Rain",
+          "dfo_other_country": "",
+          "dfo_severity": 1.5,
+          "dfo_validation_type": "FloodList",
+          "ended": "2018-03-24",
+          "gfd_country_code": "['US', 'MX']",
+          "gfd_country_name": "['UNITED STATES', 'MEXICO']",
+          "glide_index": "",
+          "id": 4589,
+          "slope_threshold": 5,
+          "threshold_b1b2": 0.7,
+          "threshold_b7": 675,
+          "threshold_type": "standard"
+        },
+        "raster": {
+          "bands": [
+            "flooded",
+            "duration",
+            "clear_views",
+            "clear_perc",
+            "jrc_perm_water"
+          ],
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.002245788210298804,
+            0.002245788210298804
+          ],
+          "tile_count": 1
+        },
+        "raster_tiles": [
+          {
+            "name": "DFO_4589_From_20180321_to_20180324.tif",
+            "sha256": "af867d0614bd315475bb382d2ae878a7e63746a4d2e6dd6eaa774c48e21b43a2"
+          }
+        ]
+      },
+      "region": "United States",
+      "selected_event": {
+        "area_km2": 51513.38478678498,
+        "country": "USA",
+        "event_end": "2018-03-24",
+        "event_id": 4589,
+        "event_start": "2018-03-21",
+        "gfd_object": {
+          "crc32c_base64": "ALBTow==",
+          "md5_hash_base64": "2RRROrCunfL2WQaHinlG8Q==",
+          "name": "DFO_4589_From_20180321_to_20180324.zip",
+          "size_bytes": 9904398
+        },
+        "main_cause": "Heavy Rain",
+        "severity": 1.5
+      }
+    },
+    {
+      "city": "Atlanta",
+      "map_screen": {
+        "aoi_raster_pixels": 12000,
+        "classified_fraction_of_aoi": 0.955833,
+        "clear_perc_ge_80pct_pixels": 11470,
+        "clear_perc_ge_90pct_pixels": 11470,
+        "clear_perc_valid_pixels": 11470,
+        "duration_valid_event_flood_candidate_pixels": 0,
+        "event_flood_candidate_fraction_of_nonpermanent_classified": 0.0,
+        "event_flood_candidate_pixels": 0,
+        "flood_classified_pixels": 11470,
+        "gfd_missing_pixels": 530,
+        "gfd_object_name": "DFO_3567_From_20091110_to_20091113.zip",
+        "gfd_zip_bytes": 20410561,
+        "gfd_zip_md5_hash_base64": "bu2Od/eMrgnD/rMuFqlMnA==",
+        "gfd_zip_sha256": "edcca46f4cd8c2d9e062117fb726a7eaecf3066e9b4280df76fa3dc72a64c402",
+        "jrc_permanent_water_pixels": 43,
+        "jrc_permanent_water_valid_pixels": 11470,
+        "license_text_contains_noncommercial": true,
+        "mapped_water_pixels_including_permanent": 0,
+        "nonpermanent_classified_pixels": 11427,
+        "nonwater_pixels": 11470,
+        "properties": {
+          "began": "2009-11-10",
+          "cc": "USA",
+          "composite_type": "3Day",
+          "countries": "United States",
+          "dfo_centroid_x": -83.746543,
+          "dfo_centroid_y": 35.159532,
+          "dfo_country": "USA",
+          "dfo_dead": 0,
+          "dfo_displaced": 0,
+          "dfo_main_cause": "Tropical Storm Ida",
+          "dfo_other_country": "NA",
+          "dfo_severity": 1,
+          "dfo_validation_type": "0",
+          "ended": "2009-11-13",
+          "gfd_country_code": "['US']",
+          "gfd_country_name": "['UNITED STATES']",
+          "glide_index": "NA",
+          "id": 3567,
+          "slope_threshold": 5,
+          "threshold_b1b2": 0.7,
+          "threshold_b7": 675,
+          "threshold_type": "standard"
+        },
+        "raster": {
+          "bands": [
+            "flooded",
+            "duration",
+            "clear_views",
+            "clear_perc",
+            "jrc_perm_water"
+          ],
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.002245788210298804,
+            0.002245788210298804
+          ],
+          "tile_count": 1
+        },
+        "raster_tiles": [
+          {
+            "name": "DFO_3567_From_20091110_to_20091113.tif",
+            "sha256": "1091822e2dd6c73d952deaffda8bc9e055d777a717a3037b1e2671bd20f39751"
+          }
+        ]
+      },
+      "region": "United States",
+      "selected_event": {
+        "area_km2": 468142.0622540431,
+        "country": "USA",
+        "event_end": "2009-11-13",
+        "event_id": 3567,
+        "event_start": "2009-11-10",
+        "gfd_object": {
+          "crc32c_base64": "fdHhOg==",
+          "md5_hash_base64": "bu2Od/eMrgnD/rMuFqlMnA==",
+          "name": "DFO_3567_From_20091110_to_20091113.zip",
+          "size_bytes": 20410561
+        },
+        "main_cause": "Tropical Storm Ida",
+        "severity": 1.0
+      }
+    },
+    {
+      "city": "St. Louis",
+      "map_screen": {
+        "aoi_raster_pixels": 12800,
+        "classified_fraction_of_aoi": 0.984531,
+        "clear_perc_ge_80pct_pixels": 12602,
+        "clear_perc_ge_90pct_pixels": 12602,
+        "clear_perc_valid_pixels": 12602,
+        "duration_valid_event_flood_candidate_pixels": 699,
+        "event_flood_candidate_fraction_of_nonpermanent_classified": 0.058114,
+        "event_flood_candidate_pixels": 699,
+        "flood_classified_pixels": 12602,
+        "gfd_missing_pixels": 198,
+        "gfd_object_name": "DFO_4314_From_20151215_to_20160129.zip",
+        "gfd_zip_bytes": 95141113,
+        "gfd_zip_md5_hash_base64": "YnpmXKOlrV/QwjD6fMJl5g==",
+        "gfd_zip_sha256": "4babd3aec9517172a79e8951b1915a0f5f720e5a4647978c58264c1b442d30a3",
+        "jrc_permanent_water_pixels": 574,
+        "jrc_permanent_water_valid_pixels": 12602,
+        "license_text_contains_noncommercial": true,
+        "mapped_water_pixels_including_permanent": 1124,
+        "nonpermanent_classified_pixels": 12028,
+        "nonwater_pixels": 11478,
+        "properties": {
+          "began": "2015-12-15",
+          "cc": "CAN, USA",
+          "composite_type": "3Day",
+          "countries": "Canada, United States",
+          "dfo_centroid_x": -91.082899,
+          "dfo_centroid_y": 35.665762,
+          "dfo_country": "USA",
+          "dfo_dead": 31,
+          "dfo_displaced": 4000,
+          "dfo_main_cause": "Heavy Rain",
+          "dfo_other_country": "",
+          "dfo_severity": 2,
+          "dfo_validation_type": "News",
+          "ended": "2016-01-29",
+          "gfd_country_code": "['CA', 'US']",
+          "gfd_country_name": "['CANADA', 'UNITED STATES']",
+          "glide_index": "",
+          "id": 4314,
+          "slope_threshold": 5,
+          "threshold_b1b2": 0.7,
+          "threshold_b7": 675,
+          "threshold_type": "standard"
+        },
+        "raster": {
+          "bands": [
+            "flooded",
+            "duration",
+            "clear_views",
+            "clear_perc",
+            "jrc_perm_water"
+          ],
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.002245788210298804,
+            0.002245788210298804
+          ],
+          "tile_count": 2
+        },
+        "raster_tiles": [
+          {
+            "name": "DFO_4314_From_20151215_to_201601290000000000-0000000000.tif",
+            "sha256": "5adbfa96e39ad08c177a2b1619873a394f36f4b57072fda617116eb1e1784e67"
+          },
+          {
+            "name": "DFO_4314_From_20151215_to_201601290000000000-0000014848.tif",
+            "sha256": "465d3cf4820cb916a9bde46aa9e8bd9cf6d6a576a06f37b332d5b9e7d8181538"
+          }
+        ]
+      },
+      "region": "United States",
+      "selected_event": {
+        "area_km2": 526834.7578828905,
+        "country": "USA",
+        "event_end": "2016-01-29",
+        "event_id": 4314,
+        "event_start": "2015-12-15",
+        "gfd_object": {
+          "crc32c_base64": "NhRqgw==",
+          "md5_hash_base64": "YnpmXKOlrV/QwjD6fMJl5g==",
+          "name": "DFO_4314_From_20151215_to_20160129.zip",
+          "size_bytes": 95141113
+        },
+        "main_cause": "Heavy Rain",
+        "severity": 2.0
+      }
+    },
+    {
+      "city": "Jakarta",
+      "map_screen": {
+        "aoi_raster_pixels": 10100,
+        "classified_fraction_of_aoi": 0.975842,
+        "clear_perc_ge_80pct_pixels": 9856,
+        "clear_perc_ge_90pct_pixels": 9856,
+        "clear_perc_valid_pixels": 9856,
+        "duration_valid_event_flood_candidate_pixels": 0,
+        "event_flood_candidate_fraction_of_nonpermanent_classified": 0.0,
+        "event_flood_candidate_pixels": 0,
+        "flood_classified_pixels": 9856,
+        "gfd_missing_pixels": 244,
+        "gfd_object_name": "DFO_4330_From_20160118_to_20160310.zip",
+        "gfd_zip_bytes": 18738867,
+        "gfd_zip_md5_hash_base64": "OjCM2YaWSH89xrbciVnoQQ==",
+        "gfd_zip_sha256": "9249f7f55006e06c8d022941ed26102d0cc6e1cbd318cbde5af7f4612f104cda",
+        "jrc_permanent_water_pixels": 304,
+        "jrc_permanent_water_valid_pixels": 9856,
+        "license_text_contains_noncommercial": true,
+        "mapped_water_pixels_including_permanent": 98,
+        "nonpermanent_classified_pixels": 9552,
+        "nonwater_pixels": 9758,
+        "properties": {
+          "began": "2016-01-18",
+          "cc": "IDN",
+          "composite_type": "3Day",
+          "countries": "Indonesia",
+          "dfo_centroid_x": 103.351503,
+          "dfo_centroid_y": -2.465434,
+          "dfo_country": "Indonesia",
+          "dfo_dead": 1,
+          "dfo_displaced": 37000,
+          "dfo_main_cause": "Torrential Rain",
+          "dfo_other_country": "Malaysia",
+          "dfo_severity": 1,
+          "dfo_validation_type": "News",
+          "ended": "2016-03-10",
+          "gfd_country_code": "['ID']",
+          "gfd_country_name": "['INDONESIA']",
+          "glide_index": "FL-2016-000009-IDN",
+          "id": 4330,
+          "slope_threshold": 5,
+          "threshold_b1b2": 0.7,
+          "threshold_b7": 675,
+          "threshold_type": "standard"
+        },
+        "raster": {
+          "bands": [
+            "flooded",
+            "duration",
+            "clear_views",
+            "clear_perc",
+            "jrc_perm_water"
+          ],
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.002245788210298804,
+            0.002245788210298804
+          ],
+          "tile_count": 1
+        },
+        "raster_tiles": [
+          {
+            "name": "DFO_4330_From_20160118_to_20160310.tif",
+            "sha256": "0570bda610af0f2dde5e1244c44bce239e3a912583fda762fe508244fd11de47"
+          }
+        ]
+      },
+      "region": "International",
+      "selected_event": {
+        "area_km2": 235818.78273827911,
+        "country": "Indonesia",
+        "event_end": "2016-03-10",
+        "event_id": 4330,
+        "event_start": "2016-01-18",
+        "gfd_object": {
+          "crc32c_base64": "0c2nhg==",
+          "md5_hash_base64": "OjCM2YaWSH89xrbciVnoQQ==",
+          "name": "DFO_4330_From_20160118_to_20160310.zip",
+          "size_bytes": 18738867
+        },
+        "main_cause": "Torrential Rain",
+        "severity": 1.0
+      }
+    },
+    {
+      "city": "Singapore",
+      "map_screen": null,
+      "region": "International",
+      "selected_event": null
+    },
+    {
+      "city": "Dubai",
+      "map_screen": null,
+      "region": "International",
+      "selected_event": null
+    },
+    {
+      "city": "Mumbai",
+      "map_screen": {
+        "aoi_raster_pixels": 10600,
+        "classified_fraction_of_aoi": 0.620377,
+        "clear_perc_ge_80pct_pixels": 6576,
+        "clear_perc_ge_90pct_pixels": 6576,
+        "clear_perc_valid_pixels": 6576,
+        "duration_valid_event_flood_candidate_pixels": 0,
+        "event_flood_candidate_fraction_of_nonpermanent_classified": 0.0,
+        "event_flood_candidate_pixels": 0,
+        "flood_classified_pixels": 6576,
+        "gfd_missing_pixels": 4024,
+        "gfd_object_name": "DFO_3119_From_20070701_to_20070706.zip",
+        "gfd_zip_bytes": 15152475,
+        "gfd_zip_md5_hash_base64": "ud0AeNqPFCg9GUFEeV1ZJw==",
+        "gfd_zip_sha256": "55a0c12f3740f3cf33be94c673264de7b55d7b3aa5650a732e3d0f9d4d577e38",
+        "jrc_permanent_water_pixels": 893,
+        "jrc_permanent_water_valid_pixels": 6576,
+        "license_text_contains_noncommercial": true,
+        "mapped_water_pixels_including_permanent": 0,
+        "nonpermanent_classified_pixels": 5683,
+        "nonwater_pixels": 6576,
+        "properties": {
+          "began": "2007-07-01",
+          "cc": "IND",
+          "composite_type": "3Day",
+          "countries": "India",
+          "dfo_centroid_x": 77.523744,
+          "dfo_centroid_y": 21.026348,
+          "dfo_country": "India",
+          "dfo_dead": 62,
+          "dfo_displaced": 10000,
+          "dfo_main_cause": "Monsoonal rain",
+          "dfo_other_country": "NA",
+          "dfo_severity": 1,
+          "dfo_validation_type": "News",
+          "ended": "2007-07-06",
+          "gfd_country_code": "['IN']",
+          "gfd_country_name": "['INDIA']",
+          "glide_index": "NA",
+          "id": 3119,
+          "slope_threshold": 5,
+          "threshold_b1b2": 0.7,
+          "threshold_b7": 675,
+          "threshold_type": "standard"
+        },
+        "raster": {
+          "bands": [
+            "flooded",
+            "duration",
+            "clear_views",
+            "clear_perc",
+            "jrc_perm_water"
+          ],
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.002245788210298804,
+            0.002245788210298804
+          ],
+          "tile_count": 1
+        },
+        "raster_tiles": [
+          {
+            "name": "DFO_3119_From_20070701_to_20070706.tif",
+            "sha256": "754e792f47113ed71fce840a0f7484cd003338717b6a01b36bd47f2c84dd847f"
+          }
+        ]
+      },
+      "region": "International",
+      "selected_event": {
+        "area_km2": 106578.44129192027,
+        "country": "India",
+        "event_end": "2007-07-06",
+        "event_id": 3119,
+        "event_start": "2007-07-01",
+        "gfd_object": {
+          "crc32c_base64": "J48ogg==",
+          "md5_hash_base64": "ud0AeNqPFCg9GUFEeV1ZJw==",
+          "name": "DFO_3119_From_20070701_to_20070706.zip",
+          "size_bytes": 15152475
+        },
+        "main_cause": "Monsoonal rain",
+        "severity": 1.0
+      }
+    },
+    {
+      "city": "Bangkok",
+      "map_screen": {
+        "aoi_raster_pixels": 10300,
+        "classified_fraction_of_aoi": 0.99767,
+        "clear_perc_ge_80pct_pixels": 10276,
+        "clear_perc_ge_90pct_pixels": 10118,
+        "clear_perc_valid_pixels": 10276,
+        "duration_valid_event_flood_candidate_pixels": 2,
+        "event_flood_candidate_fraction_of_nonpermanent_classified": 0.000204,
+        "event_flood_candidate_pixels": 2,
+        "flood_classified_pixels": 10276,
+        "gfd_missing_pixels": 24,
+        "gfd_object_name": "DFO_4423_From_20161201_to_20161207.zip",
+        "gfd_zip_bytes": 12868607,
+        "gfd_zip_md5_hash_base64": "OBI6dFu40ntO/Gm852bn2A==",
+        "gfd_zip_sha256": "9bd3785ef590b63d0f941a6fb1980f39dc0fda989df5b6ed46a23382cac6ba39",
+        "jrc_permanent_water_pixels": 453,
+        "jrc_permanent_water_valid_pixels": 10276,
+        "license_text_contains_noncommercial": true,
+        "mapped_water_pixels_including_permanent": 25,
+        "nonpermanent_classified_pixels": 9823,
+        "nonwater_pixels": 10251,
+        "properties": {
+          "began": "2016-12-01",
+          "cc": "MMR, VNM, MYS, THA, KHM, SGP",
+          "composite_type": "3Day",
+          "countries": "Myanmar (Burma), Vietnam, Malaysia, Thailand, Cambodia, Singapore",
+          "dfo_centroid_x": 100.753436,
+          "dfo_centroid_y": 14.444781,
+          "dfo_country": "Thailand",
+          "dfo_dead": 11,
+          "dfo_displaced": 0,
+          "dfo_main_cause": "Monsoonal  Rain",
+          "dfo_other_country": "",
+          "dfo_severity": 1.5,
+          "dfo_validation_type": "News",
+          "ended": "2016-12-07",
+          "gfd_country_code": "['MY', 'TH', 'BM', 'LA', 'CB', 'VM', 'SN']",
+          "gfd_country_name": "['MALAYSIA', 'THAILAND', 'BURMA', 'LAOS', 'CAMBODIA', 'VIETNAM', 'SINGAPORE']",
+          "glide_index": "",
+          "id": 4423,
+          "slope_threshold": 5,
+          "threshold_b1b2": 0.7,
+          "threshold_b7": 675,
+          "threshold_type": "standard"
+        },
+        "raster": {
+          "bands": [
+            "flooded",
+            "duration",
+            "clear_views",
+            "clear_perc",
+            "jrc_perm_water"
+          ],
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.002245788210298804,
+            0.002245788210298804
+          ],
+          "tile_count": 1
+        },
+        "raster_tiles": [
+          {
+            "name": "DFO_4423_From_20161201_to_20161207.tif",
+            "sha256": "2ef2d724b2facca7f1b0e6ca57eb299787cd478523f0c1fcaec3cbed85facb54"
+          }
+        ]
+      },
+      "region": "International",
+      "selected_event": {
+        "area_km2": 67395.39204796731,
+        "country": "Thailand",
+        "event_end": "2016-12-07",
+        "event_id": 4423,
+        "event_start": "2016-12-01",
+        "gfd_object": {
+          "crc32c_base64": "Dh8vxA==",
+          "md5_hash_base64": "OBI6dFu40ntO/Gm852bn2A==",
+          "name": "DFO_4423_From_20161201_to_20161207.zip",
+          "size_bytes": 12868607
+        },
+        "main_cause": "Monsoonal  Rain",
+        "severity": 1.5
+      }
+    },
+    {
+      "city": "Tokyo",
+      "map_screen": null,
+      "region": "International",
+      "selected_event": null
+    },
+    {
+      "city": "Manila",
+      "map_screen": {
+        "aoi_raster_pixels": 10300,
+        "classified_fraction_of_aoi": 0.643786,
+        "clear_perc_ge_80pct_pixels": 6589,
+        "clear_perc_ge_90pct_pixels": 6466,
+        "clear_perc_valid_pixels": 6631,
+        "duration_valid_event_flood_candidate_pixels": 66,
+        "event_flood_candidate_fraction_of_nonpermanent_classified": 0.011448,
+        "event_flood_candidate_pixels": 66,
+        "flood_classified_pixels": 6631,
+        "gfd_missing_pixels": 3669,
+        "gfd_object_name": "DFO_4300_From_20151022_to_20151028.zip",
+        "gfd_zip_bytes": 7275532,
+        "gfd_zip_md5_hash_base64": "w5rUQxbMJ0dIGpevBhvUtw==",
+        "gfd_zip_sha256": "0b888660fa7f85a63c7c4a8d059c9434739cd94da37ea22b58b3be8ec172e6b2",
+        "jrc_permanent_water_pixels": 866,
+        "jrc_permanent_water_valid_pixels": 6631,
+        "license_text_contains_noncommercial": true,
+        "mapped_water_pixels_including_permanent": 587,
+        "nonpermanent_classified_pixels": 5765,
+        "nonwater_pixels": 6044,
+        "properties": {
+          "began": "2015-10-22",
+          "cc": "PHL",
+          "composite_type": "3Day",
+          "countries": "Philippines",
+          "dfo_centroid_x": 121.241052,
+          "dfo_centroid_y": 16.691018,
+          "dfo_country": "Philippines",
+          "dfo_dead": 54,
+          "dfo_displaced": 60000,
+          "dfo_main_cause": "Tropical Storm Koppu",
+          "dfo_other_country": "",
+          "dfo_severity": 2,
+          "dfo_validation_type": "News",
+          "ended": "2015-10-28",
+          "gfd_country_code": "['RP']",
+          "gfd_country_name": "['PHILIPPINES']",
+          "glide_index": "TC-2015-000143-PHL",
+          "id": 4300,
+          "slope_threshold": 5,
+          "threshold_b1b2": 0.7,
+          "threshold_b7": 675,
+          "threshold_type": "standard"
+        },
+        "raster": {
+          "bands": [
+            "flooded",
+            "duration",
+            "clear_views",
+            "clear_perc",
+            "jrc_perm_water"
+          ],
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.002245788210298804,
+            0.002245788210298804
+          ],
+          "tile_count": 1
+        },
+        "raster_tiles": [
+          {
+            "name": "DFO_4300_From_20151022_to_20151028.tif",
+            "sha256": "3f829550ba94ffb100a8869798906c4deaeb1a0f8075a405d58ee47e8d6128a1"
+          }
+        ]
+      },
+      "region": "International",
+      "selected_event": {
+        "area_km2": 80271.74994985833,
+        "country": "Philippines",
+        "event_end": "2015-10-28",
+        "event_id": 4300,
+        "event_start": "2015-10-22",
+        "gfd_object": {
+          "crc32c_base64": "u80Ueg==",
+          "md5_hash_base64": "w5rUQxbMJ0dIGpevBhvUtw==",
+          "name": "DFO_4300_From_20151022_to_20151028.zip",
+          "size_bytes": 7275532
+        },
+        "main_cause": "Tropical Storm Koppu",
+        "severity": 2.0
+      }
+    },
+    {
+      "city": "S\u00e3o Paulo",
+      "map_screen": {
+        "aoi_raster_pixels": 10900,
+        "classified_fraction_of_aoi": 0.811376,
+        "clear_perc_ge_80pct_pixels": 8844,
+        "clear_perc_ge_90pct_pixels": 8844,
+        "clear_perc_valid_pixels": 8844,
+        "duration_valid_event_flood_candidate_pixels": 0,
+        "event_flood_candidate_fraction_of_nonpermanent_classified": 0.0,
+        "event_flood_candidate_pixels": 0,
+        "flood_classified_pixels": 8844,
+        "gfd_missing_pixels": 2056,
+        "gfd_object_name": "DFO_3256_From_20080112_to_20080126.zip",
+        "gfd_zip_bytes": 12441917,
+        "gfd_zip_md5_hash_base64": "n3ZwLOxcjums+hPdMEW9wQ==",
+        "gfd_zip_sha256": "3cd88649d8183b697c9838900303896709ae9dacf2c7fc97fae7b392505dfd18",
+        "jrc_permanent_water_pixels": 137,
+        "jrc_permanent_water_valid_pixels": 8844,
+        "license_text_contains_noncommercial": true,
+        "mapped_water_pixels_including_permanent": 0,
+        "nonpermanent_classified_pixels": 8707,
+        "nonwater_pixels": 8844,
+        "properties": {
+          "began": "2008-01-12",
+          "cc": "BRA",
+          "composite_type": "3Day",
+          "countries": "Brazil",
+          "dfo_centroid_x": -47.877655,
+          "dfo_centroid_y": -24.495664,
+          "dfo_country": "Brazil",
+          "dfo_dead": 4,
+          "dfo_displaced": 15000,
+          "dfo_main_cause": "Heavy rain",
+          "dfo_other_country": "NA",
+          "dfo_severity": 1,
+          "dfo_validation_type": "News",
+          "ended": "2008-01-26",
+          "gfd_country_code": "['BR']",
+          "gfd_country_name": "['BRAZIL']",
+          "glide_index": "FL-2008-000010-BRA",
+          "id": 3256,
+          "slope_threshold": 5,
+          "threshold_b1b2": 0.7,
+          "threshold_b7": 675,
+          "threshold_type": "standard"
+        },
+        "raster": {
+          "bands": [
+            "flooded",
+            "duration",
+            "clear_views",
+            "clear_perc",
+            "jrc_perm_water"
+          ],
+          "crs": "EPSG:4326",
+          "resolution": [
+            0.002245788210298804,
+            0.002245788210298804
+          ],
+          "tile_count": 1
+        },
+        "raster_tiles": [
+          {
+            "name": "DFO_3256_From_20080112_to_20080126.tif",
+            "sha256": "28c34e727016b8851d83cb36c2e089dd84d92560a9cdd519bc00044b18d43b8e"
+          }
+        ]
+      },
+      "region": "International",
+      "selected_event": {
+        "area_km2": 23022.69388125588,
+        "country": "Brazil",
+        "event_end": "2008-01-26",
+        "event_id": 3256,
+        "event_start": "2008-01-12",
+        "gfd_object": {
+          "crc32c_base64": "fod6zA==",
+          "md5_hash_base64": "n3ZwLOxcjums+hPdMEW9wQ==",
+          "name": "DFO_3256_From_20080112_to_20080126.zip",
+          "size_bytes": 12441917
+        },
+        "main_cause": "Heavy rain",
+        "severity": 1.0
+      }
+    }
+  ],
+  "audit_id": "atlas-gfd-event-extent-coverage-audit",
+  "generated_at_utc": "2026-11-03T08:41:32.194865+00:00",
+  "interpretation_limits": [
+    "GFD is an event-specific MODIS-derived water map archive from 2000\u20132018. The raw flooded band includes permanent water; the event-flood candidate screen excludes pixels marked permanent water in the supplied JRC band. It is a different sensor lineage from Sentinel-1, but is not field truth and has its own algorithm, cloud limitations, DFO event-selection process, and published uncertainty.",
+    "The current ATLAS confirmatory product OPERA DSWx-S1 begins after this archive event period. These historical masks cannot validate the current 2024\u20132026 study window or qualify current-site enrollment.",
+    "Only the latest mapped DFO event polygon intersecting each AOI was screened; an intersecting polygon does not imply that the GFD flood raster has valid or flooded pixels within the AOI.",
+    "The source license is CC BY-NC 4.0. This audit is research discovery only; GFD source data must not be used commercially without separate permission or a compatible license.",
+    "No GFD rasters are committed; reproduce by rerunning the audit to download and checksum selected source maps into the ignored work cache."
+  ],
+  "schema_version": 1,
+  "selection_rule": "For each fixed AOI, select the most recent DFO event polygon with an intersecting geometry and a matching GFD map object; selection is made by event end date before inspecting raster pixels.",
+  "source": {
+    "bucket_api": "https://storage.googleapis.com/storage/v1/b/gfd_v1_4/o",
+    "bucket_zip_objects": 913,
+    "gcs_bucket": "gs://gfd_v1_4",
+    "license": "CC-BY-NC-4.0",
+    "license_scope": "research-only, noncommercial use; do not incorporate source maps into commercial products",
+    "repository": "https://github.com/cloudtostreet/MODIS_GlobalFloodDatabase",
+    "shape_file_sha256": {
+      "dfo_polys_20191203.dbf": "1043af3b05ff5fe1e7dd74ecdd0f0fedb3075dd16b0dec4a6169162ea16421aa",
+      "dfo_polys_20191203.prj": "ef2637604ffe7cf99b9c726ecfe959d68e54d9938697042059924c25da4ec226",
+      "dfo_polys_20191203.shp": "af7582c06cbec47ef51b4aa0917bbb329c278f362be8d1577dff7a79a573af08",
+      "dfo_polys_20191203.shx": "e625fec3e540dfbff30437c13e81d8285923f7fa6e691c7491b873c90be22193"
+    },
+    "shape_files": {
+      "dfo_polys_20191203.dbf": "https://raw.githubusercontent.com/cloudtostreet/MODIS_GlobalFloodDatabase/0d20b91d124b5a9987d40392b5e3463d78f1f894/data/shp_files/dfo_polys_20191203.dbf",
+      "dfo_polys_20191203.prj": "https://raw.githubusercontent.com/cloudtostreet/MODIS_GlobalFloodDatabase/0d20b91d124b5a9987d40392b5e3463d78f1f894/data/shp_files/dfo_polys_20191203.prj",
+      "dfo_polys_20191203.shp": "https://raw.githubusercontent.com/cloudtostreet/MODIS_GlobalFloodDatabase/0d20b91d124b5a9987d40392b5e3463d78f1f894/data/shp_files/dfo_polys_20191203.shp",
+      "dfo_polys_20191203.shx": "https://raw.githubusercontent.com/cloudtostreet/MODIS_GlobalFloodDatabase/0d20b91d124b5a9987d40392b5e3463d78f1f894/data/shp_files/dfo_polys_20191203.shx"
+    },
+    "source_commit": "0d20b91d124b5a9987d40392b5e3463d78f1f894"
+  },
+  "spatial_test": "Exact shapefile polygon intersection for event discovery; then raster-cell center inclusion in each fixed registered WGS84 AOI bounding rectangle.",
+  "summary": {
+    "areas_with_classified_gfd_pixels": 13,
+    "areas_with_event_flood_candidate_pixels": 8,
+    "areas_with_latest_mapped_event_polygon": 13,
+    "candidate_areas": 16,
+    "selected_map_event_date_range": [
+      "2007-07-01",
+      "2018-03-24"
+    ],
+    "total_selected_event_flood_candidate_pixels": 1551,
+    "total_selected_flood_classified_pixels": 129294,
+    "total_selected_flood_map_aoi_pixels": 148400
+  }
+}
