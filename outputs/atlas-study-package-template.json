@@ -117,4 +117,49 @@
       "region": "International",
       "aoi": "input_data/mumbai/aoi.geojson",
       "assets": "input_data/mumbai/assets.geojson",
-      "manifest": "input_data/mu
+      "manifest": "input_data/mumbai/manifest.csv",
+      "aoi_crs": "EPSG:4326",
+      "assets_crs": "EPSG:4326"
+    },
+    {
+      "area_id": "bangkok",
+      "city": "Bangkok",
+      "region": "International",
+      "aoi": "input_data/bangkok/aoi.geojson",
+      "assets": "input_data/bangkok/assets.geojson",
+      "manifest": "input_data/bangkok/manifest.csv",
+      "aoi_crs": "EPSG:4326",
+      "assets_crs": "EPSG:4326"
+    },
+    {
+      "area_id": "tokyo",
+      "city": "Tokyo",
+      "region": "International",
+      "aoi": "input_data/tokyo/aoi.geojson",
+      "assets": "input_data/tokyo/assets.geojson",
+      "manifest": "input_data/tokyo/manifest.csv",
+      "aoi_crs": "EPSG:4326",
+      "assets_crs": "EPSG:4326"
+    },
+    {
+      "area_id": "manila",
+      "city": "Manila",
+      "region": "International",
+      "aoi": "input_data/manila/aoi.geojson",
+      "assets": "input_data/manila/assets.geojson",
+      "manifest": "input_data/manila/manifest.csv",
+      "aoi_crs": "EPSG:4326",
+      "assets_crs": "EPSG:4326"
+    },
+    {
+      "area_id": "s_o_paulo",
+      "city": "S\u00e3o Paulo",
+      "region": "International",
+      "aoi": "input_data/s_o_paulo/aoi.geojson",
+      "assets": "input_data/s_o_paulo/assets.geojson",
+      "manifest": "input_data/s_o_paulo/manifest.csv",
+      "aoi_crs": "EPSG:4326",
+      "assets_crs": "EPSG:4326"
+    }
+  ]
+}

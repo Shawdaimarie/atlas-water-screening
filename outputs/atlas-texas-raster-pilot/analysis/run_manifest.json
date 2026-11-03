@@ -91,4 +91,24 @@
     "min_valid_fraction": 0.8,
     "min_dates_per_period": 3,
     "aoi_crs": "EPSG:4326",
-    "assets
+    "assets_crs": "EPSG:4326",
+    "band": "BWTR_Binary_water",
+    "bwtr_water_classes": [
+      1
+    ],
+    "bwtr_valid_classes": [
+      0,
+      1
+    ],
+    "bwtr_mask_classes": [
+      250,
+      251,
+      255
+    ]
+  },
+  "outputs": {
+    "observation_qa.csv": "55b0abe836f8dc51b91b2f47b2ee29a010bd89930c45d1a2a371207461eb3fe5",
+    "asset_event_baseline_comparison.csv": "6cb70154410b698be219ad55b5f1fc5172ff519ed72d865dbdd3526ed3753716"
+  },
+  "independent_label_validation_performed": false
+}

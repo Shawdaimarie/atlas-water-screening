@@ -114,4 +114,28 @@ def main() -> None:
             "months_with_metadata_in_all_areas": len(common_months),
             "shared_month_fraction": round(len(common_months) / len(all_months), 4)
             if all_months
-            el
+            else 0,
+            "item_count_min": min((int(row["item_count"]) for row in results), default=0),
+            "item_count_max": max((int(row["item_count"]) for row in results), default=0),
+            "distinct_date_min": min((int(row["distinct_dates"]) for row in results), default=0),
+            "distinct_date_max": max((int(row["distinct_dates"]) for row in results), default=0),
+        },
+        "limits": (
+            "STAC footprint/date metadata only: no COGs were downloaded, no pixel masks or valid-pixel coverage were checked, and no event/baseline enrollment gate was evaluated. Sentinel-1 RTC is SAR backscatter, not an OPERA DSWx-S1 water-class product and not an independent sensor source for validating Sentinel-1-derived water classifications. Use for source-discovery and sampling-plan checks only."
+        ),
+    }
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(
+        f"{len(results)} AOIs; item counts "
+        f"{report['temporal_summary']['item_count_min']}–"
+        f"{report['temporal_summary']['item_count_max']}; date counts "
+        f"{report['temporal_summary']['distinct_date_min']}–"
+        f"{report['temporal_summary']['distinct_date_max']}; "
+        f"{len(common_dates)} exact dates and {len(common_months)}/"
+        f"{len(all_months)} months shared across all areas."
+    )
+
+
+if __name__ == "__main__":
+    main()

@@ -76,4 +76,6 @@ def test_run_records_uniform_16_area_pixel_sample_and_limitations(tmp_path, monk
     assert all(area["quarter_results"][0]["items"][0]["item_url"].startswith("https://example.invalid")
                for area in result["areas"])
     assert "SAS" in result["interpretation_limits"][-1]
-    assert result["pixel_covera
+    assert result["pixel_coverage_screen"]["sample_seed"] == "test-replicate-seed"
+    written = json.loads(output.read_text())
+    assert written["summary"] == result["summary"]

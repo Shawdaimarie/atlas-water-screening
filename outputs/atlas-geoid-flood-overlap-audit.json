@@ -156,4 +156,16 @@
     "study_areas": 16,
     "areas_with_reference_footprint": 1,
     "tiles_in_registered_areas": 12,
-    "paper_eligible_tiles_in_registered_
+    "paper_eligible_tiles_in_registered_areas": 12,
+    "event_ids_in_registered_areas": [
+      "EMSR203"
+    ]
+  },
+  "interpretation_limits": [
+    "This is catalog-footprint screening, not pixel-level QA of the label or Sentinel-1 rasters.",
+    "The source dataset describes manually validated three-class labels derived from CEMS Rapid Mapping products; they are operational expert references, not absolute ground truth.",
+    "Paper tile eligibility is a benchmark filter, not the ATLAS per-area sampling adequacy rule.",
+    "A footprint overlap does not establish event independence, held-out status, usable raster coverage, asset-level coverage, or adequate statistical sampling."
+  ],
+  "license": "CC BY 4.0; retain attribution to GEOID-Flood and the Copernicus source products before redistribution."
+}

@@ -76,4 +76,47 @@ function summarizeArea(area) {
     var waterM2 = ee.Number(ee.Dictionary(sums).get('water_m2', 0));
     var invalidM2 = ee.Number(ee.Dictionary(sums).get('known_invalid_m2', 0));
     var aoiM2 = geom.area(1);
-    var vali
+    var validFraction = validM2.divide(aoiM2);
+    return ee.Feature(null, area.toDictionary())
+      .set({
+        acquisition_date_utc: dayString,
+        source_collection: 'OPERA/DSWX/L3_V1/S1',
+        source_product_versions: ee.List(dayCollection.aggregate_array('DSWX_PRODUCT_VERSION'))
+          .distinct().sort().join(','),
+        source_image_count: dayCollection.size(),
+        scale_m: SCALE_M,
+        valid_area_m2: validM2,
+        water_area_m2: waterM2,
+        known_invalid_area_m2: invalidM2,
+        aoi_area_m2: aoiM2,
+        valid_aoi_fraction: validFraction,
+        meets_80pct_coverage_gate: validFraction.gte(MIN_VALID_AOI_FRACTION),
+        bwtr_class_histogram: histogram
+      });
+  });
+  return ee.FeatureCollection(rows);
+}
+
+var diagnostics = ee.FeatureCollection(areas.iterate(function(area, acc) {
+  return ee.FeatureCollection(acc).merge(summarizeArea(area));
+}, ee.FeatureCollection([])));
+
+var areaSummary = ee.FeatureCollection(areas.map(function(area) {
+  area = ee.Feature(area);
+  var areaRows = diagnostics.filter(ee.Filter.eq('city', area.get('city')));
+  var dates = areaRows.size();
+  var passing = areaRows.filter(ee.Filter.eq('meets_80pct_coverage_gate', true)).size();
+  return area.set({
+    date_count: dates,
+    dates_at_or_above_80pct_valid_pixels: passing,
+    passes_90_date_metadata_screen: ee.Number(dates).gte(MIN_DATES_PER_AREA),
+    dataset_max_date: END_EXCLUSIVE
+  });
+}));
+
+print('ATLAS per-area summary (metadata date count is not QA coverage)', areaSummary);
+print('ATLAS per-acquisition pixel QA diagnostics (inspect histogram for unknown codes)', diagnostics);
+print('Dataset', collection.limit(1));
+Map.centerObject(areas, 2);
+Map.addLayer(areas, {color: 'yellow'}, 'Registered ATLAS 8+8 AOIs');
+

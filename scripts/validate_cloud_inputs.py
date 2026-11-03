@@ -123,4 +123,88 @@ def validate_inputs(data: Any, release_ready: bool = False) -> list[str]:
     if not re.fullmatch(r"[A-Z]{3}", str(budget.get("currency", ""))):
         errors.append("budget.currency must be a three-letter uppercase code")
     try:
-        ceiling
+        ceiling = Decimal(str(budget.get("monthly_ceiling", "")))
+        if not ceiling.is_finite() or ceiling <= 0:
+            raise InvalidOperation
+    except (InvalidOperation, ValueError):
+        errors.append("budget.monthly_ceiling must be a positive number")
+    thresholds = budget.get("alert_thresholds_percent")
+    if not isinstance(thresholds, list) or not thresholds:
+        errors.append("budget.alert_thresholds_percent must include at least one threshold")
+    elif any(
+        not isinstance(value, (int, float)) or isinstance(value, bool) or not 1 <= value <= 100
+        for value in thresholds
+    ):
+        errors.append("budget.alert_thresholds_percent values must be numbers from 1 to 100")
+    recipients = budget.get("alert_recipient_emails")
+    if not isinstance(recipients, list) or not recipients or any(
+        not isinstance(value, str) or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", value)
+        for value in recipients
+    ):
+        errors.append("budget.alert_recipient_emails must contain at least one valid email")
+
+    providers = data.get("providers") if isinstance(data.get("providers"), dict) else {}
+    for provider, fields in PROVIDER_FIELDS.items():
+        entry = providers.get(provider)
+        if not isinstance(entry, dict):
+            errors.append(f"providers.{provider} section is required")
+            continue
+        if entry.get("account_ready") is not True:
+            errors.append(f"providers.{provider}.account_ready must be true")
+        for field in fields["identifiers"]:
+            value = entry.get(field)
+            if not _filled(value):
+                errors.append(f"providers.{provider}.{field} is required")
+            elif not IDENTIFIER_PATTERNS[(provider, field)].fullmatch(str(value)):
+                errors.append(f"providers.{provider}.{field} has an invalid format")
+        if entry.get(fields["billing"]) is not True:
+            errors.append(f"providers.{provider}.{fields['billing']} must be true")
+        if not _filled(entry.get(fields["region"])):
+            errors.append(f"providers.{provider}.{fields['region']} is required")
+        if release_ready and entry.get(fields["identity"]) is not True:
+            errors.append(f"providers.{provider}.{fields['identity']} must be true for release readiness")
+
+    return errors
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--inputs", type=Path, default=DEFAULT_INPUT)
+    parser.add_argument(
+        "--example",
+        action="store_true",
+        help="Validate the blank example handoff instead of owner-inputs.local.yaml.",
+    )
+    parser.add_argument(
+        "--release-ready",
+        action="store_true",
+        help="Also require the four provider OIDC/federated identities and API hostname.",
+    )
+    args = parser.parse_args(argv)
+    path = EXAMPLE_INPUT if args.example else args.inputs
+    if not path.is_file():
+        print(f"FAIL: input file not found: {path}", file=sys.stderr)
+        print(f"Copy {EXAMPLE_INPUT} to {DEFAULT_INPUT} and fill non-secret values.", file=sys.stderr)
+        return 2
+    try:
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    except (OSError, yaml.YAMLError) as error:
+        # Do not include parser text that could echo user-supplied scalar values.
+        print(f"FAIL: unable to parse YAML ({type(error).__name__})", file=sys.stderr)
+        return 2
+
+    errors = validate_inputs(data, release_ready=args.release_ready)
+    if errors:
+        print(f"FAIL: {len(errors)} cloud onboarding/release requirement(s) missing or invalid:")
+        for error in errors:
+            print(f"- {error}")
+        print("No cloud resources were created.")
+        return 1
+    stage = "release readiness" if args.release_ready else "account onboarding"
+    print(f"PASS: non-secret inputs satisfy the four-provider {stage} checklist.")
+    print("This validator does not authenticate to a provider or create resources.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

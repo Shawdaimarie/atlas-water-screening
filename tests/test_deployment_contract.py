@@ -78,4 +78,42 @@ def test_kubernetes_workload_preserves_restricted_container_baseline():
     assert pod["securityContext"]["runAsNonRoot"] is True
     assert pod["securityContext"]["seccompProfile"]["type"] == "RuntimeDefault"
     assert security["allowPrivilegeEscalation"] is False
-    assert security["readOnlyRootFilesystem"] is Tr
+    assert security["readOnlyRootFilesystem"] is True
+    assert security["capabilities"]["drop"] == ["ALL"]
+    assert container["resources"]["requests"] and container["resources"]["limits"]
+    assert container["env"][-1]["name"] == "ATLAS_ALLOWED_HOSTS"
+    assert "localhost" in container["env"][-1]["value"]
+    for probe in (container["readinessProbe"], container["livenessProbe"]):
+        assert {header["name"]: header["value"] for header in probe["httpGet"]["httpHeaders"]}["Host"] == "localhost"
+    assert service["spec"]["type"] == "ClusterIP"
+
+
+def test_kubernetes_network_policy_denies_by_default_and_allows_only_ingress_and_dns():
+    docs = list(yaml.safe_load_all((ROOT / "deployment/k8s/network-policy.yaml").read_text()))
+    policies = {doc["metadata"]["name"]: doc for doc in docs}
+    deny = policies["atlas-default-deny"]["spec"]
+    assert deny["podSelector"] == {}
+    assert set(deny["policyTypes"]) == {"Ingress", "Egress"}
+
+    approved = policies["atlas-api-approved-paths"]["spec"]
+    assert approved["podSelector"]["matchLabels"]["app.kubernetes.io/name"] == "atlas-api"
+    assert len(approved["ingress"]) == 1
+    source = approved["ingress"][0]["from"][0]
+    assert source["namespaceSelector"]["matchLabels"]["atlas.network/role"] == "trusted-ingress"
+    assert source["podSelector"]["matchLabels"]["app.kubernetes.io/name"] == "atlas-ingress-controller"
+    assert {port["port"] for port in approved["ingress"][0]["ports"]} == {8080}
+    assert len(approved["egress"]) == 1
+    destination = approved["egress"][0]["to"][0]
+    assert destination["namespaceSelector"]["matchLabels"]["kubernetes.io/metadata.name"] == "kube-system"
+    assert destination["podSelector"]["matchLabels"]["k8s-app"] == "kube-dns"
+    assert {port["port"] for port in approved["egress"][0]["ports"]} == {53}
+
+
+def test_kubernetes_workload_budget_and_disruption_budget_match_two_replicas():
+    docs = list(yaml.safe_load_all((ROOT / "deployment/k8s/resource-controls.yaml").read_text()))
+    quota, pdb = docs
+    assert quota["kind"] == "ResourceQuota"
+    assert quota["spec"]["hard"]["pods"] == "10"
+    assert pdb["kind"] == "PodDisruptionBudget"
+    assert pdb["spec"]["minAvailable"] == 1
+    assert pdb["spec"]["selector"]["matchLabels"]["app.kubernetes.io/name"] == "atlas-api"

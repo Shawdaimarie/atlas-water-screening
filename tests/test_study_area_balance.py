@@ -84,4 +84,43 @@ def test_16_area_package_cli_writes_balanced_results_and_provenance(tmp_path, mo
         (folder / "assets.json").write_text(json.dumps(assets))
         manifest_rows = []
         for period, dates, anchor, value in (
-            ("baseline", ["2025-01-01", "2025-01-07", "
+            ("baseline", ["2025-01-01", "2025-01-07", "2025-01-13"], "2025-01-07", 0),
+            ("event", ["2025-02-01", "2025-02-07", "2025-02-13"], "2025-02-07", 1),
+        ):
+            for date_index, acquired in enumerate(dates):
+                name = f"{period}_{date_index}.tif"
+                with rasterio.open(folder / name, "w", driver="GTiff", height=4, width=4,
+                                   count=1, dtype="uint8", crs="EPSG:32631",
+                                   transform=from_origin(0, 120, 30, 30)) as dst:
+                    dst.write(np.full((4, 4), value, dtype="uint8"), 1)
+                    manifest_rows.append({"path": name, "band": "BWTR_Binary_water", "acquired_at": acquired, "selection_anchor": anchor,
+                    "period": period, "granule_id": f"{slug}-{period}-{date_index}",
+                    "product_version": "OPERA_L3_DSWX-S1_V1", "processing_version": "1.0.0",
+                    "retrieved_at": "2025-03-01T12:00:00Z"})
+        with (folder / "manifest.csv").open("w", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=list(manifest_rows[0]))
+            writer.writeheader(); writer.writerows(manifest_rows)
+        area_entries.append({"area_id": slug, **area, "aoi": f"input_data/{slug}/aoi.json",
+            "assets": f"input_data/{slug}/assets.json", "manifest": f"input_data/{slug}/manifest.csv",
+            "aoi_crs": "EPSG:32631", "assets_crs": "EPSG:32631"})
+    package = tmp_path / "study-package.json"
+    package.write_text(json.dumps({"study_areas": area_entries}))
+    out = tmp_path / "analysis-output"
+    monkeypatch.setattr(sys, "argv", ["audit_study_area_balance.py", "--study-package", str(package),
+                                       "--output-dir", str(out)])
+    run_balanced_cli()
+
+    with (out / "area_coverage.csv").open() as handle:
+        coverage = list(csv.DictReader(handle))
+    with (out / "balanced_comparisons.csv").open() as handle:
+        comparisons = list(csv.DictReader(handle))
+    provenance = json.loads((out / "run_manifest.json").read_text())
+    assert len(coverage) == 16 and len(comparisons) == 16
+    assert {row["global_status"] for row in coverage} == {"globally_balanced_candidate"}
+    assert {row["matched_dates_per_period"] for row in comparisons} == {"3"}
+    assert {row["water_fraction_difference"] for row in comparisons} == {"1.0"}
+    assert len(provenance["source_observations"]) == 96
+    assert provenance["independent_label_validation_performed"] is False
+    assert set(provenance["outputs"]) == {"area_coverage.csv", "balanced_comparisons.csv", "observation_qa.csv"}
+    assert all(len(digest) == 64 for digest in provenance["outputs"].values())
+    assert len(provenance["pixel_analysis_script_sha256"]) == 64

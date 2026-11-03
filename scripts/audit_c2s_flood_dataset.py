@@ -109,4 +109,131 @@ def inspect_chip(key: str, areas: list[dict]) -> dict:
                     clipped, _ = mask(dataset, [clipped_geom], crop=True)
                 except ValueError:
                     continue
-       
+                pixels = clipped[0]
+                valid = pixels != dataset.nodata if dataset.nodata is not None else np.ones(pixels.shape, dtype=bool)
+                valid_count = int(valid.sum())
+                water_count = int(np.count_nonzero((pixels == 1) & valid))
+                water_values = sorted(int(v) for v in np.unique(pixels[valid]))
+                pixel_area_m2 = abs(dataset.transform.a * dataset.transform.e)
+                matches.append({
+                    "area": area_key(area),
+                    "valid_pixel_count": valid_count,
+                    "water_pixel_count": water_count,
+                    "pixel_area_m2": pixel_area_m2,
+                    "label_valid_area_km2": valid_count * pixel_area_m2 / 1_000_000,
+                    "label_water_area_km2": water_count * pixel_area_m2 / 1_000_000,
+                    "water_fraction_of_label_valid_pixels": (
+                        water_count / valid_count if valid_count else None
+                    ),
+                    "label_values": water_values,
+                })
+            return {
+                "object_key": key,
+                "event_id": event_id,
+                "scene_chip": scene_chip,
+                "acquisition_date": date,
+                "bounds_wgs84": [round(float(v), 7) for v in bounds],
+                "overlapping_areas": matches,
+            }
+
+
+def build_report(areas: list[dict], keys: list[str], max_workers: int) -> dict:
+    chips: list[dict] = []
+    errors: list[dict[str, str]] = []
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        futures = {pool.submit(inspect_chip, key, areas): key for key in keys}
+        for future in as_completed(futures):
+            key = futures[future]
+            try:
+                chips.append(future.result())
+            except Exception as exc:
+                errors.append({"object_key": key, "error": f"{type(exc).__name__}: {exc}"})
+    chips.sort(key=lambda chip: (chip["event_id"], chip["acquisition_date"], chip["scene_chip"]))
+    by_area: dict[str, list[dict]] = defaultdict(list)
+    for chip in chips:
+        for match in chip["overlapping_areas"]:
+            by_area[match["area"]].append({**chip, **match})
+
+    summaries = {}
+    for area in areas:
+        key = area_key(area)
+        matches = by_area[key]
+        summaries[key] = {
+            "label_chip_count": len(matches),
+            "distinct_s1_acquisition_dates": sorted({m["acquisition_date"] for m in matches}),
+            "event_ids": sorted({m["event_id"] for m in matches}),
+            "chips_with_water_labels": sum(m["water_pixel_count"] > 0 for m in matches),
+            "label_valid_pixels_across_overlapping_chips": sum(m["valid_pixel_count"] for m in matches),
+            "water_pixels_across_overlapping_chips": sum(m["water_pixel_count"] for m in matches),
+            "label_valid_area_km2_across_overlapping_chips": sum(m["label_valid_area_km2"] for m in matches),
+            "label_water_area_km2_across_overlapping_chips": sum(m["label_water_area_km2"] for m in matches),
+            "nominal_aoi_coverage_fraction_from_label_valid_pixels": (
+                sum(m["label_valid_area_km2"] for m in matches) / float(area["aoi_area_km2"])
+                if area.get("aoi_area_km2") else None
+            ),
+            "chip_records": [
+                {
+                    "event_id": m["event_id"],
+                    "scene_chip": m["scene_chip"],
+                    "date": m["acquisition_date"],
+                    "bounds_wgs84": m["bounds_wgs84"],
+                    "valid_pixel_count": m["valid_pixel_count"],
+                    "water_pixel_count": m["water_pixel_count"],
+                    "pixel_area_m2": m["pixel_area_m2"],
+                    "label_valid_area_km2": m["label_valid_area_km2"],
+                    "label_water_area_km2": m["label_water_area_km2"],
+                    "water_fraction": m["water_fraction_of_label_valid_pixels"],
+                    "label_values": m["label_values"],
+                }
+                for m in matches
+            ],
+        }
+    return {
+        "retrieved_utc": datetime.now(timezone.utc).isoformat(),
+        "dataset": "Cloud to Street - Microsoft Flood and Clouds Dataset",
+        "dataset_url": DATASET_URL,
+        "documentation_url": DOC_URL,
+        "dataset_license": {
+            "aws_registry": "CC-BY-4.0",
+            "radiant_earth_documentation_pdf": "CC-BY-SA-4.0",
+            "status": "conflicting source terms; do not redistribute until the dataset steward confirms the governing license",
+        },
+        "input_area_count": len(areas),
+        "registered_areas": summaries,
+        "source_label_chip_count": len(keys),
+        "successfully_inspected_chip_count": len(chips),
+        "overlapping_chip_count": sum(bool(chip["overlapping_areas"]) for chip in chips),
+        "unique_event_count": len({chip["event_id"] for chip in chips}),
+        "processing_errors": errors,
+        "chips": chips,
+        "interpretation": [
+            "This is a spatial coverage screen of hand-labeled event chips, not a completed ATLAS event analysis.",
+            "The S1 LabelWater masks were hand drawn from the same S1 scenes, with S2 imagery as supporting visual context; this is an analyst reference, not an independent sensor measurement.",
+            "Chip footprints can overlap each other; per-area valid and water pixel counts are sums over chip records and are not deduplicated AOI coverage.",
+            "The dataset's event-focused acquisition dates do not by themselves supply three qualifying baseline dates or the required OPERA product observations.",
+            "No score points should be awarded until matched input provenance, temporal adequacy, reference independence, and the preregistered QA gates are reviewed.",
+        ],
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--areas", type=Path, default=Path("data/study_area_register.json"))
+    parser.add_argument("--output", type=Path, default=Path("outputs/atlas-c2s-flood-dataset-audit.json"))
+    parser.add_argument("--max-workers", type=int, default=12)
+    args = parser.parse_args()
+    area_data = json.loads(args.areas.read_text(encoding="utf-8"))
+    areas = area_data.get("results", [])
+    keys = list_s1_label_keys()
+    report = build_report(areas, keys, args.max_workers)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(
+        f"Wrote {args.output}: {len(keys)} label objects; "
+        f"{report['overlapping_chip_count']} chips overlap {len(areas)} study AOIs; "
+        f"{len(report['processing_errors'])} errors."
+    )
+
+
+if __name__ == "__main__":
+    main()
