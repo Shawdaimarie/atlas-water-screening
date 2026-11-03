@@ -10,6 +10,10 @@ The official [NASA Earthdata ImageServer description](https://gis.earthdata.nasa
 
 The response mosaics contain binary water values rather than complete original product science layers. The software version used to create the mosaics was not present in the page or TIFF tags; the manifest says `not_reported_in_aria_share_mosaic_metadata`. It is not inferred or fabricated. The run manifest records a SHA-256 for every input, geometry, manifest, script, and output.
 
+## Pinned band and class check
+
+The manifest explicitly pins `BWTR_Binary_water`, matching the proposed protocol. For this band, class 0 is valid non-water and class 1 is valid water; 250/251 and fill/no-data are missing. Class 3 belongs to the separate multi-class `WTR_Water_classification` band and is rejected as unexpected here. A histogram of all six supplied TIFFs found values 0, 1, 251, and 255 only; counts and input checksums are recorded in `source_class_histogram.json`. The analyzer and tests enforce the binary-band semantics. This correction leaves the AOI coverage result unchanged because these rasters are already binary BWTR mosaics.
+
 ## Results by acquisition date
 
 | Period | Date | AOI valid fraction | QA result |
@@ -40,6 +44,7 @@ This reproduction reuses the attached rasters; the original public URLs and file
 ## Files
 
 - `manifest.csv`, `aoi.geojson`, `assets.geojson`: input definitions.
+- `source_class_histogram.json`: pixel value counts and checksums for each declared binary-band source.
 - `rasters/*.tif`: original public NASA response mosaics.
 - `analysis/observation_qa.csv`: per-date AOI and technical-cell QA results.
 - `analysis/asset_event_baseline_comparison.csv`: coverage gate outcome; no comparison emitted.
