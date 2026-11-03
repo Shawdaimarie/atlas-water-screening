@@ -1,5 +1,8 @@
 import json
+import math
 from pathlib import Path
+
+import yaml
 
 from scripts.audit_temporal_overlap import summarize
 from scripts.update_site_study_register import update as update_site_register
@@ -8,6 +11,7 @@ from scripts.update_site_study_register import update as update_site_register
 ROOT = Path(__file__).resolve().parents[1]
 REGISTER = json.loads((ROOT / "data/study_area_register.json").read_text())
 AREAS = REGISTER["results"]
+PROTOCOL = yaml.safe_load((ROOT / "data/validation_protocol.yaml").read_text())["protocol"]
 
 
 def test_register_has_eight_candidates_per_region_with_complete_cmr_pages():
@@ -17,13 +21,38 @@ def test_register_has_eight_candidates_per_region_with_complete_cmr_pages():
     assert all(area["returned_entries_complete"] for area in AREAS)
 
 
-def test_all_candidates_pass_metadata_discovery_gate_and_counts_match_dates():
+def test_metadata_date_counts_are_complete_and_90_date_cutoff_is_not_enrollment():
+    assert PROTOCOL["discovery_only"]["prior_date_floor"] == 90
+    assert PROTOCOL["discovery_only"]["prior_date_floor_is_enrollment_gate"] is False
     assert all(area["unique_acquisition_dates"] >= 90 for area in AREAS)
     assert all(
         area["unique_acquisition_dates"] == len(area["acquisition_dates"])
         for area in AREAS
     )
     assert all(area["acquisition_dates"] == sorted(set(area["acquisition_dates"])) for area in AREAS)
+
+
+def test_validation_protocol_has_equal_8_plus_8_design_and_no_false_adequacy_claim():
+    protocol = PROTOCOL
+    discovery = PROTOCOL["discovery_only"]
+    assert protocol["study_areas"]["total_candidates"] == 16
+    assert protocol["study_areas"]["united_states"] == 8
+    assert protocol["study_areas"]["international"] == 8
+    assert protocol["state"] == "proposed_not_externally_preregistered"
+    assert discovery["feasibility_floors_establish_statistical_adequacy"] is False
+    assert PROTOCOL["enrollment"]["current_confirmatory_areas"] == 0
+    assert PROTOCOL["reference_labels"]["independent_labelers"] == 2
+
+
+def test_validation_precision_planning_value_is_reproducible():
+    sampling = PROTOCOL["sampling"]
+    n0 = math.ceil(
+        1.96**2
+        * sampling["planning_prevalence"]
+        * (1 - sampling["planning_prevalence"])
+        / sampling["target_half_width_proportion"] ** 2
+    )
+    assert n0 == sampling["simple_random_sample_n0"] == 385
 
 
 def test_metadata_intersection_is_coarse_not_same_day_coverage():
