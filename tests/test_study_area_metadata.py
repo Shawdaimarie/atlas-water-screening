@@ -111,3 +111,33 @@ def test_site_protocol_panel_matches_proposed_validation_contract():
     assert "the 3-date/80% thresholds as final criteria" not in site_html
     assert "Final enrollment requires 3 QA-valid scenes in each event and baseline period" not in site_html
     assert 'href="https://github.com/Shawdaimarie/atlas-water-screening/blob/main/outputs/atlas-preregistered-validation-protocol.md"' in site_html
+
+
+def test_s1rtc_real_pixel_coverage_audit_is_balanced_and_clearly_limited():
+    audit = json.loads((ROOT / "outputs/atlas-s1rtc-pixel-coverage-audit.json").read_text())
+    assert audit["summary"] == {
+        "areas": 16, "us_areas": 8, "international_areas": 8,
+        "areas_with_all_four_sample_quarters_above_80pct": 12,
+        "quarterly_samples_above_80pct": 56,
+    }
+    assert audit["pixel_coverage_screen"]["band"] == "VV"
+    assert audit["pixel_coverage_screen"]["nominal_spacing_m"] == 10
+    assert "not a water classification" in audit["interpretation_limits"][1]
+    assert all(len(area["quarter_results"]) == 4 for area in audit["areas"])
+    assert all(q["valid_fraction"] is None or 0 <= q["valid_fraction"] <= 1
+               for area in audit["areas"] for q in area["quarter_results"])
+    assert all("SAS" not in json.dumps(q) and "sig=" not in json.dumps(q)
+               for area in audit["areas"] for q in area["quarter_results"])
+
+
+def test_live_site_source_exposes_s1rtc_sample_table_and_download():
+    site_html = (ROOT / "dist/index.html").read_text()
+    assert "Sentinel-1 coverage varies across the candidate areas" in site_html
+    assert "56 / 64" in site_html
+    assert "12 / 16" in site_html
+    assert 'id="rtcCoverageRows"' in site_html
+    assert "renderS1rtcAreaCoverage" in site_html
+    assert 'href="s1rtc-pixel-coverage-audit.json"' in site_html
+    assert 'href="https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc"' in site_html
+    assert (ROOT / "dist/s1rtc-pixel-coverage-audit.json").read_bytes() == (
+        ROOT / "outputs/atlas-s1rtc-pixel-coverage-audit.json").read_bytes()

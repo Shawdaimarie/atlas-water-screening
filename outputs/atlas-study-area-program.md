@@ -210,6 +210,21 @@ OPERA DSWx-S1 is a 30 m research product. Before analysis, pin the product/spec/
 
 Unit tests create tiny synthetic GeoTIFFs to exercise class interpretation, masks, coverage gates, reproducible matched-date selection, and the 16-area global failure/pass rules. The tests validate implementation behavior only. No actual OPERA raster was loaded; no study area has passed pixel-QA; no independent flood labels or event comparisons exist. The 80% and three-date gates are preregistered engineering criteria, not empirically validated scientific thresholds. Actual input checksums and per-area results must be reviewed before treating any area as enrolled.
 
+## Exploratory real-raster coverage screen across all 16 areas (2026-11-03)
+
+To replace metadata-only pixel assumptions with a real-data coverage observation, `scripts/audit_s1rtc_pixel_coverage.py` read the public Microsoft Planetary Computer Sentinel-1 RTC collection for the fixed registered AOIs. The audit queried the same full 2025 calendar period for every candidate, drew one orbit group uniformly from the eligible groups in each quarter with the fixed seed `ATLAS-S1RTC-quarterly-coverage-v1`, and measured the fraction of AOI pixels that were finite and not the raster's declared nodata in the 10 m VV band. It read spatial COG windows only. Short-lived read-only storage tokens were kept in process memory and excluded from checkpoints and reports. The collection metadata declares 10 m VV backscatter and CC-BY-4.0 ([collection record](https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc)); token acquisition follows the [Planetary Computer data-access documentation](https://planetarycomputer.microsoft.com/docs/concepts/sas/).
+
+All 16 areas received four quarter-stratified samples (64 total). **56/64** sampled orbit groups met the 80% spatial-coverage floor, and **12/16** areas met it in all four sampled quarters. At least one selected sample was below 80% in Tampa (77.9% on 2025-02-12; 77.3% on 2025-08-11), New York City (3.4% on 2025-05-24; 3.1% on 2025-12-02), St. Louis (25.2% on 2025-09-13; 26.0% on 2025-12-30), and São Paulo (0.1% on 2025-01-13; 0.1% on 2025-06-06). Candidate orbit-group counts per quarter and per-item identifiers, checksums, and item links are recorded in `outputs/atlas-s1rtc-pixel-coverage-audit.json` (SHA-256 `8911ed93de7722517537e3b59f5f91dc9ee72ad4ba0364ecf25cc3a6f75a99b6`). These four locations remain candidates; the result means the randomly selected scene groups cannot count toward the final coverage floor, while other discoverable groups recorded by the audit still require full review.
+
+This is a sampled observation-availability diagnostic only. It does not show a flood, classify water, validate OPERA DSWx-S1, establish same-date or same-orbit comparability among cities, test event/baseline adequacy, assess radiometric or geolocation quality, or supply independent labels. It does not change confirmatory enrollment status or earn score points. The finite/non-nodata rule measures spatial file coverage only; no water fraction or event effect is estimated.
+
+Reproduce with Python 3.12 and the locked development/geospatial dependencies; the default resumable checkpoint is under ignored `work/` and contains no signed asset URL:
+
+```sh
+docker run --rm -v "$PWD:/workspace" -w /workspace python:3.12-bookworm \
+  sh -lc 'python -m pip install --require-hashes -r requirements-dev.lock && python scripts/audit_s1rtc_pixel_coverage.py'
+```
+
 
 ## Equal-depth area evidence and validation profiles
 
