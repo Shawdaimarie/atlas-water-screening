@@ -1,0 +1,242 @@
+{
+  "audit_id": "atlas-worldfloods-v2-aoi-coverage-audit",
+  "source": {
+    "title": "WorldFloods extended dataset (v2)",
+    "record_url": "https://zenodo.org/records/8153514",
+    "doi": "10.5281/zenodo.8153514",
+    "metadata_archive_filename": "metadatas.zip",
+    "metadata_archive_sha256": "f48d961a1bd52dbcd0aac53e93c144cac1937df68c823cb1d51b7feefc626a00",
+    "metadata_records_screened": 509,
+    "expected_metadata_records": 509,
+    "metadata_count_matches_record": true,
+    "published_map_period": "2016-2023",
+    "mask_license": "CC BY-NC 4.0 (verify specific reuse terms before redistribution)"
+  },
+  "method": {
+    "geometry": "Conservative bounding-box intersection between each metadata record bbox and each fixed ATLAS AOI bbox.",
+    "exact_aoi_polygon_check": false,
+    "rationale": "No bounding-box overlap proves no AOI polygon overlap; a positive bounding-box hit would require exact geometry follow-up."
+  },
+  "summary": {
+    "study_areas": 16,
+    "areas_with_candidate_metadata_footprints": 0,
+    "areas_without_candidate_metadata_footprints": 16,
+    "metadata_records_intersecting_any_aoi": 0
+  },
+  "areas": [
+    {
+      "region": "United States",
+      "city": "Houston",
+      "aoi_bbox_wgs84": [
+        -95.499149,
+        29.648111,
+        -95.240451,
+        29.872689
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "United States",
+      "city": "Miami",
+      "aoi_bbox_wgs84": [
+        -80.316481,
+        25.649411,
+        -80.067119,
+        25.873989
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "United States",
+      "city": "Tampa",
+      "aoi_bbox_wgs84": [
+        -82.584317,
+        27.838311,
+        -82.330083,
+        28.062889
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "United States",
+      "city": "New Orleans",
+      "aoi_bbox_wgs84": [
+        -90.201096,
+        29.838811,
+        -89.941904,
+        30.063389
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "United States",
+      "city": "New York City",
+      "aoi_bbox_wgs84": [
+        -74.154141,
+        40.600511,
+        -73.857859,
+        40.825089
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "United States",
+      "city": "Sacramento",
+      "aoi_bbox_wgs84": [
+        -121.638043,
+        38.469311,
+        -121.350757,
+        38.693889
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "United States",
+      "city": "Atlanta",
+      "aoi_bbox_wgs84": [
+        -84.523047,
+        33.636711,
+        -84.252953,
+        33.861289
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "United States",
+      "city": "St. Louis",
+      "aoi_bbox_wgs84": [
+        -90.343134,
+        38.514711,
+        -90.055666,
+        38.739289
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "International",
+      "city": "Jakarta",
+      "aoi_bbox_wgs84": [
+        106.732649,
+        -6.321089,
+        106.958551,
+        -6.096511
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "International",
+      "city": "Singapore",
+      "aoi_bbox_wgs84": [
+        103.70748,
+        1.239811,
+        103.93212,
+        1.464389
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "International",
+      "city": "Dubai",
+      "aoi_bbox_wgs84": [
+        55.146695,
+        25.092511,
+        55.394905,
+        25.317089
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "International",
+      "city": "Mumbai",
+      "aoi_bbox_wgs84": [
+        72.758887,
+        18.963711,
+        72.996513,
+        19.188289
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "International",
+      "city": "Bangkok",
+      "aoi_bbox_wgs84": [
+        100.386195,
+        13.644011,
+        100.617405,
+        13.868589
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "International",
+      "city": "Tokyo",
+      "aoi_bbox_wgs84": [
+        139.512069,
+        35.563911,
+        139.788531,
+        35.788489
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "International",
+      "city": "Manila",
+      "aoi_bbox_wgs84": [
+        120.868164,
+        14.487211,
+        121.100236,
+        14.711789
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    },
+    {
+      "region": "International",
+      "city": "S\u00e3o Paulo",
+      "aoi_bbox_wgs84": [
+        -46.755791,
+        -23.662789,
+        -46.510809,
+        -23.438211
+      ],
+      "candidate_metadata_footprints": [],
+      "candidate_count": 0,
+      "screened_out_for_confirmatory_use": true
+    }
+  ],
+  "interpretation_limits": [
+    "The metadata screen does not inspect or verify raster masks, pixel labels, georegistration, or label uncertainty.",
+    "The WorldFloods v2 archive covers 2016-2023, before the OPERA DSWx-S1 observation window used by ATLAS; matching geography alone would not provide contemporaneous validation.",
+    "WorldFloods masks were manually curated from source flood maps and have non-commercial license terms; inspect source imagery lineage before calling any match independent of OPERA.",
+    "A no-match result is specific to the fixed ATLAS AOIs and does not imply that a city or country has no flood-reference data."
+  ]
+}
