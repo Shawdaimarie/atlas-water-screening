@@ -6,7 +6,7 @@ Updated: 2026-11-03. Scope: privately hosted synthetic walkthrough plus local fi
 
 **Latest deployment check (2026-11-03):** private Site v26 is successful. The authenticated production UI and unique RTC audit JSON route show the complete 8+8 candidate register, 192 distinct sampled groups, 169/192 spatial coverage passes, and 10/16 areas passing all 12 samples. Live Baton Rouge/Ida and aggregate comparison replayed; the hash-locked Python 3.12 suite passes 81 tests. These are demo and engineering checks only; the score remains 55/100 because real matched event observations, independent labels, confirmatory enrollment, cloud deployments, usability study, and capacity evidence remain unmet.
 
-Private GitHub main is at `4c342f5ade89c6a21db0f87e81be863191486989`; CI run [41661175760](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41661175760) passed both jobs on the v24 evidence/source sync: 78 tests, GEOID-Flood footprint check, container build/runtime audit, 11/11 HTTP smoke tests, and dependency scanning. This CI does not verify real flood accuracy, cloud-provider deployment, or independent reproduction.
+Private GitHub v26 source commit `c973dac34d4d0e88356ba95f5d15a6d0d57a6571` passed [Actions run 41665198934](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41665198934): 81 tests, GEOID-Flood footprint check, container build/runtime audit, HTTP smoke tests, and dependency scanning. This CI does not verify real flood accuracy, cloud-provider deployment, or independent reproduction.
 
 | Category | Points | Evidence and result |
 |---|---:|---|

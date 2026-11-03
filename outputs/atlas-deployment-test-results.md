@@ -12,7 +12,7 @@
 - Authenticated live walkthrough confirmed 16 candidate rows (8 U.S., 8 international), the updated coverage table with three distinct sampled groups for each quarter, and headline results of 169/192 groups above the 80% spatial-coverage floor and 10/16 areas passing all 12 samples.
 - Opened the live `s1rtc-pixel-coverage-unique.json` download route and inspected its response. It reports 192 selected/192 unique groups, zero duplicate selections, 16 areas (8+8), 169 passing samples, the `-32768` source nodata value, and provenance for all sample groups.
 - Live interaction replay changed the scenario to Baton Rouge/Hurricane Ida and selected the quality-aware aggregate. The interface changed its median synthetic overlap from 7.7% to 6.8%, elevated asset count from 4 to 3, and leading asset overlap from 28.6% to 21.4%; labels continue to identify the fixtures as synthetic. Browser console reported zero errors.
-- Full Python 3.12 suite with hash-locked development and reference-audit dependencies: **81 passed in 1.30s**. This includes the new deterministic replacement/uniqueness checks and the updated Site and ledger assertions. The local macOS Python 3.9 environment lacks Shapely, so it is not used as the full-suite result.
+- Full Python 3.12 suite with hash-locked development and reference-audit dependencies: **81 passed in 1.30s**. Private GitHub Actions run [41665198934](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41665198934) passed on source commit `c973dac34d4d0e88356ba95f5d15a6d0d57a6571`, including the same test suite, GEOID-Flood footprint screen, container build and smoke tests, runtime image audit, and dependency-security scan. This includes the new deterministic replacement/uniqueness checks and the updated Site and ledger assertions. The local macOS Python 3.9 environment lacks Shapely, so it is not used as the full-suite result.
 - The RTC rerun made 19 replacement raster reads to remove repeats from the prior 173 unique groups. The final sample is a real Sentinel-1 RTC VV availability screen, not OPERA classification, event/baseline sufficiency, independent ground truth, or validation. The stale duplicate-prone report was removed from the v26 package. The project score remains **55/100 provisional**, not 100/100; no confirmatory area is eligible.
 
 ## Earlier release: Site v21 (2026-11-03)
@@ -26,7 +26,7 @@
 
 ## Result summary
 
-The private static Site is deployed (version 25) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. The register is an archive metadata discovery screen; its scenes have not been downloaded or pixel-QA audited for the 16 candidate areas. Therefore the project is **not 100/100** and the study areas are not fully validated.
+The private static Site is deployed (version 26) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. Scene QA, independent event labels, and confirmatory validation remain incomplete. Therefore the project is **not 100/100** and the study areas are not fully validated.
 
 ## Checks completed
 
