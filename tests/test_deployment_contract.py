@@ -53,6 +53,16 @@ def test_owner_handoff_template_is_unprovisioned_and_nonsecret():
         assert forbidden not in serialized
 
 
+def test_ci_actions_use_full_sha_pinned_node24_releases():
+    workflow = (ROOT / ".github/workflows/verify.yml").read_text()
+    checkout = "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0"
+    setup_python = "actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97"
+    assert workflow.count(checkout) == 2
+    assert workflow.count(setup_python) == 2
+    assert "actions/checkout@v" not in workflow
+    assert "actions/setup-python@v" not in workflow
+
+
 def test_kubernetes_workload_preserves_restricted_container_baseline():
     namespace = yaml.safe_load((ROOT / "deployment/k8s/namespace.yaml").read_text())
     documents = list(yaml.safe_load_all((ROOT / "deployment/k8s/deployment.yaml").read_text()))
