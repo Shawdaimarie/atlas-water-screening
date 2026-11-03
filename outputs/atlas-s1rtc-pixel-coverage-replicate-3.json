@@ -1,0 +1,1833 @@
+{
+  "audit": "ATLAS exploratory Sentinel-1 RTC sampled pixel coverage",
+  "retrieved_at_utc": "2026-11-03T13:49:01.307509+00:00",
+  "source": {
+    "stac_api": "https://planetarycomputer.microsoft.com/api/stac/v1",
+    "collection": "sentinel-1-rtc",
+    "collection_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc",
+    "license": "CC-BY-4.0",
+    "attribution": "Microsoft Planetary Computer; ESA/Copernicus Sentinel-1"
+  },
+  "period": {
+    "start": "2025-01-01T00:00:00Z",
+    "end": "2025-12-31T23:59:59Z"
+  },
+  "pixel_coverage_screen": {
+    "band": "VV",
+    "nominal_spacing_m": 10,
+    "rule": "finite pixels unequal to declared raster nodata; \u226580% in fixed AOI",
+    "sample_seed": "ATLAS-S1RTC-quarterly-coverage-replicate-3",
+    "samples_per_area": 4
+  },
+  "summary": {
+    "areas": 16,
+    "us_areas": 8,
+    "international_areas": 8,
+    "areas_with_all_four_sample_quarters_above_80pct": 12,
+    "quarterly_samples_above_80pct": 59
+  },
+  "interpretation_limits": [
+    "This is a four-date-per-area spatial data-availability sample, not event/baseline sampling adequacy.",
+    "Sentinel-1 RTC VV backscatter is not a water classification and does not validate OPERA DSWx-S1.",
+    "Nodata coverage alone does not assess speckle, layover/shadow, radiometric quality, acquisition geometry balance, or classification accuracy.",
+    "A 2025 sample does not establish coverage for every event, date, asset, or the full 2024\u20132026 study window.",
+    "Independent event labels and confirmatory study-area enrollment remain unmet.",
+    "Planetary Computer SAS links are temporary and intentionally excluded from this output."
+  ],
+  "areas": [
+    {
+      "region": "United States",
+      "city": "Houston",
+      "bbox_wgs84": "-95.499149,29.648111,-95.240451,29.872689",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 2,
+      "all_four_quarters_meet_pixel_screen": false,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-01-19",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 34,
+          "absolute_orbit": 57506,
+          "candidate_orbit_groups": 22,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250119T002647_20250119T002712_057506_0714FA_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250119T002647_20250119T002712_057506_0714FA_rtc",
+              "asset_checksum": "c8115ab9514755b1490ab2f1756e6c26",
+              "asset_bytes": 1843976940
+            },
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250119T002712_20250119T002737_057506_0714FA_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250119T002712_20250119T002737_057506_0714FA_rtc",
+              "asset_checksum": "124ee8e1179796625986ce5656367965",
+              "asset_bytes": 1855278059
+            }
+          ],
+          "valid_pixels": 6231634,
+          "aoi_pixels": 6231732,
+          "valid_fraction": 0.999984,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-05-02",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "descending",
+          "relative_orbit": 143,
+          "absolute_orbit": 59015,
+          "candidate_orbit_groups": 28,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250502T122315_20250502T122345_059015_0751C9_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250502T122315_20250502T122345_059015_0751C9_rtc",
+              "asset_checksum": "0c2a3d2135449bd259f725eb6d1e38a6",
+              "asset_bytes": 2063985071
+            }
+          ],
+          "valid_pixels": 6231668,
+          "aoi_pixels": 6231732,
+          "valid_fraction": 0.99999,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-07-13",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 136,
+          "absolute_orbit": 60058,
+          "candidate_orbit_groups": 21,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250713T001848_20250713T001913_060058_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250713T001848_20250713T001913_060058_rtc",
+              "asset_checksum": "16cda0c8af1de3f43b9b53c6b1826ca2",
+              "asset_bytes": 1849582514
+            }
+          ],
+          "valid_pixels": 521535,
+          "aoi_pixels": 6231732,
+          "valid_fraction": 0.08369,
+          "meets_80pct_pixel_coverage_screen": false,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-12-28",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 136,
+          "absolute_orbit": 62508,
+          "candidate_orbit_groups": 23,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20251228T001834_20251228T001859_062508_07D539_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20251228T001834_20251228T001859_062508_07D539_rtc",
+              "asset_checksum": "e94da77a2ba343e4023f7f8c9caae1d7",
+              "asset_bytes": 1843129206
+            }
+          ],
+          "valid_pixels": 565632,
+          "aoi_pixels": 6231732,
+          "valid_fraction": 0.090766,
+          "meets_80pct_pixel_coverage_screen": false,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "United States",
+      "city": "Miami",
+      "bbox_wgs84": "-80.316481,25.649411,-80.067119,25.873989",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 4,
+      "all_four_quarters_meet_pixel_screen": true,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-03-20",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 48,
+          "absolute_orbit": 58395,
+          "candidate_orbit_groups": 7,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250320T232815_20250320T232840_058395_0738A3_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250320T232815_20250320T232840_058395_0738A3_rtc",
+              "asset_checksum": "d06b0f07113f5439de942ffb1a24b8de",
+              "asset_bytes": 1846595397
+            }
+          ],
+          "valid_pixels": 6219723,
+          "aoi_pixels": 6219872,
+          "valid_fraction": 0.999976,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-06-24",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 48,
+          "absolute_orbit": 59795,
+          "candidate_orbit_groups": 7,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250624T232814_20250624T232832_059795_076D0C_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250624T232814_20250624T232832_059795_076D0C_rtc",
+              "asset_checksum": "81e2cd02e333046872616c6a3e46cd0b",
+              "asset_bytes": 1260210126
+            }
+          ],
+          "valid_pixels": 6219723,
+          "aoi_pixels": 6219872,
+          "valid_fraction": 0.999976,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-08-23",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 48,
+          "absolute_orbit": 60670,
+          "candidate_orbit_groups": 7,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250823T232812_20250823T232837_060670_078C7B_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250823T232812_20250823T232837_060670_078C7B_rtc",
+              "asset_checksum": "36b8e176e818a29ddbe4e13b17b49d20",
+              "asset_bytes": 1844019038
+            }
+          ],
+          "valid_pixels": 6219723,
+          "aoi_pixels": 6219872,
+          "valid_fraction": 0.999976,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-12-09",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 48,
+          "absolute_orbit": 62245,
+          "candidate_orbit_groups": 7,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20251209T232810_20251209T232835_062245_07CAFF_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20251209T232810_20251209T232835_062245_07CAFF_rtc",
+              "asset_checksum": "f6f2eda7752a51ab476047f5496831b8",
+              "asset_bytes": 1844896625
+            }
+          ],
+          "valid_pixels": 6219723,
+          "aoi_pixels": 6219872,
+          "valid_fraction": 0.999976,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "United States",
+      "city": "Tampa",
+      "bbox_wgs84": "-82.584317,27.838311,-82.330083,28.062889",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 3,
+      "all_four_quarters_meet_pixel_screen": false,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-03-25",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 121,
+          "absolute_orbit": 58468,
+          "candidate_orbit_groups": 14,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250325T233700_20250325T233725_058468_073B84_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250325T233700_20250325T233725_058468_073B84_rtc",
+              "asset_checksum": "a63685969ee566bcecaa42a84973c8c6",
+              "asset_bytes": 1832865266
+            }
+          ],
+          "valid_pixels": 6224559,
+          "aoi_pixels": 6224601,
+          "valid_fraction": 0.999993,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-04-13",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 48,
+          "absolute_orbit": 58745,
+          "candidate_orbit_groups": 12,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250413T232905_20250413T232930_058745_0746D7_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250413T232905_20250413T232930_058745_0746D7_rtc",
+              "asset_checksum": "1869ecc7716349188f817d702a4d5834",
+              "asset_bytes": 1853546849
+            }
+          ],
+          "valid_pixels": 4821917,
+          "aoi_pixels": 6224601,
+          "valid_fraction": 0.774655,
+          "meets_80pct_pixel_coverage_screen": false,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-08-04",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 121,
+          "absolute_orbit": 60393,
+          "candidate_orbit_groups": 13,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250804T233657_20250804T233722_060393_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250804T233657_20250804T233722_060393_rtc",
+              "asset_checksum": "60e753a5b74bc39c07a32d27b242c205",
+              "asset_bytes": 1842332047
+            }
+          ],
+          "valid_pixels": 6224559,
+          "aoi_pixels": 6224601,
+          "valid_fraction": 0.999993,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-10-03",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 121,
+          "absolute_orbit": 61268,
+          "candidate_orbit_groups": 14,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20251003T233658_20251003T233723_061268_07A473_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20251003T233658_20251003T233723_061268_07A473_rtc",
+              "asset_checksum": "047653f85071d477e4b093590d48b79e",
+              "asset_bytes": 1837047338
+            }
+          ],
+          "valid_pixels": 6224559,
+          "aoi_pixels": 6224601,
+          "valid_fraction": 0.999993,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "United States",
+      "city": "New Orleans",
+      "bbox_wgs84": "-90.201096,29.838811,-89.941904,30.063389",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 4,
+      "all_four_quarters_meet_pixel_screen": true,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-03-29",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 165,
+          "absolute_orbit": 58512,
+          "candidate_orbit_groups": 8,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250329T000229_20250329T000254_058512_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250329T000229_20250329T000254_058512_rtc",
+              "asset_checksum": "f4085ca98b134a098e6dac8b20c5e9fb",
+              "asset_bytes": 1857716544
+            }
+          ],
+          "valid_pixels": 6236143,
+          "aoi_pixels": 6236162,
+          "valid_fraction": 0.999997,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-05-04",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 165,
+          "absolute_orbit": 59037,
+          "candidate_orbit_groups": 4,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250504T000229_20250504T000254_059037_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250504T000229_20250504T000254_059037_rtc",
+              "asset_checksum": "74ad6f0ea32718b743b337b1dee5bc7f",
+              "asset_bytes": 1856792474
+            }
+          ],
+          "valid_pixels": 6236143,
+          "aoi_pixels": 6236162,
+          "valid_fraction": 0.999997,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-09-25",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 165,
+          "absolute_orbit": 61137,
+          "candidate_orbit_groups": 8,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250925T000226_20250925T000251_061137_079F29_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250925T000226_20250925T000251_061137_079F29_rtc",
+              "asset_checksum": "ca92d2d39575694012c679aa361ac225",
+              "asset_bytes": 1854376447
+            }
+          ],
+          "valid_pixels": 6236143,
+          "aoi_pixels": 6236162,
+          "valid_fraction": 0.999997,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-11-12",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 165,
+          "absolute_orbit": 61837,
+          "candidate_orbit_groups": 8,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20251112T000226_20251112T000251_061837_07BB0C_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20251112T000226_20251112T000251_061837_07BB0C_rtc",
+              "asset_checksum": "bf04c826a9c64a7130b64601bd54f977",
+              "asset_bytes": 1856073860
+            }
+          ],
+          "valid_pixels": 6236143,
+          "aoi_pixels": 6236162,
+          "valid_fraction": 0.999997,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "United States",
+      "city": "New York City",
+      "bbox_wgs84": "-74.154141,40.600511,-73.857859,40.825089",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 4,
+      "all_four_quarters_meet_pixel_screen": true,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-01-29",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "descending",
+          "relative_orbit": 11,
+          "absolute_orbit": 57658,
+          "candidate_orbit_groups": 18,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250129T110621_20250129T110654_057658_071B0A_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250129T110621_20250129T110654_057658_071B0A_rtc",
+              "asset_checksum": "c74597359c48ede2636cb79fe88e7946",
+              "asset_bytes": 2437271092
+            }
+          ],
+          "valid_pixels": 6239701,
+          "aoi_pixels": 6239726,
+          "valid_fraction": 0.999996,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-04-24",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 33,
+          "absolute_orbit": 58905,
+          "candidate_orbit_groups": 17,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250424T225125_20250424T225150_058905_074D60_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250424T225125_20250424T225150_058905_074D60_rtc",
+              "asset_checksum": "14c12a8bd7ea92bba1c487187f94be13",
+              "asset_bytes": 1845308008
+            }
+          ],
+          "valid_pixels": 6239701,
+          "aoi_pixels": 6239726,
+          "valid_fraction": 0.999996,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-09-27",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 33,
+          "absolute_orbit": 61180,
+          "candidate_orbit_groups": 9,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250927T225110_20250927T225135_061180_07A0DF_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250927T225110_20250927T225135_061180_07A0DF_rtc",
+              "asset_checksum": "cf38f5b03167c7e8147956583cb8407d",
+              "asset_bytes": 1848883667
+            }
+          ],
+          "valid_pixels": 6239701,
+          "aoi_pixels": 6239726,
+          "valid_fraction": 0.999996,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-11-14",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 33,
+          "absolute_orbit": 61880,
+          "candidate_orbit_groups": 11,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20251114T225109_20251114T225134_061880_07BCB4_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20251114T225109_20251114T225134_061880_07BCB4_rtc",
+              "asset_checksum": "82c15da098aca2f43d6362857e6e39ac",
+              "asset_bytes": 1849340758
+            }
+          ],
+          "valid_pixels": 6239701,
+          "aoi_pixels": 6239726,
+          "valid_fraction": 0.999996,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "United States",
+      "city": "Sacramento",
+      "bbox_wgs84": "-121.638043,38.469311,-121.350757,38.693889",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 4,
+      "all_four_quarters_meet_pixel_screen": true,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-01-19",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "descending",
+          "relative_orbit": 42,
+          "absolute_orbit": 57514,
+          "candidate_orbit_groups": 29,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250119T140803_20250119T140828_057514_071548_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250119T140803_20250119T140828_057514_071548_rtc",
+              "asset_checksum": "f5bc418cf7abcab677cc0a47b22a354c",
+              "asset_bytes": 1840359014
+            }
+          ],
+          "valid_pixels": 6238201,
+          "aoi_pixels": 6238201,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-04-19",
+          "platform": "sentinel-1c",
+          "orbit_state": "descending",
+          "relative_orbit": 42,
+          "absolute_orbit": 1963,
+          "candidate_orbit_groups": 51,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1C_IW_GRDH_1SDV_20250419T140620_20250419T140650_001963_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1C_IW_GRDH_1SDV_20250419T140620_20250419T140650_001963_rtc",
+              "asset_checksum": "750c68d6fc73572e4b38eeef18e50f1c",
+              "asset_bytes": 2077669904
+            },
+            {
+              "id": "S1C_IW_GRDH_1SDV_20250419T140650_20250419T140715_001963_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1C_IW_GRDH_1SDV_20250419T140650_20250419T140715_001963_rtc",
+              "asset_checksum": "40c41a04e713849bb809b3ce02884b06",
+              "asset_bytes": 1840531179
+            }
+          ],
+          "valid_pixels": 6238200,
+          "aoi_pixels": 6238201,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-07-06",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 35,
+          "absolute_orbit": 59957,
+          "candidate_orbit_groups": 52,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250706T020807_20250706T020832_059957_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250706T020807_20250706T020832_059957_rtc",
+              "asset_checksum": "77a1983e4e19575c7b36788e07c00973",
+              "asset_bytes": 1845350926
+            }
+          ],
+          "valid_pixels": 6238201,
+          "aoi_pixels": 6238201,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-12-09",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 35,
+          "absolute_orbit": 62232,
+          "candidate_orbit_groups": 52,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20251209T020804_20251209T020829_062232_07CA77_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20251209T020804_20251209T020829_062232_07CA77_rtc",
+              "asset_checksum": "302a5a19906f7b31af7bda7d03c8cd4f",
+              "asset_bytes": 1855851083
+            }
+          ],
+          "valid_pixels": 6238201,
+          "aoi_pixels": 6238201,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "United States",
+      "city": "Atlanta",
+      "bbox_wgs84": "-84.523047,33.636711,-84.252953,33.861289",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 4,
+      "all_four_quarters_meet_pixel_screen": true,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-01-24",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 121,
+          "absolute_orbit": 57593,
+          "candidate_orbit_groups": 7,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250124T233841_20250124T233906_057593_071876_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250124T233841_20250124T233906_057593_071876_rtc",
+              "asset_checksum": "c03d59534ba12f56c37180cdcf427f5e",
+              "asset_bytes": 1864420616
+            }
+          ],
+          "valid_pixels": 6237831,
+          "aoi_pixels": 6237851,
+          "valid_fraction": 0.999997,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-05-12",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 121,
+          "absolute_orbit": 59168,
+          "candidate_orbit_groups": 7,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250512T233841_20250512T233906_059168_075773_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250512T233841_20250512T233906_059168_075773_rtc",
+              "asset_checksum": "e01c8f32b78aea08226ec5a2ca190f9a",
+              "asset_bytes": 1864160492
+            }
+          ],
+          "valid_pixels": 6237831,
+          "aoi_pixels": 6237851,
+          "valid_fraction": 0.999997,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-09-21",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 121,
+          "absolute_orbit": 61093,
+          "candidate_orbit_groups": 7,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250921T233838_20250921T233903_061093_079D61_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250921T233838_20250921T233903_061093_079D61_rtc",
+              "asset_checksum": "f06074fb15be3d27cb6360131f23740b",
+              "asset_bytes": 1865457334
+            }
+          ],
+          "valid_pixels": 6237831,
+          "aoi_pixels": 6237851,
+          "valid_fraction": 0.999997,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-12-14",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 121,
+          "absolute_orbit": 62318,
+          "candidate_orbit_groups": 7,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20251214T233834_20251214T233859_062318_07CDD5_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20251214T233834_20251214T233859_062318_07CDD5_rtc",
+              "asset_checksum": "3ffe521372d617f5b0acc7c811522242",
+              "asset_bytes": 1863302575
+            }
+          ],
+          "valid_pixels": 6237831,
+          "aoi_pixels": 6237851,
+          "valid_fraction": 0.999997,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "United States",
+      "city": "St. Louis",
+      "bbox_wgs84": "-90.343134,38.514711,-90.055666,38.739289",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 3,
+      "all_four_quarters_meet_pixel_screen": false,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-01-10",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 92,
+          "absolute_orbit": 57389,
+          "candidate_orbit_groups": 15,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250110T235627_20250110T235652_057389_071054_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250110T235627_20250110T235652_057389_071054_rtc",
+              "asset_checksum": "096795c3e996cec78e7cec84e2a55c64",
+              "asset_bytes": 1844037438
+            }
+          ],
+          "valid_pixels": 6244740,
+          "aoi_pixels": 6244760,
+          "valid_fraction": 0.999997,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-04-28",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 92,
+          "absolute_orbit": 58964,
+          "candidate_orbit_groups": 11,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250428T235626_20250428T235651_058964_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250428T235626_20250428T235651_058964_rtc",
+              "asset_checksum": "cf3b0e10726d780f0cf98e9db960c621",
+              "asset_bytes": 1849837034
+            }
+          ],
+          "valid_pixels": 6244740,
+          "aoi_pixels": 6244760,
+          "valid_fraction": 0.999997,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-09-07",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 92,
+          "absolute_orbit": 60889,
+          "candidate_orbit_groups": 12,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250907T235623_20250907T235648_060889_079531_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250907T235623_20250907T235648_060889_079531_rtc",
+              "asset_checksum": "25c96cdbbb2c7d9ff433348d21c3173b",
+              "asset_bytes": 1858093987
+            }
+          ],
+          "valid_pixels": 6244740,
+          "aoi_pixels": 6244760,
+          "valid_fraction": 0.999997,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-10-19",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 165,
+          "absolute_orbit": 61487,
+          "candidate_orbit_groups": 15,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20251019T000432_20251019T000457_061487_07AD3B_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20251019T000432_20251019T000457_061487_07AD3B_rtc",
+              "asset_checksum": "943dccce5a8f831cc869a78b0f468cbb",
+              "asset_bytes": 1840274011
+            }
+          ],
+          "valid_pixels": 1598444,
+          "aoi_pixels": 6244760,
+          "valid_fraction": 0.255966,
+          "meets_80pct_pixel_coverage_screen": false,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "International",
+      "city": "Jakarta",
+      "bbox_wgs84": "106.732649,-6.321089,106.958551,-6.096511",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 4,
+      "all_four_quarters_meet_pixel_screen": true,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-03-24",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 98,
+          "absolute_orbit": 58445,
+          "candidate_orbit_groups": 6,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250324T111530_20250324T111555_058445_073AAC_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250324T111530_20250324T111555_058445_073AAC_rtc",
+              "asset_checksum": "282cab0377a398100c584195e9ad5c7f",
+              "asset_bytes": 1853184857
+            }
+          ],
+          "valid_pixels": 6210483,
+          "aoi_pixels": 6210483,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-04-17",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 98,
+          "absolute_orbit": 58795,
+          "candidate_orbit_groups": 10,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250417T111530_20250417T111555_058795_0748EA_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250417T111530_20250417T111555_058795_0748EA_rtc",
+              "asset_checksum": "211179570984e198118376f15e857738",
+              "asset_bytes": 1855181527
+            }
+          ],
+          "valid_pixels": 6210483,
+          "aoi_pixels": 6210483,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-08-15",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 98,
+          "absolute_orbit": 60545,
+          "candidate_orbit_groups": 12,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250815T111526_20250815T111551_060545_0787A1_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250815T111526_20250815T111551_060545_0787A1_rtc",
+              "asset_checksum": "86e72cf2b5736ad776d69d7759b65b5b",
+              "asset_bytes": 1850594510
+            }
+          ],
+          "valid_pixels": 6210483,
+          "aoi_pixels": 6210483,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-12-21",
+          "platform": "sentinel-1a",
+          "orbit_state": "descending",
+          "relative_orbit": 47,
+          "absolute_orbit": 62419,
+          "candidate_orbit_groups": 15,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20251221T223358_20251221T223426_062419_07D1BF_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20251221T223358_20251221T223426_062419_07D1BF_rtc",
+              "asset_checksum": "78e56b03d29051b45f8301baf6e36d59",
+              "asset_bytes": 1947553498
+            }
+          ],
+          "valid_pixels": 6210483,
+          "aoi_pixels": 6210483,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "International",
+      "city": "Singapore",
+      "bbox_wgs84": "103.707480,1.239811,103.932120,1.464389",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 4,
+      "all_four_quarters_meet_pixel_screen": true,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-02-09",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 171,
+          "absolute_orbit": 57818,
+          "candidate_orbit_groups": 16,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250209T112536_20250209T112601_057818_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250209T112536_20250209T112601_057818_rtc",
+              "asset_checksum": "31c286d10c13bd93fb915e984fee05eb",
+              "asset_bytes": 1844834905
+            }
+          ],
+          "valid_pixels": 6205577,
+          "aoi_pixels": 6206092,
+          "valid_fraction": 0.999917,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-04-22",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 171,
+          "absolute_orbit": 58868,
+          "candidate_orbit_groups": 10,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250422T112536_20250422T112601_058868_074BE7_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250422T112536_20250422T112601_058868_074BE7_rtc",
+              "asset_checksum": "f2c16f26ab5b03f787fb1407b0cfa8f6",
+              "asset_bytes": 1842050145
+            }
+          ],
+          "valid_pixels": 6205577,
+          "aoi_pixels": 6206092,
+          "valid_fraction": 0.999917,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-07-15",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 171,
+          "absolute_orbit": 60093,
+          "candidate_orbit_groups": 13,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250715T112532_20250715T112557_060093_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250715T112532_20250715T112557_060093_rtc",
+              "asset_checksum": "8ae71383ae9eec4bc00696f960743af3",
+              "asset_bytes": 1840602822
+            }
+          ],
+          "valid_pixels": 6205577,
+          "aoi_pixels": 6206092,
+          "valid_fraction": 0.999917,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-12-31",
+          "platform": "sentinel-1a",
+          "orbit_state": "descending",
+          "relative_orbit": 18,
+          "absolute_orbit": 62565,
+          "candidate_orbit_groups": 16,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20251231T224803_20251231T224828_062565_07D762_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20251231T224803_20251231T224828_062565_07D762_rtc",
+              "asset_checksum": "68a633051b8dcea0f8026fa8a5c749fc",
+              "asset_bytes": 1846104238
+            }
+          ],
+          "valid_pixels": 6205577,
+          "aoi_pixels": 6206092,
+          "valid_fraction": 0.999917,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "International",
+      "city": "Dubai",
+      "bbox_wgs84": "55.146695,25.092511,55.394905,25.317089",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 4,
+      "all_four_quarters_meet_pixel_screen": true,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-02-21",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "descending",
+          "relative_orbit": 166,
+          "absolute_orbit": 57988,
+          "candidate_orbit_groups": 16,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250221T021545_20250221T021608_057988_072841_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250221T021545_20250221T021608_057988_072841_rtc",
+              "asset_checksum": "a7ab7670e498c989d0497dc4f6e044e5",
+              "asset_bytes": 1653545638
+            }
+          ],
+          "valid_pixels": 6222925,
+          "aoi_pixels": 6222925,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-05-28",
+          "platform": "sentinel-1a",
+          "orbit_state": "descending",
+          "relative_orbit": 166,
+          "absolute_orbit": 59388,
+          "candidate_orbit_groups": 14,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250528T021545_20250528T021608_059388_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250528T021545_20250528T021608_059388_rtc",
+              "asset_checksum": "8ff896b267271253ec3f6dcd92b05eae",
+              "asset_bytes": 1647351384
+            }
+          ],
+          "valid_pixels": 6222925,
+          "aoi_pixels": 6222925,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-09-28",
+          "platform": "sentinel-1c",
+          "orbit_state": "ascending",
+          "relative_orbit": 130,
+          "absolute_orbit": 4326,
+          "candidate_orbit_groups": 26,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1C_IW_GRDH_1SDV_20250928T142350_20250928T142419_004326_008943_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1C_IW_GRDH_1SDV_20250928T142350_20250928T142419_004326_008943_rtc",
+              "asset_checksum": "1d434f1a8edfec8c882993fc1ff0bfa1",
+              "asset_bytes": 2097495355
+            }
+          ],
+          "valid_pixels": 6222925,
+          "aoi_pixels": 6222925,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-11-12",
+          "platform": "sentinel-1a",
+          "orbit_state": "descending",
+          "relative_orbit": 166,
+          "absolute_orbit": 61838,
+          "candidate_orbit_groups": 31,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20251112T021542_20251112T021605_061838_07BB17_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20251112T021542_20251112T021605_061838_07BB17_rtc",
+              "asset_checksum": "4be38df2ff7a6accd5ed5589ab5376f8",
+              "asset_bytes": 1648541073
+            }
+          ],
+          "valid_pixels": 6222925,
+          "aoi_pixels": 6222925,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "International",
+      "city": "Mumbai",
+      "bbox_wgs84": "72.758887,18.963711,72.996513,19.188289",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 4,
+      "all_four_quarters_meet_pixel_screen": true,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-03-20",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "descending",
+          "relative_orbit": 34,
+          "absolute_orbit": 58381,
+          "candidate_orbit_groups": 7,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250320T010323_20250320T010348_058381_073817_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250320T010323_20250320T010348_058381_073817_rtc",
+              "asset_checksum": "fefe74a44570191babf8809e37acbc05",
+              "asset_bytes": 1828111682
+            }
+          ],
+          "valid_pixels": 6219661,
+          "aoi_pixels": 6219661,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-06-24",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "descending",
+          "relative_orbit": 34,
+          "absolute_orbit": 59781,
+          "candidate_orbit_groups": 8,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250624T010321_20250624T010346_059781_076C8D_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250624T010321_20250624T010346_059781_076C8D_rtc",
+              "asset_checksum": "618f3a0ee82e1ff34c285373efbd103e",
+              "asset_bytes": 1844691714
+            }
+          ],
+          "valid_pixels": 6219661,
+          "aoi_pixels": 6219661,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-09-04",
+          "platform": "sentinel-1a",
+          "orbit_state": "descending",
+          "relative_orbit": 34,
+          "absolute_orbit": 60831,
+          "candidate_orbit_groups": 7,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250904T010320_20250904T010345_060831_0792E0_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250904T010320_20250904T010345_060831_0792E0_rtc",
+              "asset_checksum": "60adaf8d4f449817629f5e917b77e347",
+              "asset_bytes": 1851954021
+            }
+          ],
+          "valid_pixels": 6219661,
+          "aoi_pixels": 6219661,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-11-15",
+          "platform": "sentinel-1a",
+          "orbit_state": "descending",
+          "relative_orbit": 34,
+          "absolute_orbit": 61881,
+          "candidate_orbit_groups": 7,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20251115T010319_20251115T010344_061881_07BCC1_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20251115T010319_20251115T010344_061881_07BCC1_rtc",
+              "asset_checksum": "eb6cd76665d785e6f2bd1d87b83c1743",
+              "asset_bytes": 1837281355
+            }
+          ],
+          "valid_pixels": 6219661,
+          "aoi_pixels": 6219661,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "International",
+      "city": "Bangkok",
+      "bbox_wgs84": "100.386195,13.644011,100.617405,13.868589",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 4,
+      "all_four_quarters_meet_pixel_screen": true,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-01-04",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 172,
+          "absolute_orbit": 57294,
+          "candidate_orbit_groups": 16,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250104T112857_20250104T112922_057294_070C93_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250104T112857_20250104T112922_057294_070C93_rtc",
+              "asset_checksum": "f79878caa6280d19d4a83b663b8bec83",
+              "asset_bytes": 1856093159
+            }
+          ],
+          "valid_pixels": 6211849,
+          "aoi_pixels": 6211930,
+          "valid_fraction": 0.999987,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-06-07",
+          "platform": "sentinel-1c",
+          "orbit_state": "descending",
+          "relative_orbit": 62,
+          "absolute_orbit": 2683,
+          "candidate_orbit_groups": 16,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1C_IW_GRDH_1SDV_20250607T230832_20250607T230902_002683_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1C_IW_GRDH_1SDV_20250607T230832_20250607T230902_002683_rtc",
+              "asset_checksum": "3e0f7a0abe886c5a443ae4ca841f5d6b",
+              "asset_bytes": 2180032511
+            }
+          ],
+          "valid_pixels": 6211849,
+          "aoi_pixels": 6211930,
+          "valid_fraction": 0.999987,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-07-07",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "descending",
+          "relative_orbit": 62,
+          "absolute_orbit": 59984,
+          "candidate_orbit_groups": 22,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250707T230922_20250707T230947_059984_0773A5_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250707T230922_20250707T230947_059984_0773A5_rtc",
+              "asset_checksum": "034843b4686995fe92ba95e852ccae7c",
+              "asset_bytes": 1867838840
+            }
+          ],
+          "valid_pixels": 6211849,
+          "aoi_pixels": 6211930,
+          "valid_fraction": 0.999987,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-11-24",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 172,
+          "absolute_orbit": 62019,
+          "candidate_orbit_groups": 19,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20251124T112851_20251124T112916_062019_07C21D_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20251124T112851_20251124T112916_062019_07C21D_rtc",
+              "asset_checksum": "254bc18f890435071c01d4928bbce7bf",
+              "asset_bytes": 1855388235
+            }
+          ],
+          "valid_pixels": 6211849,
+          "aoi_pixels": 6211930,
+          "valid_fraction": 0.999987,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "International",
+      "city": "Tokyo",
+      "bbox_wgs84": "139.512069,35.563911,139.788531,35.788489",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 4,
+      "all_four_quarters_meet_pixel_screen": true,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-02-24",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "descending",
+          "relative_orbit": 46,
+          "absolute_orbit": 58043,
+          "candidate_orbit_groups": 9,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250224T204348_20250224T204413_058043_072A84_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250224T204348_20250224T204413_058043_072A84_rtc",
+              "asset_checksum": "4f5ec51576df71ad6879a64de8ae5d6e",
+              "asset_bytes": 1856026901
+            }
+          ],
+          "valid_pixels": 6233708,
+          "aoi_pixels": 6233771,
+          "valid_fraction": 0.99999,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-04-25",
+          "platform": "sentinel-1a",
+          "orbit_state": "ascending",
+          "relative_orbit": 39,
+          "absolute_orbit": 58911,
+          "candidate_orbit_groups": 15,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250425T084220_20250425T084245_058911_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250425T084220_20250425T084245_058911_rtc",
+              "asset_checksum": "ad0c63587a970aafbf38895f2b9a7cd5",
+              "asset_bytes": 1645448054
+            }
+          ],
+          "valid_pixels": 6233708,
+          "aoi_pixels": 6233771,
+          "valid_fraction": 0.99999,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-08-23",
+          "platform": "sentinel-1a",
+          "orbit_state": "descending",
+          "relative_orbit": 46,
+          "absolute_orbit": 60668,
+          "candidate_orbit_groups": 14,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250823T204345_20250823T204410_060668_078C6B_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250823T204345_20250823T204410_060668_078C6B_rtc",
+              "asset_checksum": "b2566067954b31ee463c2b7b3801e88c",
+              "asset_bytes": 1856493604
+            }
+          ],
+          "valid_pixels": 6233708,
+          "aoi_pixels": 6233771,
+          "valid_fraction": 0.99999,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-10-04",
+          "platform": "sentinel-1c",
+          "orbit_state": "ascending",
+          "relative_orbit": 39,
+          "absolute_orbit": 4410,
+          "candidate_orbit_groups": 15,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1C_IW_GRDH_1SDV_20251004T084059_20251004T084124_004410_008BC6_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1C_IW_GRDH_1SDV_20251004T084059_20251004T084124_004410_008BC6_rtc",
+              "asset_checksum": "bf92b9ec376354b6db306675e3603109",
+              "asset_bytes": 1838251105
+            },
+            {
+              "id": "S1C_IW_GRDH_1SDV_20251004T084124_20251004T084149_004410_008BC6_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1C_IW_GRDH_1SDV_20251004T084124_20251004T084149_004410_008BC6_rtc",
+              "asset_checksum": "948b90c866c018a9d6418c179a7f079e",
+              "asset_bytes": 1852658662
+            }
+          ],
+          "valid_pixels": 6233708,
+          "aoi_pixels": 6233771,
+          "valid_fraction": 0.99999,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "International",
+      "city": "Manila",
+      "bbox_wgs84": "120.868164,14.487211,121.100236,14.711789",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 4,
+      "all_four_quarters_meet_pixel_screen": true,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-03-19",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "descending",
+          "relative_orbit": 32,
+          "absolute_orbit": 58379,
+          "candidate_orbit_groups": 7,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250319T214708_20250319T214733_058379_073801_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250319T214708_20250319T214733_058379_073801_rtc",
+              "asset_checksum": "4644afc0076766153c743a7e74f80ad5",
+              "asset_bytes": 1853672019
+            }
+          ],
+          "valid_pixels": 6215588,
+          "aoi_pixels": 6215697,
+          "valid_fraction": 0.999982,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-05-06",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "descending",
+          "relative_orbit": 32,
+          "absolute_orbit": 59079,
+          "candidate_orbit_groups": 14,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250506T214708_20250506T214733_059079_07544F_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250506T214708_20250506T214733_059079_07544F_rtc",
+              "asset_checksum": "5393933d979992c6a5ad76a966df8953",
+              "asset_bytes": 1854831598
+            }
+          ],
+          "valid_pixels": 6215588,
+          "aoi_pixels": 6215697,
+          "valid_fraction": 0.999982,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-08-28",
+          "platform": "sentinel-1c",
+          "orbit_state": "descending",
+          "relative_orbit": 32,
+          "absolute_orbit": 3878,
+          "candidate_orbit_groups": 21,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1C_IW_GRDH_1SDV_20250828T214559_20250828T214624_003878_007BA5_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1C_IW_GRDH_1SDV_20250828T214559_20250828T214624_003878_007BA5_rtc",
+              "asset_checksum": "5f02e6fb9acf081f14eb01eac4e66e0e",
+              "asset_bytes": 1857119135
+            }
+          ],
+          "valid_pixels": 6215588,
+          "aoi_pixels": 6215697,
+          "valid_fraction": 0.999982,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-10-23",
+          "platform": "sentinel-1c",
+          "orbit_state": "ascending",
+          "relative_orbit": 142,
+          "absolute_orbit": 4688,
+          "candidate_orbit_groups": 22,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1C_IW_GRDH_1SDV_20251023T100559_20251023T100624_004688_009438_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1C_IW_GRDH_1SDV_20251023T100559_20251023T100624_004688_009438_rtc",
+              "asset_checksum": "f4c93d711050eba694f82cb5483b97c0",
+              "asset_bytes": 1854827134
+            }
+          ],
+          "valid_pixels": 6215588,
+          "aoi_pixels": 6215697,
+          "valid_fraction": 0.999982,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    },
+    {
+      "region": "International",
+      "city": "S\u00e3o Paulo",
+      "bbox_wgs84": "-46.755791,-23.662789,-46.510809,-23.438211",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 3,
+      "all_four_quarters_meet_pixel_screen": false,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-03-26",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "descending",
+          "relative_orbit": 126,
+          "absolute_orbit": 58473,
+          "candidate_orbit_groups": 10,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250326T083909_20250326T083934_058473_073BBD_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250326T083909_20250326T083934_058473_073BBD_rtc",
+              "asset_checksum": "10593ccc9be2043dd42e121e33462a7d",
+              "asset_bytes": 1863627541
+            }
+          ],
+          "valid_pixels": 5741,
+          "aoi_pixels": 6220678,
+          "valid_fraction": 0.000923,
+          "meets_80pct_pixel_coverage_screen": false,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-06-01",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "descending",
+          "relative_orbit": 53,
+          "absolute_orbit": 59450,
+          "candidate_orbit_groups": 22,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250601T083112_20250601T083141_059450_07613A_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250601T083112_20250601T083141_059450_07613A_rtc",
+              "asset_checksum": "05ec7ab1b9f22be33711d2baa26a1ab3",
+              "asset_bytes": 2097868247
+            }
+          ],
+          "valid_pixels": 6220678,
+          "aoi_pixels": 6220678,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 3,
+          "date": "2025-09-05",
+          "platform": "sentinel-1a",
+          "orbit_state": "descending",
+          "relative_orbit": 53,
+          "absolute_orbit": 60850,
+          "candidate_orbit_groups": 27,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250905T083110_20250905T083139_060850_0793A0_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250905T083110_20250905T083139_060850_0793A0_rtc",
+              "asset_checksum": "e4daa9021debf8bc5ff7e8bd23b926b4",
+              "asset_bytes": 2102244808
+            }
+          ],
+          "valid_pixels": 6220678,
+          "aoi_pixels": 6220678,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 4,
+          "date": "2025-11-22",
+          "platform": "sentinel-1c",
+          "orbit_state": "descending",
+          "relative_orbit": 53,
+          "absolute_orbit": 5124,
+          "candidate_orbit_groups": 24,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1C_IW_GRDH_1SDV_20251122T083017_20251122T083042_005124_00A28C_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1C_IW_GRDH_1SDV_20251122T083017_20251122T083042_005124_00A28C_rtc",
+              "asset_checksum": "52c31a1eb3d1f2ed15f0162484a4232f",
+              "asset_bytes": 1865252682
+            }
+          ],
+          "valid_pixels": 6220678,
+          "aoi_pixels": 6220678,
+          "valid_fraction": 1.0,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        }
+      ]
+    }
+  ]
+}

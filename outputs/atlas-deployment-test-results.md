@@ -2,13 +2,13 @@
 
 **Run date:** 2026-11-02\
 **Production Site:** [ATLAS | Water Exposure Screening](https://atlas-water-screening.shawdaimarie.chatgpt.site/) (private owner-only access)\
-**Current published Site version:** 15
-**Current source commit deployed:** `07d6c103d7612d34f0bb6e8e6bd1a7792b6bc2c9`
-**Version provenance:** Sites readback matched version 15 to the deployed source commit and deployment `appgdep_6ae954d29ca48191977d5426931aea8e`; deployment status was `succeeded` at the existing private URL.
+**Current published Site version:** 20
+**Current source commit deployed:** `8d21a79217bd08ee89518a0ce405fec1c89533de`
+**Version provenance:** Sites readback matched version 20 to source commit `8d21a79217bd08ee89518a0ce405fec1c89533de`; deployment `appgdep_6ae9e7ad7fdc8191a79508eaad54fb99` reports `succeeded` at the existing private URL.
 
 ## Result summary
 
-The private static Site is deployed (version 15) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. The register is an archive metadata discovery screen; its scenes have not been downloaded or pixel-QA audited for the 16 enrolled candidates. Therefore the project is **not 100/100** and the study areas are not yet fully validated.
+The private static Site is deployed (version 20) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. The register is an archive metadata discovery screen; its scenes have not been downloaded or pixel-QA audited for the 16 candidate areas. Therefore the project is **not 100/100** and the study areas are not fully validated.
 
 ## Checks completed
 
@@ -464,3 +464,16 @@ This status supersedes the earlier version 10/11 entries below; those are retain
 - In the pinned Python 3.12 Bookworm environment, installed requirements-dev.lock and requirements-reference-audit.lock with --require-hashes; python -m pytest -q passed **67 tests in 1.22s**. A macOS/Python 3.9 venv attempt cannot collect three research-audit tests because Shapely is absent; it is not the target-runtime result. git diff --check passed with existing CSV line-ending notices.
 - The blank-example release preflight (scripts/validate_cloud_inputs.py --example --release-ready) fails closed on **30 named account, billing, region, budget, hostname, and federated-identity requirements**. It confirms no cloud resources were created. This is a checklist result, not a read of account-specific credentials or proof that an account application has completed.
 - Current project content is synced to private GitHub main at commit 67f68d82c48b9679cfb1184b383599398717fff0. GitHub Actions [run 41646127573](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41646127573) succeeded: **67 tests passed in 1.31s**, the 16-area footprint screen passed, the container built and passed **11/11 HTTP smoke checks**, the runtime image audit passed, and dependency scanning found no known vulnerabilities. Cloud-provider deployment, provider-hosted end-to-end workflows, production recovery/capacity validation, and independent study-area labels remain unverified. The canonical score stays **55/100 provisional**.
+
+## Three-draw coverage panel release (2026-11-03 UTC)
+
+- Added the third separately seeded Planetary Computer Sentinel-1 RTC 2025 availability sample for the same 8 U.S. and 8 international fixed AOIs. It completed **59/64** quarter-group spatial-coverage passes; **12/16** areas passed all four groups in that draw. Across all three draws: **168/192** selected groups passed, **173** unique orbit groups were selected, **19** selections repeated, **150** unique groups passed, and **10/16** areas passed all 12 selections. These are finite/non-nodata VV availability measurements, not flood classification, event adequacy, independent truth, or comparability evidence.
+- The three-draw export and Site table now show each draw (A/B/C), 12 selections per area, repeated-group counts, and interpretation limits. The hash-locked Python 3.12 Bookworm suite passed **67 tests in 1.29s** using `requirements-dev.lock` and `requirements-reference-audit.lock`; `git diff --check` passed with existing CSV line-ending notices.
+- Published private Site version **20** from source commit `8d21a79217bd08ee89518a0ce405fec1c89533de`. Sites deployment `appgdep_6ae9e7ad7fdc8191a79508eaad54fb99` returned and independently read back `succeeded` at the existing owner-only URL. The live HTTP request from this environment returns 403 because the Site is private; CUA browser automation reported `browser.user is unavailable`, so a fresh visual interaction replay was not possible in this run. The verified deployment and passing regression tests do not substitute for that browser replay.
+- The canonical score remains **55/100 provisional**; confirmatory enrollment is **0/16**. The third availability draw adds no rubric points and does not satisfy the user's overall 100/100 goal.
+
+## Sen1Floods11 footprint audit and expanded regression run (2026-11-03 UTC)
+
+- The public v1.1 hand-label STAC catalog lists 447 metadata objects including its collection file; all **446/446** chip items were parsed and their label-chip bboxes compared to all 16 fixed AOIs. Positive-area overlap was **0/16**, so the archive adds no site-specific reference pixels. Full per-item provenance is in `outputs/atlas-sen1floods11-label-footprint-audit.json`; reproduction uses `scripts/audit_sen1floods11_coverage.py`.
+- Added offline regression checks for positive-area bbox logic and the saved complete 8+8 audit. With development and reference-audit dependencies installed using `--require-hashes` in Python 3.12 Bookworm, the full suite passes **69 tests in 1.06s**. `git diff --check` passes with the previously noted CSV line-ending notices.
+- The result reinforces that the candidate register still lacks independent, spatially matched validation chips. Canonical score remains **55/100 provisional**, with no confirmatory enrollment.
