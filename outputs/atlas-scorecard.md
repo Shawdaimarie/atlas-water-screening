@@ -4,9 +4,9 @@ Updated: 2026-11-03. Scope: privately hosted synthetic walkthrough plus local fi
 
 **Current score: 55/100, author-verified and provisional.** No independent reproduction has occurred. The score follows the strict 5-point criterion rule. A deployment does not make synthetic data into a historical observation and does not earn unrelated reliability or scale points.
 
-**Latest deployment check (2026-11-03):** private Site v23 is successful; authenticated production replay shows the 8+8 readiness ledger and its live JSON route returns all 16 areas. The hash-locked Python 3.12 suite passed 77 tests. These are demo and engineering checks only; the score remains 55/100 because real matched event observations, independent labels, confirmatory enrollment, cloud deployments, and independent reproduction remain unmet.
+**Latest deployment check (2026-11-03):** private Site v24 is successful; the authenticated production page and live ledger JSON route return all 16 areas and the register SHA-256 among 12 input hashes. The hash-locked Python 3.12 suite passes 78 tests. These are demo and engineering checks only; the score remains 55/100 because real matched event observations, independent labels, confirmatory enrollment, cloud deployments, and independent reproduction remain unmet.
 
-Private GitHub main has the matching evidence/source sync at `f105bd9296a15f8e65afa67f5bc4afaae236ddd3`; its CI run [41657160927](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41657160927) passed 77 tests, GEOID-Flood footprint check, container build/audit, 11/11 HTTP smoke tests, and dependency scanning.
+Private GitHub main is still at the v23 evidence/source sync `f105bd9296a15f8e65afa67f5bc4afaae236ddd3`; its CI run [41657160927](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41657160927) passed 77 tests, GEOID-Flood footprint check, container build/audit, 11/11 HTTP smoke tests, and dependency scanning. The v24 register-hash update has not yet been synced or run in CI.
 
 | Category | Points | Evidence and result |
 |---|---:|---|

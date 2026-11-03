@@ -112,8 +112,11 @@ def build_ledger() -> dict:
         raise ValueError("No confirmatory site may be inferred from source intersection counts")
 
     source_hashes = {
-        name: hashlib.sha256((OUT / name).read_bytes()).hexdigest()
-        for name in INPUTS.values()
+        "data/study_area_register.json": hashlib.sha256(REGISTER.read_bytes()).hexdigest(),
+        **{
+            name: hashlib.sha256((OUT / name).read_bytes()).hexdigest()
+            for name in INPUTS.values()
+        },
     }
     summary = {
         "candidate_areas": len(rows),

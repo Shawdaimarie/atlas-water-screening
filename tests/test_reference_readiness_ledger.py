@@ -19,6 +19,15 @@ def test_reference_readiness_ledger_balances_all_areas_and_preserves_unknowns():
     assert new_orleans["spacenet8_unique_object_references"] == 4500
 
 
+def test_reference_ledger_hashes_the_register_that_defines_its_area_rows():
+    ledger = build_ledger()
+    root = Path(__file__).resolve().parents[1]
+    import hashlib
+
+    expected = hashlib.sha256((root / "data/study_area_register.json").read_bytes()).hexdigest()
+    assert ledger["input_sha256"]["data/study_area_register.json"] == expected
+
+
 def test_reference_ledger_card_reports_limits_and_both_downloads():
     html = render_card(build_ledger())
     assert "0/16 confirmatory sites eligible" in html

@@ -485,7 +485,8 @@
     "atlas-s1rtc-pixel-coverage-combined-audit.json": "7e7d923017c9a0c4ace75b916ffcebc35d1754fdfb92297758f252651452cc24",
     "atlas-sen1floods11-label-footprint-audit.json": "f639ebdb70daf7c279c6871c7e502ed977fee4950da6d9e78031d43ae5477ab6",
     "atlas-spacenet8-louisiana-coverage-audit.json": "f71302888615dc2dda1e8b45018603c4f8cdf436fc9d2137974704c7c78dcfe1",
-    "atlas-ufo-dataset-coverage-audit.json": "aac8c6e594200d991fe362090fe02cf1e4cf6d28c4b0c89a7eee326f7859ba6a"
+    "atlas-ufo-dataset-coverage-audit.json": "aac8c6e594200d991fe362090fe02cf1e4cf6d28c4b0c89a7eee326f7859ba6a",
+    "data/study_area_register.json": "c44f866942a2f99f01141fb6a7baeea09a9b61a57db1beafb77a7f686de646d6"
   },
   "interpretation_limits": [
     "Counts are source-specific and are not comparable sample sizes across sensors or label types.",
