@@ -169,3 +169,23 @@ def test_live_site_source_exposes_s1rtc_sample_table_and_download():
     assert (ROOT / "dist/s1rtc-pixel-coverage-unique.json").read_bytes() == (
         ROOT / "outputs/atlas-s1rtc-pixel-coverage-combined-audit.json").read_bytes()
     assert not (ROOT / "dist/s1rtc-pixel-coverage-replicates.json").exists()
+
+
+def test_evidence_export_includes_selected_scenario_and_measurement_provenance():
+    site_html = (ROOT / "dist/index.html").read_text()
+    handler = site_html.split("$('export').onclick=()=>{", 1)[1].split(";let timer", 1)[0]
+    for field in (
+        "study_area", "event", "event_window", "baseline_window", "collection",
+        "asset_id", "method", "observed_overlap_percent", "valid_coverage_percent",
+        "fixture_confidence_percent", "data_status",
+    ):
+        assert f"'{field}'" in handler
+    assert "const eventKey=$('event').value" in handler
+    assert "const eventName=eventKey==='ida'?'Hurricane Ida':'Hurricane Beryl'" in handler
+    assert "2021-08-29/2021-08-30" in handler
+    assert "2021-08-15/2021-08-25" in handler
+    assert "2024-07-08/2024-07-10" in handler
+    assert "2024-06-24/2024-07-04" in handler
+    assert "OPERA DSWx-S1 V1 schema reference; no granule loaded" in handler
+    assert "synthetic_fixture_no_live_NASA_data" in handler
+    assert "atlas-${area}-${eventKey}-${mode}-fixture.csv" in handler
