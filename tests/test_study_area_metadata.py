@@ -39,6 +39,9 @@ def test_validation_protocol_has_equal_8_plus_8_design_and_no_false_adequacy_cla
     assert protocol["study_areas"]["united_states"] == 8
     assert protocol["study_areas"]["international"] == 8
     assert protocol["state"] == "proposed_not_externally_preregistered"
+    assert protocol["version"] == 2
+    assert protocol["exploratory_findings_excluded_from_confirmatory"] is True
+    assert "externally timestamped" in protocol["confirmatory_freeze_record"]
     assert discovery["feasibility_floors_establish_statistical_adequacy"] is False
     assert PROTOCOL["enrollment"]["current_confirmatory_areas"] == 0
     assert PROTOCOL["reference_labels"]["independent_labelers"] == 2
