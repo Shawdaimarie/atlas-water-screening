@@ -2,7 +2,7 @@
 
 **Production Site:** [Open ATLAS](https://atlas-water-screening.shawdaimarie.chatgpt.site/)
 
-**Current deployed version:** 23 (deployment `appgdep_6ae9f349bbf88191bd90035e54ed546f` succeeded; source commit `2eb8cf562d9a2257dd012b422c1852cfa464e140`)
+**Current deployed version:** 26 (deployment `appgdep_6ae9fdf7f734819197e7b932a45cd7dd` succeeded; source commit `22a1c4b10242bde77a838651c86de37f0f8a12a8`)
 
 **Access:** private; sign in with the authorized owner account.
 
@@ -20,11 +20,11 @@ The page is an interactive research walkthrough with synthetic analysis fixtures
 6. Select an asset row to open its evidence details, then use the evidence export and confirm the success message and synthetic label.
 7. Use **Reset** to restore the baseline, then return to a preferred study-area profile.
 
-8. Review the **Sentinel-1 coverage** panel. Compare draws A, B, and C in each quarter, open the multi-draw JSON download, and note repeated groups and the 80% spatial-data coverage floor. The current screen shows 168/192 selected groups above the threshold and 10/16 areas passing all 12 selections. Treat this as availability only; it does not validate water classification, event coverage, or independent labels. Then review the **Shared validation protocol** below the reference-coverage panel. It explains the common 30 m measurement, independent event evidence, blinded label review, probability sampling, and the 385-unit starting precision calculation. The page labels this as a proposed design and states that 0 of 16 candidate areas currently qualify for confirmatory validation. Use **Open the full proposed protocol** to read the private source document.
+8. Review the **Sentinel-1 coverage** panel. Review the unique 192-group JSON audit and the 80% spatial-data coverage floor. The current screen shows 169/192 distinct area/orbit groups above the threshold and 10/16 areas passing all 12 selections; duplicate selections were removed. Treat this as availability only; it does not validate water classification, event coverage, or independent labels. Then review the **Shared validation protocol** below the reference-coverage panel. It explains the common 30 m measurement, independent event evidence, blinded label review, probability sampling, and the 385-unit starting precision calculation. The page labels this as a proposed design and states that 0 of 16 candidate areas currently qualify for confirmatory validation. Use **Open the full proposed protocol** to read the private source document.
 
 ## Verified live workflows
 
-Version 23 is the active private production release. Authenticated replay verifies the 16-area ledger card and download links. The production JSON route displays all 16 AOIs and confirms 0 confirmatory sites; the source-derived summary is 168/192 sampled RTC groups passing the 80% availability screen, 10/16 areas passing all 12 sampled groups, and four areas with some spatial reference lead. The hash-locked Python 3.12 suite passes 77 tests. These checks verify the walkthrough and source-coverage reports only; they do not verify flood classification, scientific accuracy, a connected production API, or cloud-provider deployment. Full record: `atlas-deployment-test-results.md`.
+Version 26 is the active private production release. Authenticated replay verifies the 16-area candidate register, updated unique-coverage panel, and download links. The audit JSON confirms 192 distinct groups and 0 confirmatory sites; 169/192 meet the spatial availability screen, with 10/16 areas passing all 12 samples. The hash-locked Python 3.12 suite passes 81 tests. These checks verify the walkthrough and source-coverage reports only; they do not verify flood classification, scientific accuracy, a connected production API, or cloud-provider deployment. Full record: `atlas-deployment-test-results.md`.
 
 The user intends to use an existing Apple account for a future release. ATLAS is currently a private web Site, not an Apple-hosted service or an iOS app. No iOS target or Apple distribution build has been verified; the browser deployment remains the way to observe this walkthrough.
 
