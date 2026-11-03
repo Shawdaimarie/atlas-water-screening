@@ -46,3 +46,5 @@ Updated: 2026-11-03
 - The v18 live download revealed a missing nodata summary field; code and regression assertions now carry STAC nodata values through the paired download. Site v19 was republished and the live download was verified; both local and Python 3.12 hash-locked suites pass 56 tests.
 
 - Site v19 deployment `appgdep_6ae961fb3d288191a2e8fb177451041c` is successful. Its live paired audit reports `source_declared_nodata_values: [-32768]`; end-to-end JSON route verified.
+
+- Corrected private GitHub source snapshot `f2a3b938c7c84c4de9b8da62f26f8c18ba849b04` passed [Actions run 41578752221](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41578752221): 56 tests, all-area GEOID-Flood footprint audit, container build and runtime image audit, 11/11 HTTP smoke checks, and dependency-security job. No provider cloud deployment was performed.

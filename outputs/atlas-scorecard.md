@@ -81,3 +81,5 @@ Complete held-out real-event data and labels; actual raster ingest and provenanc
 - This provides a real-input pipeline and fail-closed gate demonstration. It does not satisfy the complete historical observation workflow or any additional rubric criterion. Score remains **55/100 provisional** after clean-checkout reproduction; the added points are documentation/reproducibility only, not scientific validation. Reproduction package: `outputs/atlas-texas-raster-pilot/`.
 
 - Latest v19 deployment: paired download shows source nodata `-32768`, all 16 areas, and source item identifiers/checksums; local and Python 3.12 hash-locked suites each pass 56 tests. Score remains 55/100 provisional because scientific-validation, user-study, cloud deployment, capacity, and independent-reproduction criteria remain unmet.
+
+- Corrected private repository snapshot `f2a3b938c7c84c4de9b8da62f26f8c18ba849b04` passed [Actions run 41578752221](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41578752221). Results: 56 tests, GEOID-Flood screen, container build, 11/11 HTTP checks, runtime image and dependency audits. No cloud-hosted deployment was tested.

@@ -17,7 +17,7 @@ Updated: 2026-11-03. Scope: privately hosted synthetic walkthrough plus local fi
 
 ## Verification record
 
-- Current v17 checks (2026-11-03): local suite **56 passed**; Python 3.12 Bookworm hash-locked rerun **56 passed**. The active owner-only Site reports successful version 17 deployment; live browser checks verified paired availability samples, selected New York City and exposed its five-of-eight sampled result, switched to the synthetic quality-aware aggregate, exercised Hurricane Ida and reset flows, and triggered both register and evidence exports. These remain walkthrough/fixture checks; score stays 55/100 pending scientific, user-study, cloud, capacity, and independent-reproduction criteria.
+- Current v19 checks (2026-11-03): local suite **56 passed**; Python 3.12 Bookworm hash-locked rerun **56 passed**. The active owner-only Site reports successful version 17 deployment; live browser checks verified paired availability samples, selected New York City and exposed its five-of-eight sampled result, switched to the synthetic quality-aware aggregate, exercised Hurricane Ida and reset flows, and triggered both register and evidence exports. These remain walkthrough/fixture checks; score stays 55/100 pending scientific, user-study, cloud, capacity, and independent-reproduction criteria.
 
 - Initial local API smoke/test snapshot: `.venv/bin/python -m pytest -q` — **7 passed** on macOS/Python 3.9, project commit `44741a7`. Superseded by the current 31-test suite and the clean-checkout run below; retained as historical evidence.
 - Live local API smoke: `/api/health` returned 200 with `live_nasa_ingestion:false`; aggregate analysis returned 200 with 12 synthetic records; CSV export returned 200 with 12 records plus header.
@@ -85,3 +85,5 @@ Complete held-out real-event data and labels; actual raster ingest and provenanc
 - Site v18 replaces a duplicate-heavy download with a compact all-area sample file; it preserves item IDs and checksums but does not change the score. Full per-run evidence is retained separately.
 
 - Site v19 live JSON verification confirms the source-declared nodata value (`-32768`) and all sample records. Local and Python 3.12 hash-locked suites pass 56 tests. This is an evidence-reporting correction only; score remains 55/100 provisional.
+
+- Corrected private main commit `f2a3b938c7c84c4de9b8da62f26f8c18ba849b04` passed [Actions run 41578752221](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41578752221): 56 tests, all-area reference footprint audit, container build, 11/11 HTTP checks, runtime image audit, and dependency security. This confirms code/release candidate checks, not four-cloud deployment or scientific validation.
