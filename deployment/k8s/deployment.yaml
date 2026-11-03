@@ -42,11 +42,14 @@ spec:
             - name: ATLAS_CORS_ORIGINS
               value: https://REPLACE_WITH_APPROVED_FRONTEND_ORIGIN
             - name: ATLAS_ALLOWED_HOSTS
-              value: REPLACE_WITH_APPROVED_API_HOSTNAME
+              value: REPLACE_WITH_APPROVED_API_HOSTNAME,localhost
           readinessProbe:
             httpGet:
               path: /api/health
               port: http
+              httpHeaders:
+                - name: Host
+                  value: localhost
             periodSeconds: 5
             timeoutSeconds: 2
             failureThreshold: 3
@@ -54,6 +57,9 @@ spec:
             httpGet:
               path: /api/health
               port: http
+              httpHeaders:
+                - name: Host
+                  value: localhost
             periodSeconds: 15
             timeoutSeconds: 2
             failureThreshold: 3
