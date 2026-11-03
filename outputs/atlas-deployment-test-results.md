@@ -1,12 +1,21 @@
 # ATLAS deployment and verification results
 
-**Run date:** 2026-11-02\
+**Run date:** 2026-11-03\
 **Production Site:** [ATLAS | Water Exposure Screening](https://atlas-water-screening.shawdaimarie.chatgpt.site/) (private owner-only access)\
-**Current published Site version:** 21
-**Current source commit deployed:** `ff1e8f40ac8fc0b858fe242304131e25f013a7fe`
-**Version provenance:** Sites readback matched version 21 to source commit `ff1e8f40ac8fc0b858fe242304131e25f013a7fe`; deployment `appgdep_6ae9ea86f2a08191a1938abc73ab1d50` reports `succeeded` at the existing private URL.
+**Current published Site version:** 26
+**Current source commit deployed:** `22a1c4b10242bde77a838651c86de37f0f8a12a8`
+**Version provenance:** Site v26 source commit `22a1c4b10242bde77a838651c86de37f0f8a12a8`; deployment `appgdep_6ae9fdf7f734819197e7b932a45cd7dd` reports `succeeded` at the existing private URL.
 
-## Current release: Site v21 (2026-11-03)
+## Current release: Site v26 (2026-11-03)
+
+- Production deployment succeeded at the existing private owner-only URL. Site version 26 is tied to source commit `22a1c4b10242bde77a838651c86de37f0f8a12a8`; deployment `appgdep_6ae9fdf7f734819197e7b932a45cd7dd` returned `succeeded`.
+- Authenticated live walkthrough confirmed 16 candidate rows (8 U.S., 8 international), the updated coverage table with three distinct sampled groups for each quarter, and headline results of 169/192 groups above the 80% spatial-coverage floor and 10/16 areas passing all 12 samples.
+- Opened the live `s1rtc-pixel-coverage-unique.json` download route and inspected its response. It reports 192 selected/192 unique groups, zero duplicate selections, 16 areas (8+8), 169 passing samples, the `-32768` source nodata value, and provenance for all sample groups.
+- Live interaction replay changed the scenario to Baton Rouge/Hurricane Ida and selected the quality-aware aggregate. The interface changed its median synthetic overlap from 7.7% to 6.8%, elevated asset count from 4 to 3, and leading asset overlap from 28.6% to 21.4%; labels continue to identify the fixtures as synthetic. Browser console reported zero errors.
+- Full Python 3.12 suite with hash-locked development and reference-audit dependencies: **81 passed in 1.30s**. This includes the new deterministic replacement/uniqueness checks and the updated Site and ledger assertions. The local macOS Python 3.9 environment lacks Shapely, so it is not used as the full-suite result.
+- The RTC rerun made 19 replacement raster reads to remove repeats from the prior 173 unique groups. The final sample is a real Sentinel-1 RTC VV availability screen, not OPERA classification, event/baseline sufficiency, independent ground truth, or validation. The stale duplicate-prone report was removed from the v26 package. The project score remains **55/100 provisional**, not 100/100; no confirmatory area is eligible.
+
+## Earlier release: Site v21 (2026-11-03)
 
 - Sites readback identifies active version 21, owner-only access for `the owner account`, source commit `ff1e8f40ac8fc0b858fe242304131e25f013a7fe`, and successful production deployment `appgdep_6ae9ea86f2a08191a1938abc73ab1d50` at the existing private URL.
 - The builder no longer applies the duplicated third-draw heading rewrite. A regression assertion guards against the invalid `A / B / C / C` label; the live table visibly renders Q1–Q4 with A/B/C sample columns.
@@ -17,7 +26,7 @@
 
 ## Result summary
 
-The private static Site is deployed (version 20) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. The register is an archive metadata discovery screen; its scenes have not been downloaded or pixel-QA audited for the 16 candidate areas. Therefore the project is **not 100/100** and the study areas are not fully validated.
+The private static Site is deployed (version 25) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. The register is an archive metadata discovery screen; its scenes have not been downloaded or pixel-QA audited for the 16 candidate areas. Therefore the project is **not 100/100** and the study areas are not fully validated.
 
 ## Checks completed
 

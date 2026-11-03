@@ -10,7 +10,7 @@ def test_reference_readiness_ledger_balances_all_areas_and_preserves_unknowns():
     assert ledger["summary"]["us_areas"] == 8
     assert ledger["summary"]["international_areas"] == 8
     assert ledger["summary"]["confirmatory_areas_eligible"] == 0
-    assert ledger["summary"]["rtc_groups_passing_80pct"] == 168
+    assert ledger["summary"]["rtc_groups_passing_80pct"] == 169
     assert ledger["summary"]["rtc_groups_sampled"] == 192
     assert ledger["summary"]["areas_passing_all_12_rtc_samples"] == 10
     new_orleans = next(x for x in ledger["areas"] if x["city"] == "New Orleans")

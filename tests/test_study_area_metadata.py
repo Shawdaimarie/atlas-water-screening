@@ -140,14 +140,14 @@ def test_s1rtc_real_pixel_coverage_audit_is_balanced_and_clearly_limited():
 def test_live_site_source_exposes_s1rtc_sample_table_and_download():
     site_html = (ROOT / "dist/index.html").read_text()
     assert "Sentinel-1 coverage varies across the candidate areas" in site_html
-    assert "168 / 192" in site_html
+    assert "169 / 192" in site_html
     assert "10 / 16" in site_html
-    assert "Compare 12 sampled dates" in site_html
+    assert "Compare 12 unique sampled dates" in site_html
     assert "A / B / C" in site_html
     assert "A / B / C / C" not in site_html
     assert 'id="rtcCoverageRows"' in site_html
     assert "renderS1rtcAreaCoverage" in site_html
-    assert 'href="s1rtc-pixel-coverage-replicates.json"' in site_html
+    assert 'href="s1rtc-pixel-coverage-unique.json"' in site_html
     assert 'href="https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc"' in site_html
     combined = json.loads((ROOT / "outputs/atlas-s1rtc-pixel-coverage-combined-audit.json").read_text())
     assert combined["measurement"]["source_declared_nodata_values"] == [-32768]
@@ -157,13 +157,15 @@ def test_live_site_source_exposes_s1rtc_sample_table_and_download():
                for sample in quarter["samples"])
     assert combined["summary"] == {
         "areas": 16, "us_areas": 8, "international_areas": 8,
-        "separately_seeded_draws_per_area": 3, "separately_seeded_draws_per_quarter": 3,
+        "sampling_design": "Three distinct sampled orbit groups per quarter; without replacement within each area and quarter.",
         "selected_groups_per_area": 12, "selected_orbit_groups": 192,
-        "unique_orbit_groups": 173, "duplicate_group_selections": 19,
-        "selected_groups_above_80pct": 168, "unique_groups_above_80pct": 150,
+        "unique_orbit_groups": 192, "duplicate_group_selections": 0,
+        "selected_groups_above_80pct": 169, "unique_groups_above_80pct": 169,
         "areas_with_all_sampled_groups_above_80pct": 10,
+        "retained_prior_unique_groups": 173, "replacement_raster_reads": 19,
     }
     assert all(area["sampled_group_count"] == 12 for area in combined["areas"])
     assert all(len(q["samples"]) == 3 for area in combined["areas"] for q in area["quarter_results"])
-    assert (ROOT / "dist/s1rtc-pixel-coverage-replicates.json").read_bytes() == (
+    assert (ROOT / "dist/s1rtc-pixel-coverage-unique.json").read_bytes() == (
         ROOT / "outputs/atlas-s1rtc-pixel-coverage-combined-audit.json").read_bytes()
+    assert not (ROOT / "dist/s1rtc-pixel-coverage-replicates.json").exists()
