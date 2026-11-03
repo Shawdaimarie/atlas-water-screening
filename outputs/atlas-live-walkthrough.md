@@ -2,7 +2,7 @@
 
 **Production Site:** [Open ATLAS](https://atlas-water-screening.shawdaimarie.chatgpt.site/)
 
-**Current deployed version:** 26 (deployment `appgdep_6ae9fdf7f734819197e7b932a45cd7dd` succeeded; source commit `22a1c4b10242bde77a838651c86de37f0f8a12a8`)
+**Current deployed version:** 27 (deployment `appgdep_6aea00bd60948191b061666908408fec` succeeded; source commit `2a0fdc9ff8bc73f9de6fbfdb758d9c6b7e472960`)
 
 **Access:** private; sign in with the authorized owner account.
 
@@ -24,7 +24,7 @@ The page is an interactive research walkthrough with synthetic analysis fixtures
 
 ## Verified live workflows
 
-Version 26 is the active private production release. Authenticated replay verifies the 16-area candidate register, updated unique-coverage panel, and download links. The audit JSON confirms 192 distinct groups and 0 confirmatory sites; 169/192 meet the spatial availability screen, with 10/16 areas passing all 12 samples. The hash-locked Python 3.12 suite passes 81 tests. These checks verify the walkthrough and source-coverage reports only; they do not verify flood classification, scientific accuracy, a connected production API, or cloud-provider deployment. Full record: `atlas-deployment-test-results.md`.
+Version 27 is the active private production release. Authenticated replay verifies the 16-area candidate register, updated unique-coverage panel, and download links. The live ledger JSON confirms 192 distinct groups, zero duplicates, 169/192 above the spatial availability screen, and 0 confirmatory sites; 10/16 areas pass all 12 samples. Live replay also verifies Singapore profile selection, the Baton Rouge/Hurricane Ida switch, quality-aware method comparison, both downloads, and Reset. The hash-locked Python 3.12 suite passes 81 tests. These checks verify the walkthrough and source-coverage reports only; they do not verify flood classification, scientific accuracy, a connected production API, or cloud-provider deployment. Full record: `atlas-deployment-test-results.md`.
 
 The user intends to use an existing Apple account for a future release. ATLAS is currently a private web Site, not an Apple-hosted service or an iOS app. No iOS target or Apple distribution build has been verified; the browser deployment remains the way to observe this walkthrough.
 

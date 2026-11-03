@@ -13,7 +13,7 @@ OUT = ROOT / "outputs"
 DIST = ROOT / "dist"
 REGISTER = ROOT / "data/study_area_register.json"
 INPUTS = {
-    "rtc": "atlas-s1rtc-pixel-coverage-combined-audit.json",
+    "rtc": "atlas-s1rtc-pixel-coverage-unique-audit.json",
     "c2s": "atlas-c2s-flood-dataset-audit.json",
     "ufo": "atlas-ufo-dataset-coverage-audit.json",
     "floodplanet": "atlas-floodplanet-coverage-audit.json",
@@ -80,9 +80,9 @@ def build_ledger() -> dict:
             "city": city,
             "nominal_aoi_km2": area["aoi_area_km2"],
             "opera_cmr_dates_2024_09_to_2026_11": area["unique_acquisition_dates"],
-            "rtc_sampled_groups_passing_80pct": rtc_area["sampled_quarter_pixel_passes"],
+            "rtc_sampled_groups_passing_80pct": rtc_area["sampled_groups_passing_80pct"],
             "rtc_sampled_groups_total": rtc_area["sampled_group_count"],
-            "rtc_all_12_sampled_groups_pass": rtc_area["all_sampled_groups_meet_pixel_screen"],
+            "rtc_all_12_sampled_groups_pass": rtc_area["all_12_sampled_groups_meet_pixel_screen"],
             "c2s_label_chips": c2s_area["label_chip_count"],
             "c2s_label_valid_pixels": c2s_area.get("label_valid_pixels_across_overlapping_chips", 0),
             "c2s_water_pixels": c2s_area.get("water_pixels_across_overlapping_chips", 0),
@@ -132,6 +132,8 @@ def build_ledger() -> dict:
         "rtc_groups_passing_80pct": sum(r["rtc_sampled_groups_passing_80pct"] for r in rows),
         "rtc_groups_sampled": sum(r["rtc_sampled_groups_total"] for r in rows),
         "areas_passing_all_12_rtc_samples": sum(r["rtc_all_12_sampled_groups_pass"] for r in rows),
+        "rtc_unique_area_orbit_groups": rtc["summary"]["unique_area_orbit_groups"],
+        "rtc_duplicate_selections": rtc["summary"]["duplicate_selections"],
         "c2s_areas_with_labels": sum(bool(r["c2s_label_chips"]) for r in rows),
         "spacenet8_areas_with_objects": sum(bool(r["spacenet8_unique_object_references"]) for r in rows),
         "spacenet8_positive_objects": sum(r["spacenet8_flooded_yes_objects"] for r in rows),
@@ -147,7 +149,7 @@ def build_ledger() -> dict:
         "interpretation_limits": [
             "Counts are source-specific and are not comparable sample sizes across sensors or label types.",
             "Groundsource records are news-derived event leads, not flood labels or validated demand.",
-            "RTC VV valid-pixel samples are availability screens, not OPERA DSWx-S1 water classifications or event/baseline adequacy.",
+            "Deduplicated RTC VV valid-pixel samples are availability screens, not OPERA DSWx-S1 water classifications or event/baseline adequacy.",
             "GFD, C2S, GEOID-Flood, and SpaceNet 8 leads are historical; they do not establish event-matched, independent, balanced validation for the shared 2024-2026 window.",
             "No candidate is confirmatory until all gates in data/validation_protocol.yaml are independently met.",
         ],
@@ -160,7 +162,7 @@ def render_card(ledger: dict) -> str:
     return (
         f'{START}<article class="reference-card"><h3>16-area evidence-readiness ledger</h3>'
         f'<b>{s["confirmatory_areas_eligible"]}/16 confirmatory sites eligible · '
-        f'{s["rtc_groups_passing_80pct"]}/{s["rtc_groups_sampled"]} sampled RTC groups pass the 80% screen</b>'
+        f'{s["rtc_groups_passing_80pct"]}/{s["rtc_groups_sampled"]} distinct RTC groups pass the 80% screen</b>'
         f'<p>The same fixed-area crosswalk lists metadata dates, 12 sampled VV availability groups, and each public reference lead for every U.S. and international candidate. '
         'These source counts have different meanings and do not establish comparable flood labels or adequate event/baseline sampling.</p>'
         f'<a href="{JSON_OUT.name}" download="{JSON_OUT.name}">Download 16-area JSON ↗</a> '

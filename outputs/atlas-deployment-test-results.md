@@ -2,11 +2,19 @@
 
 **Run date:** 2026-11-03\
 **Production Site:** [ATLAS | Water Exposure Screening](https://atlas-water-screening.shawdaimarie.chatgpt.site/) (private owner-only access)\
-**Current published Site version:** 26
-**Current source commit deployed:** `22a1c4b10242bde77a838651c86de37f0f8a12a8`
-**Version provenance:** Site v26 source commit `22a1c4b10242bde77a838651c86de37f0f8a12a8`; deployment `appgdep_6ae9fdf7f734819197e7b932a45cd7dd` reports `succeeded` at the existing private URL.
+**Current published Site version:** 27
+**Current source commit deployed:** `2a0fdc9ff8bc73f9de6fbfdb758d9c6b7e472960`
+**Version provenance:** Site v27 source commit `2a0fdc9ff8bc73f9de6fbfdb758d9c6b7e472960`; deployment `appgdep_6aea00bd60948191b061666908408fec` reports `succeeded` at the existing private URL.
 
-## Current release: Site v26 (2026-11-03)
+## Current release: Site v27 (2026-11-03)
+
+- Deployment succeeded at the existing private owner-only URL. Sites reports version 27, active source commit `2a0fdc9ff8bc73f9de6fbfdb758d9c6b7e472960`, and deployment `appgdep_6aea00bd60948191b061666908408fec` with status `succeeded`.
+- Updated the normalized evidence ledger to consume the deduplicated RTC audit by its SHA-256 input, and regenerated the 16-area JSON/CSV and Site card. The authenticated live JSON endpoint reports 16 candidate areas (8+8), 192 unique area/orbit groups, zero duplicate selections, 169/192 above the 80% spatial screen, 10/16 areas passing all 12 samples, and 0/16 confirmatory eligibility.
+- Live browser replay selected Singapore and showed its rationale, public flood-resilience evidence, metadata dates, and feasibility measurements; changing the event to Hurricane Ida selected Baton Rouge and updated the synthetic scenario. Quality-aware aggregation changed the illustrative median from 7.7% to 6.8% and elevated assets from 4 to 3. The evidence export showed its synthetic label; the area-register export showed its CSV success message; Reset restored the single-scene baseline. Browser-visible state confirmed the updated 169/192 unique-group panel.
+- The hash-locked Python 3.12 Bookworm suite passes **81 tests in 1.26s** after updating the ledger builder and its assertions. `git diff --check` passed. GitHub Actions for these latest ledger changes has not yet been rerun; prior v26 CI should not be treated as verification of this ledger-builder revision.
+- These changes make the published source crosswalk consistent with the unique-group audit. They do not change the research score: all candidate areas remain unconfirmed, product analysis values remain synthetic, and no event-matched independent validation or cloud-provider deployment is complete.
+
+## Previous release: Site v26 (2026-11-03)
 
 - Production deployment succeeded at the existing private owner-only URL. Site version 26 is tied to source commit `22a1c4b10242bde77a838651c86de37f0f8a12a8`; deployment `appgdep_6ae9fdf7f734819197e7b932a45cd7dd` returned `succeeded`.
 - Authenticated live walkthrough confirmed 16 candidate rows (8 U.S., 8 international), the updated coverage table with three distinct sampled groups for each quarter, and headline results of 169/192 groups above the 80% spatial-coverage floor and 10/16 areas passing all 12 samples.
@@ -26,7 +34,7 @@
 
 ## Result summary
 
-The private static Site is deployed (version 26) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. Scene QA, independent event labels, and confirmatory validation remain incomplete. Therefore the project is **not 100/100** and the study areas are not fully validated.
+The private static Site is deployed (version 27) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. Scene QA, independent event labels, and confirmatory validation remain incomplete. Therefore the project is **not 100/100** and the study areas are not fully validated.
 
 ## Checks completed
 

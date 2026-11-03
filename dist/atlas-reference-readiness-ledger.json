@@ -482,7 +482,7 @@
     "atlas-gfd-event-extent-coverage-audit.json": "f9410dfe2c02829669e9ad9921b8474a000265198961d90a04f137ecb69a2dee",
     "atlas-global-flood-db-validation-audit.json": "3a04b6cf89ef2af29be94f4bca7287ede83ab583f248a077e5cbe931f4fb52e3",
     "atlas-groundsource-event-coverage-audit.json": "0273589ba44e3e268980598288b893e05e20c4c11f698e2f742e0fa976bd8a6a",
-    "atlas-s1rtc-pixel-coverage-combined-audit.json": "e8f8dabf8e0ad10e4bf5f7b46b04f4b389a81d7cb1c1761e3eb50182c9e5f86e",
+    "atlas-s1rtc-pixel-coverage-unique-audit.json": "807747caaf547bc793ba00db9a7cfb1ed2209ac299003176afed89e3d49d9dd6",
     "atlas-sen1floods11-label-footprint-audit.json": "f639ebdb70daf7c279c6871c7e502ed977fee4950da6d9e78031d43ae5477ab6",
     "atlas-spacenet8-louisiana-coverage-audit.json": "f71302888615dc2dda1e8b45018603c4f8cdf436fc9d2137974704c7c78dcfe1",
     "atlas-ufo-dataset-coverage-audit.json": "aac8c6e594200d991fe362090fe02cf1e4cf6d28c4b0c89a7eee326f7859ba6a",
@@ -491,7 +491,7 @@
   "interpretation_limits": [
     "Counts are source-specific and are not comparable sample sizes across sensors or label types.",
     "Groundsource records are news-derived event leads, not flood labels or validated demand.",
-    "RTC VV valid-pixel samples are availability screens, not OPERA DSWx-S1 water classifications or event/baseline adequacy.",
+    "Deduplicated RTC VV valid-pixel samples are availability screens, not OPERA DSWx-S1 water classifications or event/baseline adequacy.",
     "GFD, C2S, GEOID-Flood, and SpaceNet 8 leads are historical; they do not establish event-matched, independent, balanced validation for the shared 2024-2026 window.",
     "No candidate is confirmatory until all gates in data/validation_protocol.yaml are independently met."
   ],
@@ -503,8 +503,10 @@
     "confirmatory_areas_eligible": 0,
     "groundsource_event_records_are_validation_labels": false,
     "international_areas": 8,
+    "rtc_duplicate_selections": 0,
     "rtc_groups_passing_80pct": 169,
     "rtc_groups_sampled": 192,
+    "rtc_unique_area_orbit_groups": 192,
     "spacenet8_areas_with_objects": 1,
     "spacenet8_positive_objects": 14,
     "spacenet8_unknown_objects": 4486,

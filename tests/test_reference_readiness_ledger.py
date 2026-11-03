@@ -12,6 +12,8 @@ def test_reference_readiness_ledger_balances_all_areas_and_preserves_unknowns():
     assert ledger["summary"]["confirmatory_areas_eligible"] == 0
     assert ledger["summary"]["rtc_groups_passing_80pct"] == 169
     assert ledger["summary"]["rtc_groups_sampled"] == 192
+    assert ledger["summary"]["rtc_unique_area_orbit_groups"] == 192
+    assert ledger["summary"]["rtc_duplicate_selections"] == 0
     assert ledger["summary"]["areas_passing_all_12_rtc_samples"] == 10
     new_orleans = next(x for x in ledger["areas"] if x["city"] == "New Orleans")
     assert new_orleans["spacenet8_flooded_yes_objects"] == 14
@@ -34,6 +36,7 @@ def test_reference_ledger_card_reports_limits_and_both_downloads():
     assert "atlas-reference-readiness-ledger.json" in html
     assert "atlas-reference-readiness-ledger.csv" in html
     assert "do not establish comparable flood labels" in html
+    assert "169/192 distinct RTC groups" in html
 
 
 def test_generated_reference_ledger_matches_current_source_snapshot():
