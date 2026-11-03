@@ -116,9 +116,9 @@ def validate_labels(sample_path: Path, label_path: Path) -> tuple[list[dict[str,
         elif len(adjudicators) > 1:
             raise ValueError(f"More than one adjudicator row for sample {sid}")
         final_label = labels_by_labeler[0] if agreement else adjudicated_label
-        independent = structurally_complete and all(
-            row["independence_status"].strip() == "independent_primary" for row in initial)
         required_reviewers = initial + (adjudicators if not agreement else [])
+        independent = structurally_complete and all(
+            row["independence_status"].strip() == "independent_primary" for row in required_reviewers)
         blinded = structurally_complete and all(_is_true(row["blind_to_opera"]) for row in required_reviewers)
         ready = bool(final_label and independent and blinded)
         output.append({

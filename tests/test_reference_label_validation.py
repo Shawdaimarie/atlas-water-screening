@@ -106,3 +106,19 @@ def test_same_reference_source_cannot_have_conflicting_provenance(tmp_path):
     _write_csv(labels, sorted(REQUIRED), rows)
     with pytest.raises(ValueError, match="metadata conflicts"):
         validate_labels(sample, labels)
+
+
+def test_sensitivity_only_adjudicator_cannot_make_primary_label_ready(tmp_path):
+    sample, labels = tmp_path / "samples.csv", tmp_path / "labels.csv"
+    _write_csv(sample, ["sample_id"], [{"sample_id": "s1"}])
+    rows = [
+        _label("s1", "a", "persistent_water"),
+        _label("s1", "b", "nonwater"),
+        _label("s1", "c", "persistent_water", role="adjudicator", source_id="sensitivity",
+               independence_status="lineage_qualified_sensitivity"),
+    ]
+    _write_csv(labels, sorted(REQUIRED), rows)
+    qc, summary = validate_labels(sample, labels)
+    assert qc[0]["adjudicated"] is True
+    assert qc[0]["primary_label_review_ready"] is False
+    assert summary["primary_label_review_ready_units"] == 0
