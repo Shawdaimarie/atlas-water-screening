@@ -343,3 +343,10 @@ This status supersedes the earlier version 10/11 entries below; those are retain
 - A value histogram over all six public Texas pilot TIFFs found only classes 0, 1, 251, and 255. Per-file counts and SHA-256 checksums are recorded in `outputs/atlas-texas-raster-pilot/source_class_histogram.json`.
 - Reproduced the pilot with the updated code. The existing AOI still has 2/3 qualifying dates in baseline and 2/3 in the event period, so the analyzer withholds the comparison. This is an out-of-cohort pipeline pilot, not an enrolled study-area result or independent validation.
 - Verification: targeted raster-analysis tests **5 passed**; full `.venv/bin/python -m pytest -q` **49 passed** with one environment warning; `git diff --check` passed. Reinstalled `requirements-dev.lock` with `--require-hashes` in a Python 3.12 ARM64 container and ran the full suite there: **49 passed in 1.11s**, no test warnings. The working tree was mounted, so this is target-environment coverage rather than clean-checkout or independent reproduction. Canonical score remains **55/100 provisional**; no scientific-validation points are added.
+
+
+## Latest source CI confirmation (2026-11-02 CST)
+
+- GitHub Actions [run 41569925241](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41569925241) completed successfully on private main commit `3d67b59fbe5bf90523f379694324d94ca332832a`. Job-log readback confirms **50 passed in 1.39s**, container build completed, **11/11** HTTP smoke checks passed, and `pip-audit` reported no known vulnerabilities in the locked Python dependency set. This verifies repository and container checks only; no cloud-provider deployment or scientific-validation points result.
+- Re-ran the current local working-tree suite: **50 passed in 0.89s**, with the known LibreSSL/urllib3 environment warning. This working tree contains changes beyond remote commit `3d67b59`; it has not been shown to be identical to that CI checkout.
+- The canonical score remains **55/100 provisional**. Cloud-provider identities/resources and confirmatory study-area enrollment remain unverified.
