@@ -1,0 +1,119 @@
+{
+  "audit": "ATLAS paired-seed Sentinel-1 RTC VV coverage sample",
+  "source": {
+    "stac_api": "https://planetarycomputer.microsoft.com/api/stac/v1",
+    "collection": "sentinel-1-rtc",
+    "collection_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc",
+    "license": "CC-BY-4.0",
+    "attribution": "Microsoft Planetary Computer; ESA/Copernicus Sentinel-1"
+  },
+  "measurement": {
+    "band": "VV",
+    "resolution_m": 10,
+    "nodata": null,
+    "validity_definition": "Finite VV pixels not equal to declared nodata; spatial data coverage only."
+  },
+  "period": {
+    "start": "2025-01-01T00:00:00Z",
+    "end": "2025-12-31T23:59:59Z"
+  },
+  "study_area_register_sha256": null,
+  "summary": {
+    "areas": 16,
+    "us_areas": 8,
+    "international_areas": 8,
+    "separately_seeded_draws_per_area": 8,
+    "selected_orbit_groups": 128,
+    "unique_orbit_groups": 121,
+    "duplicate_group_selections": 7,
+    "selected_groups_above_80pct": 109,
+    "unique_groups_above_80pct": 102,
+    "areas_with_all_eight_groups_above_80pct": 10
+  },
+  "replicate_audits": [
+    {
+      "audit": "ATLAS exploratory Sentinel-1 RTC sampled pixel coverage",
+      "sample_seed": "ATLAS-S1RTC-quarterly-coverage-v1",
+      "summary": {
+        "areas": 16,
+        "us_areas": 8,
+        "international_areas": 8,
+        "areas_with_all_four_sample_quarters_above_80pct": 12,
+        "quarterly_samples_above_80pct": 56
+      },
+      "report_file": "atlas-s1rtc-pixel-coverage-audit.json",
+      "report_sha256": "8911ed93de7722517537e3b59f5f91dc9ee72ad4ba0364ecf25cc3a6f75a99b6"
+    },
+    {
+      "audit": "ATLAS exploratory Sentinel-1 RTC sampled pixel coverage",
+      "sample_seed": "ATLAS-S1RTC-quarterly-coverage-replicate-2",
+      "summary": {
+        "areas": 16,
+        "us_areas": 8,
+        "international_areas": 8,
+        "areas_with_all_four_sample_quarters_above_80pct": 10,
+        "quarterly_samples_above_80pct": 53
+      },
+      "report_file": "atlas-s1rtc-pixel-coverage-replicate-2.json",
+      "report_sha256": "cbc548e32de64604de1dc82168694076d4555aff335ec0284e4cdf12f10cfc67"
+    }
+  ],
+  "areas": [
+    {
+      "region": "United States",
+      "city": "Houston",
+      "sampled_quarter_pixel_passes": 7,
+      "all_eight_sampled_groups_meet_pixel_screen": false,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "samples": [
+            {
+              "quarter": 1,
+              "date": "2025-01-26",
+              "platform": "SENTINEL-1A",
+              "orbit_state": "descending",
+              "relative_orbit": 143,
+              "absolute_orbit": 57615,
+              "candidate_orbit_groups": 22,
+              "valid_pixels": 6231668,
+              "aoi_pixels": 6231732,
+              "valid_fraction": 0.99999,
+              "meets_80pct_pixel_coverage_screen": true,
+              "items": [
+                {
+                  "id": "S1A_IW_GRDH_1SDV_20250126T122315_20250126T122344_057615_071953_rtc",
+                  "asset_checksum": "1cfd37f103a9e768182a4d9519973db1"
+                }
+              ]
+            },
+            {
+              "quarter": 1,
+              "date": "2025-02-19",
+              "platform": "SENTINEL-1A",
+              "orbit_state": "descending",
+              "relative_orbit": 143,
+              "absolute_orbit": 57965,
+              "candidate_orbit_groups": 22,
+              "valid_pixels": 6231668,
+              "aoi_pixels": 6231732,
+              "valid_fraction": 0.99999,
+              "meets_80pct_pixel_coverage_screen": true,
+              "items": [
+                {
+                  "id": "S1A_IW_GRDH_1SDV_20250219T122314_20250219T122343_057965_072747_rtc",
+                  "asset_checksum": "fd45ba79845624c88e42fb56ed6a3023"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "quarter": 2,
+          "samples": [
+            {
+              "quarter": 2,
+              "date": "2025-04-08",
+              "platform": "SENTINEL-1A",
+              "orbit_state": "descending",
+              "relative_

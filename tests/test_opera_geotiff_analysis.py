@@ -78,38 +78,4 @@ def test_duplicate_dates_fail_closed(tmp_path):
     for i in (1, 2):
         name = f"{i}.tif"
         (tmp_path / name).touch()
-        rows.append({"path": name, "band": "BWTR_Binary_water", "acquired_at": "2025-01-01", "selection_anchor": "2025-01-01", "period": "baseline",
-                     "granule_id": name, "product_version": "OPERA_L3_DSWX-S1_V1",
-                     "processing_version": "1.0.0", "retrieved_at": "2025-03-01T12:00:00Z"})
-    with (tmp_path / "manifest.csv").open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
-        writer.writeheader(); writer.writerows(rows)
-    with pytest.raises(ValueError, match="Duplicate acquisition date"):
-        analyze(tmp_path / "manifest.csv", tmp_path / "aoi.json", tmp_path / "assets.json")
-
-
-def test_non_pinned_product_fails_closed(tmp_path):
-    aoi = {"type": "Feature", "properties": {}, "geometry": _polygon(0, 0, 60, 60)}
-    assets = {"type": "Feature", "properties": {"asset_id": "x"}, "geometry": _polygon(0, 0, 30, 60)}
-    (tmp_path / "aoi.json").write_text(json.dumps(aoi))
-    (tmp_path / "assets.json").write_text(json.dumps(assets))
-    (tmp_path / "1.tif").touch()
-    row = {"path": "1.tif", "band": "BWTR_Binary_water", "acquired_at": "2025-01-01", "selection_anchor": "2025-01-01", "period": "baseline",
-           "granule_id": "1", "product_version": "OPERA_L3_DSWX-S1_V2",
-           "processing_version": "1.0.0", "retrieved_at": "2025-03-01T12:00:00Z"}
-    with (tmp_path / "manifest.csv").open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(row))
-        writer.writeheader(); writer.writerow(row)
-    with pytest.raises(ValueError, match="Expected pinned product"):
-        analyze(tmp_path / "manifest.csv", tmp_path / "aoi.json", tmp_path / "assets.json")
-
-
-def test_non_binary_band_fails_closed(tmp_path):
-    row = {"path": "1.tif", "band": "WTR_Water_classification", "acquired_at": "2025-01-01",
-           "selection_anchor": "2025-01-01", "period": "baseline", "granule_id": "1",
-           "product_version": "OPERA_L3_DSWX-S1_V1", "processing_version": "1.0.0",
-           "retrieved_at": "2025-03-01T12:00:00Z"}
-    (tmp_path / "manifest.csv").write_text(",".join(row) + "\n" + ",".join(row.values()) + "\n")
-    with pytest.raises(ValueError, match="Expected pinned band BWTR_Binary_water"):
-        from scripts.analyze_opera_geotiffs import load_manifest
-        load_manifest(tmp_path / "manifest.csv")
+        rows.append({"path": name, "band": "BWTR_Binary_water", "a

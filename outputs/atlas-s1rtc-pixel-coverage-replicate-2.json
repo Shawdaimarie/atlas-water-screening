@@ -1,0 +1,91 @@
+{
+  "audit": "ATLAS exploratory Sentinel-1 RTC sampled pixel coverage",
+  "retrieved_at_utc": "2026-11-03T04:10:54.953853+00:00",
+  "source": {
+    "stac_api": "https://planetarycomputer.microsoft.com/api/stac/v1",
+    "collection": "sentinel-1-rtc",
+    "collection_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc",
+    "license": "CC-BY-4.0",
+    "attribution": "Microsoft Planetary Computer; ESA/Copernicus Sentinel-1"
+  },
+  "period": {
+    "start": "2025-01-01T00:00:00Z",
+    "end": "2025-12-31T23:59:59Z"
+  },
+  "pixel_coverage_screen": {
+    "band": "VV",
+    "nominal_spacing_m": 10,
+    "rule": "finite pixels unequal to declared raster nodata; \u226580% in fixed AOI",
+    "sample_seed": "ATLAS-S1RTC-quarterly-coverage-replicate-2",
+    "samples_per_area": 4
+  },
+  "summary": {
+    "areas": 16,
+    "us_areas": 8,
+    "international_areas": 8,
+    "areas_with_all_four_sample_quarters_above_80pct": 10,
+    "quarterly_samples_above_80pct": 53
+  },
+  "interpretation_limits": [
+    "This is a four-date-per-area spatial data-availability sample, not event/baseline sampling adequacy.",
+    "Sentinel-1 RTC VV backscatter is not a water classification and does not validate OPERA DSWx-S1.",
+    "Nodata coverage alone does not assess speckle, layover/shadow, radiometric quality, acquisition geometry balance, or classification accuracy.",
+    "A 2025 sample does not establish coverage for every event, date, asset, or the full 2024\u20132026 study window.",
+    "Independent event labels and confirmatory study-area enrollment remain unmet.",
+    "Planetary Computer SAS links are temporary and intentionally excluded from this output."
+  ],
+  "areas": [
+    {
+      "region": "United States",
+      "city": "Houston",
+      "bbox_wgs84": "-95.499149,29.648111,-95.240451,29.872689",
+      "sample_rule": "One uniformly random eligible orbit group per 2025 calendar quarter, seeded by the recorded protocol string and city; same four-quarter rule for all areas.",
+      "sampled_quarters": 4,
+      "sampled_quarter_pixel_passes": 3,
+      "all_four_quarters_meet_pixel_screen": false,
+      "quarter_results": [
+        {
+          "quarter": 1,
+          "date": "2025-02-19",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "descending",
+          "relative_orbit": 143,
+          "absolute_orbit": 57965,
+          "candidate_orbit_groups": 22,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250219T122314_20250219T122343_057965_072747_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250219T122314_20250219T122343_057965_072747_rtc",
+              "asset_checksum": "fd45ba79845624c88e42fb56ed6a3023",
+              "asset_bytes": 2084281802
+            }
+          ],
+          "valid_pixels": 6231668,
+          "aoi_pixels": 6231732,
+          "valid_fraction": 0.99999,
+          "meets_80pct_pixel_coverage_screen": true,
+          "validity_definition": "Finite VV backscatter pixels not equal to declared nodata; this is spatial data coverage only."
+        },
+        {
+          "quarter": 2,
+          "date": "2025-05-19",
+          "platform": "SENTINEL-1A",
+          "orbit_state": "ascending",
+          "relative_orbit": 34,
+          "absolute_orbit": 59256,
+          "candidate_orbit_groups": 28,
+          "asset_band": "VV",
+          "stac_nodata": -32768,
+          "stac_spatial_resolution_m": 10,
+          "items": [
+            {
+              "id": "S1A_IW_GRDH_1SDV_20250519T002646_20250519T002711_059256_075A73_rtc",
+              "item_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20250519T002646_20250519T002711_059256_075A73_rtc",
+              "asset_checksum": "ea25a82515556d114b4316d04d98b487",
+              "asset_bytes": 1844820307
+            },
+            {
+              "id": "S1A_IW_GRDH_1SDV_2

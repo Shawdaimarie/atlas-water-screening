@@ -35,7 +35,9 @@ def test_quarter_selection_is_repeatable_and_uniformly_one_group_per_quarter():
             groups.update(audit._orbit_groups([item(stamp, month * 100 + day)]))
     selected_a = audit.select_quarterly_groups(groups, "Houston")
     selected_b = audit.select_quarterly_groups(groups, "Houston")
+    selected_replicate = audit.select_quarterly_groups(groups, "Houston", "ATLAS-S1RTC-quarterly-coverage-replicate-2")
     assert [x["group_id"] for x in selected_a] == [x["group_id"] for x in selected_b]
+    assert [x["group_id"] for x in selected_a] != [x["group_id"] for x in selected_replicate]
     assert [x["quarter"] for x in selected_a] == [1, 2, 3, 4]
     assert all(x["candidate_orbit_groups"] == 4 for x in selected_a)
     assert all(len(x["items"]) == 1 for x in selected_a)
@@ -65,7 +67,7 @@ def test_run_records_uniform_16_area_pixel_sample_and_limitations(tmp_path, monk
     monkeypatch.setattr(audit, "_pixel_fraction_for_group", lambda selected, bbox: (0.9, 90, 100))
     output = tmp_path / "coverage.json"
     result = audit.run(audit.Path(__file__).parents[1] / "data/study_area_register.json", output,
-                       tmp_path / "checkpoint.json")
+                       tmp_path / "checkpoint.json", "test-replicate-seed")
     assert len(result["areas"]) == 16
     assert result["summary"]["us_areas"] == 8
     assert result["summary"]["international_areas"] == 8
@@ -74,5 +76,4 @@ def test_run_records_uniform_16_area_pixel_sample_and_limitations(tmp_path, monk
     assert all(area["quarter_results"][0]["items"][0]["item_url"].startswith("https://example.invalid")
                for area in result["areas"])
     assert "SAS" in result["interpretation_limits"][-1]
-    written = json.loads(output.read_text())
-    assert written["summary"] == result["summary"]
+    assert result["pixel_covera

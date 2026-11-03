@@ -47,24 +47,4 @@ python scripts/analyze_opera_geotiffs.py \
 
 The default gate is at least 80% valid pixels over the AOI and each asset, and at least three qualifying dates in each predeclared event and baseline period. Selection uses the same count in both periods, choosing observations nearest each predeclared period anchor, then earliest date, then granule ID. Outputs retain source-file SHA-256, selected dates, quality fractions, and an explicit unverified local-input label. The script does not establish independent flood truth, damage, or operational impact.
 
-To require equal usable-date counts across the complete 16-area program, use `scripts/audit_study_area_balance.py` with a 16-area JSON package. Start from [the study package template](outputs/atlas-study-package-template.json), replace the local paths with authorized raster, AOI, asset, and manifest files, then run:
-
-```sh
-python scripts/audit_study_area_balance.py \
-  --study-package outputs/atlas-study-package-template.json \
-  --output-dir /path/to/balanced-study-output
-```
-
-The balance gate checks every registered area and every provided asset; if any area has fewer than 3 qualifying dates in either period, it marks the full study insufficient and emits no cross-area water-fraction comparison. A passing gate only establishes matched data sufficiency. Independent event labels and accuracy evaluation remain necessary.
-
-A separate real-input technical run is packaged at [outputs/atlas-texas-raster-pilot](outputs/atlas-texas-raster-pilot/README.md). It uses six publicly available preliminary NASA ARIA/OPERA response mosaics near Kerrville, outside the 16 registered study areas. The pipeline processed the rasters but withheld the comparison because only two dates per period passed the preregistered 80% valid-pixel rule. NASA labels these response products preliminary and unvalidated; this pilot is not a study result or a validation of any registered candidate.
-
-## Multi-cloud deployment preparation
-
-The API now has a container image and a shared restricted Kubernetes deployment baseline intended for Google Kubernetes Engine, Amazon EKS, Azure Kubernetes Service, and Oracle Kubernetes Engine. Review [the multi-cloud preparation and release gates](outputs/atlas-multicloud-deployment-preparation.md) and the common [release runbook](deployment/cloud/RELEASE_RUNBOOK.md) before provisioning. The machine-readable [provider parity matrix](deployment/cloud/provider-matrix.yaml) defines identical account, OIDC, identity-denial, private-network, artifact, runtime, recovery, and staging E2E gates, with provider-specific evidence mappings. The owner reports that account creation is underway; no account readiness or billing configuration is verified, and no cloud resources have been created. Provider IaC and deploy workflows, identity/network/secret bindings, remote CI, and staging remain pending. The shared local verification workflow and hash-locked runtime, development, and audit dependencies are prepared.
-
-Build the local image with `docker build -t atlas-api:local .`. Do not deploy the fixture API as a real flood-analysis service: all returned analysis values are synthetic.
-
-## Evidence and limits
-
-See `STUDY_AREA_PROGRAM.md`, `EVIDENCE_REGISTER.md`, `TECHNICAL_REVIEW.md`, `COMPETITIVE_REVIEW.md`, and `SPECIFICATION.md`. `scripts/screen_study_areas.py` reproduces the common 25 km × 25 km CMR metadata screen and writes candidate counts; metadata hits are not QA-valid scenes or independent flood labels. OPERA product metadata and schema references do not make the fixture data real. NASA Earthdata credentials were not supplied. Do not interpret observed water as proof of damage, service interruption, structural failure, or financial loss.
+To re
