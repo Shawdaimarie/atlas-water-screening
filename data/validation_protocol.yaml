@@ -1,8 +1,11 @@
 protocol:
   id: atlas-study-area-validation
-  version: 1
+  version: 2
   state: proposed_not_externally_preregistered
-  freeze_before: inspecting_candidate_area_product_outcomes_or_reference_labels
+  exploratory_history: candidate selection, metadata screens, RTC availability draws, Tampa exploratory OPERA sampling, and reference-source audits were examined before external preregistration; these findings are discovery-only and excluded from confirmatory inference
+  confirmatory_freeze_before: inspecting_selected_event_opera_outcomes_or_reference_labels
+  confirmatory_freeze_record: externally timestamped protocol, event-selection frame, site/event inclusion list, AOIs, sampling design, metrics, and analysis code
+  exploratory_findings_excluded_from_confirmatory: true
   study_areas:
     total_candidates: 16
     united_states: 8
@@ -57,6 +60,11 @@ protocol:
     target_half_width_proportion: 0.05
     planning_prevalence: 0.5
     simple_random_sample_n0: 385
+    n0_scope: per_area_per_period_overall_accuracy_or_proportion
+    planning_periods_per_area: 2
+    planning_area_period_reference_assessments_for_8_plus_8: 12320
+    paired_locations_may_be_reused_across_periods: true
+    class_specific_precision_requires_separate_allocation: true
     inflate_for_design_effect: true
     finite_population_correction_when_applicable: true
     report_achieved_precision_if_target_missed: true
