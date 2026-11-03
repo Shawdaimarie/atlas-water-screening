@@ -2,19 +2,19 @@
 
 **Run date:** 2026-11-02\
 **Production Site:** [ATLAS | Water Exposure Screening](https://atlas-water-screening.shawdaimarie.chatgpt.site/) (private owner-only access)\
-**Current published Site version:** 12
-**Current source commit deployed:** `af1c7a315447588f6893279605f5c7b7ddbaa240`
-**Version provenance:** Sites readback matched version 12 to this source commit and deployment `appgdep_6ae9164a45bc81919f19e1af0750b143`; archive hash `sha256:077b62bb99cdc3503f970af4878bac95bc0bdf9666e36b0492ac7a7946173844`.
+**Current published Site version:** 14
+**Current source commit deployed:** `2a3de8aec54071a1d6ca8d50ab52edb638c48674`
+**Version provenance:** Sites readback matched version 14 to the deployed source commit and deployment `appgdep_6ae931ab72608191a78a05a9c9aec3fa`; deployment status was `succeeded` at the existing private URL.
 
 ## Result summary
 
-The private static Site is deployed (version 12) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. The register is an archive metadata discovery screen; its scenes have not been downloaded or pixel-QA audited for the 16 enrolled candidates. Therefore the project is **not 100/100** and the study areas are not yet fully validated.
+The private static Site is deployed (version 14) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. The register is an archive metadata discovery screen; its scenes have not been downloaded or pixel-QA audited for the 16 enrolled candidates. Therefore the project is **not 100/100** and the study areas are not yet fully validated.
 
 ## Checks completed
 
 | Check | Result | Evidence |
 |---|---|---|
-| Production publish | Pass | Sites readback on 2026-11-02 confirms active version 12, source `af1c7a315447588f6893279605f5c7b7ddbaa240`, successful deployment, and archive hash recorded above. |
+| Production publish | Pass | Sites readback on 2026-11-02 confirms active version 14, source `2a3de8aec54071a1d6ca8d50ab52edb638c48674`, and successful deployment recorded above. |
 | Access policy | Pass | Owner-only custom allowlist contains `shawdaimarie@gmail.com`; zero external visitors. This is Sites account access; Apple Sign In is not configured. |
 | U.S./international register | Pass for candidate presentation | Version 12 walkthrough rendered 8 U.S. and 8 international candidate areas and exercised all 16 profiles. They remain metadata-screened candidates, not validated sites. |
 | Candidate profile interaction | Pass | Selected Mumbai; rationale, value-integration question, 361 metadata hits, and 121 acquisition dates appeared. |
@@ -24,7 +24,7 @@ The private static Site is deployed (version 12) and the study-area candidate re
 | Asset detail | Pass | Selecting Southeast Water Plant updated detail values and asset ID. |
 | Synthetic evidence export | Pass | Export button showed its success message with synthetic-data labeling and selected method. |
 | Reset workflow | Pass | Reset restored the single-scene baseline values and method labels. |
-| API and metadata unit tests | Pass locally | Current suite `.venv/bin/python -m pytest -q`: 40 passed in 1.33s, with one LibreSSL/urllib3 environment warning. All four Kubernetes manifest YAML files parsed, and `git diff --check` passed. |
+| API and metadata unit tests (earlier snapshot) | Pass locally | The version-12-era suite had 40 passing tests in 1.33s with one LibreSSL/urllib3 environment warning. See the dated current full-suite result below. |
 | API HTTP smoke | Pass locally; not deployed | Local fixture API health, area listing, analysis, CSV, and request-boundary checks passed. Health explicitly reports `live_nasa_ingestion:false`; the API is not connected to the Site. |
 | Static/document checks | Pass | HTML parser accepted the deployed source; structural checks confirmed exactly one study-area panel and 16 records with 8 per region. |
 | Focused accessibility checks | Pass with documented limits | Updated muted-text colors measure 5.87:1 on white, 5.44:1 on the method card, and 5.04:1 for warning text. Keyboard Tab/Enter selected Miami and updated its profile. Touch targets and focus styling were improved; VoiceOver/NVDA and zoom review remain open. See `atlas-accessibility-review.md`. |
@@ -32,7 +32,7 @@ The private static Site is deployed (version 12) and the study-area candidate re
 | Temporal overlap audit | Pass for metadata only | Exact `time_start` date intersection is empty across all 16 AOIs. Every AOI has at least one metadata date in 24 of 26 year-month periods represented across the candidates. Reproducible from saved date sets. No claim of same-day or equal pixel-valid coverage. |
 | Full-date register export | Pass for metadata only | The v12 register export includes per-area date lists, AOI coordinates/bounds, collection, time window, rationale, evidence and pending-validation status. It does not imply pixel QA. |
 | Fixture API request-boundary checks | Pass locally | Over HTTP: valid analysis 200/12 rows; unexpected `image_url` field 422; 16,385-byte payload 413 with 16,384-byte limit. Unit test also exercises a streamed over-limit body without `Content-Length`. This local API is not deployed or connected to the Site. |
-| Private GitHub CI | Pass | Kubernetes policy and resource-control source run [41551001149](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41551001149) succeeded on `bb0f1f1ccdca0f5c262510fbd0869886fbdfa815`, including hash-locked tests, container build/smoke, image audit, and dependency audit. The later runbook-sync run [41551036322](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41551036322) also passed. |
+| Private GitHub CI (latest) | Pass | Commit `7620a78b8be06fc27d5907bac2d12266f87b74b0` passed [run 41568692992](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41568692992); test/container and dependency-security jobs passed with full-SHA Node 24 action pins. Local rerun: 50 passed, one LibreSSL/urllib3 warning. This is repository CI evidence, not cloud deployment. Earlier run: Kubernetes policy and resource-control source run [41551001149](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41551001149) succeeded on `bb0f1f1ccdca0f5c262510fbd0869886fbdfa815`, including hash-locked tests, container build/smoke, image audit, and dependency audit. The later runbook-sync run [41551036322](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41551036322) also passed. |
 | Kubernetes policy enforcement smoke (local, Calico) | Pass for local test cluster | A disposable kind v1.35 cluster with Calico v3.32.3 enforced both manifests. The hardened API image rolled out 2/2 replicas; readiness/liveness checks passed after adding the explicit probe Host header. The approved namespace/pod label pair received HTTP 200; an untrusted namespace timed out; API service DNS resolved; API-to-peer TCP egress timed out; the ResourceQuota and PDB were accepted. This proves enforcement in this local Calico cluster only, not in GKE, EKS, AKS, or OKE. Full results: `deployment/k8s/LOCAL_POLICY_SMOKE.md`. |
 | Earth Engine pixel audit | Prepared; not run | All-area Code Editor diagnostic is checked into the private repository. No approved Earth Engine project was verified and no pixel result exists. PO.DAAC confirms science GeoTIFFs are in its Earthdata-protected S3 prefix; the public prefix is supporting metadata, not anonymous science-data access. NASA's collection notice also requires replacement granules for affected 2025-05-20–2025-12-09 acquisitions. |
 | Independent labels and event validation | Not passed | Current CEMS/GFD audits found no qualifying independent labels in the registered AOIs. The Texas raster pilot failed the minimum-date gate and is outside the 16 areas. |
@@ -325,6 +325,17 @@ This status supersedes the earlier version 10/11 entries below; those are retain
 - The live reference panel and new protocol panel both appeared in the browser accessibility tree. Screenshot: `outputs/atlas-site-v14-protocol-panel.png`. The full replay is interaction evidence for the synthetic UI only; it does not create real-observation, independent-label, cloud-hosting, or scientific-accuracy evidence.
 - The local regression suite after the Site change: `.venv/bin/python -m pytest -q` — **48 passed in 1.18s**, one LibreSSL/urllib3 environment warning; `git diff --check` passed. Canonical score remains **55/100 provisional**.
 - Private GitHub main commit `2c2bae2bd2448689bef2423f0e0685cb354dfa5a` contains the v14 source, regression assertion, replay notes, and screenshot. [CI run 41556988160](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41556988160) completed successfully; run/job readback confirms successful unit/fixture-test, container-build, HTTP-smoke, runtime-image-audit, and dependency-security steps. It does not deploy to Google Cloud, AWS, Azure, or Oracle Cloud.
+
+## Latest live walkthrough check (2026-11-02 CST)
+
+- Reopened the current private Site and confirmed the v14 study-program, reference-coverage and protocol panels render.
+- Selected Mumbai: the 16-area list remained balanced at 8 U.S. and 8 international candidates; Mumbai displayed 361 metadata hits, 121 acquisition dates, the public management evidence, value-integration question, comparable validation path, and its explicit metadata-only/pixel-QA-pending status.
+- Switched to the quality-aware method: the illustrative lead overlap changed from 28.6% to 21.4%, elevated count from 4 to 3, and median from 7.7% to 6.8%. The page labels the method experimental and the values synthetic.
+- Download-area-register action displayed “Study area register downloaded as CSV.”
+- The live run confirms UI behavior only. It does not verify the CSV file contents, real NASA acquisition, pixel-level coverage, independent reference labels, a connected API, or cloud hosting. The full 50-test local suite and private GitHub run 41568692992 pass separately; neither turns synthetic demo values into scientific validation.
+- Current cloud preflight: `.venv/bin/python scripts/validate_cloud_inputs.py --example --release-ready` fails closed with 30 missing/invalid onboarding or release requirements and confirms that no cloud resources were created. The owner-specific handoff file is absent.
+- Current local API-image validation (2026-11-02): built `atlas-api:goal-2026-11-03` from the pinned Python 3.12 slim Bookworm base (manifest digest `sha256:c2aed89c3c7a8dc9328b20bf5d401328edbfc4596bb063608191605da755e2c4`); ran it read-only as the non-root runtime image; all **11/11** HTTP smoke checks passed (health, area/register, analysis/CSV, request validation/size, host allowlist and CORS allow/deny). `pip-audit` inside the image reported **No known vulnerabilities found** for the locked Python dependency set. This is local-container evidence only; it does not include an OS image scanner, cloud deployment, authentication integration, or real geospatial input.
+- Python 3.12 target check (2026-11-02): in pinned `python:3.12-bookworm@sha256:a5bab0ff300f91231c2e68bf73a8a8d60762ac39ce1c50eaf6803e4c38a9062b` ARM64 container, installed `requirements-dev.lock` with `--require-hashes` and ran the mounted current worktree suite: **50 passed in 0.70s**, no test warnings. A separate `python:3.12-slim-bookworm` attempt could not import Rasterio because the image lacked `libexpat.so.1`; the standard Bookworm test container passed, and no application-code change was needed. This is author-run mounted-tree verification, not an independent clean-checkout reproduction.
 
 ## BWTR measurement-contract correction and rerun (2026-11-03)
 
