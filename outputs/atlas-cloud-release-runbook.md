@@ -8,6 +8,24 @@ Use the owner-created accounts associated with `shawdaimarie@gmail.com`; account
 
 Before creating resources, record only non-secret identifiers and owner decisions in a private inventory: provider account/project/tenant/subscription/tenancy and compartment IDs, approved region, billing ceiling and alert recipients, environment, support contact, and approved API hostname. Confirm data residency and account ownership. If a provider supports it, keep production separate from staging at the account/project/subscription/compartment boundary. Turn on MFA for named human administrators, document a monitored break-glass route, and enable control-plane audit logs before provisioning.
 
+### Fail-closed input preflight
+
+Copy `deployment/cloud/owner-inputs.example.yaml` to the ignored local file `deployment/cloud/owner-inputs.local.yaml`, then complete only non-secret account identifiers and owner-approved choices. Run:
+
+```sh
+.venv/bin/python scripts/validate_cloud_inputs.py
+```
+
+This onboarding check requires the four provider accounts and billing confirmations, project/account/tenant/subscription/tenancy and compartment identifiers, regions, a monthly budget ceiling and alert recipients, and explicit data-residency and staging/production decisions. It reports missing field paths without printing field values. It rejects credential-like keys and never contacts a provider or creates resources.
+
+After the exact GitHub OIDC/federated trust configurations and approved API hostname exist, run the stricter static readiness check:
+
+```sh
+.venv/bin/python scripts/validate_cloud_inputs.py --release-ready
+```
+
+The stricter mode requires all four provider identity-readiness flags. A pass validates the local handoff record only; it does not prove that cloud identity, network paths, cluster access, billing, or policy work in a live provider. Those still require provider-side allow/deny and staging evidence from the release flow below.
+
 Create resources through reviewed, versioned IaC with encrypted remote state, state locking, restricted state access, and a recovery copy. Set budgets, service quotas, region policy, and alerts first. Default to private cluster control planes, private worker nodes, private registries, no public database, and no public API. Any exception requires a written threat and access review before provisioning. Do not create paid resources just to validate an account.
 
 ### Private-cluster deployment runner gate
@@ -28,14 +46,6 @@ Provider documentation: [GKE private clusters with Cloud Build private pools](ht
 ### Owner onboarding handoff
 
 While accounts are being created, no credential or console access is needed in this project. Once setup is complete, the owner can provide non-secret account/project/tenant/subscription/tenancy and compartment identifiers, chosen region, billing ceiling and alert destination, data-residency decision, and approved staging/production boundary. Confirm MFA, recovery, and billing directly in each provider console. Do not send passwords, codes, payment data, access keys, or private keys. After those inputs are recorded in an owner-controlled private inventory, validate organization-level policy and repository OIDC trust before provisioning. Use one identical acceptance checklist for each provider; do not declare a provider ready from account creation alone.
-
-Run the no-provisioning input check after copying `deployment/cloud/owner-inputs.example.yaml` to the ignored `deployment/cloud/owner-inputs.local.yaml`:
-
-```sh
-.venv/bin/python scripts/validate_cloud_inputs.py
-```
-
-It verifies non-secret IDs, billing confirmations, regions, monthly budget and alert recipients, Apple-account role, data residency, and environment boundary for all four providers. It rejects credential-like fields without printing their values. After OIDC federation and the approved API hostname are recorded, use `--release-ready` to check that all four identities are marked configured. Neither mode contacts a provider or provisions resources; live allow/deny, network, cluster, and spend evidence is still required.
 
 ## Parity requirements
 
@@ -88,9 +98,9 @@ For each provider, retain the commit, workflow run, test/audit reports, image di
 ## Current readiness
 
 - The private Sites walkthrough is at version 12 and is separate from the API runtime. It demonstrates synthetic fixture data and the metadata-only 8+8 candidate register.
-- The GitHub repository is private at `Shawdaimarie/atlas-water-screening`. Latest source and cloud-preflight CI passed on commit `84089a48a53fc17e3c800605726d5cab5c519e00` ([run 41548693104](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41548693104)). This verifies repository checks, not a cloud deployment.
+- The GitHub repository is private at `Shawdaimarie/atlas-water-screening`. Latest CI passed on commit `48612aa404e3c59f5b6586b05bb28133dfc88f28`: unit/fixture tests, container build, container HTTP smoke, image audit, and dependency audit ([run 41545519993](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41545519993)). This verifies the container candidate, not a cloud deployment.
 - The passing container smoke is not a cloud staging test: it covers a synthetic fixture API and does not prove provider identity, access control, networking, persistence, or real geospatial workflows.
 - No account-specific deploy workflows, trust policies, cloud registries, clusters, or provider staging environments are configured. No Google Cloud, AWS, Azure, or OCI deployment has been verified.
-- Account creation remains owner-managed. The ignored local handoff file is currently absent, so ATLAS has not verified account status, billing, MFA, provider identifiers, or region choices. The non-secret handoff template is `deployment/cloud/owner-inputs.example.yaml`; when ready, complete the local copy at `deployment/cloud/owner-inputs.local.yaml` and run the preflight above. Do not place credentials, recovery material, or payment details in either file.
+- Account creation remains owner-managed. ATLAS has not verified account status, billing, MFA, provider identifiers, or region choices. The non-secret handoff template is `deployment/cloud/owner-inputs.example.yaml`; complete a local ignored copy at `deployment/cloud/owner-inputs.local.yaml`. Do not place credentials, recovery material, or payment details in either file.
 - The owner plans to use an existing Apple Account during account setup. Provider consoles must still use the sign-in methods they support; an Apple Account does not create or host GKE, EKS, AKS, or OKE resources. The four deployment targets remain Google Cloud, AWS, Microsoft Azure, and Oracle Cloud.
 - Keep preparation no-cost. Provision resources only after account, billing, region, quota, cost ceiling, alert recipient, data residency, and environment boundary are confirmed. Do not release the fixture API as a real flood analysis service: real-data ingest, event validation, independent labels, user authorization, and production recovery remain separate release gates.
