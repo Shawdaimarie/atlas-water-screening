@@ -1,4 +1,4 @@
-"""Pixel-QA and asset overlap analysis for locally authorized OPERA DSWx-S1 WTR COGs.
+"""Pixel-QA and asset overlap analysis for locally authorized OPERA DSWx-S1 BWTR COGs.
 
 This module never downloads data or accepts remote URLs. Supply a manifest of
 already-authorized local files; credentials and temporary download tokens stay
@@ -28,8 +28,9 @@ except ImportError as exc:  # pragma: no cover - exercised by CLI users without 
 
 PRODUCT = "OPERA_L3_DSWX-S1_V1"
 PRODUCT_DOI = "https://doi.org/10.5067/OPDSWS1-L3V1"
-WATER_CLASSES = {1, 3}
-VALID_CLASSES = {0, 1, 3}
+PRODUCT_BAND = "BWTR_Binary_water"
+WATER_CLASSES = {1}
+VALID_CLASSES = {0, 1}
 INVALID_CLASSES = {250, 251, 255}
 
 
@@ -82,7 +83,7 @@ def load_geojson(path: Path, *, id_key: str | None = None) -> tuple[list[dict[st
 
 
 def load_manifest(path: Path) -> list[Observation]:
-    required = {"path", "acquired_at", "selection_anchor", "period", "granule_id",
+    required = {"path", "band", "acquired_at", "selection_anchor", "period", "granule_id",
                 "product_version", "processing_version", "retrieved_at"}
     with path.open(newline="") as handle:
         reader = csv.DictReader(handle)
@@ -98,6 +99,8 @@ def load_manifest(path: Path) -> list[Observation]:
     processing_versions = set()
     root = path.resolve().parent
     for row in rows:
+        if row["band"].strip() != PRODUCT_BAND:
+            raise ValueError(f"Expected pinned band {PRODUCT_BAND}, got {row['band'].strip()!r}")
         period = row["period"].strip().lower()
         if period not in {"event", "baseline"}:
             raise ValueError(f"Invalid period {period!r}; use 'event' or 'baseline'")
@@ -226,7 +229,7 @@ def analyze(manifest_path: Path, aoi_path: Path, assets_path: Path, *,
     for obs in observations:
         with rasterio.open(obs.path) as src:
             if src.count != 1:
-                raise ValueError(f"Expected a single-band WTR raster: {obs.path.name}")
+                raise ValueError(f"Expected a single-band BWTR raster: {obs.path.name}")
             if not _metric_projected_meters(src.crs):
                 raise ValueError(f"Expected projected metre CRS, got {src.crs}")
             xres, yres = src.res
@@ -245,6 +248,7 @@ def analyze(manifest_path: Path, aoi_path: Path, assets_path: Path, *,
                     and stats["unexpected_classes"] == 0
                 )
                 row = {
+                    "product_band": PRODUCT_BAND,
                     "granule_id": obs.granule_id,
                     "acquired_at": obs.acquired_at.isoformat(),
                     "period": obs.period,
@@ -323,7 +327,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--manifest", type=Path, required=True, help="CSV of local, already-authorized WTR GeoTIFFs")
+    parser.add_argument("--manifest", type=Path, required=True, help="CSV of local, already-authorized BWTR GeoTIFFs")
     parser.add_argument("--aoi", type=Path, required=True, help="Single-feature AOI GeoJSON")
     parser.add_argument("--assets", type=Path, required=True, help="Asset FeatureCollection GeoJSON with asset_id properties")
     parser.add_argument("--aoi-crs", default="EPSG:4326")
@@ -351,16 +355,17 @@ def main() -> None:
             "aoi": {"file": args.aoi.name, "sha256": file_sha256(args.aoi)},
             "assets": {"file": args.assets.name, "sha256": file_sha256(args.assets)},
             "observations": [{"granule_id": o.granule_id, "acquired_at": o.acquired_at.isoformat(),
-                              "period": o.period, "file": o.path.name, "sha256": file_sha256(o.path),
+                              "period": o.period, "band": PRODUCT_BAND, "file": o.path.name, "sha256": file_sha256(o.path),
                               "product_version": o.product_version, "processing_version": o.processing_version,
                               "retrieved_at": o.retrieved_at} for o in source_observations],
         },
         "analysis": {"product_doi": PRODUCT_DOI, "min_valid_fraction": args.min_valid_fraction,
                      "min_dates_per_period": args.min_dates, "aoi_crs": args.aoi_crs,
                      "assets_crs": args.assets_crs,
-                     "wtr_water_classes": sorted(WATER_CLASSES),
-                     "wtr_valid_classes": sorted(VALID_CLASSES),
-                     "wtr_mask_classes": sorted(INVALID_CLASSES)},
+                     "band": PRODUCT_BAND,
+                     "bwtr_water_classes": sorted(WATER_CLASSES),
+                     "bwtr_valid_classes": sorted(VALID_CLASSES),
+                     "bwtr_mask_classes": sorted(INVALID_CLASSES)},
         "outputs": {name: file_sha256(args.output_dir / name) for name in
                     ("observation_qa.csv", "asset_event_baseline_comparison.csv")},
         "independent_label_validation_performed": False,
