@@ -2,7 +2,7 @@
 
 **Production Site:** [Open ATLAS](https://atlas-water-screening.shawdaimarie.chatgpt.site/)
 
-**Verified version:** 12
+**Current deployed version:** 13
 
 **Access:** private; sign in with the authorized owner account.
 
@@ -12,7 +12,7 @@ The page is an interactive research walkthrough with synthetic analysis fixtures
 
 ## Guided walkthrough
 
-1. Open the production Site and review the synthetic-data and candidate-only notices.
+1. Open the production Site and review the synthetic-data and candidate-only notices. The new reference-coverage panel reports the C2S, UFOv2, CEMS, and GFD screening gaps; no current candidate passes the independent-label gate.
 2. In the study-area panel, select **Singapore** or **Mumbai**. Review the location rationale, public source, value-integration question, metadata count, and pending pixel-QA/independent-label status. Try a U.S. candidate such as **Houston** and compare its evidence profile.
 3. Use **Download area register**. The CSV contains all 16 candidates, per-area CMR date evidence, AOI bounds, screening dates, rationale, and validation status.
 4. In the analysis panel, change the method from the single-scene baseline to **Quality-aware aggregate**. The current synthetic fixture changes the lead overlap estimate from 28.6% to 21.4%, the elevated-fixture count from 4 to 3, and the median from 7.7% to 6.8%.
@@ -22,6 +22,6 @@ The page is an interactive research walkthrough with synthetic analysis fixtures
 
 ## Verified live workflows
 
-The latest recorded production replay selected all 16 profiles, switched analysis methods, changed to Baton Rouge/Hurricane Ida, inspected an asset, downloaded both CSV exports, and reset the view. Sites readback confirms the Site is active at version 12, with owner-only access and zero external visitors. These author-run checks demonstrate the walkthrough interactions only; they do not verify real raster coverage, scientific accuracy, a connected production API, or cloud-provider deployment.
+The full recorded production replay on version 12 selected all 16 profiles, switched analysis methods, changed to Baton Rouge/Hurricane Ida, inspected an asset, downloaded both CSV exports, and reset the view. Version 13 adds a responsive reference-coverage panel; source assertions cover its claims and links, and Sites readback confirms its deployment as active version 13 with owner-only access and zero external visitors. A fresh browser interaction replay on v13 was unavailable. These checks do not verify real raster coverage, scientific accuracy, a connected production API, or cloud-provider deployment.
 
 For test detail, see [deployment and test results](atlas-deployment-test-results.md). For the current rubric evidence, see the [scorecard](atlas-scorecard.md). For the cloud prerequisites, see the [four-cloud release runbook](atlas-cloud-release-runbook.md).

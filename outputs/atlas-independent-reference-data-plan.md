@@ -1,7 +1,7 @@
 # ATLAS independent reference data access plan
 
 **Prepared:** 2026-11-02  
-**Status:** source identified; no granule or reference-label file has been downloaded or screened.
+**Status:** multiple sources screened; no candidate-area package yet supplies qualifying event-matched, independently governed labels across the 16 AOIs.
 
 ## Candidate benchmark: OPERA DSWx-S1 CalVal Database V1
 
@@ -45,6 +45,15 @@ The official [PO.DAAC collection record](https://podaac.jpl.nasa.gov/dataset/OPE
 PO.DAAC also reports that OPERA reprocessed all affected DSWx-S1 granules acquired **2025-05-20 through 2025-12-09** after a processing anomaly; replacement products are available and users are advised to replace previously downloaded files. Any ATLAS run including those dates must query the current granule records, record the replacement granule ID/product-generation metadata and SHA-256, and avoid stale cached copies. The local analyzer records granule ID, product/software version, retrieval time, source checksum, and analysis-code checksum, but those records only prove provenance if the inputs were retrieved from the current authoritative collection. The Earth Engine diagnostic should be run against its current collection and outputs retained with their execution date; if the collection's reprocessing status cannot be verified for an acquisition, exclude it pending confirmation.
 
 Primary source: [PO.DAAC OPERA DSWx-S1 V1 collection record](https://podaac.jpl.nasa.gov/dataset/OPERA_L3_DSWX-S1_V1), “Direct S3-Access” and product information. Its notice says replacement granules for the 2025 anomaly are available and recommends replacing earlier downloads. The separate Earthdata alert page was unavailable during this check, so this record is the evidence cited here.
+
+## Public label-dataset screens: C2S Microsoft Floods and UFOv2
+
+Two public, manually labeled flood/surface-water datasets were screened against the exact 16 fixed ATLAS AOI boxes on 2026-11-03. The reproducible machine-readable outputs are `outputs/atlas-c2s-flood-dataset-audit.json` and `outputs/atlas-ufo-dataset-coverage-audit.json`; scripts and local geometry/key tests are under `scripts/audit_c2s_flood_dataset.py`, `scripts/audit_ufo_dataset_coverage.py`, and `tests/`.
+
+- The [C2S Microsoft Floods registry](https://registry.opendata.aws/c2smsfloods/) lists 900 Sentinel-1 label chips across 18 events. Within the 16 AOIs, the audit found one label chip, Houston / 2017-08-30: 34,967 valid label pixels (about 3.50 km², 0.56% of the 625 km² AOI), including 277 water pixels. It is one sparse date/event and cannot support balanced area-level validation. The registry lists CC-BY-4.0, while the linked [dataset README](https://radiantearth.blob.core.windows.net/mlhub/c2smsfloods/ms-dataset_README.pdf) states CC-BY-SA-4.0; clarify the applicable license before redistribution. The README also says labels mark water visible in Sentinel-1 with Sentinel-2 visual support, so this is not a fully independent sensor reference to OPERA DSWx-S1.
+- The authors’ [UFOv2 Zenodo release](https://zenodo.org/records/23426661) contains 215 PlanetScope visible-surface-water label-chip footprints across 14 events. All 215 metadata records were read successfully; none overlap the 16 fixed AOI boxes. This exact-footprint miss is not a claim that Houston had no observations: the archive includes Houston chips outside the selected 25 × 25 km Houston AOI. Its [paper](https://arxiv.org/abs/2604.23066) and [source repository](https://github.com/Tellman-lab/urbanFloodObservations) describe manually annotated PlanetScope imagery; the labels include pre-existing water and do not distinguish floodwater. The source package is a different sensor from OPERA but gives no matching reference chips for these fixed study boxes.
+
+Neither audit provides held-out event validation, comparable 8+8 coverage, or a score increase. The C2S result establishes only one sparse Houston label overlap; UFOv2 establishes zero chip-footprint overlaps for the current AOIs. Continue seeking locally governed event products or field labels, and apply the same spatial, temporal, licensing, annotation, and sampling gates to every enrolled area.
 
 ## Event-reference discovery audit: Copernicus EMS and Global Flood Database
 

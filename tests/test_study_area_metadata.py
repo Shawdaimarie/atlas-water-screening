@@ -51,3 +51,15 @@ def test_site_evidence_register_is_complete_and_idempotent():
     assert sum(area["region"] == "International" for area in profiles) == 8
     assert all(area["empirical_evidence"] and area["validation_path"] for area in profiles)
     assert updated.count("Demand distinction:") == 1
+
+
+def test_site_discloses_independent_reference_coverage_gaps():
+    site_html = (ROOT / "dist/index.html").read_text()
+    assert 'aria-labelledby="referenceAuditTitle"' in site_html
+    assert "Reference-label coverage is not yet comparable" in site_html
+    assert "1 sparse Houston chip" in site_html
+    assert "0 of 16 AOIs overlap" in site_html
+    assert "8 Sacramento points assessed in 2018 for a 2017 flood" in site_html
+    assert "no current area passes the independent-label gate" in site_html
+    assert 'href="https://registry.opendata.aws/c2smsfloods/"' in site_html
+    assert 'href="https://zenodo.org/records/23426661"' in site_html
