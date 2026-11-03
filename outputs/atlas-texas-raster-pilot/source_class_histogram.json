@@ -1,0 +1,82 @@
+{
+  "collection": "OPERA_L3_DSWX-S1_V1",
+  "band": "BWTR_Binary_water",
+  "valid_classes": {
+    "0": "non-water",
+    "1": "water"
+  },
+  "missing_classes": {
+    "250": "HAND masked",
+    "251": "layover/shadow masked",
+    "255": "fill/no-data"
+  },
+  "unexpected_classes": [],
+  "inputs": [
+    {
+      "file": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-06-17_mosaic.tif",
+      "sha256": "0eb881673a6c5a724241ad67b7f951627aff4c1d887db416f0c236d0e6f7216f",
+      "band": "BWTR_Binary_water",
+      "pixel_counts": {
+        "0": 102107253,
+        "1": 700502,
+        "251": 3457,
+        "255": 38269268
+      }
+    },
+    {
+      "file": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-06-19_mosaic.tif",
+      "sha256": "901c1ed952808c62afb92aedf1297919276d7dd4d7aa281eb5c228519236c630",
+      "band": "BWTR_Binary_water",
+      "pixel_counts": {
+        "0": 9584797,
+        "1": 27143,
+        "251": 15,
+        "255": 28188525
+      }
+    },
+    {
+      "file": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-06-22_mosaic.tif",
+      "sha256": "5aba54fba7ea3510f085faa9e17b7c04e1027a81f3814b5530667be6af163980",
+      "band": "BWTR_Binary_water",
+      "pixel_counts": {
+        "0": 72582719,
+        "1": 348144,
+        "251": 481,
+        "255": 33715584
+      }
+    },
+    {
+      "file": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-07-01_mosaic.tif",
+      "sha256": "cef2903998ef56b846a96005dfa308c36d9dc36c8e69a2244e87ff37e7db4f97",
+      "band": "BWTR_Binary_water",
+      "pixel_counts": {
+        "0": 9599545,
+        "1": 24613,
+        "251": 15,
+        "255": 28176307
+      }
+    },
+    {
+      "file": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-07-04_mosaic.tif",
+      "sha256": "911df6de00d347ba6cde0ad4bc1d3fed671c2b75b9b3cdfef6ad3842a2f4f319",
+      "band": "BWTR_Binary_water",
+      "pixel_counts": {
+        "0": 72664550,
+        "1": 255755,
+        "251": 490,
+        "255": 33726133
+      }
+    },
+    {
+      "file": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-07-11_mosaic.tif",
+      "sha256": "5aa315c6608ce69a15df91c860ce78162b6841519a5ae597658895985bf4d925",
+      "band": "BWTR_Binary_water",
+      "pixel_counts": {
+        "0": 134349019,
+        "1": 7173261,
+        "251": 3088,
+        "255": 136127792
+      }
+    }
+  ]
+}
