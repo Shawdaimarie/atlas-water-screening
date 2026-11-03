@@ -1,6 +1,6 @@
 # ATLAS validation protocol for the 16 candidate study areas
 
-**Protocol state: proposed; not externally preregistered.** Freeze a dated copy in a public or institutionally controlled registry before examining candidate-area OPERA outcomes or reference labels. Any change after that point must be versioned with a dated rationale. No area currently satisfies the confirmatory enrollment gates; this protocol defines the evidence needed to change that status.
+**Protocol state: proposed; not externally preregistered.** Candidate selection, archive discovery, RTC availability draws, Tampa exploratory OPERA sampling, and reference-source screens have already been examined. Those findings are discovery-only and excluded from confirmatory inference. Before selecting confirmatory events or inspecting their OPERA outcomes or reference labels, deposit a dated protocol, event-selection frame, site/event inclusion list, fixed AOIs, sampling design, metrics, and analysis code in a public or institutionally controlled registry. Version any later change with a dated rationale. No area currently satisfies the confirmatory enrollment gates; this protocol defines the evidence needed to change that status.
 
 ## Objectives and inference limits
 
