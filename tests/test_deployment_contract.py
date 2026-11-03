@@ -71,6 +71,10 @@ def test_kubernetes_workload_preserves_restricted_container_baseline():
     assert security["readOnlyRootFilesystem"] is True
     assert security["capabilities"]["drop"] == ["ALL"]
     assert container["resources"]["requests"] and container["resources"]["limits"]
+    assert container["env"][-1]["name"] == "ATLAS_ALLOWED_HOSTS"
+    assert "localhost" in container["env"][-1]["value"]
+    for probe in (container["readinessProbe"], container["livenessProbe"]):
+        assert {header["name"]: header["value"] for header in probe["httpGet"]["httpHeaders"]}["Host"] == "localhost"
     assert service["spec"]["type"] == "ClusterIP"
 
 
