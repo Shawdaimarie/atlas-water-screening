@@ -1,7 +1,17 @@
 # ATLAS independent reference data access plan
 
 **Prepared:** 2026-11-02  
-**Status:** multiple sources screened; GEOID-Flood metadata add one historical St. Louis AOI/event lead, but no source supplies qualifying, comparable event-matched labels across the 16 AOIs.
+**Status:** multiple sources screened; the latest screen adds a sparse SpaceNet 8 object-label lead for New Orleans and a historical GEOID-Flood lead for St. Louis. No source supplies qualifying, comparable event-matched water-pixel labels across all 16 AOIs.
+
+## SpaceNet 8 Hurricane Ida annotations: New Orleans overlap
+
+SpaceNet 8 is a complementary event-reference source for buildings and roads, not a water-pixel reference set. The official catalog identifies a Louisiana-East public training area; its CVPR Workshops paper describes hand-created pre/post-event object annotations from high-resolution Maxar imagery for Hurricane Ida in August 2021. The paper states that roads are marked flooded when visibly covered by water or rubble, and buildings when flood water is in immediate proximity; it also documents cloud and image-acquisition limitations. Thus the building class is a proxy for likely flooding, and a road label can include rubble.
+
+The reproducible audit retrieved the official mapping CSV and **all 599/599** public Louisiana-East annotation GeoJSON files, checked CRS84 geometries, and intersected them with each fixed ATLAS AOI bbox using positive-area polygon or positive-length line intersections. Only **New Orleans** intersects: 160 annotation files and 4,500 unique feature IDs (4,191 buildings and 309 roads). Within the fixed New Orleans box, **14** objects have source label `flooded=yes`; **4,486** have null flood status, which the audit leaves **unknown**. No explicit negative label is counted from the GeoJSON screen. Do not treat null as dry or treat the 14 positives as a representative accuracy sample.
+
+This is a valuable but narrow 2021 event reference lead. It is not a field survey, does not map every water pixel, is not temporally matched to the current OPERA candidate window, and covers only one of 16 areas. It cannot establish the shared 8+8 measurement or confirmatory precision gate and adds no score points. The SpaceNet dataset page lists CC BY-SA 4.0 for the dataset; the satellite imagery has separate terms. This audit reads vector labels only and does not download the imagery.
+
+Sources: [SpaceNet 8 dataset page](https://www.spacenet.ai/sn8-challenge/), [Hänsch et al., SpaceNet 8 (CVPR Workshops 2022)](https://openaccess.thecvf.com/content/CVPR2022W/EarthVision/html/Hansch_SpaceNet_8_-_The_Detection_of_Flooded_Roads_and_Buildings_CVPRW_2022_paper.html). Machine-readable results: [`atlas-spacenet8-louisiana-coverage-audit.json`](atlas-spacenet8-louisiana-coverage-audit.json); reproducible screen: `scripts/audit_spacenet8_reference_coverage.py`; Site panel generator: `scripts/build_site_spacenet8_reference_card.py`.
 
 ## Candidate benchmark: OPERA DSWx-S1 CalVal Database V1
 
@@ -103,6 +113,12 @@ This is a stronger event-map discovery screen than a DFO polygon-only or point-o
 ## Effect on current claims
 
 No registered site has passed real-raster scene QA or confirmatory independent-label validation. The Texas technical pilot remains outside the 16 candidates and failed its minimum-date gate. The GEOID-Flood screen identifies a historical St. Louis lead only. These source audits award no score points and do not validate the candidate sites.
+
+## Normalized 16-area reference-readiness ledger
+
+`scripts/build_reference_readiness_ledger.py` joins the pinned results above and the other source-specific audits into `outputs/atlas-reference-readiness-ledger.json` and `.csv`. It includes, for every fixed AOI, the OPERA metadata-date count, twelve sampled Sentinel-1 RTC VV availability results, and area-specific counts for C2S, UFOv2, FloodPlanet, Sen1Floods11, GEOID-Flood, GFD validation points and map pixels, Groundsource event leads, SpaceNet 8, and CEMS. Each input file's SHA-256 is embedded in the JSON report. The script does not download or reinterpret source rasters; counts remain separate by label/source type.
+
+The ledger finds 4/16 areas with any spatial reference lead: one sparse Houston C2S chip, historical St. Louis GEOID-Flood tiles, eight Sacramento GFD validation points, and New Orleans SpaceNet 8 objects. These are not equivalent evidence: dates, sensors, benchmark splits, object/pixel semantics, and licenses differ. The 2025 RTC availability screen has 168/192 sampled groups above the 80% spatial floor, with 10/16 areas passing all 12; it does not establish event/baseline adequacy. The all-area confirmatory gate remains **0/16**. The Site exposes JSON and CSV downloads alongside the separate source cards.
 
 ## FloodPlanet hand-label footprint screen
 

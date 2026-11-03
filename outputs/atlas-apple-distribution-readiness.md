@@ -4,10 +4,10 @@ Updated 2026-11-03. This note separates the existing private web deployment from
 
 ## Current verified state
 
-- The deployed ATLAS product is a private, browser-based Site at `https://atlas-water-screening.shawdaimarie.chatgpt.site/`, currently version 19 and restricted to the owner account. It is not hosted by Apple.
+- The deployed ATLAS product is a private, browser-based Site at `https://atlas-water-screening.shawdaimarie.chatgpt.site/`, currently version 21 and restricted to the owner account. It is not hosted by Apple.
 - The repository contains a static web experience in `dist/index.html`; it has no `.xcodeproj`, `.xcworkspace`, Swift source, or iOS app target.
 - This Mac has Apple command-line developer tools, but `xcodebuild -version` fails because the active developer directory is Command Line Tools rather than a full Xcode installation. An iOS archive cannot be built here yet.
-- No Apple Developer Program membership, App Store Connect app record, bundle identifier, signing team, certificates, provisioning profile, or TestFlight build has been verified or created.
+- The user says an existing Apple account will be used for a future release. No Apple Developer Program membership, App Store Connect app record, bundle identifier, signing team, certificates, provisioning profile, or TestFlight build has been verified or created. Account ownership alone does not establish distribution readiness.
 
 ## Apple account release path
 
@@ -23,7 +23,7 @@ To make an Apple release buildable and reviewable:
 
 ## Readiness gate
 
-Apple distribution is **not ready and has not been attempted**. The current web deployment remains available as a browser demo. This Apple track does not change the ATLAS research score or count as a Google Cloud, AWS, Azure, or Oracle deployment.
+Apple distribution is **not ready and has not been attempted**. The current private web deployment is Site v22 and remains available as a browser demo. To distribute an app with the existing account, its Developer Program/App Store Connect access must be verified and a full Xcode installation and iOS app target are needed. This Apple track does not change the ATLAS research score or count as a Google Cloud, AWS, Azure, or Oracle deployment.
 
 ## Apple references
 

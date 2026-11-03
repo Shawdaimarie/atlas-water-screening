@@ -2,7 +2,7 @@
 
 **Production Site:** [Open ATLAS](https://atlas-water-screening.shawdaimarie.chatgpt.site/)
 
-**Current deployed version:** 20 (deployment status verified as succeeded; source commit `8d21a79217bd08ee89518a0ce405fec1c89533de`)
+**Current deployed version:** 23 (deployment `appgdep_6ae9f349bbf88191bd90035e54ed546f` succeeded; source commit `2eb8cf562d9a2257dd012b422c1852cfa464e140`)
 
 **Access:** private; sign in with the authorized owner account.
 
@@ -12,7 +12,7 @@ The page is an interactive research walkthrough with synthetic analysis fixtures
 
 ## Guided walkthrough
 
-1. Open the production Site and review the synthetic-data and candidate-only notices. The new reference-coverage panel reports the C2S, UFOv2, CEMS, and GFD screening gaps; no current candidate passes the independent-label gate.
+1. Open the production Site and review the synthetic-data and candidate-only notices. The reference panel reports the C2S, UFOv2, CEMS, GFD, SpaceNet 8, and normalized 16-area readiness screens; no current candidate passes the independent-label gate.
 2. In the study-area panel, select **Singapore** or **Mumbai**. Review the location rationale, public source, value-integration question, metadata count, and pending pixel-QA/independent-label status. Try a U.S. candidate such as **Houston** and compare its evidence profile.
 3. Use **Download area register**. The CSV contains all 16 candidates, per-area CMR date evidence, AOI bounds, screening dates, rationale, and validation status.
 4. In the analysis panel, change the method from the single-scene baseline to **Quality-aware aggregate**. The current synthetic fixture changes the lead overlap estimate from 28.6% to 21.4%, the elevated-fixture count from 4 to 3, and the median from 7.7% to 6.8%.
@@ -24,7 +24,9 @@ The page is an interactive research walkthrough with synthetic analysis fixtures
 
 ## Verified live workflows
 
-Version 20 is the active private production release. It adds a third separately seeded Sentinel-1 RTC availability draw to the 16-area sample table and downloadable audit. The deployment control plane reports `succeeded`; the full 67-test Python 3.12 suite passes. This run could not replay the page visually because browser automation reported `browser.user is unavailable`, and the private site rejects unauthenticated HTTP requests. Earlier browser walkthroughs verified the synthetic method switch, profiles, scenario, exports, and reset, and version 19's paired panel/download. These checks do not verify flood classification, scientific accuracy, a connected production API, or cloud-provider deployment. Full record: `atlas-deployment-test-results.md`.
+Version 23 is the active private production release. Authenticated replay verifies the 16-area ledger card and download links. The production JSON route displays all 16 AOIs and confirms 0 confirmatory sites; the source-derived summary is 168/192 sampled RTC groups passing the 80% availability screen, 10/16 areas passing all 12 sampled groups, and four areas with some spatial reference lead. The hash-locked Python 3.12 suite passes 77 tests. These checks verify the walkthrough and source-coverage reports only; they do not verify flood classification, scientific accuracy, a connected production API, or cloud-provider deployment. Full record: `atlas-deployment-test-results.md`.
+
+The user intends to use an existing Apple account for a future release. ATLAS is currently a private web Site, not an Apple-hosted service or an iOS app. No iOS target or Apple distribution build has been verified; the browser deployment remains the way to observe this walkthrough.
 
 For test detail, see [deployment and test results](atlas-deployment-test-results.md). For the current rubric evidence, see the [scorecard](atlas-scorecard.md). For the cloud prerequisites, see the [four-cloud release runbook](atlas-cloud-release-runbook.md).
 

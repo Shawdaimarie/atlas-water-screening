@@ -119,4 +119,3 @@ print('ATLAS per-acquisition pixel QA diagnostics (inspect histogram for unknown
 print('Dataset', collection.limit(1));
 Map.centerObject(areas, 2);
 Map.addLayer(areas, {color: 'yellow'}, 'Registered ATLAS 8+8 AOIs');
-

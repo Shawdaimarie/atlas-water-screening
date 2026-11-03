@@ -34,4 +34,3 @@ def test_earth_engine_audit_uses_documented_binary_water_validity_gate():
     assert "MIN_VALID_AOI_FRACTION = 0.80" in source
     assert "MIN_DATES_PER_AREA = 90" in source
     assert "Export.table" not in source
-

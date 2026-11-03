@@ -86,4 +86,3 @@ def test_secret_like_fields_are_rejected_without_echoing_values(tmp_path, capsys
     output = capsys.readouterr().out
     assert "secret_access_key" in output
     assert "must-not-appear-in-output" not in output
-

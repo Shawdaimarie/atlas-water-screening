@@ -4,6 +4,8 @@ Updated: 2026-11-03. Scope: privately hosted synthetic walkthrough plus local fi
 
 **Current score: 55/100, author-verified and provisional.** No independent reproduction has occurred. The score follows the strict 5-point criterion rule. A deployment does not make synthetic data into a historical observation and does not earn unrelated reliability or scale points.
 
+**Latest deployment check (2026-11-03):** private Site v23 is successful; authenticated production replay shows the 8+8 readiness ledger and its live JSON route returns all 16 areas. The hash-locked Python 3.12 suite passed 77 tests. These are demo and engineering checks only; the score remains 55/100 because real matched event observations, independent labels, confirmatory enrollment, cloud deployments, and independent reproduction remain unmet.
+
 | Category | Points | Evidence and result |
 |---|---:|---|
 | Functionality | 15/20 | Three bounded demo criteria pass: supported scenario/area interaction; synthetic method comparison and asset inspection; labeled CSV exports. The 5-point real pinned historical-observation workflow is pending; no real raster or event has been reproduced. |

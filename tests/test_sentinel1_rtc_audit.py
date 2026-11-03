@@ -60,4 +60,3 @@ def test_query_area_follows_stac_pagination_and_deduplicates_dates():
     assert result["pages_read"] == 2
     assert session.bodies[0]["collections"] == ["sentinel-1-rtc"]
     assert session.bodies[1] == {"token": "page-2"}
-

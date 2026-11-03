@@ -92,7 +92,14 @@ def test_site_discloses_independent_reference_coverage_gaps():
     assert "no current area passes the independent-label gate" in site_html
     assert 'href="https://registry.opendata.aws/c2smsfloods/"' in site_html
     assert 'href="https://zenodo.org/records/23426661"' in site_html
-    assert site_html.count('<article class="reference-card">') == 4
+    assert site_html.count('<article class="reference-card">') == 6
+    assert "16-area evidence-readiness ledger" in site_html
+    assert "Download 16-area JSON" in site_html
+    assert "SpaceNet 8 · Hurricane Ida" in site_html
+    assert "4,500 unique building/road references intersect the fixed box" in site_html
+    assert "14 have source label" in site_html
+    assert "4,486 null flood states remain unknown" in site_html
+    assert 'href="atlas-spacenet8-louisiana-coverage-audit.json"' in site_html
     assert "12 benchmark-filtered tiles · St. Louis event EMSR203 (2017)" in site_html
     assert "all 12 records are in the benchmark training split" in site_html
     assert "not held-out validation" in site_html
@@ -137,6 +144,7 @@ def test_live_site_source_exposes_s1rtc_sample_table_and_download():
     assert "10 / 16" in site_html
     assert "Compare 12 sampled dates" in site_html
     assert "A / B / C" in site_html
+    assert "A / B / C / C" not in site_html
     assert 'id="rtcCoverageRows"' in site_html
     assert "renderS1rtcAreaCoverage" in site_html
     assert 'href="s1rtc-pixel-coverage-replicates.json"' in site_html

@@ -161,8 +161,6 @@ def build() -> None:
     panel = panel.replace("two separately seeded sample groups per quarter", f"{draw_count} separately seeded sample groups per quarter")
     panel = panel.replace("Download the paired coverage audit", "Download the multi-draw coverage audit")
     panel = panel.replace("groups repeat across the two draws", f"groups repeat across the {draw_count} draws")
-    for quarter in range(1, 5):
-        panel = panel.replace(f"Q{quarter} · A / B", f"Q{quarter} · A / B / C")
     data_js = f"{DATA_START}const s1rtcCoverageData={json.dumps(data, ensure_ascii=False, separators=(',', ':'))};{DATA_END}"
     html = HTML.read_text()
     html = replace_marked(html, CSS_START, CSS_END, CSS, before=".reference-grid{display:grid")

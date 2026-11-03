@@ -1,7 +1,7 @@
 # Local Kubernetes policy smoke result
 
-**Run date:** 2026-11-02  
-**Cluster:** disposable kind v1.35.0, Calico v3.32.3  
+**Run date:** 2026-11-02
+**Cluster:** disposable kind v1.35.0, Calico v3.32.3
 **ATLAS image:** local `atlas-api:secure-candidate` (`sha256:e5239a544edb12b7525f09a6f025051000dc845c1519f2a6be673244db3b014f4`)
 
 ## Result

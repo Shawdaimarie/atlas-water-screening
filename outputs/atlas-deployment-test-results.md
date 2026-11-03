@@ -2,9 +2,18 @@
 
 **Run date:** 2026-11-02\
 **Production Site:** [ATLAS | Water Exposure Screening](https://atlas-water-screening.shawdaimarie.chatgpt.site/) (private owner-only access)\
-**Current published Site version:** 20
-**Current source commit deployed:** `8d21a79217bd08ee89518a0ce405fec1c89533de`
-**Version provenance:** Sites readback matched version 20 to source commit `8d21a79217bd08ee89518a0ce405fec1c89533de`; deployment `appgdep_6ae9e7ad7fdc8191a79508eaad54fb99` reports `succeeded` at the existing private URL.
+**Current published Site version:** 21
+**Current source commit deployed:** `ff1e8f40ac8fc0b858fe242304131e25f013a7fe`
+**Version provenance:** Sites readback matched version 21 to source commit `ff1e8f40ac8fc0b858fe242304131e25f013a7fe`; deployment `appgdep_6ae9ea86f2a08191a1938abc73ab1d50` reports `succeeded` at the existing private URL.
+
+## Current release: Site v21 (2026-11-03)
+
+- Sites readback identifies active version 21, owner-only access for `shawdaimarie@gmail.com`, source commit `ff1e8f40ac8fc0b858fe242304131e25f013a7fe`, and successful production deployment `appgdep_6ae9ea86f2a08191a1938abc73ab1d50` at the existing private URL.
+- The builder no longer applies the duplicated third-draw heading rewrite. A regression assertion guards against the invalid `A / B / C / C` label; the live table visibly renders Q1–Q4 with A/B/C sample columns.
+- Authenticated live walkthrough replay exercised the 16-area panel; area profiles; quality-aware aggregate; Baton Rouge/Hurricane Ida scenario; asset detail selection; area-register CSV export; synthetic evidence export and label; reset; and corrected coverage table. The interface reports 168/192 selected groups above the spatial floor and 10/16 areas passing all 12 sampled groups.
+- The live coverage-audit JSON endpoint was opened and parsed. It confirms 16 total areas (8 U.S. and 8 international), 192 selections, 173 unique orbit groups, 19 repeated selections, 168 selections above the 80% screen, 150 unique passing groups, and 10 areas passing all 12 samples. The browser's native attachment-download interception did not complete, so the file-download gesture is not counted as passed; the live JSON endpoint itself is verified.
+- Test rerun: Python 3.12 with hash-locked development and reference-audit dependencies and `libexpat1` — **69 passed in 0.97s**. The local macOS Python 3.9 `.venv` is incomplete (missing `shapely`) and is not used to represent this result.
+- This release does not change the rubric score. It verifies the deployed walkthrough and availability report only; it is not scientific validation, production API/cloud hosting, Apple distribution, or independent reproduction. Canonical project score remains **55/100 provisional**.
 
 ## Result summary
 
@@ -478,3 +487,19 @@ This status supersedes the earlier version 10/11 entries below; those are retain
 - Added offline regression checks for positive-area bbox logic and the saved complete 8+8 audit. With development and reference-audit dependencies installed using `--require-hashes` in Python 3.12 Bookworm, the full suite passes **69 tests in 1.06s**. `git diff --check` passes with the previously noted CSV line-ending notices.
 - Private GitHub `main` commit `9333baea3f281b35146ffcba9f118e5f5c494153` passed [Actions run 41649838352](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41649838352): **69 tests passed in 1.83s**, GEOID-Flood screen passed, container build and **11/11** HTTP smoke checks passed, runtime image audit passed, and dependency-security scan passed. This verifies the pushed source snapshot and container checks only; it is not four-cloud deployment or independent scientific reproduction.
 - The result reinforces that the candidate register still lacks independent, spatially matched validation chips. Canonical score remains **55/100 provisional**, with no confirmatory enrollment.
+
+## Site v22 live release and end-to-end replay (2026-11-03 UTC)
+
+- Sites control-plane readback confirms private production version **22**, deployment `appgdep_6ae9f0d056c48191a1b89e186b9b56e3` (`succeeded`), source commit `c34e16db781213772148fc6588d0eb183dd3b8b7`, and the existing owner-only URL. No access policy was widened.
+- Authenticated production browser replay selected Dubai and verified its 381-date candidate profile, planned Tasreef investment evidence, value-integration question, and explicit warning that program targets are not measured results. The separate demo method control switched to “Quality-aware temporal aggregate” and visibly changed the elevated count from 4 to 3, median from 7.7% to 6.8%, and lead asset overlap from 28.6% to 21.4%; the interface labels these as synthetic fixtures. Hurricane Ida selection changed the live demo to Baton Rouge, updated its dates/asset IDs, and showed the scenario-change confirmation. Reset restored the single-scene baseline; selecting a second asset updated the detail panel. Area-register CSV and evidence export both showed download confirmations, with the evidence export retaining the synthetic-data/method label.
+- The public production route `/atlas-spacenet8-louisiana-coverage-audit.json` loaded and displayed a parseable complete 16-area report. Only New Orleans intersects the fixed AOI: 160 annotation files, 4,500 unique objects (4,191 buildings, 309 roads), 14 positive source labels, 4,486 unknown labels, and zero explicit negative labels. Null values are not counted as dry. The deployed reference card and audit data agree.
+- In Python 3.12 Bookworm, installed `requirements-dev.lock` and `requirements-reference-audit.lock` with `--require-hashes`; full local regression suite: **74 passed in 1.98s**. `git diff --check` passed before this documentation update; rechecked after update.
+- These test results demonstrate successful publication and core interactive/export workflows, not live flood classification or validated outcomes. Canonical rubric remains **55/100 provisional**; confirmatory enrollment remains 0/16; Google Cloud, AWS, Azure, and Oracle deployments remain unperformed. No 100/100 result is claimed.
+
+## Site v23 normalized 8+8 readiness ledger (2026-11-03 UTC)
+
+- Built `scripts/build_reference_readiness_ledger.py`, which joins pinned per-area outputs for the 8+8 register, 192 RTC sample checks, C2S, UFOv2, FloodPlanet, Sen1Floods11, GEOID-Flood, GFD validation points and event maps, Groundsource leads, SpaceNet 8, and CEMS. It stores SHA-256 for all 11 input snapshots and keeps the source counts disaggregated by type. The JSON and CSV each contain 16 fixed-AOI rows; this is a normalized crosswalk, not an assertion that unlike sensors/labels are equivalent.
+- Ledger result: **0/16 confirmatory areas eligible**; 4/16 have any spatial reference lead (Houston, New Orleans, Sacramento, St. Louis). The RTC availability samples show **168/192** groups passing 80%, and **10/16** areas passing all 12 groups. Groundsource remains marked discovery-only; New Orleans SpaceNet null labels stay unknown.
+- Added regression checks for the 8+8 balance, all totals, SpaceNet unknown handling, download-card disclosures, and generated outputs. Hash-locked Python 3.12 Bookworm suite: **77 passed in 0.90s**. `git diff --check` passed.
+- Published private Site version **23**, deployment `appgdep_6ae9f349bbf88191bd90035e54ed546f` (`succeeded`), from source commit `2eb8cf562d9a2257dd012b422c1852cfa464e140`. Site readback shows version 23 and preserves owner-only access. Live browser replay displays the new readiness panel and both download links; opening the JSON route visibly returns all 16 rows and source hashes. Browser direct navigation to the CSV route is handled as a download and the embedded browser blocked opening it as a page; the generated CSV is regression-checked locally for presence, but its production file payload was not parsed through the browser.
+- No score points are added: the ledger documents gaps and reproducibility but does not supply independent current-window labels, pass enrollment gates, perform cloud deployment, or establish field-measured outcomes. Score remains **55/100 provisional**.

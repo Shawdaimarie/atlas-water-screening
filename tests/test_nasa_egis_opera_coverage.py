@@ -56,4 +56,3 @@ def test_catalog_date_and_s1_water_classification():
     undated_wtr = catalog_record({"name": "OPERA_DSWx_S1_WTR_item", "date": None})
     assert undated_wtr["date_utc"] is None
     assert undated_wtr["candidate_sentinel1_water_observation"] is True
-
