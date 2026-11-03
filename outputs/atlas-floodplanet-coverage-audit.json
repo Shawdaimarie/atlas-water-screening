@@ -1,0 +1,144 @@
+{
+  "retrieved_utc": "2026-11-03T12:12:09.588996+00:00",
+  "source": "FloodPlanet Inundation Dataset, STAC label-item metadata in the public Zenodo archive",
+  "zenodo_record_id": 15238572,
+  "doi": "10.5281/zenodo.15238572",
+  "record_url": "https://zenodo.org/records/15238572",
+  "archive_file": "FloodPlanet.zip",
+  "archive_bytes": 1877915990,
+  "archive_checksum": "md5:6e63963b481698a1903cc1ace88b5231",
+  "range_read_only": true,
+  "zip_member_count": 5267,
+  "stac_label_item_count": 366,
+  "successfully_inspected_item_count": 366,
+  "event_group_count": 19,
+  "processing_errors": [],
+  "registered_area_count": 16,
+  "overlapping_area_count": 0,
+  "overlapping_label_chip_count": 0,
+  "item_level_license_values": [
+    "CC-BY-SA-4.0"
+  ],
+  "license_note": "Zenodo landing page does not display a license; each label STAC item must be checked, and the CyVerse listing reports PDDL. Resolve conflicting terms with the data provider before redistribution or commercial use.",
+  "registered_areas": {
+    "United States/Houston": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "United States/Miami": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "United States/Tampa": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "United States/New Orleans": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "United States/New York City": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "United States/Sacramento": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "United States/Atlanta": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "United States/St. Louis": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "International/Jakarta": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "International/Singapore": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "International/Dubai": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "International/Mumbai": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "International/Bangkok": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "International/Tokyo": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "International/Manila": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    },
+    "International/São Paulo": {
+      "label_chip_count": 0,
+      "events": [],
+      "dates": [],
+      "spatial_reference_sensor": "PlanetScope hand labels (different sensor from OPERA Sentinel-1)",
+      "matched_chips": []
+    }
+  },
+  "limitations": [
+    "A footprint overlap is a candidate reference lead, not proof of event-date or pixel-level alignment with the current OPERA acquisition.",
+    "The labels distinguish no-data, not-water, low-confidence water, and water; low-confidence pixels require a predeclared treatment.",
+    "The collection covers 19 historical events from 2017–2020, outside the current 2024–2026 OPERA screening window.",
+    "STAC item properties describe hand labels based on PlanetScope and co-located temporally near Sentinel imagery; inspect actual label rasters, temporal lags, annotator documentation, and co-registration before validation.",
+    "The source is not balanced across the 16 selected city AOIs and cannot establish the full 8+8 comparative design."
+  ]
+}

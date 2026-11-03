@@ -103,3 +103,13 @@ This is a stronger event-map discovery screen than a DFO polygon-only or point-o
 ## Effect on current claims
 
 No registered site has passed real-raster scene QA or confirmatory independent-label validation. The Texas technical pilot remains outside the 16 candidates and failed its minimum-date gate. The GEOID-Flood screen identifies a historical St. Louis lead only. These source audits award no score points and do not validate the candidate sites.
+
+## FloodPlanet hand-label footprint screen
+
+On 2026-11-03, the pinned [FloodPlanet Zenodo release](https://zenodo.org/records/15238572) was screened against the same 16 fixed city AOIs. The authors describe 366 manually labeled, 3 m PlanetScope chips across 19 flood events from 2017–2020, with spatially overlapping, temporally near Sentinel-1, Sentinel-2, and Landsat-8 imagery. The published archive is 1,877,915,990 bytes. The audit used HTTP byte ranges to read only the ZIP central directory and 366 small STAC label-item documents; it did not retrieve imagery or label rasters. The archive's published MD5 was recorded and 366/366 label records parsed without errors.
+
+No label-chip footprint intersects any of the 16 fixed 25 × 25 km AOIs. A Hurricane Harvey item is near Houston but outside the registered Houston box; it was not counted as an overlap. Thus the dataset does not provide direct labeled pixels within this fixed program's candidate areas. The result is a zero-overlap metadata screen, not proof that no wider-area or other-version references exist.
+
+The STAC label-item metadata describes hand labels based on PlanetScope and classes for no-data, not-water, low-confidence water, and water. Before any future use, review annotator instructions, treatment of low-confidence pixels, label/image timing, co-registration, and actual raster masks. Item metadata reports `CC-BY-SA-4.0`, while the CyVerse dataset listing reports PDDL and the Zenodo landing page does not display a license; resolve this discrepancy with the data provider before redistribution or commercial use. Primary records: [Zenodo dataset record](https://zenodo.org/records/15238572), [FloodPlanet paper and data-availability statement](https://doi.org/10.34133/remotesensing.0575), and [CyVerse catalog entry](https://ckan.cyverse.rocks/dataset/floodplanet). Machine-readable counts and per-area output: `atlas-floodplanet-coverage-audit.json`; reproducible screen: `scripts/audit_floodplanet_dataset_coverage.py`.
+
+This source adds no study-area labels or score points. The zero intersections reinforce the need for site-specific event references or a justified revision of the fixed candidate footprint before confirmatory enrollment; AOIs must not be shifted after inspecting outcomes to manufacture coverage.

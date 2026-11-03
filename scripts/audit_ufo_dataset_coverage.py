@@ -93,7 +93,13 @@ def zip_read_contiguous_members(url: str, entries: list[dict]) -> dict[str, byte
         return {}
     ordered = sorted(entries, key=lambda entry: entry["local_header_offset"])
     start = ordered[0]["local_header_offset"]
-    end = ordered[-1]["local_header_offset"] + 30 + len(ordered[-1]["name"].encode("utf-8")) + ordered[-1]["compressed_size"] - 1
+    last = ordered[-1]
+    last_header, _ = request_bytes(url, last["local_header_offset"], last["local_header_offset"] + 29)
+    last_fields = struct.unpack("<4s5H3I2H", last_header)
+    if last_fields[0] != LOCAL_SIG:
+        raise ValueError(f"Malformed local ZIP header for {last['name']}")
+    filename_length, extra_length = last_fields[-2:]
+    end = last["local_header_offset"] + 30 + filename_length + extra_length + last["compressed_size"] - 1
     data, _ = request_bytes(url, start, end)
     result = {}
     for entry in ordered:
