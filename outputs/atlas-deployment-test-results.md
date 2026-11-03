@@ -24,7 +24,7 @@ The private static Site is deployed (version 12) and the study-area candidate re
 | Asset detail | Pass | Selecting Southeast Water Plant updated detail values and asset ID. |
 | Synthetic evidence export | Pass | Export button showed its success message with synthetic-data labeling and selected method. |
 | Reset workflow | Pass | Reset restored the single-scene baseline values and method labels. |
-| API and metadata unit tests | Pass locally | Current suite `.venv/bin/python -m pytest -q`: 38 passed in 0.87s, with one LibreSSL/urllib3 environment warning. |
+| API and metadata unit tests | Pass locally | Current suite `.venv/bin/python -m pytest -q`: 40 passed in 0.92s, with one LibreSSL/urllib3 environment warning. |
 | API HTTP smoke | Pass locally; not deployed | Local fixture API health, area listing, analysis, CSV, and request-boundary checks passed. Health explicitly reports `live_nasa_ingestion:false`; the API is not connected to the Site. |
 | Static/document checks | Pass | HTML parser accepted the deployed source; structural checks confirmed exactly one study-area panel and 16 records with 8 per region. |
 | Focused accessibility checks | Pass with documented limits | Updated muted-text colors measure 5.87:1 on white, 5.44:1 on the method card, and 5.04:1 for warning text. Keyboard Tab/Enter selected Miami and updated its profile. Touch targets and focus styling were improved; VoiceOver/NVDA and zoom review remain open. See `atlas-accessibility-review.md`. |
@@ -36,6 +36,7 @@ The private static Site is deployed (version 12) and the study-area candidate re
 | Earth Engine pixel audit | Prepared; not run | All-area Code Editor diagnostic is checked into the private repository. No approved Earth Engine project was verified and no pixel result exists. PO.DAAC confirms science GeoTIFFs are in its Earthdata-protected S3 prefix; the public prefix is supporting metadata, not anonymous science-data access. NASA's collection notice also requires replacement granules for affected 2025-05-20–2025-12-09 acquisitions. |
 | Independent labels and event validation | Not passed | Current CEMS/GFD audits found no qualifying independent labels in the registered AOIs. The Texas raster pilot failed the minimum-date gate and is outside the 16 areas. |
 | Four-cloud deployment | Not deployed | Account-input preflight fails closed with 25 missing/invalid requirements. No provider project, cluster, API runtime, or cloud E2E test is verified. |
+| Shared Kubernetes baseline | Static checks pass; live enforcement unverified | Restricted pods, default-deny namespace policies, explicit ingress/DNS rules, resource quota, and disruption budget parse and pass manifest-policy tests. No cluster/CNI has applied or enforced them. See `deployment/k8s/README.md`. |
 | Canonical score | 55/100 provisional | Strict evidence-based score; CI and the static walkthrough do not establish scientific validation or cloud deployment. |
 
 **Evidence-date note:** Version-specific entries below are dated release history. If a historical section conflicts with this current-status table, this table and its linked artifacts control.
