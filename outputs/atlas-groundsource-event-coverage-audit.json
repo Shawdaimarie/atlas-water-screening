@@ -1,0 +1,306 @@
+{
+  "analysis_window": {
+    "end_inclusive": "2026-02-03",
+    "source_max_available_event_date": "2026-02-03",
+    "start_inclusive": "2024-09-01"
+  },
+  "areas": [
+    {
+      "city": "Houston",
+      "distinct_event_ids": 122,
+      "distinct_start_dates": 71,
+      "intersecting_event_records": 122,
+      "region": "United States",
+      "start_date_counts_by_year": {
+        "2024": 16,
+        "2025": 55
+      },
+      "start_date_range": [
+        "2024-08-31",
+        "2025-11-30"
+      ]
+    },
+    {
+      "city": "Miami",
+      "distinct_event_ids": 124,
+      "distinct_start_dates": 51,
+      "intersecting_event_records": 124,
+      "region": "United States",
+      "start_date_counts_by_year": {
+        "2024": 17,
+        "2025": 34
+      },
+      "start_date_range": [
+        "2024-09-02",
+        "2025-10-24"
+      ]
+    },
+    {
+      "city": "Tampa",
+      "distinct_event_ids": 196,
+      "distinct_start_dates": 52,
+      "intersecting_event_records": 196,
+      "region": "United States",
+      "start_date_counts_by_year": {
+        "2024": 25,
+        "2025": 26,
+        "2026": 1
+      },
+      "start_date_range": [
+        "2024-09-01",
+        "2026-01-01"
+      ]
+    },
+    {
+      "city": "New Orleans",
+      "distinct_event_ids": 157,
+      "distinct_start_dates": 37,
+      "intersecting_event_records": 157,
+      "region": "United States",
+      "start_date_counts_by_year": {
+        "2024": 10,
+        "2025": 27
+      },
+      "start_date_range": [
+        "2024-09-03",
+        "2025-12-25"
+      ]
+    },
+    {
+      "city": "New York City",
+      "distinct_event_ids": 425,
+      "distinct_start_dates": 145,
+      "intersecting_event_records": 425,
+      "region": "United States",
+      "start_date_counts_by_year": {
+        "2024": 32,
+        "2025": 112,
+        "2026": 1
+      },
+      "start_date_range": [
+        "2024-09-01",
+        "2026-01-27"
+      ]
+    },
+    {
+      "city": "Sacramento",
+      "distinct_event_ids": 36,
+      "distinct_start_dates": 22,
+      "intersecting_event_records": 36,
+      "region": "United States",
+      "start_date_counts_by_year": {
+        "2024": 1,
+        "2025": 19,
+        "2026": 2
+      },
+      "start_date_range": [
+        "2024-11-22",
+        "2026-01-05"
+      ]
+    },
+    {
+      "city": "Atlanta",
+      "distinct_event_ids": 161,
+      "distinct_start_dates": 42,
+      "intersecting_event_records": 161,
+      "region": "United States",
+      "start_date_counts_by_year": {
+        "2024": 11,
+        "2025": 31
+      },
+      "start_date_range": [
+        "2024-09-11",
+        "2025-11-08"
+      ]
+    },
+    {
+      "city": "St. Louis",
+      "distinct_event_ids": 68,
+      "distinct_start_dates": 26,
+      "intersecting_event_records": 68,
+      "region": "United States",
+      "start_date_counts_by_year": {
+        "2024": 5,
+        "2025": 20,
+        "2026": 1
+      },
+      "start_date_range": [
+        "2024-09-03",
+        "2026-01-27"
+      ]
+    },
+    {
+      "city": "Jakarta",
+      "distinct_event_ids": 5453,
+      "distinct_start_dates": 376,
+      "intersecting_event_records": 5453,
+      "region": "International",
+      "start_date_counts_by_year": {
+        "2024": 73,
+        "2025": 275,
+        "2026": 28
+      },
+      "start_date_range": [
+        "2024-09-09",
+        "2026-01-29"
+      ]
+    },
+    {
+      "city": "Singapore",
+      "distinct_event_ids": 166,
+      "distinct_start_dates": 63,
+      "intersecting_event_records": 166,
+      "region": "International",
+      "start_date_counts_by_year": {
+        "2024": 14,
+        "2025": 46,
+        "2026": 3
+      },
+      "start_date_range": [
+        "2024-09-30",
+        "2026-01-16"
+      ]
+    },
+    {
+      "city": "Dubai",
+      "distinct_event_ids": 72,
+      "distinct_start_dates": 45,
+      "intersecting_event_records": 72,
+      "region": "International",
+      "start_date_counts_by_year": {
+        "2024": 9,
+        "2025": 33,
+        "2026": 3
+      },
+      "start_date_range": [
+        "2024-08-31",
+        "2026-01-20"
+      ]
+    },
+    {
+      "city": "Mumbai",
+      "distinct_event_ids": 948,
+      "distinct_start_dates": 155,
+      "intersecting_event_records": 948,
+      "region": "International",
+      "start_date_counts_by_year": {
+        "2024": 31,
+        "2025": 123,
+        "2026": 1
+      },
+      "start_date_range": [
+        "2024-08-31",
+        "2026-01-20"
+      ]
+    },
+    {
+      "city": "Bangkok",
+      "distinct_event_ids": 816,
+      "distinct_start_dates": 183,
+      "intersecting_event_records": 816,
+      "region": "International",
+      "start_date_counts_by_year": {
+        "2024": 64,
+        "2025": 118,
+        "2026": 1
+      },
+      "start_date_range": [
+        "2024-08-30",
+        "2026-01-02"
+      ]
+    },
+    {
+      "city": "Tokyo",
+      "distinct_event_ids": 174,
+      "distinct_start_dates": 35,
+      "intersecting_event_records": 174,
+      "region": "International",
+      "start_date_counts_by_year": {
+        "2024": 5,
+        "2025": 30
+      },
+      "start_date_range": [
+        "2024-09-03",
+        "2025-11-24"
+      ]
+    },
+    {
+      "city": "Manila",
+      "distinct_event_ids": 1228,
+      "distinct_start_dates": 167,
+      "intersecting_event_records": 1228,
+      "region": "International",
+      "start_date_counts_by_year": {
+        "2024": 40,
+        "2025": 122,
+        "2026": 5
+      },
+      "start_date_range": [
+        "2024-09-01",
+        "2026-01-24"
+      ]
+    },
+    {
+      "city": "S\u00e3o Paulo",
+      "distinct_event_ids": 1469,
+      "distinct_start_dates": 177,
+      "intersecting_event_records": 1469,
+      "region": "International",
+      "start_date_counts_by_year": {
+        "2024": 44,
+        "2025": 112,
+        "2026": 21
+      },
+      "start_date_range": [
+        "2024-09-08",
+        "2026-01-28"
+      ]
+    }
+  ],
+  "audit_id": "atlas-groundsource-event-coverage-audit",
+  "counts": {
+    "areas_with_intersecting_records": 16,
+    "candidate_areas": 16,
+    "distinct_event_ids_across_area_matches": 11615,
+    "intersecting_area_records": 11615
+  },
+  "generated_at_utc": "2026-11-03T05:01:02.948075+00:00",
+  "interpretation_limit": "Groundsource records are machine-extracted from news reports and geolocated for event discovery. Their geometries are not satellite-derived inundation boundaries, field observations, independent flood labels, or proof that flooding occurred throughout the polygon. News coverage and extraction may be geographically and temporally biased. Intersections do not establish comparable sampling, pixel quality, event attribution, or confirmatory enrollment.",
+  "schema_version": 1,
+  "source": {
+    "all_row_group_date_ranges": [
+      {
+        "max": "2020-08-27",
+        "min": "2000-01-01",
+        "row_group": 0,
+        "rows": 1048576
+      },
+      {
+        "max": "2024-09-12",
+        "min": "2020-08-27",
+        "row_group": 1,
+        "rows": 1048576
+      },
+      {
+        "max": "2026-02-03",
+        "min": "2024-09-12",
+        "row_group": 2,
+        "rows": 549150
+      }
+    ],
+    "doi": "https://doi.org/10.5281/zenodo.18647054",
+    "file_checksum": "md5:cd1b5de6508f7aad8e1d1d0dd4cecea6",
+    "file_key": "groundsource_2026.parquet",
+    "file_size_bytes": 667122400,
+    "license": "cc-by-4.0",
+    "record_id": "18647054",
+    "screened_row_groups": [
+      1,
+      2
+    ],
+    "screened_source_rows": 1597726,
+    "title": "Groundsource: A Dataset of Flood Events from News",
+    "total_dataset_rows": 2646302
+  },
+  "spatial_test": "WKB event geometry intersects each fixed WGS84 AOI bounding envelope"
+}
