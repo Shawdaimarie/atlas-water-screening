@@ -1,5 +1,5 @@
 {
-  "notes": "Template only: replace all paths with authorized local data. Do not add passwords, Earthdata tokens, signed URLs, or cloud secrets. The manifests must contain pinned OPERA product/processing versions, ISO-8601 retrieval timestamps with timezone, event/baseline period labels, and predeclared period anchors.",
+  "notes": "Template only: replace all paths with authorized local data. Do not add passwords, Earthdata tokens, signed URLs, or cloud secrets. Each manifest must pin the BWTR_Binary_water band and OPERA product/processing versions, include ISO-8601 retrieval timestamps with timezone, event/baseline period labels, and predeclared period anchors.",
   "study_areas": [
     {
       "area_id": "houston",
