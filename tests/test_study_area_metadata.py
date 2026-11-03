@@ -92,6 +92,11 @@ def test_site_discloses_independent_reference_coverage_gaps():
     assert "no current area passes the independent-label gate" in site_html
     assert 'href="https://registry.opendata.aws/c2smsfloods/"' in site_html
     assert 'href="https://zenodo.org/records/23426661"' in site_html
+    assert site_html.count('<article class="reference-card">') == 4
+    assert "12 benchmark-filtered tiles · St. Louis event EMSR203 (2017)" in site_html
+    assert "all 12 records are in the benchmark training split" in site_html
+    assert "not held-out validation" in site_html
+    assert 'href="https://huggingface.co/datasets/links-ads/geoid-flood"' in site_html
 
 
 def test_site_protocol_panel_matches_proposed_validation_contract():

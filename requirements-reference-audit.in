@@ -1,0 +1,2 @@
+pyarrow==23.0.1
+shapely==2.0.7

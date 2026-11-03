@@ -1,7 +1,7 @@
 # ATLAS independent reference data access plan
 
 **Prepared:** 2026-11-02  
-**Status:** multiple sources screened; no candidate-area package yet supplies qualifying event-matched, independently governed labels across the 16 AOIs.
+**Status:** multiple sources screened; GEOID-Flood metadata add one historical St. Louis AOI/event lead, but no source supplies qualifying, comparable event-matched labels across the 16 AOIs.
 
 ## Candidate benchmark: OPERA DSWx-S1 CalVal Database V1
 
@@ -65,6 +65,21 @@ The [Google Earth Engine Global Flood Database catalog](https://developers.googl
 
 The GFD files may support a historical, coarse-resolution algorithm-method check when an event footprint, acquisition timing, and independent point protocol align. Its 2000–2018 extent, 250 m MODIS resolution, and limited local point coverage mean it cannot validate the current 2024–2026 window or substitute for adequately sampled contemporary independent labels.
 
+## GEOID-Flood exact-footprint screen
+
+The GEOID-Flood authors describe a 10 m multi-modal benchmark with CEMS Rapid Mapping-derived, manually validated three-class flood labels across 219 activations and 65 countries; label values separate background, permanent water, and event inundation. The authors explicitly characterize these as expert operational products rather than absolute hydrodynamic truth. Dataset terms are CC BY 4.0, with required Copernicus attribution. Primary records: [GEOID-Flood paper/code repository](https://github.com/links-ads/geoid-flood) and [dataset card](https://huggingface.co/datasets/links-ads/geoid-flood).
+
+An exact WKB-footprint intersection of the pinned `tile_catalog.parquet` against all 16 ATLAS bounding AOIs found a single overlap: St. Louis, with 12 tiles from activation `EMSR203`, event time 2017-04-28, pre-event delineation 2015-04-01, and post-event delineation 2017-04-30. This is consistent with the National Weather Service's independent event record of April 28–30, 2017, reporting more than 9 inches of rain in some locations and historic flooding along Missouri and Mississippi tributaries ([NWS event review](https://www.weather.gov/lsx/04_29_2017)). All 12 records pass the benchmark authors' tile filter (`is_valid == true` and `invalid_pixel_frac <= 0.95`); their reported invalid fraction is 0.0. Their catalog footprints collectively cover the fixed nominal AOI. All rows belong to the benchmark's `train` split. The other 15 ATLAS AOIs have no catalog tile intersections. The checked catalog is 703,922 bytes, revision `15db1cc0babbe3e570aa9fb582823c533504c971`, SHA-256 `8599287a1a8cffc73014938a72698acd360414e47fbc54cdaa953b4ce3ab0e6d`. Audit runtime: Python 3.12.16, PyArrow 23.0.1, Shapely 2.0.7; the locked dependencies passed `pip-audit` with no known vulnerabilities. Machine-readable result: `outputs/atlas-geoid-flood-overlap-audit.json`; reproduction code: `scripts/audit_geoid_flood_overlap.py` with `requirements-reference-audit.lock`.
+
+This improves the St. Louis historical reference lead only. It does not meet comparable 8+8 coverage, and the 2017 event falls outside ATLAS's current 2024-2026 observation window. The catalog screen does not read the labels or imagery, validate their pixel-level masks, test alignment or annotation error, or establish sufficient independent sample units. The label/input sensor lineage must also be checked against the intended OPERA comparison before calling it sensor-independent. `EMSR203` is in the benchmark's training split, so any use as a held-out ATLAS assessment must be frozen before tuning and must not reuse benchmark-trained models without a new holdout. No current ATLAS site passes confirmatory enrollment; this screen adds no accuracy or score credit.
+
+The reproducible audit uses Python 3.12 and only the 703,922-byte catalog, not the benchmark's multi-gigabyte imagery shards. It verifies the pinned catalog revision and SHA-256 and caches the small public metadata file under `work/geoid-flood-pinned/`; it does not download image shards:
+
+```sh
+python -m pip install --require-hashes -r requirements-reference-audit.lock
+python scripts/audit_geoid_flood_overlap.py
+```
+
 ## Effect on current claims
 
-No registered site has passed real-raster scene QA or independent label validation. The Texas technical pilot remains outside the 16 candidates and failed its minimum-date gate. This source audit identifies a credible next reference-data lead and clarifies the Earthdata account dependency; it awards no score points and does not validate the candidate sites.
+No registered site has passed real-raster scene QA or confirmatory independent-label validation. The Texas technical pilot remains outside the 16 candidates and failed its minimum-date gate. The GEOID-Flood screen identifies a historical St. Louis lead only. These source audits award no score points and do not validate the candidate sites.

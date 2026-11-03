@@ -17,10 +17,30 @@ jobs:
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
           python-version: "3.12"
-      - name: Install hash-locked development dependencies
-        run: python -m pip install --require-hashes -r requirements-dev.lock
+      - name: Install hash-locked development and reference-audit dependencies
+        run: python -m pip install --require-hashes -r requirements-dev.lock -r requirements-reference-audit.lock
       - name: Run unit and fixture tests
         run: python -m pytest -q
+      - name: Screen GEOID-Flood footprints against the 16 study areas
+        run: |
+          python scripts/audit_geoid_flood_overlap.py --output "$RUNNER_TEMP/atlas-geoid-flood-overlap-audit.json"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          result_path = Path(os.environ["RUNNER_TEMP"]) / "atlas-geoid-flood-overlap-audit.json"
+          result = json.loads(result_path.read_text())
+          expected = {
+              "study_areas": 16,
+              "areas_with_reference_footprint": 1,
+              "tiles_in_registered_areas": 12,
+              "paper_eligible_tiles_in_registered_areas": 12,
+              "event_ids_in_registered_areas": ["EMSR203"],
+          }
+          assert result["summary"] == expected, result["summary"]
+          print("GEOID-Flood footprint screen: 16 areas checked; one historical St. Louis event footprint found")
+          PY
       - name: Build the same container candidate
         run: docker build --tag atlas-api:${{ github.sha }} .
       - name: Smoke-test the built container
@@ -44,7 +64,7 @@ jobs:
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
           python-version: "3.12"
-      - name: Install hash-locked runtime and audit dependencies
-        run: python -m pip install --require-hashes -r requirements-dev.lock
-      - name: Block known vulnerable runtime, audit, or development dependencies
+      - name: Install hash-locked development and reference-audit dependencies
+        run: python -m pip install --require-hashes -r requirements-dev.lock -r requirements-reference-audit.lock
+      - name: Block known vulnerable runtime, development, or research-audit dependencies
         run: python -m pip_audit

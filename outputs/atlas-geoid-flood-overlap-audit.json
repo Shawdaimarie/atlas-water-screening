@@ -1,0 +1,171 @@
+{
+  "dataset": "links-ads/geoid-flood",
+  "revision": "15db1cc0babbe3e570aa9fb582823c533504c971",
+  "catalog_path": "geoid-flood/tile_catalog.parquet",
+  "catalog_url": "https://huggingface.co/datasets/links-ads/geoid-flood/resolve/15db1cc0babbe3e570aa9fb582823c533504c971/geoid-flood/tile_catalog.parquet?download=true",
+  "catalog_sha256": "8599287a1a8cffc73014938a72698acd360414e47fbc54cdaa953b4ce3ab0e6d",
+  "audit_runtime": {
+    "python": "3.12.16",
+    "pyarrow": "23.0.1",
+    "shapely": "2.0.7"
+  },
+  "catalog_bytes": 703922,
+  "catalog_rows": 10935,
+  "aoi_source": "data/study_area_register.json",
+  "aoi_method": "exact polygon intersection against each fixed ATLAS WGS84 AOI bounding box",
+  "paper_tile_filter": "is_valid is true and invalid_pixel_frac <= 0.95",
+  "results": [
+    {
+      "region": "United States",
+      "city": "Houston",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "United States",
+      "city": "Miami",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "United States",
+      "city": "Tampa",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "United States",
+      "city": "New Orleans",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "United States",
+      "city": "New York City",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "United States",
+      "city": "Sacramento",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "United States",
+      "city": "Atlanta",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "United States",
+      "city": "St. Louis",
+      "intersecting_tiles": 12,
+      "paper_eligible_tiles": 12,
+      "events": [
+        {
+          "event_id": "EMSR203",
+          "event_time": [
+            "2017-04-28T00:00:00"
+          ],
+          "delineation_time_pre": [
+            "2015-04-01T00:00:00"
+          ],
+          "delineation_time_post": [
+            "2017-04-30T11:37:00"
+          ],
+          "country": [
+            "United States"
+          ],
+          "benchmark_split": [
+            "train"
+          ],
+          "intersecting_tiles": 12,
+          "paper_eligible_tiles": 12,
+          "eligible_invalid_pixel_fraction_min": 0.0,
+          "eligible_invalid_pixel_fraction_max": 0.0,
+          "eligible_tile_footprint_fraction_of_aoi": 1.0
+        }
+      ]
+    },
+    {
+      "region": "International",
+      "city": "Jakarta",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "International",
+      "city": "Singapore",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "International",
+      "city": "Dubai",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "International",
+      "city": "Mumbai",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "International",
+      "city": "Bangkok",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "International",
+      "city": "Tokyo",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "International",
+      "city": "Manila",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    },
+    {
+      "region": "International",
+      "city": "São Paulo",
+      "intersecting_tiles": 0,
+      "paper_eligible_tiles": 0,
+      "events": []
+    }
+  ],
+  "summary": {
+    "study_areas": 16,
+    "areas_with_reference_footprint": 1,
+    "tiles_in_registered_areas": 12,
+    "paper_eligible_tiles_in_registered_areas": 12,
+    "event_ids_in_registered_areas": [
+      "EMSR203"
+    ]
+  },
+  "interpretation_limits": [
+    "This is catalog-footprint screening, not pixel-level QA of the label or Sentinel-1 rasters.",
+    "The source dataset describes manually validated three-class labels derived from CEMS Rapid Mapping products; they are operational expert references, not absolute ground truth.",
+    "Paper tile eligibility is a benchmark filter, not the ATLAS per-area sampling adequacy rule.",
+    "A footprint overlap does not establish event independence, held-out status, usable raster coverage, asset-level coverage, or adequate statistical sampling."
+  ],
+  "license": "CC BY 4.0; retain attribution to GEOID-Flood and the Copernicus source products before redistribution."
+}

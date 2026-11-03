@@ -2,20 +2,20 @@
 
 **Run date:** 2026-11-02\
 **Production Site:** [ATLAS | Water Exposure Screening](https://atlas-water-screening.shawdaimarie.chatgpt.site/) (private owner-only access)\
-**Current published Site version:** 14
-**Current source commit deployed:** `2a3de8aec54071a1d6ca8d50ab52edb638c48674`
-**Version provenance:** Sites readback matched version 14 to the deployed source commit and deployment `appgdep_6ae931ab72608191a78a05a9c9aec3fa`; deployment status was `succeeded` at the existing private URL.
+**Current published Site version:** 15
+**Current source commit deployed:** `07d6c103d7612d34f0bb6e8e6bd1a7792b6bc2c9`
+**Version provenance:** Sites readback matched version 15 to the deployed source commit and deployment `appgdep_6ae954d29ca48191977d5426931aea8e`; deployment status was `succeeded` at the existing private URL.
 
 ## Result summary
 
-The private static Site is deployed (version 14) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. The register is an archive metadata discovery screen; its scenes have not been downloaded or pixel-QA audited for the 16 enrolled candidates. Therefore the project is **not 100/100** and the study areas are not yet fully validated.
+The private static Site is deployed (version 15) and the study-area candidate register is visible and interactive. Its downloadable CSV contains the complete per-area acquisition-date sets, AOI bounds, collection, and query window. The current product remains a synthetic research walkthrough. The register is an archive metadata discovery screen; its scenes have not been downloaded or pixel-QA audited for the 16 enrolled candidates. Therefore the project is **not 100/100** and the study areas are not yet fully validated.
 
 ## Checks completed
 
 | Check | Result | Evidence |
 |---|---|---|
-| Production publish | Pass | Sites readback on 2026-11-02 confirms active version 14, source `2a3de8aec54071a1d6ca8d50ab52edb638c48674`, and successful deployment recorded above. |
-| Access policy | Pass | Owner-only custom allowlist contains `shawdaimarie@gmail.com`; zero external visitors. This is Sites account access; Apple Sign In is not configured. |
+| Production publish | Pass | Sites readback on 2026-11-03 confirms active version 15, source `07d6c103d7612d34f0bb6e8e6bd1a7792b6bc2c9`, and successful deployment recorded above. |
+| Access policy | Pass | Version 15 Sites readback confirms the existing owner-only custom allowlist contains `shawdaimarie@gmail.com`; zero external visitors. This is Sites account access; Apple Sign In is not configured. |
 | U.S./international register | Pass for candidate presentation | Version 12 walkthrough rendered 8 U.S. and 8 international candidate areas and exercised all 16 profiles. They remain metadata-screened candidates, not validated sites. |
 | Candidate profile interaction | Pass | Selected Mumbai; rationale, value-integration question, 361 metadata hits, and 121 acquisition dates appeared. |
 | Candidate register export | Pass | “Download area register” produced the visible “Study area register downloaded as CSV” success message. |
@@ -344,9 +344,34 @@ This status supersedes the earlier version 10/11 entries below; those are retain
 - Reproduced the pilot with the updated code. The existing AOI still has 2/3 qualifying dates in baseline and 2/3 in the event period, so the analyzer withholds the comparison. This is an out-of-cohort pipeline pilot, not an enrolled study-area result or independent validation.
 - Verification: targeted raster-analysis tests **5 passed**; full `.venv/bin/python -m pytest -q` **49 passed** with one environment warning; `git diff --check` passed. Reinstalled `requirements-dev.lock` with `--require-hashes` in a Python 3.12 ARM64 container and ran the full suite there: **49 passed in 1.11s**, no test warnings. The working tree was mounted, so this is target-environment coverage rather than clean-checkout or independent reproduction. Canonical score remains **55/100 provisional**; no scientific-validation points are added.
 
+## Latest source CI and onboarding preflight (2026-11-02 CST)
 
-## Latest source CI confirmation (2026-11-02 CST)
+- GitHub Actions [run 41569925241](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41569925241) completed successfully on private main commit `3d67b59fbe5bf90523f379694324d94ca332832a`. Job-log readback confirms **50 passed in 1.39s**, container build completed, **11/11** HTTP smoke checks passed, and `pip-audit` found no known vulnerabilities in the locked Python dependency set. This verifies repository/container checks only; no cloud-provider deployment or scientific-validation points result.
+- Re-ran the current local working-tree suite: **50 passed in 0.89s**, with the known LibreSSL/urllib3 environment warning. The current working tree includes changes beyond remote commit `3d67b59`; it has not been shown identical to that CI checkout.
+- Current four-provider release preflight failed closed with **30 missing or invalid requirements**, including Apple-account role, region, budget, provider account/billing confirmation, and federated deployment identity. It confirmed **no cloud resources were created**. The owner-specific handoff file is absent.
+- The canonical score remains **55/100 provisional**. Confirmatory enrollment, live cloud deployments, and deployed-provider E2E evidence remain unverified.
+- The documentation update passed GitHub Actions [run 41570142371](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41570142371) on commit `4e9669b814e565b0aac45f4ce0d5c23e38489bcb`: **50 passed in 1.43s**, container build, **11/11** HTTP smoke checks, and dependency-security job all succeeded; the runtime audit reported no known vulnerabilities. This run verifies the source/documentation checkout and local container candidate, not a provider deployment.
 
-- GitHub Actions [run 41569925241](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41569925241) completed successfully on private main commit `3d67b59fbe5bf90523f379694324d94ca332832a`. Job-log readback confirms **50 passed in 1.39s**, container build completed, **11/11** HTTP smoke checks passed, and `pip-audit` reported no known vulnerabilities in the locked Python dependency set. This verifies repository and container checks only; no cloud-provider deployment or scientific-validation points result.
-- Re-ran the current local working-tree suite: **50 passed in 0.89s**, with the known LibreSSL/urllib3 environment warning. This working tree contains changes beyond remote commit `3d67b59`; it has not been shown to be identical to that CI checkout.
-- The canonical score remains **55/100 provisional**. Cloud-provider identities/resources and confirmatory study-area enrollment remain unverified.
+## GEOID-Flood reference-catalog audit and 3.12 rerun (2026-11-02 CST)
+
+- Added a pinned 703,922-byte GEOID-Flood catalog screen with source attribution, an exact 16-AOI footprint audit, and a hash-locked optional research-audit environment. The catalog screen finds 12 benchmark-filtered tiles from one 2017 event in St. Louis and zero tile intersections in the other 15 candidate AOIs. This is an archive-footprint result, not raster/label pixel QA or confirmatory validation; no rubric points are added.
+- In a pinned Python 3.12 Bookworm ARM64 container, installed the hash-locked development and reference-audit dependencies, ran the current full suite (**50 passed in 0.75s**), ran the all-area catalog audit (16 areas; 1 area; 12 tiles; `EMSR203`), and asserted the expected output. The dependency audit reported **No known vulnerabilities found**. `git diff --check` passed, with only existing CSV CRLF warnings.
+- Current GEOID-Flood audit artifacts: `scripts/audit_geoid_flood_overlap.py`, `requirements-reference-audit.lock`, and `outputs/atlas-geoid-flood-overlap-audit.json`. The small public catalog is fetched by its pinned revision only if it is not cached; the workflow checks the exact catalog hash and includes the optional dependencies in its security audit.
+- The canonical score remains **55/100 provisional**. The current provider preflight still fails closed on 30 missing or unverified requirements; no cloud resources or provider-hosted E2E checks exist.
+
+## Fresh live walkthrough replay (2026-11-03 UTC)
+
+- Read-only Sites status confirmed active version 14 at the existing owner-private URL; access policy remained restricted to the owner. The live page's banner and evidence panel identify map, assets, and values as synthetic fixtures and state that no NASA data was retrieved.
+- Fresh in-app browser replay exercised the live version 14: selected Singapore, Dubai, Mumbai, St. Louis, and Jakarta and verified each location heading, region, public evidence, value dimensions, comparable validation path, scope limit, and primary evidence link rendered. Houston was also reselected and its profile rendered.
+- Switched from the single-scene method to the quality-aware temporal aggregate. The synthetic portfolio's median overlap changed from 7.7% to 6.8%; the UI identified the method as experimental and the values as synthetic.
+- Changed the scenario to Hurricane Ida. The selector changed to Baton Rouge, the displayed event dates changed to 29–30 August 2021 with the 15–25 August baseline, and the interface disclosed that values remain illustrative synthetic fixtures.
+- Triggered both exports. The live page announced “Evidence export downloaded with synthetic-data label and method” and “Study area register downloaded as CSV.” These are UI completion signals; this replay did not parse downloaded files.
+- Reset the analysis to its single-observation baseline, then restored the starting Houston/Beryl scenario. Final page state is Houston/Beryl, single-scene baseline. The browser replay verifies the private demo workflows only; it is not live satellite retrieval, scientific validation, API/cloud deployment, or independent reproduction. No score change; canonical score remains 55/100 provisional.
+
+## Private Site version 15 publication and live verification (2026-11-03 UTC)
+
+- Added the pinned GEOID-Flood catalog screen to the live reference panel. It reports 12 benchmark-filtered catalog footprints in St. Louis for event EMSR203 (2017), labels all records as benchmark training split, and says the event predates the current 2024–2026 window. It explicitly states that imagery, mask alignment, and sensor independence were not checked and that this is not held-out validation. Dataset-card and source-repository links are present.
+- The four-card reference panel uses a two-column layout that collapses to one column on narrow screens. Regression assertions cover the source result, training-split caveat, date limitation, link, and card count.
+- Packaged from a clean Site-source checkout at commit `07d6c103d7612d34f0bb6e8e6bd1a7792b6bc2c9`; Sites saved and deployed version 15 successfully as deployment `appgdep_6ae954d29ca48191977d5426931aea8e`. Version readback matches the deployed commit and archive hash `sha256:7efc2b55c546d94ae64ec78bf50c95a26df3a64b423f67a43aa2cc42ca10b26a`. Site readback confirms the same owner-only audience and zero external visitors.
+- Fresh production browser load showed the GEOID-Flood card, exact St. Louis event/tile screen, explicit training-split and time-window caveats, and both source links in the accessibility tree. Site remained at the Houston/Beryl synthetic baseline. `.venv/bin/python -m pytest -q`: **50 passed in 0.83s**, one local LibreSSL/urllib3 warning; `git diff --check` passed with pre-existing CSV line-ending warnings.
+- Version 15 adds reference-source transparency only. It adds no observed flood data or validation and no rubric points; score remains **55/100 provisional**.
