@@ -7,17 +7,19 @@
     "license": "CC-BY-4.0",
     "attribution": "Microsoft Planetary Computer; ESA/Copernicus Sentinel-1"
   },
+  "item_url_template": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/{item_id}",
   "measurement": {
     "band": "VV",
     "resolution_m": 10,
-    "nodata": null,
-    "validity_definition": "Finite VV pixels not equal to declared nodata; spatial data coverage only."
+    "source_declared_nodata_values": [
+      -32768
+    ],
+    "validity_definition": "Finite VV pixels not equal to the source-declared nodata value; spatial data coverage only."
   },
   "period": {
     "start": "2025-01-01T00:00:00Z",
     "end": "2025-12-31T23:59:59Z"
   },
-  "study_area_register_sha256": null,
   "summary": {
     "areas": 16,
     "us_areas": 8,
@@ -80,6 +82,9 @@
               "aoi_pixels": 6231732,
               "valid_fraction": 0.99999,
               "meets_80pct_pixel_coverage_screen": true,
+              "stac_nodata": -32768,
+              "asset_band": "VV",
+              "stac_spatial_resolution_m": 10,
               "items": [
                 {
                   "id": "S1A_IW_GRDH_1SDV_20250126T122315_20250126T122344_057615_071953_rtc",
@@ -99,21 +104,10 @@
               "aoi_pixels": 6231732,
               "valid_fraction": 0.99999,
               "meets_80pct_pixel_coverage_screen": true,
+              "stac_nodata": -32768,
+              "asset_band": "VV",
+              "stac_spatial_resolution_m": 10,
               "items": [
                 {
                   "id": "S1A_IW_GRDH_1SDV_20250219T122314_20250219T122343_057965_072747_rtc",
-                  "asset_checksum": "fd45ba79845624c88e42fb56ed6a3023"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "quarter": 2,
-          "samples": [
-            {
-              "quarter": 2,
-              "date": "2025-04-08",
-              "platform": "SENTINEL-1A",
-              "orbit_state": "descending",
-              "relative_
+          
