@@ -4,9 +4,9 @@ Updated: 2026-11-03. Scope: privately hosted synthetic walkthrough plus local fi
 
 **Current score: 55/100, author-verified and provisional.** No independent reproduction has occurred. The score follows the strict 5-point criterion rule. A deployment does not make synthetic data into a historical observation and does not earn unrelated reliability or scale points.
 
-**Latest deployment check (2026-11-03):** private Site v24 is successful; the authenticated production page and live ledger JSON route return all 16 areas and the register SHA-256 among 12 input hashes. The hash-locked Python 3.12 suite passes 78 tests. These are demo and engineering checks only; the score remains 55/100 because real matched event observations, independent labels, confirmatory enrollment, cloud deployments, and independent reproduction remain unmet.
+**Latest deployment check (2026-11-03):** private Site v24 is successful; the authenticated production page and live ledger JSON route return all 16 areas and the register SHA-256 among 12 input hashes. Live scenario/method changes, Dubai profile, 8+8 and aggregate CSV exports, and reset were replayed in the production browser. The hash-locked Python 3.12 suite passes 78 tests. These are demo and engineering checks only; the score remains 55/100 because real matched event observations, independent labels, confirmatory enrollment, cloud deployments, usability study, and capacity evidence remain unmet.
 
-Private GitHub main is still at the v23 evidence/source sync `f105bd9296a15f8e65afa67f5bc4afaae236ddd3`; its CI run [41657160927](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41657160927) passed 77 tests, GEOID-Flood footprint check, container build/audit, 11/11 HTTP smoke tests, and dependency scanning. The v24 register-hash update has not yet been synced or run in CI.
+Private GitHub main is at `4c342f5ade89c6a21db0f87e81be863191486989`; CI run [41661175760](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41661175760) passed both jobs on the v24 evidence/source sync: 78 tests, GEOID-Flood footprint check, container build/runtime audit, 11/11 HTTP smoke tests, and dependency scanning. This CI does not verify real flood accuracy, cloud-provider deployment, or independent reproduction.
 
 | Category | Points | Evidence and result |
 |---|---:|---|
