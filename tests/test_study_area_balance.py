@@ -93,7 +93,7 @@ def test_16_area_package_cli_writes_balanced_results_and_provenance(tmp_path, mo
                                    count=1, dtype="uint8", crs="EPSG:32631",
                                    transform=from_origin(0, 120, 30, 30)) as dst:
                     dst.write(np.full((4, 4), value, dtype="uint8"), 1)
-                manifest_rows.append({"path": name, "acquired_at": acquired, "selection_anchor": anchor,
+                    manifest_rows.append({"path": name, "band": "BWTR_Binary_water", "acquired_at": acquired, "selection_anchor": anchor,
                     "period": period, "granule_id": f"{slug}-{period}-{date_index}",
                     "product_version": "OPERA_L3_DSWX-S1_V1", "processing_version": "1.0.0",
                     "retrieved_at": "2025-03-01T12:00:00Z"})
