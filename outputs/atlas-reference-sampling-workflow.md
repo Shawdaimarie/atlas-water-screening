@@ -28,4 +28,19 @@ Interpretation and adjudication columns are intentionally blank. Independent lab
 
 The default 385 is an unadjusted planning target for one overall proportion at 95% confidence and ±5 percentage points. It is not a guarantee of effective sample size: the spatial-block pilot must estimate design effect and adjust the target before confirmatory use. If a stratum population is below its allocation, all available units are selected and the frame records the finite population. The script does not calculate accuracy, spatial independence, event eligibility, or valid-reference coverage.
 
-No complete set of real, QA-verified event and baseline BWTR rasters is currently available for the 16 fixed areas. The workflow has been tested on synthetic GeoTIFF fixtures only. Four fixture tests and the full pinned Python 3.12 suite pass (100 tests). Therefore no production frame was drawn, independent labels remain unavailable at comparable coverage, confirmatory eligibility remains **0/16**, and the canonical score remains **55/100 provisional**.
+## Independent label review gate
+
+Use `outputs/atlas-reference-labels-template.csv` for one row per labeler and sampled unit. Each unit needs two distinct primary labelers; both must be blinded to OPERA. Use the protocol's five label values. Record an ISO-8601 acquisition timestamp with timezone, sensor, resolution, source lineage, independence status and rationale, license, and HTTPS source link. For disagreement, include a third row with role `adjudicator` and the resolved class. Reuse one source ID only when its metadata is identical across rows. Do not declare an OPERA-derived or same-acquisition Sentinel-1 product `independent_primary` without a documented independent evidence basis.
+
+Run the declared review-quality checks after the labels are assembled:
+
+```sh
+python scripts/validate_reference_labels.py \
+  --sample-frame work/reference-sample-frame/reference_sample_frame.csv \
+  --labels input_data/reference_labels.csv \
+  --output-dir work/reference-label-qc
+```
+
+The validator writes a per-unit QC CSV and a hash-linked JSON summary. Incomplete, unblinded, sensitivity-only, or unknown-lineage records remain marked unready. A passing source declaration does not prove accuracy, licensing, event-time proximity, or complete sample precision; a second scientific review must still check those conditions against the source. This step never establishes confirmatory site enrollment.
+
+No complete set of real, QA-verified event and baseline BWTR rasters is currently available for the 16 fixed areas. The sampling and label review workflows have been tested only with synthetic fixtures. Therefore no production frame or label QC run exists, independent labels remain unavailable at comparable coverage, confirmatory eligibility remains **0/16**, and the canonical score remains **55/100 provisional**.
