@@ -110,7 +110,6 @@ def validate_inputs(data: Any, release_ready: bool = False) -> list[str]:
 
     owner = data.get("owner") if isinstance(data.get("owner"), dict) else {}
     for field in (
-        "apple_account_role",
         "data_residency_decision",
         "staging_production_boundary",
     ):

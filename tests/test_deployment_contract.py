@@ -42,7 +42,7 @@ def test_all_four_clouds_share_private_digest_based_release_contract():
 
 def test_owner_handoff_template_is_unprovisioned_and_nonsecret():
     assert OWNER_INPUTS["schema_version"] == 1
-    assert OWNER_INPUTS["owner"]["apple_account_role"] == "undecided"
+    assert OWNER_INPUTS["owner"]["apple_account_role"] == "app_store_testflight_distribution"
     assert OWNER_INPUTS["budget"]["monthly_ceiling"] is None
     assert OWNER_INPUTS["providers"]["google_cloud"]["account_ready"] is False
     assert OWNER_INPUTS["providers"]["aws"]["account_ready"] is False

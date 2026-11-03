@@ -18,7 +18,74 @@
       "gfd_event_map_flood_candidate_pixels": 0,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 122,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 61,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "5a99475ed9b4488d9fabf7bef1ed4a85",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-05-31",
+            "2025-06-07",
+            "2025-06-12",
+            "2025-06-19",
+            "2025-06-24"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-04-26",
+            "2025-05-02",
+            "2025-05-07",
+            "2025-05-14",
+            "2025-05-19"
+          ],
+          "reported_end_date": "2025-05-26",
+          "reported_start_date": "2025-05-26"
+        },
+        {
+          "event_id": "99e2e3bb8142471992f429fb3969f979",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-05-31",
+            "2025-06-07",
+            "2025-06-12",
+            "2025-06-19",
+            "2025-06-24"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-04-26",
+            "2025-05-02",
+            "2025-05-07",
+            "2025-05-14",
+            "2025-05-19"
+          ],
+          "reported_end_date": "2025-05-26",
+          "reported_start_date": "2025-05-26"
+        },
+        {
+          "event_id": "118641f6e3dd49db87e75775b243cf14",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2024-12-09",
+            "2024-12-14",
+            "2024-12-21",
+            "2024-12-26"
+          ],
+          "pre_event_30d_product_dates": [
+            "2024-11-03",
+            "2024-11-08",
+            "2024-11-15",
+            "2024-11-20",
+            "2024-11-27"
+          ],
+          "reported_end_date": "2024-12-02",
+          "reported_start_date": "2024-12-02"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 126,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "United States",
@@ -47,7 +114,72 @@
       "gfd_event_map_flood_candidate_pixels": 61,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 124,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 41,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "8f25be86830e4a81aca246dbde81413e",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-11",
+            "2025-09-16",
+            "2025-09-23",
+            "2025-09-28"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-06",
+            "2025-08-11",
+            "2025-08-18",
+            "2025-08-23",
+            "2025-08-30"
+          ],
+          "reported_end_date": "2025-09-04",
+          "reported_start_date": "2025-09-04"
+        },
+        {
+          "event_id": "c93150238c0f481d9c6dc69c33acedb8",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-11",
+            "2025-09-16",
+            "2025-09-23",
+            "2025-09-28"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-06",
+            "2025-08-11",
+            "2025-08-18",
+            "2025-08-23",
+            "2025-08-30"
+          ],
+          "reported_end_date": "2025-09-04",
+          "reported_start_date": "2025-09-04"
+        },
+        {
+          "event_id": "059ed6118ba3475285f336fa3bb3c2e2",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-10-17",
+            "2025-10-22",
+            "2025-10-29",
+            "2025-11-03"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-09-11",
+            "2025-09-16",
+            "2025-09-23",
+            "2025-09-28",
+            "2025-10-05"
+          ],
+          "reported_end_date": "2025-10-10",
+          "reported_start_date": "2025-10-10"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 112,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "United States",
@@ -76,7 +208,77 @@
       "gfd_event_map_flood_candidate_pixels": 18,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 196,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 141,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "81e5c029589e41cc9799a92e06e45abc",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2024-10-15",
+            "2024-10-20",
+            "2024-10-27",
+            "2024-11-01",
+            "2024-11-08",
+            "2024-11-13"
+          ],
+          "pre_event_30d_product_dates": [
+            "2024-09-09",
+            "2024-09-14",
+            "2024-09-21",
+            "2024-09-26",
+            "2024-10-03"
+          ],
+          "reported_end_date": "2024-10-14",
+          "reported_start_date": "2024-10-08"
+        },
+        {
+          "event_id": "8dc40ea34e7546eeb9eed2af82690819",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2024-10-11",
+            "2024-10-15",
+            "2024-10-20",
+            "2024-10-27",
+            "2024-11-01",
+            "2024-11-08"
+          ],
+          "pre_event_30d_product_dates": [
+            "2024-09-09",
+            "2024-09-14",
+            "2024-09-21",
+            "2024-09-26",
+            "2024-10-03"
+          ],
+          "reported_end_date": "2024-10-10",
+          "reported_start_date": "2024-10-08"
+        },
+        {
+          "event_id": "3e2b2b60ebda4f44b486ebfc79a093bc",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2024-10-15",
+            "2024-10-20",
+            "2024-10-27",
+            "2024-11-01",
+            "2024-11-08"
+          ],
+          "pre_event_30d_product_dates": [
+            "2024-09-09",
+            "2024-09-14",
+            "2024-09-21",
+            "2024-09-26",
+            "2024-10-03"
+          ],
+          "reported_end_date": "2024-10-12",
+          "reported_start_date": "2024-10-08"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 106,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "United States",
@@ -105,7 +307,88 @@
       "gfd_event_map_flood_candidate_pixels": 76,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 157,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 122,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "91c4b71cab7b46e9832eedec3f7e7834",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-10-19",
+            "2025-10-24",
+            "2025-10-25",
+            "2025-10-31",
+            "2025-11-05",
+            "2025-11-06",
+            "2025-11-12"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-09-13",
+            "2025-09-18",
+            "2025-09-19",
+            "2025-09-25",
+            "2025-09-30",
+            "2025-10-01",
+            "2025-10-07",
+            "2025-10-12"
+          ],
+          "reported_end_date": "2025-10-13",
+          "reported_start_date": "2025-10-13"
+        },
+        {
+          "event_id": "8cca36baaf2a46bfae86e600a79d6210",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-04-27",
+            "2025-04-28",
+            "2025-05-04",
+            "2025-05-09",
+            "2025-05-10",
+            "2025-05-21",
+            "2025-05-22"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-03-23",
+            "2025-03-29",
+            "2025-04-03",
+            "2025-04-04",
+            "2025-04-10",
+            "2025-04-15",
+            "2025-04-16"
+          ],
+          "reported_end_date": "2025-04-22",
+          "reported_start_date": "2025-04-22"
+        },
+        {
+          "event_id": "274457714af44ca8b974919827ed5dcd",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-01",
+            "2025-09-06",
+            "2025-09-07",
+            "2025-09-13",
+            "2025-09-18",
+            "2025-09-19",
+            "2025-09-25"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-07-27",
+            "2025-08-01",
+            "2025-08-02",
+            "2025-08-08",
+            "2025-08-13",
+            "2025-08-14",
+            "2025-08-20"
+          ],
+          "reported_end_date": "2025-08-26",
+          "reported_start_date": "2025-08-26"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 165,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "United States",
@@ -134,7 +417,119 @@
       "gfd_event_map_flood_candidate_pixels": 254,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 425,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 178,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "6d64543b4db1401b9288f5e079f501e3",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-02-16",
+            "2025-02-17",
+            "2025-02-18",
+            "2025-02-22",
+            "2025-02-23",
+            "2025-02-28",
+            "2025-03-01",
+            "2025-03-02",
+            "2025-03-06",
+            "2025-03-07",
+            "2025-03-12",
+            "2025-03-13"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-01-11",
+            "2025-01-12",
+            "2025-01-13",
+            "2025-01-17",
+            "2025-01-18",
+            "2025-01-23",
+            "2025-01-24",
+            "2025-01-25",
+            "2025-01-29",
+            "2025-01-30",
+            "2025-02-04",
+            "2025-02-05",
+            "2025-02-06"
+          ],
+          "reported_end_date": "2025-02-11",
+          "reported_start_date": "2025-02-10"
+        },
+        {
+          "event_id": "b24539589ab0407180cd68f882968210",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-02-16",
+            "2025-02-17",
+            "2025-02-18",
+            "2025-02-22",
+            "2025-02-23",
+            "2025-02-28",
+            "2025-03-01",
+            "2025-03-02",
+            "2025-03-06",
+            "2025-03-07",
+            "2025-03-12",
+            "2025-03-13"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-01-12",
+            "2025-01-13",
+            "2025-01-17",
+            "2025-01-18",
+            "2025-01-23",
+            "2025-01-24",
+            "2025-01-25",
+            "2025-01-29",
+            "2025-01-30",
+            "2025-02-04",
+            "2025-02-05",
+            "2025-02-06",
+            "2025-02-10"
+          ],
+          "reported_end_date": "2025-02-11",
+          "reported_start_date": "2025-02-11"
+        },
+        {
+          "event_id": "a47415ca3349437c8bd5efd3515b7378",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-02-23",
+            "2025-02-28",
+            "2025-03-01",
+            "2025-03-02",
+            "2025-03-06",
+            "2025-03-07",
+            "2025-03-12",
+            "2025-03-13",
+            "2025-03-14",
+            "2025-03-19",
+            "2025-03-24"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-01-23",
+            "2025-01-24",
+            "2025-01-25",
+            "2025-01-29",
+            "2025-01-30",
+            "2025-02-04",
+            "2025-02-05",
+            "2025-02-06",
+            "2025-02-10",
+            "2025-02-11",
+            "2025-02-16",
+            "2025-02-17",
+            "2025-02-18"
+          ],
+          "reported_end_date": "2025-02-22",
+          "reported_start_date": "2025-02-22"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 238,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "United States",
@@ -163,7 +558,118 @@
       "gfd_event_map_flood_candidate_pixels": 375,
       "gfd_validation_points": 8,
       "groundsource_event_records_discovery_only": 36,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 24,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "c3f1a6cde0a2489e80ab9e2824be7831",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-05-12",
+            "2025-05-13",
+            "2025-05-14",
+            "2025-05-19",
+            "2025-05-20",
+            "2025-05-24",
+            "2025-05-25",
+            "2025-05-26",
+            "2025-05-31",
+            "2025-06-01",
+            "2025-06-05",
+            "2025-06-06",
+            "2025-06-07"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-04-08",
+            "2025-04-13",
+            "2025-04-18",
+            "2025-04-19",
+            "2025-04-20",
+            "2025-04-24",
+            "2025-04-25",
+            "2025-04-26",
+            "2025-04-30",
+            "2025-05-01",
+            "2025-05-02",
+            "2025-05-07"
+          ],
+          "reported_end_date": "2025-05-08",
+          "reported_start_date": "2025-05-08"
+        },
+        {
+          "event_id": "0922aa46f0bf42c7a2b5f2557f7d0b31",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-06-05",
+            "2025-06-06",
+            "2025-06-07",
+            "2025-06-12",
+            "2025-06-17",
+            "2025-06-18",
+            "2025-06-19",
+            "2025-06-24",
+            "2025-06-25",
+            "2025-06-29",
+            "2025-06-30",
+            "2025-07-01"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-05-02",
+            "2025-05-07",
+            "2025-05-08",
+            "2025-05-12",
+            "2025-05-13",
+            "2025-05-14",
+            "2025-05-19",
+            "2025-05-20",
+            "2025-05-24",
+            "2025-05-25",
+            "2025-05-26",
+            "2025-05-31"
+          ],
+          "reported_end_date": "2025-06-01",
+          "reported_start_date": "2025-06-01"
+        },
+        {
+          "event_id": "3e604082333e4e4f9558b4ee2e6faae9",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-06-05",
+            "2025-06-06",
+            "2025-06-07",
+            "2025-06-12",
+            "2025-06-17",
+            "2025-06-18",
+            "2025-06-19",
+            "2025-06-24",
+            "2025-06-25",
+            "2025-06-29",
+            "2025-06-30",
+            "2025-07-01"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-05-02",
+            "2025-05-07",
+            "2025-05-08",
+            "2025-05-12",
+            "2025-05-13",
+            "2025-05-14",
+            "2025-05-19",
+            "2025-05-20",
+            "2025-05-24",
+            "2025-05-25",
+            "2025-05-26",
+            "2025-05-31"
+          ],
+          "reported_end_date": "2025-06-01",
+          "reported_start_date": "2025-06-01"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 258,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "United States",
@@ -192,7 +698,73 @@
       "gfd_event_map_flood_candidate_pixels": 0,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 161,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 98,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "9aa12f7b94f7484db437d846e9a4589e",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2024-10-15",
+            "2024-10-20",
+            "2024-10-27",
+            "2024-11-01",
+            "2024-11-08"
+          ],
+          "pre_event_30d_product_dates": [
+            "2024-09-09",
+            "2024-09-14",
+            "2024-09-21",
+            "2024-09-26",
+            "2024-10-03"
+          ],
+          "reported_end_date": "2024-10-09",
+          "reported_start_date": "2024-10-08"
+        },
+        {
+          "event_id": "ef256974cb9249cfb1bdf6a7a3c6587a",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-11-15",
+            "2025-11-20",
+            "2025-11-27",
+            "2025-12-02"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-10-10",
+            "2025-10-15",
+            "2025-10-22",
+            "2025-10-27",
+            "2025-11-03"
+          ],
+          "reported_end_date": "2025-11-08",
+          "reported_start_date": "2025-11-08"
+        },
+        {
+          "event_id": "06dd8b9862f447a78677ea46958fdbc6",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2024-10-03",
+            "2024-10-08",
+            "2024-10-15",
+            "2024-10-20",
+            "2024-10-27"
+          ],
+          "pre_event_30d_product_dates": [
+            "2024-09-02",
+            "2024-09-09",
+            "2024-09-14",
+            "2024-09-21"
+          ],
+          "reported_end_date": "2024-09-27",
+          "reported_start_date": "2024-09-26"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 99,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "United States",
@@ -221,7 +793,75 @@
       "gfd_event_map_flood_candidate_pixels": 699,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 68,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 43,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "1398ebae55a24eb9b2638729a2922841",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2024-11-11",
+            "2024-11-17",
+            "2024-11-23",
+            "2024-11-29",
+            "2024-12-05"
+          ],
+          "pre_event_30d_product_dates": [
+            "2024-10-06",
+            "2024-10-12",
+            "2024-10-18",
+            "2024-10-24",
+            "2024-10-30"
+          ],
+          "reported_end_date": "2024-11-05",
+          "reported_start_date": "2024-11-05"
+        },
+        {
+          "event_id": "27efd34b3a2243a885e924ac866eeff8",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2024-11-11",
+            "2024-11-17",
+            "2024-11-23",
+            "2024-11-29",
+            "2024-12-05"
+          ],
+          "pre_event_30d_product_dates": [
+            "2024-10-06",
+            "2024-10-12",
+            "2024-10-18",
+            "2024-10-24",
+            "2024-10-30"
+          ],
+          "reported_end_date": "2024-11-05",
+          "reported_start_date": "2024-11-05"
+        },
+        {
+          "event_id": "3d1ee0da8db44bef88b99b96b5ef41f5",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2024-11-11",
+            "2024-11-17",
+            "2024-11-23",
+            "2024-11-29",
+            "2024-12-05"
+          ],
+          "pre_event_30d_product_dates": [
+            "2024-10-06",
+            "2024-10-12",
+            "2024-10-18",
+            "2024-10-24",
+            "2024-10-30"
+          ],
+          "reported_end_date": "2024-11-05",
+          "reported_start_date": "2024-11-05"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 101,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "United States",
@@ -250,7 +890,121 @@
       "gfd_event_map_flood_candidate_pixels": 0,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 5453,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 4486,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "109e9bf35d7b4660981e25cc8c1f1cd1",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2026-01-30",
+            "2026-02-02",
+            "2026-02-04",
+            "2026-02-06",
+            "2026-02-07",
+            "2026-02-11",
+            "2026-02-14",
+            "2026-02-16",
+            "2026-02-18",
+            "2026-02-19",
+            "2026-02-23",
+            "2026-02-26",
+            "2026-02-28"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-12-28",
+            "2025-12-30",
+            "2026-01-01",
+            "2026-01-02",
+            "2026-01-06",
+            "2026-01-09",
+            "2026-01-11",
+            "2026-01-13",
+            "2026-01-14",
+            "2026-01-18",
+            "2026-01-21",
+            "2026-01-23",
+            "2026-01-25"
+          ],
+          "reported_end_date": "2026-01-29",
+          "reported_start_date": "2026-01-26"
+        },
+        {
+          "event_id": "2093ee115a304fa4af8a3ed57e502730",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-20",
+            "2025-09-23",
+            "2025-09-25",
+            "2025-09-27",
+            "2025-09-28",
+            "2025-10-02",
+            "2025-10-05",
+            "2025-10-07",
+            "2025-10-09",
+            "2025-10-10",
+            "2025-10-14",
+            "2025-10-17"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-18",
+            "2025-08-20",
+            "2025-08-22",
+            "2025-08-23",
+            "2025-08-27",
+            "2025-08-30",
+            "2025-09-01",
+            "2025-09-03",
+            "2025-09-04",
+            "2025-09-08",
+            "2025-09-11",
+            "2025-09-13",
+            "2025-09-15"
+          ],
+          "reported_end_date": "2025-09-17",
+          "reported_start_date": "2025-09-16"
+        },
+        {
+          "event_id": "36eba8f9a98e4b59b50c8fa9d225da8c",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-20",
+            "2025-09-23",
+            "2025-09-25",
+            "2025-09-27",
+            "2025-09-28",
+            "2025-10-02",
+            "2025-10-05",
+            "2025-10-07",
+            "2025-10-09",
+            "2025-10-10",
+            "2025-10-14",
+            "2025-10-17"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-18",
+            "2025-08-20",
+            "2025-08-22",
+            "2025-08-23",
+            "2025-08-27",
+            "2025-08-30",
+            "2025-09-01",
+            "2025-09-03",
+            "2025-09-04",
+            "2025-09-08",
+            "2025-09-11",
+            "2025-09-13",
+            "2025-09-15"
+          ],
+          "reported_end_date": "2025-09-17",
+          "reported_start_date": "2025-09-16"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 249,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "International",
@@ -279,7 +1033,91 @@
       "gfd_event_map_flood_candidate_pixels": 0,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 166,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 86,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "c5e6600430794002b724b7fc11728aa3",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-03-24",
+            "2025-03-29",
+            "2025-03-30",
+            "2025-04-05",
+            "2025-04-10",
+            "2025-04-11",
+            "2025-04-17",
+            "2025-04-22"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-02-16",
+            "2025-02-21",
+            "2025-02-22",
+            "2025-02-28",
+            "2025-03-05",
+            "2025-03-06",
+            "2025-03-12",
+            "2025-03-17"
+          ],
+          "reported_end_date": "2025-03-23",
+          "reported_start_date": "2025-03-18"
+        },
+        {
+          "event_id": "4a8b2b3b70b64cd796f8cdda0725bec6",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-01-23",
+            "2025-01-28",
+            "2025-01-29",
+            "2025-02-04",
+            "2025-02-09",
+            "2025-02-10",
+            "2025-02-16"
+          ],
+          "pre_event_30d_product_dates": [
+            "2024-12-18",
+            "2024-12-23",
+            "2024-12-24",
+            "2024-12-30",
+            "2025-01-04",
+            "2025-01-05",
+            "2025-01-11",
+            "2025-01-16"
+          ],
+          "reported_end_date": "2025-01-19",
+          "reported_start_date": "2025-01-17"
+        },
+        {
+          "event_id": "28fe944d17c74283a73fa830d3e3dd09",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-04-17",
+            "2025-04-22",
+            "2025-04-23",
+            "2025-04-29",
+            "2025-05-04",
+            "2025-05-05",
+            "2025-05-11"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-03-12",
+            "2025-03-17",
+            "2025-03-18",
+            "2025-03-24",
+            "2025-03-29",
+            "2025-03-30",
+            "2025-04-05",
+            "2025-04-10"
+          ],
+          "reported_end_date": "2025-04-11",
+          "reported_start_date": "2025-04-11"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 163,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "International",
@@ -308,7 +1146,165 @@
       "gfd_event_map_flood_candidate_pixels": 0,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 72,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 69,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "06ae3a685c884ff7a397d6bc18c947c1",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-10-25",
+            "2025-10-26",
+            "2025-10-28",
+            "2025-10-29",
+            "2025-10-31",
+            "2025-11-01",
+            "2025-11-03",
+            "2025-11-04",
+            "2025-11-06",
+            "2025-11-07",
+            "2025-11-09",
+            "2025-11-10",
+            "2025-11-12",
+            "2025-11-13",
+            "2025-11-15",
+            "2025-11-16",
+            "2025-11-18",
+            "2025-11-19",
+            "2025-11-21",
+            "2025-11-22"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-09-23",
+            "2025-09-25",
+            "2025-09-26",
+            "2025-09-28",
+            "2025-09-29",
+            "2025-10-01",
+            "2025-10-02",
+            "2025-10-04",
+            "2025-10-05",
+            "2025-10-07",
+            "2025-10-08",
+            "2025-10-10",
+            "2025-10-11",
+            "2025-10-13",
+            "2025-10-14",
+            "2025-10-16",
+            "2025-10-17",
+            "2025-10-19",
+            "2025-10-20",
+            "2025-10-22"
+          ],
+          "reported_end_date": "2025-10-24",
+          "reported_start_date": "2025-10-23"
+        },
+        {
+          "event_id": "5b7ceb4941fc42a3ac6e8520cd4705f7",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-12-01",
+            "2025-12-03",
+            "2025-12-04",
+            "2025-12-06",
+            "2025-12-07",
+            "2025-12-09",
+            "2025-12-10",
+            "2025-12-12",
+            "2025-12-13",
+            "2025-12-15",
+            "2025-12-16",
+            "2025-12-18",
+            "2025-12-19",
+            "2025-12-21",
+            "2025-12-22",
+            "2025-12-24",
+            "2025-12-25",
+            "2025-12-27",
+            "2025-12-28",
+            "2025-12-30"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-10-29",
+            "2025-10-31",
+            "2025-11-01",
+            "2025-11-03",
+            "2025-11-04",
+            "2025-11-06",
+            "2025-11-07",
+            "2025-11-09",
+            "2025-11-10",
+            "2025-11-12",
+            "2025-11-13",
+            "2025-11-15",
+            "2025-11-16",
+            "2025-11-18",
+            "2025-11-19",
+            "2025-11-21",
+            "2025-11-22",
+            "2025-11-24",
+            "2025-11-25",
+            "2025-11-27"
+          ],
+          "reported_end_date": "2025-11-30",
+          "reported_start_date": "2025-11-28"
+        },
+        {
+          "event_id": "125f71ca896e487e9ec5dc03a1d2c616",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-12-16",
+            "2025-12-18",
+            "2025-12-19",
+            "2025-12-21",
+            "2025-12-22",
+            "2025-12-24",
+            "2025-12-25",
+            "2025-12-27",
+            "2025-12-28",
+            "2025-12-30",
+            "2025-12-31",
+            "2026-01-02",
+            "2026-01-03",
+            "2026-01-05",
+            "2026-01-06",
+            "2026-01-08",
+            "2026-01-09",
+            "2026-01-11",
+            "2026-01-12",
+            "2026-01-14"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-11-10",
+            "2025-11-12",
+            "2025-11-13",
+            "2025-11-15",
+            "2025-11-16",
+            "2025-11-18",
+            "2025-11-19",
+            "2025-11-21",
+            "2025-11-22",
+            "2025-11-24",
+            "2025-11-25",
+            "2025-11-27",
+            "2025-11-28",
+            "2025-11-30",
+            "2025-12-01",
+            "2025-12-03",
+            "2025-12-04",
+            "2025-12-06",
+            "2025-12-07",
+            "2025-12-09"
+          ],
+          "reported_end_date": "2025-12-15",
+          "reported_start_date": "2025-12-10"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 381,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "International",
@@ -337,7 +1333,80 @@
       "gfd_event_map_flood_candidate_pixels": 0,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 948,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 460,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "5aff35db93b04c45b6f424eae314d2b5",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-23",
+            "2025-09-28",
+            "2025-10-03",
+            "2025-10-05",
+            "2025-10-10",
+            "2025-10-17"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-18",
+            "2025-08-23",
+            "2025-08-30",
+            "2025-09-04",
+            "2025-09-09",
+            "2025-09-11"
+          ],
+          "reported_end_date": "2025-09-17",
+          "reported_start_date": "2025-09-16"
+        },
+        {
+          "event_id": "ae7313d1a3034f33ad5ebe15b3b70867",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-10-03",
+            "2025-10-05",
+            "2025-10-10",
+            "2025-10-17",
+            "2025-10-22",
+            "2025-10-29"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-30",
+            "2025-09-04",
+            "2025-09-09",
+            "2025-09-11",
+            "2025-09-16",
+            "2025-09-23"
+          ],
+          "reported_end_date": "2025-09-29",
+          "reported_start_date": "2025-09-28"
+        },
+        {
+          "event_id": "4203f3b5e1094b4ea0f4293f5302e98f",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-10-03",
+            "2025-10-05",
+            "2025-10-10",
+            "2025-10-17",
+            "2025-10-22"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-30",
+            "2025-09-04",
+            "2025-09-09",
+            "2025-09-11",
+            "2025-09-16",
+            "2025-09-23"
+          ],
+          "reported_end_date": "2025-09-28",
+          "reported_start_date": "2025-09-28"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 2,
+      "nrsc_official_use_marked": true,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 121,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "International",
@@ -366,7 +1435,93 @@
       "gfd_event_map_flood_candidate_pixels": 2,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 816,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 459,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "0a15548ed8744639968f2bfb6dfde45f",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-11",
+            "2025-09-13",
+            "2025-09-17",
+            "2025-09-23",
+            "2025-09-25",
+            "2025-09-29",
+            "2025-10-05",
+            "2025-10-07"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-06",
+            "2025-08-08",
+            "2025-08-12",
+            "2025-08-18",
+            "2025-08-20",
+            "2025-08-24",
+            "2025-08-30",
+            "2025-09-01"
+          ],
+          "reported_end_date": "2025-09-08",
+          "reported_start_date": "2025-09-05"
+        },
+        {
+          "event_id": "1f32f61b278d4704a8ec51c3e9f433d0",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-11",
+            "2025-09-13",
+            "2025-09-17",
+            "2025-09-23",
+            "2025-09-25",
+            "2025-09-29",
+            "2025-10-05",
+            "2025-10-07"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-06",
+            "2025-08-08",
+            "2025-08-12",
+            "2025-08-18",
+            "2025-08-20",
+            "2025-08-24",
+            "2025-08-30",
+            "2025-09-01"
+          ],
+          "reported_end_date": "2025-09-07",
+          "reported_start_date": "2025-09-05"
+        },
+        {
+          "event_id": "26e6863d7bce40049aa7ca6999eadbe4",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-11",
+            "2025-09-13",
+            "2025-09-17",
+            "2025-09-23",
+            "2025-09-25",
+            "2025-09-29",
+            "2025-10-05",
+            "2025-10-07"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-06",
+            "2025-08-08",
+            "2025-08-12",
+            "2025-08-18",
+            "2025-08-20",
+            "2025-08-24",
+            "2025-08-30",
+            "2025-09-01"
+          ],
+          "reported_end_date": "2025-09-07",
+          "reported_start_date": "2025-09-05"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 127,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "International",
@@ -395,7 +1550,108 @@
       "gfd_event_map_flood_candidate_pixels": 0,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 174,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 131,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "2443e698062646f1a00afbde0959ef03",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-16",
+            "2025-09-17",
+            "2025-09-21",
+            "2025-09-22",
+            "2025-09-28",
+            "2025-09-29",
+            "2025-10-03",
+            "2025-10-04",
+            "2025-10-10",
+            "2025-10-11"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-11",
+            "2025-08-12",
+            "2025-08-16",
+            "2025-08-17",
+            "2025-08-23",
+            "2025-08-24",
+            "2025-08-28",
+            "2025-08-29",
+            "2025-09-04",
+            "2025-09-05",
+            "2025-09-09"
+          ],
+          "reported_end_date": "2025-09-11",
+          "reported_start_date": "2025-09-10"
+        },
+        {
+          "event_id": "3a963eb2fde441cbb94385f8242c7680",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-16",
+            "2025-09-17",
+            "2025-09-21",
+            "2025-09-22",
+            "2025-09-28",
+            "2025-09-29",
+            "2025-10-03",
+            "2025-10-04",
+            "2025-10-10",
+            "2025-10-11"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-11",
+            "2025-08-12",
+            "2025-08-16",
+            "2025-08-17",
+            "2025-08-23",
+            "2025-08-24",
+            "2025-08-28",
+            "2025-08-29",
+            "2025-09-04",
+            "2025-09-05",
+            "2025-09-09"
+          ],
+          "reported_end_date": "2025-09-12",
+          "reported_start_date": "2025-09-10"
+        },
+        {
+          "event_id": "436d2044a90546bfad5e1a3b7f3ef9c4",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-16",
+            "2025-09-17",
+            "2025-09-21",
+            "2025-09-22",
+            "2025-09-28",
+            "2025-09-29",
+            "2025-10-03",
+            "2025-10-04",
+            "2025-10-10",
+            "2025-10-11"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-11",
+            "2025-08-12",
+            "2025-08-16",
+            "2025-08-17",
+            "2025-08-23",
+            "2025-08-24",
+            "2025-08-28",
+            "2025-08-29",
+            "2025-09-04",
+            "2025-09-05",
+            "2025-09-09"
+          ],
+          "reported_end_date": "2025-09-12",
+          "reported_start_date": "2025-09-10"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 202,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "International",
@@ -424,7 +1680,176 @@
       "gfd_event_map_flood_candidate_pixels": 66,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 1228,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 1080,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "dccc5469ebeb414eb2a2fd49eea97bc2",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-12",
+            "2025-09-14",
+            "2025-09-15",
+            "2025-09-16",
+            "2025-09-17",
+            "2025-09-18",
+            "2025-09-20",
+            "2025-09-21",
+            "2025-09-22",
+            "2025-09-24",
+            "2025-09-27",
+            "2025-09-28",
+            "2025-09-29",
+            "2025-09-30",
+            "2025-10-02",
+            "2025-10-03",
+            "2025-10-04",
+            "2025-10-06",
+            "2025-10-08",
+            "2025-10-09",
+            "2025-10-10"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-11",
+            "2025-08-12",
+            "2025-08-13",
+            "2025-08-15",
+            "2025-08-16",
+            "2025-08-17",
+            "2025-08-19",
+            "2025-08-21",
+            "2025-08-22",
+            "2025-08-23",
+            "2025-08-24",
+            "2025-08-25",
+            "2025-08-27",
+            "2025-08-28",
+            "2025-08-29",
+            "2025-08-31",
+            "2025-09-02",
+            "2025-09-03",
+            "2025-09-04",
+            "2025-09-05",
+            "2025-09-06",
+            "2025-09-08",
+            "2025-09-09"
+          ],
+          "reported_end_date": "2025-09-10",
+          "reported_start_date": "2025-09-10"
+        },
+        {
+          "event_id": "7a6c8fa7e0d145209c4d7883ec6f96a3",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-24",
+            "2025-09-27",
+            "2025-09-28",
+            "2025-09-29",
+            "2025-09-30",
+            "2025-10-02",
+            "2025-10-03",
+            "2025-10-04",
+            "2025-10-06",
+            "2025-10-08",
+            "2025-10-09",
+            "2025-10-10",
+            "2025-10-11",
+            "2025-10-12",
+            "2025-10-14",
+            "2025-10-15",
+            "2025-10-16",
+            "2025-10-20",
+            "2025-10-21",
+            "2025-10-22",
+            "2025-10-23"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-23",
+            "2025-08-24",
+            "2025-08-25",
+            "2025-08-27",
+            "2025-08-28",
+            "2025-08-29",
+            "2025-08-31",
+            "2025-09-02",
+            "2025-09-03",
+            "2025-09-04",
+            "2025-09-05",
+            "2025-09-06",
+            "2025-09-08",
+            "2025-09-09",
+            "2025-09-10",
+            "2025-09-12",
+            "2025-09-14",
+            "2025-09-15",
+            "2025-09-16",
+            "2025-09-17",
+            "2025-09-18",
+            "2025-09-20",
+            "2025-09-21"
+          ],
+          "reported_end_date": "2025-09-23",
+          "reported_start_date": "2025-09-22"
+        },
+        {
+          "event_id": "200d176e1fa04a4c877240bc4fba17e6",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-09-20",
+            "2025-09-21",
+            "2025-09-22",
+            "2025-09-24",
+            "2025-09-27",
+            "2025-09-28",
+            "2025-09-29",
+            "2025-09-30",
+            "2025-10-02",
+            "2025-10-03",
+            "2025-10-04",
+            "2025-10-06",
+            "2025-10-08",
+            "2025-10-09",
+            "2025-10-10",
+            "2025-10-11",
+            "2025-10-12",
+            "2025-10-14",
+            "2025-10-15",
+            "2025-10-16"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-08-19",
+            "2025-08-21",
+            "2025-08-22",
+            "2025-08-23",
+            "2025-08-24",
+            "2025-08-25",
+            "2025-08-27",
+            "2025-08-28",
+            "2025-08-29",
+            "2025-08-31",
+            "2025-09-02",
+            "2025-09-03",
+            "2025-09-04",
+            "2025-09-05",
+            "2025-09-06",
+            "2025-09-08",
+            "2025-09-09",
+            "2025-09-10",
+            "2025-09-12",
+            "2025-09-14",
+            "2025-09-15",
+            "2025-09-16",
+            "2025-09-17"
+          ],
+          "reported_end_date": "2025-09-18",
+          "reported_start_date": "2025-09-18"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 403,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "International",
@@ -453,7 +1878,105 @@
       "gfd_event_map_flood_candidate_pixels": 0,
       "gfd_validation_points": 0,
       "groundsource_event_records_discovery_only": 1469,
+      "groundsource_leads_with_product_date_within_1_calendar_day": 888,
+      "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": 3,
+      "groundsource_top_metadata_opportunity_leads": [
+        {
+          "event_id": "2b840211dde049cc867ee9388a3a01f5",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-10-10",
+            "2025-10-11",
+            "2025-10-16",
+            "2025-10-17",
+            "2025-10-22",
+            "2025-10-23",
+            "2025-10-28",
+            "2025-10-29",
+            "2025-11-03",
+            "2025-11-04"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-09-05",
+            "2025-09-10",
+            "2025-09-11",
+            "2025-09-16",
+            "2025-09-17",
+            "2025-09-22",
+            "2025-09-23",
+            "2025-09-28",
+            "2025-09-29",
+            "2025-10-04"
+          ],
+          "reported_end_date": "2025-10-05",
+          "reported_start_date": "2025-10-05"
+        },
+        {
+          "event_id": "12cafddf01fb41b5bd2f6c27b6422702",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-10-11",
+            "2025-10-16",
+            "2025-10-17",
+            "2025-10-22",
+            "2025-10-23",
+            "2025-10-28",
+            "2025-10-29",
+            "2025-11-03",
+            "2025-11-04",
+            "2025-11-09"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-09-10",
+            "2025-09-11",
+            "2025-09-16",
+            "2025-09-17",
+            "2025-09-22",
+            "2025-09-23",
+            "2025-09-28",
+            "2025-09-29",
+            "2025-10-04",
+            "2025-10-05"
+          ],
+          "reported_end_date": "2025-10-10",
+          "reported_start_date": "2025-10-10"
+        },
+        {
+          "event_id": "26d704d920564f51986a3136624f8ef8",
+          "nearest_product_date_offset_calendar_days": 0,
+          "post_event_30d_product_dates": [
+            "2025-10-11",
+            "2025-10-16",
+            "2025-10-17",
+            "2025-10-22",
+            "2025-10-23",
+            "2025-10-28",
+            "2025-10-29",
+            "2025-11-03",
+            "2025-11-04",
+            "2025-11-09"
+          ],
+          "pre_event_30d_product_dates": [
+            "2025-09-10",
+            "2025-09-11",
+            "2025-09-16",
+            "2025-09-17",
+            "2025-09-22",
+            "2025-09-23",
+            "2025-09-28",
+            "2025-09-29",
+            "2025-10-04",
+            "2025-10-05"
+          ],
+          "reported_end_date": "2025-10-10",
+          "reported_start_date": "2025-10-10"
+        }
+      ],
       "nominal_aoi_km2": 625,
+      "nrsc_fixed_aoi_overlap_verified": false,
+      "nrsc_official_map_documents": 0,
+      "nrsc_official_use_marked": false,
+      "nrsc_reuse_license_verified": false,
       "opera_cmr_dates_2024_09_to_2026_11": 196,
       "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
       "region": "International",
@@ -468,6 +1991,21 @@
     }
   ],
   "audit": "ATLAS normalized per-area reference and observation readiness ledger",
+  "city_specific_nonspatial_leads": [
+    {
+      "city": "Jakarta",
+      "confirmatory_enrollment_eligible": false,
+      "coordinate_or_geometry_field_present": false,
+      "csv_rows": 260,
+      "distinct_kelurahan": 138,
+      "explicit_reuse_license_verified": false,
+      "region": "International",
+      "reporting_periods": 4,
+      "source_csv_sha256": "679a1bdcee4d557c8244c7530f3c789f02605870bd7d6dae74018be1097859f8",
+      "source_page": "https://data.go.id/dataset/dataset/data-kejadian-bencana-banjir-tahun-2024",
+      "source_title": "Data Kejadian Bencana Banjir Tahun 2024"
+    }
+  ],
   "created_from": "Pinned audit snapshots; no source archive or raster was reinterpreted by this join",
   "design": {
     "international_areas": 8,
@@ -481,8 +2019,11 @@
     "atlas-geoid-flood-overlap-audit.json": "4a921d5f3b7b2ff6aab04487a0e0066ac5c5c4e813968d601e6a52121f565ce2",
     "atlas-gfd-event-extent-coverage-audit.json": "f9410dfe2c02829669e9ad9921b8474a000265198961d90a04f137ecb69a2dee",
     "atlas-global-flood-db-validation-audit.json": "3a04b6cf89ef2af29be94f4bca7287ede83ab583f248a077e5cbe931f4fb52e3",
-    "atlas-groundsource-event-coverage-audit.json": "0273589ba44e3e268980598288b893e05e20c4c11f698e2f742e0fa976bd8a6a",
+    "atlas-groundsource-event-coverage-audit.json": "3ec6e77a34750bb10dc76ea23dfcefc98cb3988815cfbb85f6278a1c8c52a3bf",
+    "atlas-jakarta-incident-data-audit.json": "20ce5625d6ea9ab2cf1fde63b3aac69e8725595eb9a7c2aefae02c2654fb4b1a",
+    "atlas-mumbai-nrsc-reference-lead.json": "6f8ff1b3ed5fc783eced4b3238db338044a47005bb7cfde710b5700e081ec09a",
     "atlas-s1rtc-pixel-coverage-unique-audit.json": "807747caaf547bc793ba00db9a7cfb1ed2209ac299003176afed89e3d49d9dd6",
+    "atlas-s1rtc-valid-quota-audit.json": "8e883d7086aff6e8d627c1b7c695a0c30f6f2714a88842d5209c76ff0ff4c376",
     "atlas-sen1floods11-label-footprint-audit.json": "f639ebdb70daf7c279c6871c7e502ed977fee4950da6d9e78031d43ae5477ab6",
     "atlas-spacenet8-louisiana-coverage-audit.json": "f71302888615dc2dda1e8b45018603c4f8cdf436fc9d2137974704c7c78dcfe1",
     "atlas-ufo-dataset-coverage-audit.json": "aac8c6e594200d991fe362090fe02cf1e4cf6d28c4b0c89a7eee326f7859ba6a",
@@ -491,21 +2032,33 @@
   "interpretation_limits": [
     "Counts are source-specific and are not comparable sample sizes across sensors or label types.",
     "Groundsource records are news-derived event leads, not flood labels or validated demand.",
+    "The two NRSC Mumbai event-map PDFs are marked for official use; AOI overlap and reuse permission are unverified, so they are tracked as discovery leads and excluded from validation counts.",
     "Deduplicated RTC VV valid-pixel samples are availability screens, not OPERA DSWx-S1 water classifications or event/baseline adequacy.",
     "GFD, C2S, GEOID-Flood, and SpaceNet 8 leads are historical; they do not establish event-matched, independent, balanced validation for the shared 2024-2026 window.",
-    "No candidate is confirmatory until all gates in data/validation_protocol.yaml are independently met."
+    "No candidate is confirmatory until all gates in data/validation_protocol.yaml are independently met.",
+    "The Jakarta BPBD 2024 incident extract is a nonspatial administrative lead with quarter-coded reporting and no event-day coordinates; it is not a pixel label and cannot establish fixed-AOI overlap or confirmatory eligibility."
   ],
   "summary": {
     "areas_passing_all_12_rtc_samples": 10,
     "areas_with_any_spatial_reference_lead": 4,
+    "areas_with_three_groundsource_top_metadata_opportunities": 16,
+    "areas_with_unverified_official_map_leads": 1,
     "c2s_areas_with_labels": 1,
     "candidate_areas": 16,
+    "cities_with_nonspatial_administrative_event_leads": 1,
     "confirmatory_areas_eligible": 0,
     "groundsource_event_records_are_validation_labels": false,
     "international_areas": 8,
+    "jakarta_incident_source_reporting_periods": 4,
+    "jakarta_incident_source_rows": 260,
+    "nrsc_official_map_documents": 2,
     "rtc_duplicate_selections": 0,
     "rtc_groups_passing_80pct": 169,
     "rtc_groups_sampled": 192,
+    "rtc_matched_quota_areas": 16,
+    "rtc_matched_quota_groups_selected": 192,
+    "rtc_matched_quota_supplemental_groups_screened": 34,
+    "rtc_matched_quota_target_groups": 192,
     "rtc_unique_area_orbit_groups": 192,
     "spacenet8_areas_with_objects": 1,
     "spacenet8_positive_objects": 14,

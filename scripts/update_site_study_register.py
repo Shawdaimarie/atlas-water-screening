@@ -78,7 +78,7 @@ def update(html: str, areas: list[dict]) -> str:
         html = html.replace(old_source, new_source, 1)
     elif html.count(new_source) != 1:
         raise ValueError("Expected the primary evidence link exactly once")
-    public_need_label = '<div class="study-status">Candidate only · metadata screening passed. Pixel-level QA, event-matched scenes, asset geometry, and independent labels remain pending.</div>'
+    public_need_label = '<div class="study-status">Candidate only · metadata screening passed. OPERA pixel-level QA, event-matched scenes, asset geometry, and independent labels remain pending.</div>'
     demand_note = '<p><b>Demand distinction:</b> documented public management need does not establish ATLAS customer demand or purchase intent.</p>'
     public_need_detail = public_need_label + demand_note
     while html.count(public_need_detail + public_need_detail):

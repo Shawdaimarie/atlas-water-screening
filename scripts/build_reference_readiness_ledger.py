@@ -14,6 +14,7 @@ DIST = ROOT / "dist"
 REGISTER = ROOT / "data/study_area_register.json"
 INPUTS = {
     "rtc": "atlas-s1rtc-pixel-coverage-unique-audit.json",
+    "rtc_valid_quota": "atlas-s1rtc-valid-quota-audit.json",
     "c2s": "atlas-c2s-flood-dataset-audit.json",
     "ufo": "atlas-ufo-dataset-coverage-audit.json",
     "floodplanet": "atlas-floodplanet-coverage-audit.json",
@@ -24,11 +25,14 @@ INPUTS = {
     "groundsource": "atlas-groundsource-event-coverage-audit.json",
     "spacenet8": "atlas-spacenet8-louisiana-coverage-audit.json",
     "cems": "atlas-cems-event-discovery-audit.json",
+    "mumbai_nrsc": "atlas-mumbai-nrsc-reference-lead.json",
+    "jakarta_incidents": "atlas-jakarta-incident-data-audit.json",
 }
 JSON_OUT = OUT / "atlas-reference-readiness-ledger.json"
 CSV_OUT = OUT / "atlas-reference-readiness-ledger.csv"
 DIST_JSON = DIST / JSON_OUT.name
 DIST_CSV = DIST / CSV_OUT.name
+DIST_JAKARTA_AUDIT = DIST / INPUTS["jakarta_incidents"]
 HTML = DIST / "index.html"
 START = "<!-- GENERATED REFERENCE READINESS LEDGER START -->"
 END = "<!-- GENERATED REFERENCE READINESS LEDGER END -->"
@@ -45,6 +49,7 @@ def area_key(region: str, city: str) -> str:
 def build_ledger() -> dict:
     register = json.loads(REGISTER.read_text())
     rtc = load_json(INPUTS["rtc"])
+    rtc_quota = load_json(INPUTS["rtc_valid_quota"])
     c2s = load_json(INPUTS["c2s"])["registered_areas"]
     ufo = load_json(INPUTS["ufo"])["registered_areas"]
     floodplanet = load_json(INPUTS["floodplanet"])["registered_areas"]
@@ -52,9 +57,19 @@ def build_ledger() -> dict:
     geoid = {area_key(x["region"], x["city"]): x for x in load_json(INPUTS["geoid"])["results"]}
     gfd_points = load_json(INPUTS["gfd_points"])["area_match_counts"]
     gfd_extent = {area_key(x["region"], x["city"]): x for x in load_json(INPUTS["gfd_extent"])["areas"]}
-    groundsource = {area_key(x["region"], x["city"]): x for x in load_json(INPUTS["groundsource"])["areas"]}
+    groundsource_audit = load_json(INPUTS["groundsource"])
+    groundsource = {area_key(x["region"], x["city"]): x for x in groundsource_audit["areas"]}
+    groundsource_opportunities = {
+        area_key(x["region"], x["city"]): x
+        for x in groundsource_audit["acquisition_opportunity_screen"]["areas"]
+    }
     spacenet = load_json(INPUTS["spacenet8"])["results"]
     cems = load_json(INPUTS["cems"])
+    mumbai_nrsc = load_json(INPUTS["mumbai_nrsc"])
+    jakarta_incidents = load_json(INPUTS["jakarta_incidents"])
+    nrsc_present = mumbai_nrsc.get("candidate_area") == "Mumbai"
+    nrsc_documents = len(mumbai_nrsc.get("event", {}).get("mapped_tiles", [])) if nrsc_present else 0
+    nrsc_use = mumbai_nrsc.get("coverage_and_use", {})
     cems_by_area = {
         area_key(x["region"], x["city"]): x for x in cems.get("matches", [])
     }
@@ -97,10 +112,32 @@ def build_ledger() -> dict:
             "gfd_event_map_event_start": gfd_event.get("event_start"),
             "gfd_event_map_event_end": gfd_event.get("event_end"),
             "groundsource_event_records_discovery_only": groundsource[key]["intersecting_event_records"],
+            "groundsource_leads_with_product_date_within_1_calendar_day": groundsource_opportunities[key]["events_with_product_date_within_1_day"],
+            "groundsource_top_leads_with_near_date_and_3_pre_post_metadata": sum(
+                candidate["has_calendar_date_match_within_1_day"]
+                and candidate["has_3_pre_event_metadata_dates"]
+                and candidate["has_3_post_event_metadata_dates"]
+                for candidate in groundsource_opportunities[key]["top_candidates"][:3]
+            ),
+            "groundsource_top_metadata_opportunity_leads": [
+                {
+                    "event_id": candidate["event_id"],
+                    "reported_start_date": candidate["reported_start_date"],
+                    "reported_end_date": candidate["reported_end_date"],
+                    "nearest_product_date_offset_calendar_days": candidate["nearest_product_date_offset_calendar_days"],
+                    "pre_event_30d_product_dates": candidate["pre_event_30d_product_dates"],
+                    "post_event_30d_product_dates": candidate["post_event_30d_product_dates"],
+                }
+                for candidate in groundsource_opportunities[key]["top_candidates"][:3]
+            ],
             "cems_rapid_mapping_activations": cems_by_area.get(key, {}).get("count", 0),
             "spacenet8_unique_object_references": s["unique_feature_ids"],
             "spacenet8_flooded_yes_objects": s["flooded"],
             "spacenet8_unknown_flood_status_objects": s["flood_status_unknown"],
+            "nrsc_official_map_documents": nrsc_documents if city == "Mumbai" else 0,
+            "nrsc_official_use_marked": bool(nrsc_use.get("source_marks_maps_for_official_use")) if city == "Mumbai" else False,
+            "nrsc_fixed_aoi_overlap_verified": bool(nrsc_use.get("fixed_aoi_overlap_verified")) if city == "Mumbai" else False,
+            "nrsc_reuse_license_verified": bool(nrsc_use.get("reuse_license_verified")) if city == "Mumbai" else False,
             "confirmatory_enrollment_eligible": False,
             "reason_not_enrolled": "No area currently meets the complete event-matched independent-label, QA-valid observation, blinded adjudication, probability-sample, and precision gates.",
         }
@@ -134,11 +171,23 @@ def build_ledger() -> dict:
         "areas_passing_all_12_rtc_samples": sum(r["rtc_all_12_sampled_groups_pass"] for r in rows),
         "rtc_unique_area_orbit_groups": rtc["summary"]["unique_area_orbit_groups"],
         "rtc_duplicate_selections": rtc["summary"]["duplicate_selections"],
+        "rtc_matched_quota_groups_selected": rtc_quota["summary"]["valid_groups_selected"],
+        "rtc_matched_quota_target_groups": rtc_quota["summary"]["target_valid_groups"],
+        "rtc_matched_quota_areas": rtc_quota["summary"]["areas_meeting_12_group_quota"],
+        "rtc_matched_quota_supplemental_groups_screened": rtc_quota["summary"]["supplemental_groups_screened"],
         "c2s_areas_with_labels": sum(bool(r["c2s_label_chips"]) for r in rows),
         "spacenet8_areas_with_objects": sum(bool(r["spacenet8_unique_object_references"]) for r in rows),
         "spacenet8_positive_objects": sum(r["spacenet8_flooded_yes_objects"] for r in rows),
         "spacenet8_unknown_objects": sum(r["spacenet8_unknown_flood_status_objects"] for r in rows),
+        "areas_with_unverified_official_map_leads": sum(bool(r["nrsc_official_map_documents"]) for r in rows),
+        "nrsc_official_map_documents": sum(r["nrsc_official_map_documents"] for r in rows),
         "groundsource_event_records_are_validation_labels": False,
+        "areas_with_three_groundsource_top_metadata_opportunities": sum(
+            r["groundsource_top_leads_with_near_date_and_3_pre_post_metadata"] == 3 for r in rows
+        ),
+        "cities_with_nonspatial_administrative_event_leads": 1,
+        "jakarta_incident_source_rows": jakarta_incidents["observed_data"]["csv_rows"],
+        "jakarta_incident_source_reporting_periods": jakarta_incidents["observed_data"]["distinct_reporting_periods"],
     }
     return {
         "audit": "ATLAS normalized per-area reference and observation readiness ledger",
@@ -146,12 +195,29 @@ def build_ledger() -> dict:
         "design": {"us_areas": 8, "international_areas": 8, "nominal_aoi_km2": 625},
         "summary": summary,
         "input_sha256": source_hashes,
+        "city_specific_nonspatial_leads": [
+            {
+                "city": "Jakarta",
+                "region": "International",
+                "source_title": jakarta_incidents["source"]["dataset_title"],
+                "source_page": jakarta_incidents["source"]["dataset_page"],
+                "source_csv_sha256": jakarta_incidents["source"]["raw_csv_sha256"],
+                "csv_rows": jakarta_incidents["observed_data"]["csv_rows"],
+                "reporting_periods": jakarta_incidents["observed_data"]["distinct_reporting_periods"],
+                "distinct_kelurahan": jakarta_incidents["observed_data"]["distinct_kelurahan"],
+                "coordinate_or_geometry_field_present": jakarta_incidents["observed_data"]["coordinate_or_geometry_field_present"],
+                "explicit_reuse_license_verified": jakarta_incidents["reuse_and_quality_gates"]["explicit_reuse_license_verified"],
+                "confirmatory_enrollment_eligible": jakarta_incidents["classification"]["confirmatory_enrollment_eligible"],
+            }
+        ],
         "interpretation_limits": [
             "Counts are source-specific and are not comparable sample sizes across sensors or label types.",
             "Groundsource records are news-derived event leads, not flood labels or validated demand.",
+            "The two NRSC Mumbai event-map PDFs are marked for official use; AOI overlap and reuse permission are unverified, so they are tracked as discovery leads and excluded from validation counts.",
             "Deduplicated RTC VV valid-pixel samples are availability screens, not OPERA DSWx-S1 water classifications or event/baseline adequacy.",
             "GFD, C2S, GEOID-Flood, and SpaceNet 8 leads are historical; they do not establish event-matched, independent, balanced validation for the shared 2024-2026 window.",
             "No candidate is confirmatory until all gates in data/validation_protocol.yaml are independently met.",
+            "The Jakarta BPBD 2024 incident extract is a nonspatial administrative lead with quarter-coded reporting and no event-day coordinates; it is not a pixel label and cannot establish fixed-AOI overlap or confirmatory eligibility.",
         ],
         "areas": rows,
     }
@@ -162,9 +228,15 @@ def render_card(ledger: dict) -> str:
     return (
         f'{START}<article class="reference-card"><h3>16-area evidence-readiness ledger</h3>'
         f'<b>{s["confirmatory_areas_eligible"]}/16 confirmatory sites eligible · '
-        f'{s["rtc_groups_passing_80pct"]}/{s["rtc_groups_sampled"]} distinct RTC groups pass the 80% screen</b>'
+        f'{s["rtc_matched_quota_groups_selected"]}/{s["rtc_matched_quota_target_groups"]} selected RTC groups meet the matched 80% quota '
+        f'({s["rtc_matched_quota_areas"]}/16 areas; {s["rtc_matched_quota_supplemental_groups_screened"]} extra candidates screened)</b>'
         f'<p>The same fixed-area crosswalk lists metadata dates, 12 sampled VV availability groups, and each public reference lead for every U.S. and international candidate. '
-        'These source counts have different meanings and do not establish comparable flood labels or adequate event/baseline sampling.</p>'
+        f'The initial random availability draw passed {s["rtc_groups_passing_80pct"]}/{s["rtc_groups_sampled"]}; the separate matched quota conditions selection on the 80% coverage floor and is not an archive-wide pass-rate estimate. '
+        'Mumbai’s two NRSC maps are separately flagged as official-use leads with unverified overlap and reuse terms. Jakarta also has a 2024 BPBD administrative incident extract (260 rows across four reporting periods); it has no coordinates or event-day timestamps, and its reuse license is unverified. These source counts have different meanings and do not establish comparable flood labels or adequate event/baseline sampling.</p>'
+        f'<p><b>Event acquisition opportunities:</b> the three top metadata-ranked Groundsource event leads for each of {s["areas_with_three_groundsource_top_metadata_opportunities"]}/16 areas have an OPERA metadata date within one calendar day and at least three metadata dates in each 30-day pre/post window. Calendar dates do not establish an exact 24-hour match; source events need official verification, and QA-valid pixels and independent labels remain unverified. News coverage is geographically uneven.</p>'
+        f'<a href="atlas-jakarta-incident-data-audit.json" download="atlas-jakarta-incident-data-audit.json">Download Jakarta source audit ↗</a> '
+        f'<a href="atlas-groundsource-event-coverage-audit.json" target="_blank" rel="noopener">Open event/date opportunity JSON ↗</a> '
+        f'<a href="atlas-groundsource-event-coverage-audit.json" download="atlas-groundsource-event-coverage-audit.json">Download event/date opportunity JSON ↧</a> '
         f'<a href="{JSON_OUT.name}" download="{JSON_OUT.name}">Download 16-area JSON ↗</a> '
         f'<a href="{CSV_OUT.name}" download="{CSV_OUT.name}">Download 16-area CSV ↗</a></article>{END}'
     )
@@ -175,6 +247,8 @@ def build() -> dict:
     JSON_OUT.write_text(json.dumps(ledger, indent=2, sort_keys=True) + "\n")
     DIST.mkdir(exist_ok=True)
     DIST_JSON.write_bytes(JSON_OUT.read_bytes())
+    DIST_JAKARTA_AUDIT.write_bytes((OUT / INPUTS["jakarta_incidents"]).read_bytes())
+    (DIST / INPUTS["groundsource"]).write_bytes((OUT / INPUTS["groundsource"]).read_bytes())
     fields = list(ledger["areas"][0])
     with CSV_OUT.open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fields)
