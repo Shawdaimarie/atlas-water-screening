@@ -6,7 +6,6 @@ def valid_onboarding_inputs():
         "schema_version": 1,
         "owner": {
             "contact_email": "owner@example.com",
-            "apple_account_role": "sign_in_only",
             "data_residency_decision": "us-central-only",
             "staging_production_boundary": "separate-projects",
             "approved_api_hostname": "api.example.com",
@@ -54,6 +53,12 @@ def valid_onboarding_inputs():
 
 def test_owner_inputs_can_pass_onboarding_before_oidc_is_configured():
     assert validate_inputs(valid_onboarding_inputs()) == []
+
+
+def test_cloud_onboarding_is_independent_of_apple_distribution_choice():
+    data = valid_onboarding_inputs()
+    data["owner"]["apple_account_role"] = "app_store_testflight_distribution"
+    assert validate_inputs(data) == []
 
 
 def test_release_readiness_requires_all_four_federated_identities():

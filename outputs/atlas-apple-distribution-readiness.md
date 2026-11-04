@@ -1,13 +1,13 @@
 # ATLAS Apple distribution readiness
 
-Updated 2026-11-03. This note separates the existing private web deployment from a future Apple-platform app release.
+Updated 2026-11-04 America/Chicago. The user confirmed that ATLAS should use their existing Apple Account for its Apple deployment while the Google Cloud, AWS, Azure, and Oracle accounts are being set up. This note separates the private browser deployment from the Apple app release path.
 
 ## Current verified state
 
-- The deployed ATLAS product is a private, browser-based Site at `https://atlas-water-screening.shawdaimarie.chatgpt.site/`, currently version 27 and restricted to the owner account. Its authenticated UI and live evidence-ledger endpoint were checked. It is not hosted by Apple.
+- The deployed ATLAS product is a private, browser-based Site at `https://atlas-water-screening.shawdaimarie.chatgpt.site/`, currently version 56 and restricted to the owner account. The v56 deployment record is in `outputs/atlas-v56-end-to-end-checklist.md`. It is not hosted by Apple.
 - The repository contains a static web experience in `dist/index.html`; it has no `.xcodeproj`, `.xcworkspace`, Swift source, or iOS app target.
 - This Mac has Apple command-line developer tools, but `xcodebuild -version` fails because the active developer directory is Command Line Tools rather than a full Xcode installation. An iOS archive cannot be built here yet.
-- The user confirmed the existing Apple account is the intended Apple distribution account while the four cloud accounts are being applied for. The Apple Account page currently shows its sign-in screen; no sign-in was performed, so Developer Program membership and App Store Connect access remain unverified. The Mac has only Command Line Tools; `xcodebuild -version` confirms full Xcode is unavailable, and there is no iOS app target in this repository. No app record, bundle identifier, signing team, certificates, provisioning profile, or TestFlight build has been verified or created. Account ownership alone does not establish distribution readiness.
+- The user explicitly directed that Apple deployment use their existing Apple Account while they are creating the four cloud accounts. An Apple Account does not host the browser Site. Apple Developer Program membership and App Store Connect access remain unverified. The Mac has only Command Line Tools; `xcodebuild -version` confirms full Xcode is unavailable, and there is no iOS app target in this repository. No app record, bundle identifier, signing team, certificates, provisioning profile, or TestFlight build has been verified or created. Account ownership alone does not establish distribution readiness.
 
 ## Apple account release path
 
@@ -23,7 +23,7 @@ To make an Apple release buildable and reviewable:
 
 ## Readiness gate
 
-Apple distribution is **not ready and has not been attempted**. The current private web deployment is Site v27 and remains available as a browser demo. The existing Apple Account can open the live site in Safari, but Apple does not host this browser deployment through an Apple Account. To distribute ATLAS as an iOS app through TestFlight or the App Store, the account's Developer Program/App Store Connect access must be verified, full Xcode installed, and a native app target designed, implemented, signed, and tested. Apple says free membership is enough to begin development and test on personal devices; TestFlight/App Store Connect distribution requires Apple Developer Program membership ([program overview](https://developer.apple.com/help/account/membership/programs-overview/)). The current owner-only Site and ChatGPT sign-in also need a deliberate app-review/access plan. This Apple track does not change the ATLAS research score or count as a Google Cloud, AWS, Azure, or Oracle deployment.
+Apple app distribution is **not ready and has not been attempted**. The current private web deployment is Site v56 and remains available as a browser demo. The user specified their existing Apple Account as the intended Apple distribution account; its Developer Program membership and App Store Connect access still need verification. To distribute ATLAS as an iOS app through TestFlight or the App Store, full Xcode must be installed and a native app target designed, implemented, signed, and tested. Apple allows development and testing on personal devices without paid membership; TestFlight and App Store Connect distribution require Apple Developer Program membership ([program overview](https://developer.apple.com/help/account/membership/programs-overview/)). The current owner-only Site and ChatGPT sign-in also need a deliberate app-review/access plan. This Apple app path does not host the browser Site, change the ATLAS research score, or count as a Google Cloud, AWS, Azure, or Oracle deployment.
 
 ## Apple references
 

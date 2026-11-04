@@ -1,0 +1,1487 @@
+{
+  "source": "Copernicus Global Flood Monitoring STAC collection GFM",
+  "endpoint": "https://stac.eodc.eu/api/v1/search",
+  "created_utc": "2026-11-03",
+  "purpose": "Raster-level availability diagnostic around a candidate event lead; not validation evidence.",
+  "independence_limit": "GFM uses Sentinel-1, as does the target OPERA DSWx-S1 product; GFM output is not independent reference truth.",
+  "validity_gate": "At least 0.80 unmasked pixels over the fixed AOI for each used raster; an AOI must also have at least 3 event and 3 baseline dates, with independently licensed reference labels, before enrollment.",
+  "areas": [
+    {
+      "region": "United States",
+      "city": "Houston",
+      "bbox_wgs84": [
+        -95.499149,
+        29.648111,
+        -95.240451,
+        29.872689
+      ],
+      "candidate_event_id": "5a99475ed9b4488d9fabf7bef1ed4a85",
+      "candidate_event_interval": [
+        "2025-05-26",
+        "2025-05-26"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2025-05-19",
+          "gfm_item_count": 5,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250519T002646_VV_NA020M_E084N021T3",
+            "datetime": "2025-05-19T00:26:46Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/19/ENSEMBLE_FLOOD_20250519T002646_VV_NA020M_E084N021T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 806182,
+            "valid_pixels": 765819,
+            "valid_fraction": 0.9499331416479158,
+            "class_counts": {
+              "0": 765788,
+              "1": 31
+            },
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2025-05-26",
+          "gfm_item_count": 6,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250526T122314_VV_NA020M_E084N024T3",
+            "datetime": "2025-05-26T12:23:14Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/26/ENSEMBLE_FLOOD_20250526T122314_VV_NA020M_E084N024T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 873145,
+            "valid_pixels": 831194,
+            "valid_fraction": 0.9519541427826993,
+            "class_counts": {
+              "0": 831131,
+              "1": 63
+            },
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2025-05-31",
+          "gfm_item_count": 5,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250531T002646_VV_NA020M_E084N021T3",
+            "datetime": "2025-05-31T00:26:46Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/31/ENSEMBLE_FLOOD_20250531T002646_VV_NA020M_E084N021T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 806182,
+            "valid_pixels": 765819,
+            "valid_fraction": 0.9499331416479158,
+            "class_counts": {
+              "0": 765819
+            },
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": true,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "United States",
+      "city": "Miami",
+      "bbox_wgs84": [
+        -80.316481,
+        25.649411,
+        -80.067119,
+        25.873989
+      ],
+      "candidate_event_id": "8f25be86830e4a81aca246dbde81413e",
+      "candidate_event_interval": [
+        "2025-09-04",
+        "2025-09-04"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2025-08-30",
+          "gfm_item_count": 2,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250830T232030_VV_NA020M_E099N021T3",
+            "datetime": "2025-08-30T23:20:30Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/08/30/ENSEMBLE_FLOOD_20250830T232030_VV_NA020M_E099N021T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2251480,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2025-09-04",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250904T232812_VV_NA020M_E099N021T3",
+            "datetime": "2025-09-04T23:28:12Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/09/04/ENSEMBLE_FLOOD_20250904T232812_VV_NA020M_E099N021T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2251480,
+            "valid_pixels": 813234,
+            "valid_fraction": 0.36119974416828043,
+            "class_counts": {
+              "0": 813201,
+              "1": 33
+            },
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2025-09-11",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250911T232030_VV_NA020M_E099N021T3",
+            "datetime": "2025-09-11T23:20:30Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/09/11/ENSEMBLE_FLOOD_20250911T232030_VV_NA020M_E099N021T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2251480,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "United States",
+      "city": "Tampa",
+      "bbox_wgs84": [
+        -82.584317,
+        27.838311,
+        -82.330083,
+        28.062889
+      ],
+      "candidate_event_id": "81e5c029589e41cc9799a92e06e45abc",
+      "candidate_event_interval": [
+        "2024-10-08",
+        "2024-10-14"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2024-10-03",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20241003T232912_VV_NA020M_E096N021T3",
+            "datetime": "2024-10-03T23:29:12Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/03/ENSEMBLE_FLOOD_20241003T232912_VV_NA020M_E096N021T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2165310,
+            "valid_pixels": 1089637,
+            "valid_fraction": 0.5032244805593656,
+            "class_counts": {
+              "0": 1089508,
+              "1": 129
+            },
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2024-10-08",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20241008T233708_VV_NA020M_E096N021T3",
+            "datetime": "2024-10-08T23:37:08Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/08/ENSEMBLE_FLOOD_20241008T233708_VV_NA020M_E096N021T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2165310,
+            "valid_pixels": 1290074,
+            "valid_fraction": 0.5957918265744858,
+            "class_counts": {
+              "0": 1289938,
+              "1": 136
+            },
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2024-10-15",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20241015T232912_VV_NA020M_E096N021T3",
+            "datetime": "2024-10-15T23:29:12Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/15/ENSEMBLE_FLOOD_20241015T232912_VV_NA020M_E096N021T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2165310,
+            "valid_pixels": 1084960,
+            "valid_fraction": 0.5010645127025691,
+            "class_counts": {
+              "0": 1084716,
+              "1": 244
+            },
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "United States",
+      "city": "New Orleans",
+      "bbox_wgs84": [
+        -90.201096,
+        29.838811,
+        -89.941904,
+        30.063389
+      ],
+      "candidate_event_id": "91c4b71cab7b46e9832eedec3f7e7834",
+      "candidate_event_interval": [
+        "2025-10-13",
+        "2025-10-13"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2025-10-12",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20251012T001118_VV_NA020M_E087N024T3",
+            "datetime": "2025-10-12T00:11:18Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/10/12/ENSEMBLE_FLOOD_20251012T001118_VV_NA020M_E087N024T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 1016667,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2025-10-13",
+          "gfm_item_count": 2,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20251013T235443_VV_NA020M_E090N024T3",
+            "datetime": "2025-10-13T23:54:43Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/10/13/ENSEMBLE_FLOOD_20251013T235443_VV_NA020M_E090N024T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 861513,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2025-10-19",
+          "gfm_item_count": 6,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20251019T000227_VV_NA020M_E090N024T3",
+            "datetime": "2025-10-19T00:02:27Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/10/19/ENSEMBLE_FLOOD_20251019T000227_VV_NA020M_E090N024T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 861513,
+            "valid_pixels": 682136,
+            "valid_fraction": 0.7917884001750409,
+            "class_counts": {
+              "0": 682120,
+              "1": 16
+            },
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "United States",
+      "city": "New York City",
+      "bbox_wgs84": [
+        -74.154141,
+        40.600511,
+        -73.857859,
+        40.825089
+      ],
+      "candidate_event_id": "6d64543b4db1401b9288f5e079f501e3",
+      "candidate_event_interval": [
+        "2025-02-10",
+        "2025-02-11"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2025-02-06",
+          "gfm_item_count": 2,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250206T224340_VV_NA020M_E102N039T3",
+            "datetime": "2025-02-06T22:43:40Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/02/06/ENSEMBLE_FLOOD_20250206T224340_VV_NA020M_E102N039T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2494610,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2025-02-10",
+          "gfm_item_count": 2,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250210T110620_VV_NA020M_E102N039T3",
+            "datetime": "2025-02-10T11:06:20Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/02/10/ENSEMBLE_FLOOD_20250210T110620_VV_NA020M_E102N039T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2494610,
+            "valid_pixels": 1397372,
+            "valid_fraction": 0.5601564974084126,
+            "class_counts": {
+              "0": 1397109,
+              "1": 263
+            },
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": false,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2025-02-16",
+          "gfm_item_count": 1,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250216T225925_VV_NA020M_E102N039T3",
+            "datetime": "2025-02-16T22:59:25Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/02/16/ENSEMBLE_FLOOD_20250216T225925_VV_NA020M_E102N039T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2494610,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "United States",
+      "city": "Sacramento",
+      "bbox_wgs84": [
+        -121.638043,
+        38.469311,
+        -121.350757,
+        38.693889
+      ],
+      "candidate_event_id": "c3f1a6cde0a2489e80ab9e2824be7831",
+      "candidate_event_interval": [
+        "2025-05-08",
+        "2025-05-08"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2025-05-07",
+          "gfm_item_count": 7,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250507T140802_VV_NA020M_E060N036T3",
+            "datetime": "2025-05-07T14:08:02Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/07/ENSEMBLE_FLOOD_20250507T140802_VV_NA020M_E060N036T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2505633,
+            "valid_pixels": 1597000,
+            "valid_fraction": 0.6373638916792683,
+            "class_counts": {
+              "0": 1595069,
+              "1": 1931
+            },
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2025-05-08",
+          "gfm_item_count": 0,
+          "status": "no GFM item",
+          "best_coverage_item": null,
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2025-05-12",
+          "gfm_item_count": 5,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250512T141601_VV_NA020M_E060N036T3",
+            "datetime": "2025-05-12T14:16:01Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/12/ENSEMBLE_FLOOD_20250512T141601_VV_NA020M_E060N036T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2505633,
+            "valid_pixels": 940117,
+            "valid_fraction": 0.3752013962140505,
+            "class_counts": {
+              "0": 939748,
+              "1": 369
+            },
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "United States",
+      "city": "Atlanta",
+      "bbox_wgs84": [
+        -84.523047,
+        33.636711,
+        -84.252953,
+        33.861289
+      ],
+      "candidate_event_id": "9aa12f7b94f7484db437d846e9a4589e",
+      "candidate_event_interval": [
+        "2024-10-08",
+        "2024-10-09"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2024-10-03",
+          "gfm_item_count": 1,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20241003T233027_VV_NA020M_E093N027T3",
+            "datetime": "2024-10-03T23:30:27Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/03/ENSEMBLE_FLOOD_20241003T233027_VV_NA020M_E093N027T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2090915,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2024-10-08",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20241008T233848_VV_NA020M_E093N027T3",
+            "datetime": "2024-10-08T23:38:48Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/08/ENSEMBLE_FLOOD_20241008T233848_VV_NA020M_E093N027T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2090915,
+            "valid_pixels": 1592315,
+            "valid_fraction": 0.7615398043440312,
+            "class_counts": {
+              "0": 1592315
+            },
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2024-10-15",
+          "gfm_item_count": 1,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20241015T233027_VV_NA020M_E093N027T3",
+            "datetime": "2024-10-15T23:30:27Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/15/ENSEMBLE_FLOOD_20241015T233027_VV_NA020M_E093N027T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 2090915,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "United States",
+      "city": "St. Louis",
+      "bbox_wgs84": [
+        -90.343134,
+        38.514711,
+        -90.055666,
+        38.739289
+      ],
+      "candidate_event_id": "1398ebae55a24eb9b2638729a2922841",
+      "candidate_event_interval": [
+        "2024-11-05",
+        "2024-11-05"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2024-10-30",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20241030T235633_VV_NA020M_E087N033T3",
+            "datetime": "2024-10-30T23:56:33Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/30/ENSEMBLE_FLOOD_20241030T235633_VV_NA020M_E087N033T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 1865947,
+            "valid_pixels": 1576442,
+            "valid_fraction": 0.8448482191616375,
+            "class_counts": {
+              "0": 1576442
+            },
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2024-11-05",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20241105T000441_VV_NA020M_E087N033T3",
+            "datetime": "2024-11-05T00:04:41Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/11/05/ENSEMBLE_FLOOD_20241105T000441_VV_NA020M_E087N033T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 1865947,
+            "valid_pixels": 386539,
+            "valid_fraction": 0.20715432967817413,
+            "class_counts": {
+              "0": 386539
+            },
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2024-11-11",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20241111T235632_VV_NA020M_E087N033T3",
+            "datetime": "2024-11-11T23:56:32Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/11/11/ENSEMBLE_FLOOD_20241111T235632_VV_NA020M_E087N033T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27705",
+            "aoi_pixels": 1865947,
+            "valid_pixels": 1576442,
+            "valid_fraction": 0.8448482191616375,
+            "class_counts": {
+              "0": 1576365,
+              "1": 77
+            },
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "International",
+      "city": "Jakarta",
+      "bbox_wgs84": [
+        106.732649,
+        -6.321089,
+        106.958551,
+        -6.096511
+      ],
+      "candidate_event_id": "109e9bf35d7b4660981e25cc8c1f1cd1",
+      "candidate_event_interval": [
+        "2026-01-26",
+        "2026-01-29"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2026-01-25",
+          "gfm_item_count": 2,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20260125T110700_VV_OC020M_E042N087T3",
+            "datetime": "2026-01-25T11:07:00Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2026/01/25/ENSEMBLE_FLOOD_20260125T110700_VV_OC020M_E042N087T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27706",
+            "aoi_pixels": 1928421,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "v4.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2026-01-26",
+          "gfm_item_count": 2,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20260126T223355_VV_OC020M_E042N087T3",
+            "datetime": "2026-01-26T22:33:55Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2026/01/26/ENSEMBLE_FLOOD_20260126T223355_VV_OC020M_E042N087T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27706",
+            "aoi_pixels": 1928421,
+            "valid_pixels": 1559556,
+            "valid_fraction": 0.8087217469629298,
+            "class_counts": {
+              "0": 1559556
+            },
+            "gfm_version": "v4.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2026-01-30",
+          "gfm_item_count": 2,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20260130T111520_VV_OC020M_E042N087T3",
+            "datetime": "2026-01-30T11:15:20Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2026/01/30/ENSEMBLE_FLOOD_20260130T111520_VV_OC020M_E042N087T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27706",
+            "aoi_pixels": 1928421,
+            "valid_pixels": 1566523,
+            "valid_fraction": 0.812334547279873,
+            "class_counts": {
+              "0": 1566523
+            },
+            "gfm_version": "v4.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": true,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "International",
+      "city": "Singapore",
+      "bbox_wgs84": [
+        103.70748,
+        1.239811,
+        103.93212,
+        1.464389
+      ],
+      "candidate_event_id": "c5e6600430794002b724b7fc11728aa3",
+      "candidate_event_interval": [
+        "2025-03-18",
+        "2025-03-23"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2025-03-17",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250317T112535_VV_OC020M_E036N096T3",
+            "datetime": "2025-03-17T11:25:35Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/03/17/ENSEMBLE_FLOOD_20250317T112535_VV_OC020M_E036N096T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27706",
+            "aoi_pixels": 1912092,
+            "valid_pixels": 1347267,
+            "valid_fraction": 0.7046036487784061,
+            "class_counts": {
+              "0": 1347267
+            },
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2025-03-18",
+          "gfm_item_count": 2,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250318T224811_VV_OC020M_E036N096T3",
+            "datetime": "2025-03-18T22:48:11Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/03/18/ENSEMBLE_FLOOD_20250318T224811_VV_OC020M_E036N096T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27706",
+            "aoi_pixels": 1912092,
+            "valid_pixels": 1310986,
+            "valid_fraction": 0.6856291433675785,
+            "class_counts": {
+              "0": 1310986
+            },
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2025-03-24",
+          "gfm_item_count": 2,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250324T111735_VV_OC020M_E036N096T3",
+            "datetime": "2025-03-24T11:17:35Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/03/24/ENSEMBLE_FLOOD_20250324T111735_VV_OC020M_E036N096T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27706",
+            "aoi_pixels": 1912092,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "GFM v3.1.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "International",
+      "city": "Dubai",
+      "bbox_wgs84": [
+        55.146695,
+        25.092511,
+        55.394905,
+        25.317089
+      ],
+      "candidate_event_id": "06ae3a685c884ff7a397d6bc18c947c1",
+      "candidate_event_interval": [
+        "2025-10-23",
+        "2025-10-24"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2025-10-22",
+          "gfm_item_count": 0,
+          "status": "no GFM item",
+          "best_coverage_item": null,
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2025-10-23",
+          "gfm_item_count": 2,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20251023T141627_VV_AF020M_E090N078T3",
+            "datetime": "2025-10-23T14:16:27Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AF020M/2025/10/23/ENSEMBLE_FLOOD_20251023T141627_VV_AF020M_E090N078T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27701",
+            "aoi_pixels": 1470740,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2025-10-25",
+          "gfm_item_count": 0,
+          "status": "no GFM item",
+          "best_coverage_item": null,
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "International",
+      "city": "Mumbai",
+      "bbox_wgs84": [
+        72.758887,
+        18.963711,
+        72.996513,
+        19.188289
+      ],
+      "candidate_event_id": "5aff35db93b04c45b6f424eae314d2b5",
+      "candidate_event_interval": [
+        "2025-09-16",
+        "2025-09-17"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2025-09-11",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250911T005543_VV_AS020M_E018N018T3",
+            "datetime": "2025-09-11T00:55:43Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/11/ENSEMBLE_FLOOD_20250911T005543_VV_AS020M_E018N018T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27703",
+            "aoi_pixels": 2313216,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2025-09-16",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250916T010320_VV_AS020M_E018N018T3",
+            "datetime": "2025-09-16T01:03:20Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/16/ENSEMBLE_FLOOD_20250916T010320_VV_AS020M_E018N018T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27703",
+            "aoi_pixels": 2313216,
+            "valid_pixels": 1007378,
+            "valid_fraction": 0.43548808239265163,
+            "class_counts": {
+              "0": 1006048,
+              "1": 1330
+            },
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2025-09-23",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250923T005543_VV_AS020M_E018N018T3",
+            "datetime": "2025-09-23T00:55:43Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/23/ENSEMBLE_FLOOD_20250923T005543_VV_AS020M_E018N018T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27703",
+            "aoi_pixels": 2313216,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "International",
+      "city": "Bangkok",
+      "bbox_wgs84": [
+        100.386195,
+        13.644011,
+        100.617405,
+        13.868589
+      ],
+      "candidate_event_id": "0a15548ed8744639968f2bfb6dfde45f",
+      "candidate_event_interval": [
+        "2025-09-05",
+        "2025-09-08"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2025-09-01",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250901T112852_VV_AS020M_E048N009T3",
+            "datetime": "2025-09-01T11:28:52Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/01/ENSEMBLE_FLOOD_20250901T112852_VV_AS020M_E048N009T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27703",
+            "aoi_pixels": 1847538,
+            "valid_pixels": 1645976,
+            "valid_fraction": 0.8909023792744722,
+            "class_counts": {
+              "0": 1645975,
+              "1": 1
+            },
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2025-09-05",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250905T230943_VV_AS020M_E048N009T3",
+            "datetime": "2025-09-05T23:09:43Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/05/ENSEMBLE_FLOOD_20250905T230943_VV_AS020M_E048N009T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27703",
+            "aoi_pixels": 1847538,
+            "valid_pixels": 1105874,
+            "valid_fraction": 0.5985663082437276,
+            "class_counts": {
+              "0": 1105871,
+              "1": 3
+            },
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2025-09-11",
+          "gfm_item_count": 0,
+          "status": "no GFM item",
+          "best_coverage_item": null,
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "International",
+      "city": "Tokyo",
+      "bbox_wgs84": [
+        139.512069,
+        35.563911,
+        139.788531,
+        35.788489
+      ],
+      "candidate_event_id": "2443e698062646f1a00afbde0959ef03",
+      "candidate_event_interval": [
+        "2025-09-10",
+        "2025-09-11"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2025-09-09",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250909T205207_VV_AS020M_E081N045T3",
+            "datetime": "2025-09-09T20:52:07Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/09/ENSEMBLE_FLOOD_20250909T205207_VV_AS020M_E081N045T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27703",
+            "aoi_pixels": 3141996,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2025-09-10",
+          "gfm_item_count": 0,
+          "status": "no GFM item",
+          "best_coverage_item": null,
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2025-09-16",
+          "gfm_item_count": 2,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250916T204346_VV_AS020M_E081N045T3",
+            "datetime": "2025-09-16T20:43:46Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/16/ENSEMBLE_FLOOD_20250916T204346_VV_AS020M_E081N045T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27703",
+            "aoi_pixels": 3141996,
+            "valid_pixels": 1636636,
+            "valid_fraction": 0.5208905421903783,
+            "class_counts": {
+              "0": 1636636
+            },
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "International",
+      "city": "Manila",
+      "bbox_wgs84": [
+        120.868164,
+        14.487211,
+        121.100236,
+        14.711789
+      ],
+      "candidate_event_id": "dccc5469ebeb414eb2a2fd49eea97bc2",
+      "candidate_event_interval": [
+        "2025-09-10",
+        "2025-09-10"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2025-09-09",
+          "gfm_item_count": 0,
+          "status": "no GFM item",
+          "best_coverage_item": null,
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2025-09-10",
+          "gfm_item_count": 4,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20250910T213945_VV_OC020M_E057N111T3",
+            "datetime": "2025-09-10T21:39:45Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/09/10/ENSEMBLE_FLOOD_20250910T213945_VV_OC020M_E057N111T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27706",
+            "aoi_pixels": 134100,
+            "valid_pixels": 0,
+            "valid_fraction": 0.0,
+            "class_counts": {},
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2025-09-12",
+          "gfm_item_count": 0,
+          "status": "no GFM item",
+          "best_coverage_item": null,
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    },
+    {
+      "region": "International",
+      "city": "S\u00e3o Paulo",
+      "bbox_wgs84": [
+        -46.755791,
+        -23.662789,
+        -46.510809,
+        -23.438211
+      ],
+      "candidate_event_id": "2b840211dde049cc867ee9388a3a01f5",
+      "candidate_event_interval": [
+        "2025-10-05",
+        "2025-10-05"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "observations": [
+        {
+          "period": "baseline_nearest",
+          "target_date": "2025-10-04",
+          "gfm_item_count": 3,
+          "status": "raster sampled",
+          "best_coverage_item": {
+            "id": "ENSEMBLE_FLOOD_20251004T083907_VV_SA020M_E084N042T3",
+            "datetime": "2025-10-04T08:39:07Z",
+            "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/SA020M/2025/10/04/ENSEMBLE_FLOOD_20251004T083907_VV_SA020M_E084N042T3.tif",
+            "asset_nodata": 255.0,
+            "asset_crs": "EPSG:27707",
+            "aoi_pixels": 1826480,
+            "valid_pixels": 825,
+            "valid_fraction": 0.00045168849371468616,
+            "class_counts": {
+              "0": 825
+            },
+            "gfm_version": "v4.0.0",
+            "constellation": "sentinel-1",
+            "flood_members": {
+              "DLR": true,
+              "TUW": true,
+              "LIST": true
+            }
+          },
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "candidate_event",
+          "target_date": "2025-10-05",
+          "gfm_item_count": 0,
+          "status": "no GFM item",
+          "best_coverage_item": null,
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        },
+        {
+          "period": "post_event_nearest",
+          "target_date": "2025-10-10",
+          "gfm_item_count": 0,
+          "status": "no GFM item",
+          "best_coverage_item": null,
+          "other_raster_errors": [],
+          "method": "Among same-day intersecting catalog items, report the single COG with the largest valid fraction over this AOI; never combine duplicate overpasses/tiles."
+        }
+      ],
+      "event_raster_meets_80_percent": false,
+      "enrollment_status": "not eligible: one discovery event and at most one sampled date per period; independent reference labels and 3+ valid dates per period remain required"
+    }
+  ]
+}

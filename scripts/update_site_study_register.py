@@ -14,6 +14,19 @@ FIELDS = [
     "need_evidence_type", "empirical_evidence", "value_dimensions",
     "validation_path", "scope_limit", "secondary_evidence_url",
 ]
+VALUE_CHAIN_START = "<!-- GENERATED PUBLIC VALUE CHAIN START -->"
+VALUE_CHAIN_END = "<!-- GENERATED PUBLIC VALUE CHAIN END -->"
+VALUE_CHAIN = (
+    f"{VALUE_CHAIN_START}<div class=\"study-foot public-value-chain\" role=\"group\" aria-labelledby=\"publicValueTitle\">"
+    "<b id=\"publicValueTitle\">Shared public-value framework · apply the same five steps in all 16 areas</b>"
+    "<ol><li><b>Hazard observation:</b> report product class, acquisition time, valid-pixel fraction, and uncertainty.</li>"
+    "<li><b>Asset exposure:</b> intersect dated, sourced asset footprints and report overlap and geometry completeness.</li>"
+    "<li><b>Service consequence:</b> add criticality, population served, and dependencies only from attributable data reviewed with responsible agencies or communities.</li>"
+    "<li><b>Distributional equity:</b> report who is represented and where coverage is missing, using privacy-preserving, locally governed data.</li>"
+    "<li><b>Decision usefulness:</b> evaluate evidence against documented local priorities; use no weighted social-value score without stakeholder-approved weights and sensitivity analysis.</li></ol>"
+    "<p>Keep observation, exposure, consequence, equity, and decision relevance separate. Water overlap alone does not establish damage, service failure, financial loss, realized benefit, or customer demand; unknowns stay unknown.</p>"
+    f"</div>{VALUE_CHAIN_END}"
+)
 
 
 def update(html: str, areas: list[dict]) -> str:
@@ -78,7 +91,7 @@ def update(html: str, areas: list[dict]) -> str:
         html = html.replace(old_source, new_source, 1)
     elif html.count(new_source) != 1:
         raise ValueError("Expected the primary evidence link exactly once")
-    public_need_label = '<div class="study-status">Candidate only · metadata screening passed. Pixel-level QA, event-matched scenes, asset geometry, and independent labels remain pending.</div>'
+    public_need_label = '<div class="study-status">Candidate only · metadata screening passed. OPERA pixel-level QA, event-matched scenes, asset geometry, and independent labels remain pending.</div>'
     demand_note = '<p><b>Demand distinction:</b> documented public management need does not establish ATLAS customer demand or purchase intent.</p>'
     public_need_detail = public_need_label + demand_note
     while html.count(public_need_detail + public_need_detail):
@@ -91,6 +104,14 @@ def update(html: str, areas: list[dict]) -> str:
         html = html.replace(public_need_label, public_need_detail, 1)
     else:
         raise ValueError("Expected candidate-only disclosure in the study-area detail card")
+
+    if html.count(VALUE_CHAIN_START) == 0:
+        matrix_end = "<!-- GENERATED SITE SELECTION MATRIX END -->"
+        if html.count(matrix_end) != 1:
+            raise ValueError("Expected the generated selection-matrix boundary exactly once")
+        html = html.replace(matrix_end, matrix_end + VALUE_CHAIN, 1)
+    elif html.count(VALUE_CHAIN_START) != 1 or html.count(VALUE_CHAIN_END) != 1:
+        raise ValueError("Expected one complete generated public-value chain")
     return html
 
 

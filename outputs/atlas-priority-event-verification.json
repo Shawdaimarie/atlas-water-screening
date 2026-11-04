@@ -1,0 +1,143 @@
+{
+  "title": "ATLAS priority event verification audit",
+  "updated": "2026-11-03",
+  "purpose": "Screen high-priority Groundsource metadata opportunities against official incident records. This verifies event relevance only; it does not create flood labels or confirmatory eligibility.",
+  "cases": [
+    {
+      "city": "Jakarta",
+      "groundsource_event_id": "109e9bf35d7b4660981e25cc8c1f1cd1",
+      "groundsource_reported_interval": [
+        "2026-01-26",
+        "2026-01-29"
+      ],
+      "official_event_interval": [
+        "2026-01-22",
+        "2026-01-26"
+      ],
+      "official_status": "confirmed_with_date_correction",
+      "finding": "BPBD DKI reported flooding caused by heavy rain beginning Jan 22; at 08:00 WIB Jan 24, 90 RT and 10 roads were inundated, and a Jan 26 03:00 WIB update said the inundation had receded. An official boundary crosswalk found positive-area overlap between the fixed study box and 20 of the 21 kelurahan polygons named in the BPBD impact list. The overlap is administrative-area context only: BPBD does not locate the affected RTs or roads inside the overlapping portions of those polygons.",
+      "opera_dates_in_groundsource_interval": [
+        "2026-01-26"
+      ],
+      "opera_dates_near_official_event": [
+        "2026-01-18",
+        "2026-01-21",
+        "2026-01-23",
+        "2026-01-25",
+        "2026-01-26",
+        "2026-01-30"
+      ],
+      "official_sources": [
+        "https://bpbd.jakarta.go.id/berita/Wkk2MjIwSnZEdjhUcklsb3gwVkh1Zz09/update-info-terkini-genangan-24-januari-2026-s-d-pukul-08-00-wib",
+        "https://bpbd.jakarta.go.id/berita/WUVyVWZ0ejhuNXRSaFNLSDl6WVNMQT09/update-info-terkini-genangan-26-januari-2026-s-d-pukul-03-00-wib"
+      ],
+      "fixed_aoi_intersection_verified": false,
+      "independent_pixel_reference_labels": false,
+      "qa_valid_pixels_checked": false,
+      "confirmatory_eligible": false,
+      "score_credit": 0,
+      "administrative_area_context_overlap": {
+        "audit_id": "jakarta-bpbd-2026-01-fixed-aoi-administrative-context-v1",
+        "reported_affected_kelurahan_count": 21,
+        "positive_area_intersection_count": 20,
+        "not_returned_by_aoi_intersection_query": [
+          {
+            "administrative_city": "JAKARTA BARAT",
+            "kelurahan": "DURI KOSAMBI"
+          }
+        ],
+        "boundary_layer_url": "https://gis-dpmptsp.jakarta.go.id/arcgis/rest/services/Hosted/Batas_Administrasi_Kelurahan_DKI_Jakarta/FeatureServer/85",
+        "boundary_query_response_sha256": "1d63c42d7990b91e3af776bef3307659e1762a90cc1149117f676a93a1241d3f",
+        "event_inundation_points_inside_fixed_aoi_verified": false,
+        "pixel_reference_labels_available": false,
+        "raster_qa_performed": false,
+        "confirmatory_eligible": false,
+        "score_credit": 0
+      }
+    },
+    {
+      "city": "Singapore",
+      "groundsource_event_id": "c5e6600430794002b724b7fc11728aa3",
+      "groundsource_reported_interval": [
+        "2025-03-18",
+        "2025-03-23"
+      ],
+      "official_event_interval": [
+        "2025-03-21",
+        "2025-03-23"
+      ],
+      "official_status": "confirmed_local_incidents",
+      "finding": "PUB documented incidents at Central Lane 3 near Marina Bay MRT on Mar 21 and Bedok Reservoir Road on Mar 23, attributed respectively to poor drainage at a worksite and debris-clogged internal drains. The listed OPERA date Mar 18 precedes both incidents; Mar 24 is the first post-incident acquisition in the lead window. Event locations have not been intersected with the fixed study AOI.",
+      "opera_dates_in_groundsource_interval": [
+        "2025-03-18"
+      ],
+      "first_opera_date_after_official_incidents": "2025-03-24",
+      "official_sources": [
+        "https://www.pub.gov.sg/Resources/News-Room/Clarifications"
+      ],
+      "fixed_aoi_intersection_verified": false,
+      "independent_pixel_reference_labels": false,
+      "qa_valid_pixels_checked": false,
+      "confirmatory_eligible": false,
+      "score_credit": 0
+    },
+    {
+      "city": "Mumbai",
+      "groundsource_event_id": "5aff35db93b04c45b6f424eae314d2b5",
+      "groundsource_reported_interval": [
+        "2025-09-16",
+        "2025-09-17"
+      ],
+      "official_event_interval": null,
+      "official_status": "top_lead_not_confirmed_as_observed_event; alternate_event_confirmed",
+      "finding": "The Sep 15 IMD flash-flood risk outlook is a forecast, not an observation confirming the Sep 16–17 lead. A separate IMD release documents extreme rain and urban flooding in Mumbai Aug 15–20, including 87.5 cm at Santacruz over six days; only one listed OPERA metadata date (Aug 18) falls in that interval, below the three-scene opportunity threshold.",
+      "opera_dates_in_groundsource_interval": [
+        "2025-09-16"
+      ],
+      "alternate_official_event_interval": [
+        "2025-08-15",
+        "2025-08-20"
+      ],
+      "opera_dates_in_alternate_interval": [
+        "2025-08-18"
+      ],
+      "official_sources": [
+        "https://mausam.imd.gov.in/Forecast/marquee_data/Press%20Release%2015-09-2025.pdf",
+        "https://mausam.imd.gov.in/Forecast/marquee_data/Extended%2021st%20August%202025.pdf"
+      ],
+      "fixed_aoi_intersection_verified": false,
+      "independent_pixel_reference_labels": false,
+      "qa_valid_pixels_checked": false,
+      "confirmatory_eligible": false,
+      "score_credit": 0
+    },
+    {
+      "city": "Dubai",
+      "groundsource_event_id": "06ae3a685c884ff7a397d6bc18c947c1",
+      "groundsource_reported_interval": [
+        "2025-10-23",
+        "2025-10-24"
+      ],
+      "official_event_interval": null,
+      "official_status": "not_verified_in_screened_official_sources",
+      "finding": "The screened National Centre of Meteorology bulletin confirms a forecast was issued for Dubai on Oct 23, but the retrieved record did not establish observed flooding or rain impacts matching the Groundsource Oct 23–24 lead. This is an evidence gap, not evidence that no event occurred.",
+      "opera_dates_in_groundsource_interval": [
+        "2025-10-23"
+      ],
+      "official_sources": [
+        "https://www.ncm.gov.ae/resources/shared/assets/bulletins/emirates/20251023/DXB01-EN.pdf"
+      ],
+      "fixed_aoi_intersection_verified": false,
+      "independent_pixel_reference_labels": false,
+      "qa_valid_pixels_checked": false,
+      "confirmatory_eligible": false,
+      "score_credit": 0
+    }
+  ],
+  "interpretation": {
+    "event_verification_is_not_pixel_label_validation": true,
+    "all_four_confirmatory_eligible": false,
+    "total_score_credit": 0,
+    "next_gate": "Geocode incident extents against preregistered AOIs, obtain independent reference labels, check product QA and valid-pixel quotas, then complete blinded adjudication and probability-sample precision gates."
+  }
+}

@@ -11,6 +11,7 @@ import argparse
 import concurrent.futures
 import datetime as dt
 import json
+import re
 import time
 import urllib.error
 import urllib.parse
@@ -87,13 +88,44 @@ def make_spatial_query(bbox: tuple[float, float, float, float]) -> dict[str, str
 
 
 def catalog_record(attributes: dict[str, Any]) -> dict[str, Any]:
-    """Preserve source attributes and normalize only the service date field."""
+    """Preserve source fields and separate service dates from name timestamps."""
     raw_date = attributes.get("date")
     if isinstance(raw_date, (int, float)):
         date_utc = dt.datetime.fromtimestamp(raw_date / 1000, dt.timezone.utc).date().isoformat()
+        date_basis = "service_date_field"
+    elif isinstance(raw_date, str) and raw_date.strip():
+        value = raw_date.strip()
+        try:
+            parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+            date_utc = parsed.date().isoformat()
+            date_basis = "service_date_field"
+        except ValueError:
+            try:
+                date_utc = dt.date.fromisoformat(value[:10]).isoformat()
+                date_basis = "service_date_field"
+            except ValueError:
+                date_utc = None
+                date_basis = "unparsed_service_date_field"
     else:
         date_utc = None
+        date_basis = "unavailable"
     name = str(attributes.get("name") or "")
+    interval_match = re.search(r"(\d{8}T\d{6}Z)_(\d{8}T\d{6}Z)", name)
+    name_interval_start = None
+    name_interval_end = None
+    if interval_match:
+        name_interval_start = dt.datetime.strptime(interval_match.group(1), "%Y%m%dT%H%M%SZ").replace(
+            tzinfo=dt.timezone.utc
+        ).isoformat().replace("+00:00", "Z")
+        name_interval_end = dt.datetime.strptime(interval_match.group(2), "%Y%m%dT%H%M%SZ").replace(
+            tzinfo=dt.timezone.utc
+        ).isoformat().replace("+00:00", "Z")
+    if date_utc is None and name_interval_start:
+        date_basis = "granule_name_interval_only"
+    elif date_utc is None and date_basis == "unparsed_service_date_field":
+        date_basis = "service_date_field_unparsed"
+    elif date_utc is None:
+        date_basis = "unavailable"
     product = str(attributes.get("productname") or "")
     identity = f"{name} {product}".casefold()
     is_s1_water = (
@@ -107,6 +139,9 @@ def catalog_record(attributes: dict[str, Any]) -> dict[str, Any]:
         "name": attributes.get("name"),
         "date_raw": raw_date,
         "date_utc": date_utc,
+        "date_basis": date_basis,
+        "granule_name_interval_start_utc": name_interval_start,
+        "granule_name_interval_end_utc": name_interval_end,
         "product_name": product or None,
         "group_name": attributes.get("groupname"),
         "category": attributes.get("category"),
