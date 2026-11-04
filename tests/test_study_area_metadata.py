@@ -118,7 +118,8 @@ def test_singapore_priority_profile_uses_current_official_context_and_excludes_t
     profiles = json.loads(embedded)
     singapore_profile = next(row for row in profiles if row["city"] == "Singapore")
     assert singapore_profile["secondary_evidence_url"] == singapore["secondary_evidence_url"]
-    assert "data.gov.sg" not in site_html
+    assert "data.gov.sg" in site_html
+    assert "Open event source ↗" in site_html
     evidence_register = json.loads((ROOT / "outputs/atlas-study-area-evidence-register.json").read_text())
     singapore_export = next(row for row in evidence_register["results"] if row["city"] == "Singapore")
     assert singapore_export["secondary_evidence_url"] == singapore["secondary_evidence_url"]
@@ -153,6 +154,26 @@ def test_site_discloses_independent_reference_coverage_gaps():
     assert "14 have source label" in site_html
     assert "4,486 null flood states remain unknown" in site_html
     assert 'href="atlas-spacenet8-louisiana-coverage-audit.json"' in site_html
+
+
+def test_singapore_pub_alert_is_disclosed_as_an_exploratory_event_lead():
+    evidence = json.loads((ROOT / "data/study_area_evidence.json").read_text())
+    singapore = next(row for row in evidence["records"] if row["city"] == "Singapore")
+    assert singapore["event_reference_date"] == "2025-05-22"
+    assert "Wan Tho Ave" in singapore["empirical_evidence"]
+    assert "not a mapped flood extent" in singapore["scope_limit"]
+    report = json.loads((ROOT / "outputs/atlas-singapore-pub-flood-alert-audit.json").read_text())
+    assert report["summary"]["flood_reading_centers_inside_aoi"] == 1
+    assert report["summary"]["observed_certainty_inside_aoi"] == 1
+    assert report["status"] == "exploratory_event_lead_screen"
+    site_html = update_site_register((ROOT / "dist/index.html").read_text(), AREAS)
+    embedded = site_html.split("const studyAreas=", 1)[1].split(";let selectedStudyArea=", 1)[0]
+    profiles = json.loads(embedded)
+    singapore_profile = next(row for row in profiles if row["city"] == "Singapore")
+    assert singapore_profile["event_reference_date"] == "2025-05-22"
+    assert singapore_profile["event_reference_audit"] == "atlas-singapore-pub-flood-alert-audit.json"
+    assert "Open event source ↗" in site_html
+    assert "Open event audit ↗" in site_html
     assert "12 benchmark-filtered tiles · St. Louis event EMSR203 (2017)" in site_html
     assert "all 12 records are in the benchmark training split" in site_html
     assert "not held-out validation" in site_html
