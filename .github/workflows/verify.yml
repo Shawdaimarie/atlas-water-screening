@@ -61,6 +61,13 @@ jobs:
           PY
       - name: Build the same container candidate
         run: docker build --tag atlas-api:${{ github.sha }} .
+      - name: Generate and retain SPDX image SBOM
+        uses: anchore/sbom-action@66cbf4bc1f1c0d2edc94016e65bc221b6bb0ad6c # v0.24.3
+        with:
+          image: atlas-api:${{ github.sha }}
+          format: spdx-json
+          output-file: atlas-api-sbom.spdx.json
+          upload-artifact: true
       - name: Smoke-test the built container
         run: |
           set -eu
@@ -70,6 +77,16 @@ jobs:
             atlas-api:${{ github.sha }})
           trap 'docker stop "$_container_id" >/dev/null' EXIT
           python scripts/smoke_container.py
+      - name: Block high and critical image vulnerabilities
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          image-ref: atlas-api:${{ github.sha }}
+          version: 0.76.1
+          format: table
+          exit-code: '1'
+          ignore-unfixed: false
+          vuln-type: os,library
+          severity: HIGH,CRITICAL
       - name: Audit the built runtime image
         run: docker run --rm --user 0 -v ${{ github.workspace }}:/audit --entrypoint sh atlas-api:${{ github.sha }} -c 'python -m pip install --require-hashes -r /audit/requirements-audit.lock && pip-audit'
 

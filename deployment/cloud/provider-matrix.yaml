@@ -64,6 +64,21 @@ release_contract:
     - staging_authenticated_e2e
     - recovery_and_restore_drill
     - rollback_drill
+  predeployment_automation:
+    image_vulnerability_scan:
+      action: aquasecurity/trivy-action
+      action_commit: ed142fd0673e97e23eac54620cfb913e5ce36c25
+      scanner_version: 0.76.1
+      package_types: [os, library]
+      blocked_severities: [HIGH, CRITICAL]
+      unfixed_findings_are_blocking: true
+    software_bill_of_materials:
+      action: anchore/sbom-action
+      action_commit: 66cbf4bc1f1c0d2edc94016e65bc221b6bb0ad6c
+      format: SPDX-JSON
+      retained_as_workflow_artifact: true
+    image_signature_and_provenance:
+      status: pending_registry_and_private_repository_plan_validation
   production_approval_required: true
   ingress_must_be_private_or_authenticated: true
   tls_minimum: "1.2"
