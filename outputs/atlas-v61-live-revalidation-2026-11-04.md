@@ -3,7 +3,7 @@
 ## Release identity and access
 
 - Private Sites project `appgprj_6ae8f548d7a48191adbbfe7affb04a94` published v61 at `https://atlas-water-screening.shawdaimarie.chatgpt.site`.
-- Sites control-plane readback confirms v61 is the latest version, deployment `appgdep_6aeb0960487881919cdf41f78877eee8` succeeded, and the live URL remains active. Current access policy is custom/owner-only: `shawdaimarie@gmail.com` is the only allowed user and external visitor count is zero. Site source commit: `1bf4d1659270e6516235433259bf3b657361eb6b`.
+- Sites control-plane readback confirms v61 is the latest version, deployment `appgdep_6aeb0960487881919cdf41f78877eee8` succeeded, and the live URL remains active. Current access policy is custom/owner-only: `shawdaimarie@gmail.com` is the only allowed user and external visitor count is zero. Site source commit: `1bf4d1659270e6516235433259bf3b657361eb6b`. The source was uploaded through PR [#9](https://github.com/Shawdaimarie/atlas-water-screening/pull/9), merged to canonical main as `0918a5cc00e3232c9f6e4e541894923d4d6fbb3c`; all 28 Site-source file blobs match main exactly.
 - Production browser replay shows the SenForFlood card, its dataset-paper and Dataverse citations, the machine-readable audit link, and the interpretation report link. The app still labels its map and scenario results as synthetic fixtures and states that no NASA observation was retrieved.
 - This release is the private browser Site. Apple distribution is planned with the user's existing Apple Account; it does not constitute an iOS build or Apple release. Full Xcode, Developer Program membership, and App Store Connect readiness remain unverified.
 
@@ -18,7 +18,7 @@ This is not evidence that floods did not occur. The repository says its upload i
 - Full local suite after the v61 change: `.venv/bin/python -m pytest -q` — **171 passed in 1.94 s** on revalidation; one environment warning notes urllib3 running with LibreSSL.
 - `git diff --check` succeeded.
 - Live private production page rendered the new card and report links. Confirmatory eligibility remains **0/16**.
-- Canonical score remains **60/100 provisional**. No score points were awarded for discovery coverage or the deployed evidence card.
+- Canonical score remains **60/100 provisional**. No score points were awarded for discovery coverage or the deployed evidence card. PR #9 CI runs 41815923447 and 41815980306 both passed tests, image/smoke, and dependency-security jobs.
 
 ## Remaining limits
 
