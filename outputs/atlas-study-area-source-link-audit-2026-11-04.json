@@ -1,0 +1,199 @@
+{
+  "run_date": "2026-11-04",
+  "source_file": "data/study_area_evidence.json",
+  "source_count": 16,
+  "interpretation": "Reachability checks do not validate the truth, spatial scope, date, completeness, or local applicability of each empirical claim. The Sacramento evidence remains regional Central Valley context, not a local event label.",
+  "results": [
+    {
+      "city": "Houston",
+      "url": "https://www.houstontx.gov/cip/26cipadopt/e_storm.pdf",
+      "status": 200,
+      "final_url": "https://www.houstontx.gov/cip/26cipadopt/e_storm.pdf",
+      "content_type": "application/pdf",
+      "bytes_sampled": 1024,
+      "title_prefix": "",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "Miami",
+      "url": "https://coastalscience.noaa.gov/news/new-model-enables-rapid-flood-prediction-in-miami-to-support-risk-management/",
+      "status": 200,
+      "final_url": "https://coastalscience.noaa.gov/news/new-model-enables-rapid-flood-prediction-in-miami-to-support-risk-management/",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes_sampled": 1024,
+      "title_prefix": "<!DOCTYPE html> <html lang=\"en-US\"> <head> \t<meta charset=\"UTF-8\"> \t<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /> <meta name=\"viewport\" content=\"width=device-width, initial-sca",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "Tampa",
+      "url": "https://www.usgs.gov/news/national-news-release/usgs-deploys-sensors-along-floridas-gulf-coast-measure-impacts-hurricane",
+      "status": 200,
+      "final_url": "https://www.usgs.gov/news/national-news-release/usgs-deploys-sensors-along-floridas-gulf-coast-measure-impacts-hurricane",
+      "content_type": "text/html; charset=utf-8",
+      "bytes_sampled": 1024,
+      "title_prefix": "<!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\"> <head>   <!-- Google Tag Manager -->   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':         new Date().getTime(),event:'gtm.js'});var f=d.getEl",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "New Orleans",
+      "url": "https://ready.nola.gov/hazard-mitigation/hazards/flooding/",
+      "status": 200,
+      "final_url": "https://ready.nola.gov/hazard-mitigation/hazards/flooding/",
+      "content_type": "text/html; charset=utf-8",
+      "bytes_sampled": 1024,
+      "title_prefix": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r <html xmlns=\"http://www.w3.org/1999/xhtml\"  lang=\"en\">\r <head id=\"head\"><title>\r \tFlood - NOLA Ready\r </title><meta h",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "New York City",
+      "url": "https://www.nyc.gov/site/dep/news/25-031/mayor-adams-nyc-department-environmental-protection-delivered-historic-progress-climate",
+      "status": 200,
+      "final_url": "https://www.nyc.gov/site/dep/news/25-031/mayor-adams-nyc-department-environmental-protection-delivered-historic-progress-climate",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes_sampled": 1024,
+      "title_prefix": "<!DOCTYPE html>\r <html> <head> <META http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"> <title>Mayor Adams and NYC DEP Delivered Historic Progress on Climate Resilience, Infrastructure | City of New York</title> <!--fixed-layout-",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "Sacramento",
+      "url": "https://water.ca.gov/Programs/Flood-Management/Community-Resources/Flood-Risk",
+      "status": 403,
+      "final_url": "https://water.ca.gov/Programs/Flood-Management/Community-Resources/Flood-Risk",
+      "content_type": "text/plain",
+      "bytes_sampled": 25,
+      "title_prefix": "",
+      "error": null,
+      "assessment": "The DWR host returned HTTP 403 to this scripted client. The official DWR Flood Risk Notification page is discoverable and its content is indexed in web search; this is an access restriction for the audit client, not evidence the source page is missing."
+    },
+    {
+      "city": "Atlanta",
+      "url": "https://atlantawatershed.org/watershedimprovementplans/",
+      "status": 200,
+      "final_url": "https://atlantawatershed.org/watershedimprovementplans/",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes_sampled": 1024,
+      "title_prefix": "<!DOCTYPE html> <!--[if lt IE 7]>      <html class=\"no-js html-loading wf-active ie old-browser lt-ie10 lt-ie9 lt-ie8 lt-ie7 responsive\" itemscope=\"itemscope\" itemtype=\"http://schema.org/WebPage\" dir=\"ltr\" lang=\"en-US\" prefix=\"og: https://o",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "St. Louis",
+      "url": "https://www.weather.gov/lsx/1993_flood",
+      "status": 200,
+      "final_url": "https://www.weather.gov/lsx/1993_flood",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes_sampled": 1024,
+      "title_prefix": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.org/1999/xhtml\">     <head>         <link rel=\"schema.DC\" href=\"http://purl.org/dc/elements",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "Jakarta",
+      "url": "https://www.jakarta.go.id/siaran-pers/4685-SP-HMS-03-2024",
+      "status": 200,
+      "final_url": "https://www.jakarta.go.id/siaran-pers/4685-SP-HMS-03-2024",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes_sampled": 1024,
+      "title_prefix": "<!DOCTYPE html> <html lang=\"id\">  <head>   <meta charset=\"UTF-8\">   <meta name=\"robots\" content=\"index, follow\">   <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />   <meta name=\"viewport\" content=\"width=device-width, in",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "Singapore",
+      "url": "https://www.pub.gov.sg/Public/KeyInitiatives/Flood-Resilience/About-Floods",
+      "status": 200,
+      "final_url": "https://www.pub.gov.sg/Public/KeyInitiatives/Flood-Resilience/About-Floods",
+      "content_type": "text/html; charset=utf-8",
+      "bytes_sampled": 1024,
+      "title_prefix": "\r <!DOCTYPE html>\r <html lang=\"en\">\r <head>\r     \r \r <meta http-equiv=\"Content-Security-Policy\" content=\"img-src * data: https://webchat.vica.gov.sg/static/js/chat.js https://webchat.vica.gov.sg/static/css/chat.css;\">\r <meta charset=\"utf-8\"",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "Dubai",
+      "url": "https://www.dm.gov.ae/aed-1-439-billion-contracts-awarded-for-four-tasreef-project-phases/",
+      "status": 200,
+      "final_url": "https://www.dm.gov.ae/aed-1-439-billion-contracts-awarded-for-four-tasreef-project-phases/",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes_sampled": 1024,
+      "title_prefix": " <!doctype html> <html lang=\"en-US\"> <head> \t<meta charset=\"UTF-8\"> \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> \t<link rel=\"profile\" href=\"https://gmpg.org/xfn/11\"> \t<link rel=\"icon\" type=\"image/x-icon\" href=\"https",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "Mumbai",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2297625&lang=1&reg=3",
+      "status": 200,
+      "final_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2297625&lang=1&reg=3",
+      "content_type": "text/html; charset=utf-8",
+      "bytes_sampled": 1024,
+      "title_prefix": "\r <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r <html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\">\r <head id=\"Head1\"><title>\r \tPress Release Page | Press Inform",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "Bangkok",
+      "url": "https://documents1.worldbank.org/curated/en/834261468025503285/pdf/508980ESW0v10P1pt1bangkok1report111.pdf",
+      "status": 200,
+      "final_url": "https://documents1.worldbank.org/curated/en/834261468025503285/pdf/508980ESW0v10P1pt1bangkok1report111.pdf",
+      "content_type": "application/pdf;charset=utf-8",
+      "bytes_sampled": 1024,
+      "title_prefix": "",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "Tokyo",
+      "url": "https://www.kensetsu.metro.tokyo.lg.jp/river/chusho_seibi/ike",
+      "status": 200,
+      "final_url": "https://www.kensetsu.metro.tokyo.lg.jp/river/chusho_seibi/ike",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes_sampled": 1024,
+      "title_prefix": "                                \t \t\t \t\t\t<!DOCTYPE html>                                                              <html class=\"ltr\" dir=\"ltr\" lang=\"ja-JP\">  <head> \t<!-- <script src=\"//msta.j-server.com/MSTA/LUC2MYTYO/js/msta.js\"></scrip",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "Manila",
+      "url": "https://www.worldbank.org/ext/en/topic/water/water-for-planet",
+      "status": 200,
+      "final_url": "https://www.worldbank.org/ext/en/topic/water/water-for-planet",
+      "content_type": "text/html; charset=utf-8",
+      "bytes_sampled": 1024,
+      "title_prefix": "<!DOCTYPE html> <html>   <head>     <title>Water for Planet  | World Bank Group</title>     <link rel=\"canonical\" href=\"https://www.worldbank.org/ext/en/topic/water/water-for-planet\">     <meta name=\"description\" content=\"Managing water sus",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    },
+    {
+      "city": "São Paulo",
+      "url": "https://prefeitura.sp.gov.br/web/obras/w/prefeitura-de-s%C3%A3o-paulo-publica-3%C2%AA-edi%C3%A7%C3%A3o-do-plano-diretor-de-drenagem-com-201-interven%C3%A7%C3%B5es-que-visam-a-redu%C3%A7%C3%A3o-de-alagamentos",
+      "status": 200,
+      "final_url": "https://prefeitura.sp.gov.br/web/obras/w/prefeitura-de-s%C3%A3o-paulo-publica-3%C2%AA-edi%C3%A7%C3%A3o-do-plano-diretor-de-drenagem-com-201-interven%C3%A7%C3%B5es-que-visam-a-redu%C3%A7%C3%A3o-de-alagamentos",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes_sampled": 1024,
+      "title_prefix": "                                \t \t\t \t\t \t\t\t<!DOCTYPE html>                                                              <html class=\"ltr\" dir=\"ltr\" lang=\"pt-BR\">  <head> \t<title>Prefeitura de São Paulo publica 3ª edição do Plano Diretor de ",
+      "error": null,
+      "assessment": "Direct HTTP GET returned a 2xx response; reachability only."
+    }
+  ],
+  "reachability_summary": {
+    "direct_http_2xx": 15,
+    "scripted_client_403_with_official_page_indexed": 1,
+    "other_failures": 0
+  },
+  "sacramento_web_verification": {
+    "title": "Flood Risk Notification",
+    "url": "https://water.ca.gov/Programs/Flood-Management/Community-Resources/Flood-Risk",
+    "status": "official California DWR page content returned in web search; search-result content verified",
+    "claims_visible": [
+      "more than 1,600 miles of State-Federal levees in the Central Valley",
+      "more than 70 overtoppings or breaches since 1983",
+      "annual notices to at-risk property owners in 17 counties"
+    ]
+  }
+}
