@@ -106,7 +106,10 @@ def test_site_discloses_independent_reference_coverage_gaps():
     assert "no current area passes the independent-label gate" in site_html
     assert 'href="https://registry.opendata.aws/c2smsfloods/"' in site_html
     assert 'href="https://zenodo.org/records/23426661"' in site_html
-    assert site_html.count('<article class="reference-card">') == 7
+    assert site_html.count('<article class="reference-card">') == 8
+    assert "Copernicus EMS Rapid Mapping · live AOI screen" in site_html
+    assert "268 activations · 90 floods · 0/16 fixed-area AOI overlaps" in site_html
+    assert 'href="atlas-cems-event-discovery-audit.json" download=' in site_html
     assert "16-area evidence-readiness ledger" in site_html
     assert "Download 16-area JSON" in site_html
     assert "SpaceNet 8 · Hurricane Ida" in site_html

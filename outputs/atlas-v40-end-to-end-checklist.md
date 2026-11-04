@@ -25,6 +25,15 @@ Updated the readiness card to distinguish the coverage-conditioned **192/192 mat
 - The current worktree's Python 3.12 Bookworm suite passed **127 tests** using the two hash-locked dependency files. See the current revalidation record for environment details and the known host Python limitation.
 - `git diff --check` passed for the release changes; only the pre-existing archived CSV line-ending warnings were reported.
 
+## Fresh live replay — 2026-11-03
+
+- Sites control-plane readback again confirmed the active production URL, Site version 40, and the private owner-only audience (one owner, zero external visitors).
+- Authenticated browser replay selected Mumbai and displayed its candidate-only profile, 121 distinct metadata dates, the common 625 km² footprint, public need evidence, value-integration question, and explicit pending QA/independent-label caveats.
+- Switched the separate synthetic analysis to Baton Rouge / Hurricane Ida. The page updated the event window and portfolio; selecting Quality-aware aggregate changed the fixture ranking and displayed the synthetic-method disclosure.
+- Triggered Export evidence. The deployed page showed the success notice naming the scenario, observation windows, method, and synthetic-data label. The browser did not expose a saved file for byte-level inspection, so this confirms the user-visible workflow only.
+- The full current-worktree suite passed **128 tests in 2.13s** in Python 3.12 Bookworm after installing `requirements-dev.lock` and `requirements-reference-audit.lock` with `--require-hashes`. The host Python 3.9 attempt cannot collect four spatial-audit modules because Shapely is absent there; it is not the supported pinned test environment.
+- The live replay verifies interface controls and evidence disclosures, not real-data results. Analysis remains synthetic, no study area is confirmatorily enrolled, no cloud provider is deployed, and the research score remains **60/100 provisional**.
+
 ## Limits and outstanding release gates
 
 The deployed analysis portfolio remains synthetic; it does not retrieve NASA observations. The RTC quota measures finite, non-nodata Sentinel-1 VV spatial coverage and is not OPERA QA, water classification, event/baseline adequacy, independent reference data, or flood-accuracy validation. The 16 candidate areas remain **0/16 confirmatory eligible**, and the canonical score remains **60/100 provisional**.

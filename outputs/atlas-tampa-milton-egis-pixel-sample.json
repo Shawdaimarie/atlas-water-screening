@@ -1,0 +1,153 @@
+{
+  "audit": "ATLAS Tampa Hurricane Milton NASA EGIS WTR pixel-sample availability screen",
+  "candidate_area": {
+    "aoi_bbox_wgs84": [
+      -82.584317,
+      27.838311,
+      -82.330083,
+      28.062889
+    ],
+    "city": "Tampa",
+    "region": "United States",
+    "register_sha256": "c44f866942a2f99f01141fb6a7baeea09a9b61a57db1beafb77a7f686de646d6"
+  },
+  "class_contract": {
+    "0": "not water",
+    "1": "open water",
+    "120": "fill/no data",
+    "2": "high-backscattering water",
+    "254": "ocean masked",
+    "255": "no data/transparent",
+    "3": "low-backscattering non-water",
+    "4": "landcover masked",
+    "5": "HAND masked",
+    "6": "layover/shadow masked",
+    "7": "inundated vegetation"
+  },
+  "confirmatory_eligibility": "not assessed; this exploratory sample does not satisfy label, full-raster QA, or precision requirements",
+  "created_at_utc": "2026-11-03T23:33:36.840857+00:00",
+  "overall_interpretation": "NASA EGIS sample-return behavior across candidate dates in Tampa only. The preliminary response maps are not independent reference labels and no water-change or accuracy result is claimed.",
+  "sample_design": {
+    "method": "One seeded, jittered equal-area point per cell in a 32 by 32 grid over the frozen AOI.",
+    "not_an_estimator": "No area-wide classification or change inference is made from this availability sample.",
+    "pixel_interpolation": "nearest neighbor",
+    "same_points_for_each_scene": true,
+    "samples_per_scene": 1024,
+    "seed": "ATLAS-Tampa-Milton-EGIS-WTR-v1"
+  },
+  "scenes": [
+    {
+      "catalog_item": {
+        "category": 1,
+        "date": "2024-10-03",
+        "name": "OPERA_DSWx_S1_WTR_20241003_mosaic",
+        "objectid": 2,
+        "productname": "WTR mosaic"
+      },
+      "class_counts": {
+        "0": 661,
+        "1": 133,
+        "3": 3
+      },
+      "date_utc": "2024-10-03",
+      "interpretation": "Equal-area point-sample returns only; not full-AOI raster coverage or flood truth.",
+      "masked_or_fill_class_points": 0,
+      "name": "OPERA_DSWx_S1_WTR_20241003_mosaic",
+      "phase": "pre-landfall",
+      "raster_id": 2,
+      "recognized_nonmasked_class_points": 797,
+      "sample_return_fraction": 0.7783203125,
+      "samples_requested": 1024,
+      "samples_returned": 797,
+      "sampling_error": null,
+      "sampling_status": "sampled"
+    },
+    {
+      "catalog_item": {
+        "category": 1,
+        "date": "2024-10-08",
+        "name": "OPERA_DSWx_S1_WTR_20241008_mosaic",
+        "objectid": 3,
+        "productname": "WTR mosaic"
+      },
+      "class_counts": {
+        "0": 767,
+        "1": 252,
+        "3": 5
+      },
+      "date_utc": "2024-10-08",
+      "interpretation": "Equal-area point-sample returns only; not full-AOI raster coverage or flood truth.",
+      "masked_or_fill_class_points": 0,
+      "name": "OPERA_DSWx_S1_WTR_20241008_mosaic",
+      "phase": "pre-landfall",
+      "raster_id": 3,
+      "recognized_nonmasked_class_points": 1024,
+      "sample_return_fraction": 1.0,
+      "samples_requested": 1024,
+      "samples_returned": 1024,
+      "sampling_error": null,
+      "sampling_status": "sampled"
+    },
+    {
+      "catalog_item": {
+        "category": 1,
+        "date": "2024-10-10",
+        "name": "OPERA_DSWx_S1_WTR_20241010_mosaic",
+        "objectid": 4,
+        "productname": "WTR mosaic"
+      },
+      "class_counts": {},
+      "date_utc": "2024-10-10",
+      "interpretation": "Equal-area point-sample returns only; not full-AOI raster coverage or flood truth.",
+      "masked_or_fill_class_points": 0,
+      "name": "OPERA_DSWx_S1_WTR_20241010_mosaic",
+      "phase": "post-landfall",
+      "raster_id": 4,
+      "recognized_nonmasked_class_points": 0,
+      "sample_return_fraction": 0.0,
+      "samples_requested": 1024,
+      "samples_returned": 0,
+      "sampling_error": {
+        "code": 400,
+        "message": "Invalid or missing input parameters."
+      },
+      "sampling_status": "service_error"
+    },
+    {
+      "catalog_item": {
+        "category": 1,
+        "date": "2024-10-11",
+        "name": "OPERA_DSWx_S1_WTR_20241011_mosaic",
+        "objectid": 5,
+        "productname": "WTR mosaic"
+      },
+      "class_counts": {
+        "0": 777,
+        "1": 246,
+        "3": 1
+      },
+      "date_utc": "2024-10-11",
+      "interpretation": "Equal-area point-sample returns only; not full-AOI raster coverage or flood truth.",
+      "masked_or_fill_class_points": 0,
+      "name": "OPERA_DSWx_S1_WTR_20241011_mosaic",
+      "phase": "post-landfall",
+      "raster_id": 5,
+      "recognized_nonmasked_class_points": 1024,
+      "sample_return_fraction": 1.0,
+      "samples_requested": 1024,
+      "samples_returned": 1024,
+      "sampling_error": null,
+      "sampling_status": "sampled"
+    }
+  ],
+  "schema_version": 1,
+  "service": {
+    "class_reference_url": "https://www.earthdata.nasa.gov/s3fs-public/2023-12/ProductSpec_DSWX_S1.pdf",
+    "description": "Date of Images: Pre-Landfall: HLS: 9/27/2024 - 10/7/2024 Sentinel-1: 10/3/2024, 10/8/2024 Post-Landfall: Sentinel-1: 10/10/2024, 10/11/2024 Summary: The Advanced Rapid Imaging and Analysis (ARIA) and Observational Products for End-Users from Remote Sensing Analysis (OPERA) teams at NASA's Jet Propulsion Laboratory and California Institute of Technology derived the surface water extent maps from the OPERA Dynamic Surface Water Extent (DSWx) from NASA Harmonized Landsat Sentinel-2 (HLS) and Sentinel-1 (DSWx-S1) products. The results posted here are preliminary and unvalidated results, primarily intended to aid the field response and people who wanted to have a rough first look at the inundation extent. The ARIA-share website has always focused on posting preliminary results as fast as possible for disaster response. OPERA DSWx-S1 The OPERA DSWx-S1 data identifies surface water and inundated vegetation. We provide the Water (WTR) layers. Images are provided from 1) October 3, 2024, 2) October 8, 2024, 3) October 10, 2024, and 4) October 11, 2024. Each image consists of multiple MGRS tiles that were merged together for a composite image saved as a GeoTIFF file. ARIA/OPERA water change map derived from OPERA DSWx-S1 The ARIA/OPERA water change map is derived from two OPERA DSWx-S1 Binary Water (BWTR) images. Change maps are made for images taken on October 3, 2024 and October 11, 2024 and for October 8, 2024, and October 11, 2024. The BWTR combines inundated vegetation and open water into a single water class. These maps depict areas of new water detection (or loss). The change map includes values of: (0) indicate no change between images, (1) absence of water pre-event, presence of water during-event, and (-1) presence of water pre-event, absence of water during-event. OPERA DSWx-HLS The OPERA DSWx-HLS was used to identify surface water using the WTR layer. 378 images were examined from 2024-09-27 to 2024-10-07, prioritizing pixels classified as open surface water. Pixels flagged as snow/ice in the HLS Fmask were reclassified to water. The mosaic image consists of multiple MGRS tiles that were merged together for a composite image saved as a GeoTIFF file. Suggested Use: OPERA DSWx-S1 The OPERA DSWx-S1 products classifies the OPERA Radiometric Terrain Corrected SAR backscatter from Sentinel-1 (RTC-S1) input imagery into: not water, water, and inundated vegetation with the masks such as layover/shadow mask and HAND mask. The WTR layer includes all classes. Open water and inundated vegetation are represented in blue and green in WTR. Areas with masks are gray. The masks include the layover/shadow mask and HAND mask. Areas with no water detected are transparent. Transparent: Not Water Blue: Water Green: Inundated Vegetation Gray: Layover/Shadow/Hand Masks ARIA/OPERA water change map derived from OPERA DSWx-S1 The ARIA/OPERA water extent change map classifies water extent into change/no change. Transparent (0): No Change Red (1): increased water extent Gray (-1): decreased water extent OPERA DSWx-HLS-WTR The OPERA DSWx-HLS Water product classifies the Harmonized Landsat Sentinel-2 (HLS) input imagery into \"not water\", \"open surface water\", and \"partial surface water\". The \"HLS cloud/cloud shadow\" and \"HLS snow/ice\" layers are direct inputs from the HLS FMask. Transparent (0): No Water Blue (1): Open Water Light Blue (2): Partial Surface Water <50% Gray (253): HLS Cloud/Cloud Shadow This layer is meant to provide users with a quick view for water/no-water. Invalid data classes (snow/ice and cloud/cloud shadow along with adjacent to cloud/cloud shadow) are also provided to indicate areas in which the water classification does not provide water/no-water classification. Note: Sediment rich water is sometimes misclassified as snow/ice by the HLS Fmask. As such, we have reclassified any of the snow/ice pixels to water for these images. For more information about how the OPERA DSWx-HLS Water product classifies data: https://d2pn8kiwq2w21t.cloudfront.net/documents/ProductSpec_DSWX_URS309746.pdf Satellite/Sensor: Synthetic Aperture Radar (SAR) instrument on European Space Agency's (ESA) Sentinel-1A satellite Harmonized Landsat Sentinel-2 (HLS): MultiSpectral Instrument (MSI) on European Space Agency's (ESA) Copernicus Sentinel-2A/2B satellites and Operational Land Imager (OLI) on the NASA/USGS Landsat 8 satellite Resolution: 30 meters The DSWx-S1 products have these flags: 250 (light gray) and 251 (dark gray) represent HAND and layover/shadow masks, respectively. HAND mask (light gray, value 250) delineates regions where the terrain's elevation exceeds a specified threshold relative to the height above the nearest drainage point, indicating areas less likely to be subject to direct inundation. Layover/shadow mask (dark gray, value 251) identifies zones that are either occluded by topographic features taller than the surrounding landscape (layover) or are not illuminated by the radar signal due to obstruction by these elevated features (shadow), leading to potential data voids in SAR imagery. Credits: NASA JPL-Caltech ARIA/OPERA Team Sentinel-1 data were accessed through the Copernicus Open Hub and the Alaska Satellite Facility server. The product contains modified Copernicus Sentinel data (2024), processed by the European Space Agency and analyzed by the NASA-JPL/Caltech ARIA and OPERA team. The products are produced as part of the OPERA project, which is funded by NASA to address remote sensing needs identified by the Satellite Needs Working Group, and managed by NASA's Jet Propulsion Laboratory. HLS data was accessed through NASA EarthData Search. The product contains modified Copernicus Sentinel data (2024), processed by the European Space Agency, NASA/USGS Landsat 8 data, and analyzed by the NASA-JPL/Caltech ARIA and OPERA team. The products are produced as part of the OPERA project, which is funded by NASA to address remote sensing needs identified by the Satellite Needs Working Group, and managed by NASA's Jet Propulsion Laboratory. The OPERA DSWx products have been in production since September 2024, are freely distributed to the public via NASA's Physical Oceanography Distributed Active Archive Center (PO.DAAC), and can be downloaded through NASA's Earthdata search. For more information about the Dynamic Surface Water eXtent product suite, please refer to the DSWx Product page: https://www.jpl.nasa.gov/go/opera/products/dswx-product-suite. For more information about the Caltech-JPL ARIA project, visit https://aria.jpl.nasa.gov . For more information about the JPL OPERA project, visit https://www.jpl.nasa.gov/go/opera . Data Download: https://aria-share.jpl.nasa.gov/20241010-Hurricane_Milton/DSWx/ Esri REST Endpoint:",
+    "item_url": "https://gis.earthdata.nasa.gov/portal/home/item.html?id=d20858f42cae4c6b8b4438e847266442",
+    "product": "OPERA DSWx-S1 WTR mosaics",
+    "resolution_m": 30,
+    "source_caveat": "NASA identifies the response imagery as preliminary and unvalidated.",
+    "url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+  }
+}

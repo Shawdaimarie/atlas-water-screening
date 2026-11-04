@@ -30,7 +30,7 @@ REFERENCE_FIELDS = {
     "GEOID-Flood tiles": "geoid_flood_tiles",
     "GFD validation points": "gfd_validation_points",
     "SpaceNet 8 object references": "spacenet8_unique_object_references",
-    "CEMS rapid-mapping activations": "cems_rapid_mapping_activations",
+    "CEMS rapid-mapping flood AOI overlaps": "cems_rapid_mapping_flood_aoi_overlaps",
 }
 
 CRITERIA = [

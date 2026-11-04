@@ -4,6 +4,14 @@
 **Scope:** deployment readiness for Google Cloud, AWS, Microsoft Azure, and Oracle Cloud Infrastructure (OCI).\
 **Status:** preparation only. The owner reports that accounts are being created under `shawdaimarie@gmail.com`. ATLAS has not verified account readiness, billing, MFA, regions, or provider IDs; no credential was requested or stored, no resources were provisioned, and nothing was deployed to these providers.
 
+## Current readiness recheck — 2026-11-04
+
+- Private browser Site v43 is active and has a separate release record in `atlas-v43-end-to-end-checklist.md`. The current-worktree hash-locked Python 3.12 Bookworm suite passed **138 tests in 72.90 seconds**; `git diff --check` passed. These results cover the software candidate and Site walkthrough, not cloud provider deployments.
+- The owner-input example contains no account/project/tenant/subscription/compartment identifiers, billing confirmations, or approved regions. No local private owner-input file is present. The fail-closed `scripts/validate_cloud_inputs.py --example --release-ready` check reports **29 missing or invalid fields** and confirms it created no resources.
+- GKE, EKS, AKS, and OKE are therefore all **not provisioned**. This repository contains the provider-neutral Kubernetes workload baseline and the four-provider policy/release contract; it does not yet contain provider Terraform stacks or executable cloud deployment workflows. Creating those without network, cost, region, and identity inputs would not produce a safe or testable deployment.
+- The user's existing Apple account is designated for potential Apple-platform app distribution. It is separate from cloud provider accounts and cannot host this browser Site. Apple membership/App Store Connect access, full Xcode, and a native app target remain unverified; see `atlas-apple-distribution-readiness.md`.
+- The research candidate frame remains 8 U.S. plus 8 international areas, but confirmatory eligibility is **0/16** and the live walkthrough uses synthetic analysis fixtures. Canonical score remains **60/100 provisional**; neither the cloud prep nor this verification adds rubric points.
+
 ## Current application boundary
 
 ATLAS currently consists of a private static Sites walkthrough and a separate Starlette API. The API returns synthetic analysis data, exposes the 16-area archive-metadata candidate register, performs no raster processing, has no persistent database, and is not connected to the hosted page. This preparation packages the API as one non-root container and defines a common Kubernetes release contract. It does not make the demo into an operational geospatial service.

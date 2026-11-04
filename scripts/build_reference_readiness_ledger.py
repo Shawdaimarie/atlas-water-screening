@@ -130,7 +130,7 @@ def build_ledger() -> dict:
                 }
                 for candidate in groundsource_opportunities[key]["top_candidates"][:3]
             ],
-            "cems_rapid_mapping_activations": cems_by_area.get(key, {}).get("count", 0),
+            "cems_rapid_mapping_flood_aoi_overlaps": cems_by_area.get(key, {}).get("intersecting_flood_aois", 0),
             "spacenet8_unique_object_references": s["unique_feature_ids"],
             "spacenet8_flooded_yes_objects": s["flooded"],
             "spacenet8_unknown_flood_status_objects": s["flood_status_unknown"],
