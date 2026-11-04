@@ -1,6 +1,18 @@
-# ATLAS worktree and production revalidation — 2026-11-04
+# ATLAS worktree and production revalidation records — 2026-11-04
 
-## Current source checks
+## Latest revalidation — v61 source and research audit
+
+- Sites control-plane readback confirms private owner-only v61 remains active at the production URL, with deployment `appgdep_6aeb0960487881919cdf41f78877eee8` succeeded from Site source `1bf4d1659270e6516235433259bf3b657361eb6b`. The owner is the only allowed user and external visitor count is zero. The authenticated v61 walkthrough and interaction results are recorded in [`atlas-v61-live-revalidation-2026-11-04.md`](atlas-v61-live-revalidation-2026-11-04.md); this update did not claim a new browser replay.
+- A fresh Site-linked source checkout at v61 commit `1bf4d1659270e6516235433259bf3b657361eb6b` matches every one of the **27** current root `dist/` files by SHA-256. No new Site deployment was needed. The existing `.sites-open` checkout was behind the live source and locally edited; the Sites source helper refused to overwrite it. A separate empty checkout was used to read the live source safely. The in-app browser session was listed, but this Mac is locked and CUA reported the browser user unavailable, so no new interaction replay is claimed; the prior authenticated v61 replay remains the latest.
+- Re-ran the complete repository suite in digest-pinned Python 3.12 Bookworm with both lock files installed using `--require-hashes`: **172 passed in 1.39 seconds**. Built the current API image from the hash-pinned runtime base; its read-only container passed **11/11** health, 8+8 register, analysis, CSV export, input-limit, host, and CORS checks. `pip-audit` found **no known runtime vulnerabilities**. The 16-area GEOID-Flood screen completed with one historical St. Louis event, 12 tiles, and 12 benchmark-eligible tiles. `git diff --check` passed after the documentation reconciliation.
+- Added the exact official Jakarta BPBD 22–26 January 2026 event window to the PetaBencana archive audit. The direct API response returned five area IDs, all last updated 2022-10-07, with the same response hash as separate 2025 and January 2026 requests. This is stale source data, not a flood reference label. A focused regression test covers the event-specific stale-row case; see [`atlas-petabencana-january-2026-event-window.md`](atlas-petabencana-january-2026-event-window.md) and the machine-readable audit.
+- The 8+8 candidate frame remains **0/16 confirmatory-eligible**; the PetaBencana result adds no score. The evidence-only canonical score remains **60/100 provisional**.
+- Cloud account handoff inputs are still absent. The release-ready validator fails closed with `input file not found: deployment/cloud/owner-inputs.local.yaml`; it creates no provider resources. No GCP, AWS, Azure, or OCI deployment is verified. The existing Apple account remains a separate future Apple-app distribution path; no native app build is verified.
+- This local checkout is based on `f8064f83788984260b61f24902802035cc7b14e1` and is dirty; Git cannot fetch over HTTPS in this environment. External release identity is established from Sites control-plane readback and the private GitHub connector, not inferred from the local branch.
+
+The sections below preserve the older v45 revalidation as historical evidence; they do not describe the current deployment.
+
+## Historical v45 source checks (superseded)
 
 - Ran the complete Python 3.12 suite in the digest-pinned `python:3.12-bookworm` image with `requirements-dev.lock` and `requirements-reference-audit.lock` installed using `--require-hashes`: **139 passed in 1.55 seconds**.
 - `git diff --check` passed.
