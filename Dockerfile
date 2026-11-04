@@ -8,9 +8,6 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 COPY requirements-runtime.lock ./requirements-runtime.lock
 RUN python -m pip install --no-cache-dir --require-hashes -r requirements-runtime.lock \
-    && printf '%s\n' 'setuptools==84.2.1 --hash=sha256:ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2' > /tmp/setuptools.lock \
-    && python -m pip install --no-cache-dir --no-deps --require-hashes -r /tmp/setuptools.lock \
-    && rm /tmp/setuptools.lock \
     && groupadd --gid 10001 atlas \
     && useradd --uid 10001 --gid 10001 --no-create-home --home-dir /nonexistent --shell /usr/sbin/nologin atlas
 
