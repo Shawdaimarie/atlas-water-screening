@@ -44,6 +44,11 @@ def test_reference_readiness_ledger_balances_all_areas_and_preserves_unknowns():
     assert ledger["summary"]["jakarta_incident_source_rows"] == 260
     assert ledger["summary"]["areas_with_nasa_egis_s1_water_catalog_leads"] == 3
     assert ledger["summary"]["nasa_egis_s1_water_catalog_footprint_records"] == 12
+    assert ledger["summary"]["usgs_gfid_rows_scanned"] == 136642
+    assert ledger["summary"]["usgs_gfid_rows_in_common_window"] == 504
+    assert ledger["summary"]["areas_with_usgs_gfid_representative_points_in_aoi"] == 0
+    assert ledger["summary"]["usgs_gfid_representative_event_points_within_25km"] == 0
+    assert all(x["usgs_gfid_representative_event_points_in_aoi"] == 0 for x in ledger["areas"])
     tampa = next(x for x in ledger["areas"] if x["city"] == "Tampa")
     assert tampa["nasa_egis_s1_water_catalog_dates"] == [
         "2024-09-14", "2024-09-26", "2024-10-03", "2024-10-08", "2024-10-11"
@@ -105,6 +110,9 @@ def test_reference_ledger_card_reports_limits_and_both_downloads():
     assert "77.70%" in html
     assert "not held-out validation" in html
     assert "atlas-geoid-flood-stlouis-label-coverage.json" in html
+    assert "USGS GFID independent event-context screen" in html
+    assert "no local point is not evidence that flooding did not occur" in html
+    assert "atlas-usgs-gfid-aoi-event-audit.json" in html
     assert "New Orleans has one WTR/BWTR catalog granule" in html
     assert "the service date field is absent" in html
     assert "not counted as multiple acquisition dates" in html
@@ -137,4 +145,6 @@ def test_generated_reference_ledger_matches_current_source_snapshot():
     assert (root / "dist/atlas-groundsource-event-coverage-audit.json").read_bytes() == (root / "outputs/atlas-groundsource-event-coverage-audit.json").read_bytes()
     assert (root / "dist/atlas-nasa-egis-opera-footprint-audit.json").read_bytes() == (root / "outputs/atlas-nasa-egis-opera-footprint-audit.json").read_bytes()
     assert (root / "dist/atlas-geoid-flood-stlouis-label-coverage.json").read_bytes() == (root / "outputs/atlas-geoid-flood-stlouis-label-coverage.json").read_bytes()
+    assert (root / "dist/atlas-usgs-gfid-aoi-event-audit.json").read_bytes() == (root / "outputs/atlas-usgs-gfid-aoi-event-audit.json").read_bytes()
+    assert (root / "dist/atlas-usgs-gfid-aoi-event-audit.md").read_bytes() == (root / "outputs/atlas-usgs-gfid-aoi-event-audit.md").read_bytes()
     assert "GENERATED REFERENCE READINESS LEDGER START" in (root / "dist/index.html").read_text()
