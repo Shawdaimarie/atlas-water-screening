@@ -94,6 +94,13 @@ def test_site_evidence_register_is_complete_and_idempotent():
     assert sum(area["region"] == "International" for area in profiles) == 8
     assert all(area["empirical_evidence"] and area["validation_path"] for area in profiles)
     assert updated.count("Demand distinction:") == 1
+    assert updated.count("GENERATED PUBLIC VALUE CHAIN START") == 1
+    assert updated.count("GENERATED PUBLIC VALUE CHAIN END") == 1
+    value_chain = updated.split("GENERATED PUBLIC VALUE CHAIN START", 1)[1].split("GENERATED PUBLIC VALUE CHAIN END", 1)[0]
+    for stage in ("Hazard observation", "Asset exposure", "Service consequence", "Distributional equity", "Decision usefulness"):
+        assert value_chain.count(stage) == 1
+    assert "Water overlap alone does not establish damage" in value_chain
+    assert "stakeholder-approved weights and sensitivity analysis" in value_chain
 
 
 def test_site_discloses_independent_reference_coverage_gaps():
