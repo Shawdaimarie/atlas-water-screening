@@ -55,3 +55,24 @@ def test_archive_screen_rejects_invalid_response_envelope() -> None:
         assert "unexpected response envelope" in str(exc)
     else:
         raise AssertionError("invalid response envelope should fail closed")
+
+
+def test_archive_screen_flags_stale_rows_for_jakarta_january_2026_event() -> None:
+    window = {
+        "label": "Jakarta BPBD 22-26 January 2026 event window",
+        "start": "2026-01-22T00:00:00+0700",
+        "end": "2026-01-26T03:00:00+0700",
+    }
+    payload = {
+        "statusCode": 200,
+        "result": [
+            {"area_id": "4157", "last_updated": "2022-10-07T12:36:18.830Z", "max_state": 2},
+            {"area_id": "5394", "last_updated": "2022-10-07T12:36:18.933Z", "max_state": 3},
+        ],
+    }
+
+    result = summarize_window(payload=payload, window=window, response_sha256=hashlib.sha256(b"fixture").hexdigest())
+
+    assert result["returned_rows_with_update_date_in_requested_window"] == 0
+    assert result["returned_update_date_min"] == "2022-10-07"
+    assert result["screening_outcome"] == "returned_rows_are_outside_requested_window"

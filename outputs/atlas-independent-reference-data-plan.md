@@ -187,3 +187,8 @@ A follow-up sampled actual `ensemble_flood_extent` COG pixels around one Grounds
 This is only an availability diagnostic. Groundsource candidate leads are unverified; each area has just one sampled date per period, far short of the preregistered 3+ event and 3+ baseline dates. Copernicus documents GFM as a Sentinel-1 SAR ensemble, which shares the target OPERA DSWx-S1 sensor lineage, so GFM output is not independent truth. GFM classification is algorithmic, not adjudicated field reference. The collection metadata labels its license `other` and links [GFM terms of service](https://global-flood.emergency.copernicus.eu/terms-of-service/); reuse clearance remains pending. No area enrolls and no rubric points are added.
 
 Reproduce with the project analysis environment: `.venv/bin/python scripts/audit_gfm_raster_coverage.py`. Catalog query counts and dates: `outputs/atlas-gfm-aoi-coverage-screen.json`.
+
+
+### Event-specific January 2026 recheck (2026-11-04)
+
+The BPBD bulletin places the January 2026 inundation event between 22 and 26 January. A direct PetaBencana archive request for that exact window returned five area IDs, all dated 2022-10-07. Its response hash matches the older records returned for other 2025 and January 2026 windows. The date-control queries still behave as expected for January 2020 and October 2022. This is a stale-data result; the returned records do not support this event. The event query, response hash, and interpretation limits are recorded in [the event-window recheck](atlas-petabencana-january-2026-event-window.md) and the machine-readable [archive audit](atlas-petabencana-archive-screen.json).
