@@ -88,5 +88,5 @@ def test_ci_installs_checksum_pinned_terraform_and_validates_all_four_roots():
 
 def test_runtime_image_pins_fixed_setuptools_with_pypi_hash():
     dockerfile = (ROOT / "Dockerfile").read_text()
-    assert "setuptools==78.1.1" in dockerfile
-    assert "c3a9c4211ff4c309edb8b8c4f1cbfa7ae324c4ba9f91ff254e3d305b9fd54561" in dockerfile
+    assert "setuptools==84.2.1" in dockerfile
+    assert "ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2" in dockerfile
