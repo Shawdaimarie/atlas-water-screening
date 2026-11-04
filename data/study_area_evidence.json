@@ -122,8 +122,8 @@
     },
     {
       "city": "Singapore",
-      "evidence_type": "national drainage performance and current risk context",
-      "empirical_evidence": "PUB reports that flood-prone area fell from about 3,200 ha in the 1970s to less than 25 ha, a 99% reduction. Its 2 April 2025 national list names 36 flood-prone locations defined as low-lying areas with a history of flooding. These are Singapore-wide management and residual-risk context, not event-specific label data or ATLAS results.",
+      "evidence_type": "national drainage performance, current risk context, and exploratory event lead",
+      "empirical_evidence": "PUB reports that flood-prone area fell from about 3,200 ha in the 1970s to less than 25 ha, a 99% reduction. Its 2 April 2025 national list names 36 flood-prone locations defined as low-lying areas with a history of flooding. Separately, the data.gov.sg PUB Flood Alerts API returned an alert dated 2025-05-22 describing an observed flash flood at Wan Tho Ave (Pheng Geck Ave); the reported center falls inside the fixed Singapore AOI. The single point alert is an exploratory event lead, not a mapped flood extent, independent pixel label, or ATLAS result.",
       "evidence_url": "https://www.pub.gov.sg/Public/KeyInitiatives/Flood-Resilience/About-Floods",
       "secondary_evidence_url": "https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/List-of-Flood-Prone-Areas-as-at-Apr-2025.pdf",
       "value_dimensions": [
@@ -131,8 +131,11 @@
         "urban transport and facility access",
         "residual-risk hotspot prioritization"
       ],
-      "validation_path": "For a held-out event, obtain dated PUB flood alerts, water-level sensor or rainfall records, and official geospatial hotspot layers. The 2025 PDF supplies named locations but no event-specific extent geometry; verify licensing and geocode only from a suitable official or openly licensed source before testing intersection with the frozen common box.",
-      "scope_limit": "The national 1970s-to-current area trend and 36 named locations cannot be attributed to the 625 km² screen without geospatial intersection. The hotspot list is risk context, not an independent event label or pixel-level reference."
+      "validation_path": "For a held-out event, obtain dated PUB flood alerts, water-level sensor or rainfall records, and official geospatial hotspot layers. The alert supplies no event-specific extent geometry. Geocode and verify licensing before event intersection with the frozen common box; source an independent mapped extent or field reference and sample pixels under the common protocol before confirmatory testing.",
+      "scope_limit": "The national area trend and named locations cannot be attributed to the 625 km² screen without spatial validation. The 2025-05-22 alert is a single location lead, not a mapped flood extent, not an independent event label, and does not establish event frequency. Singapore remains candidate-only.",
+      "event_reference_url": "https://data.gov.sg/datasets/d_f1404e08587ce555b9ea3f565e2eb9a3/view",
+      "event_reference_date": "2025-05-22",
+      "event_reference_audit": "atlas-singapore-pub-flood-alert-audit.json"
     },
     {
       "city": "Dubai",
