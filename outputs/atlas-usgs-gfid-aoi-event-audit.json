@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "audit_id": "usgs-gfid-fixed-aoi-event-screen-2026-11-04",
+  "status": "event_context_discovery_only",
+  "generated_at_utc": "2026-11-04T09:39:45+00:00",
+  "source": {
+    "title": "The Global Flood Impacts Database (GFID)",
+    "publisher": "U.S. Geological Survey",
+    "data_gov_url": "https://catalog.data.gov/dataset/the-global-flood-impacts-database-gfid",
+    "sciencebase_item_url": "https://www.sciencebase.gov/catalog/item/69e7e00db66b0164d0f7302d",
+    "workbook_url": "https://www.sciencebase.gov/catalog/file/get/69e7e00db66b0164d0f7302d?f=__disk__c3%2F44%2Fd6%2Fc344d62cc5d115d408726fb52d9d459c6e1b5ed1",
+    "workbook_name": "AggregatedFloodData.xlsx",
+    "workbook_md5": "3ea4849f12f98a58855d06b9f1b9a5bc",
+    "expected_workbook_md5": "3ea4849f12f98a58855d06b9f1b9a5bc",
+    "user_agent": "ATLAS-open-data-research/1.0"
+  },
+  "analysis_window": {
+    "start": "2024-09-01",
+    "end": "2026-11-02",
+    "date_field": "Aggregated.Date, interpreted as Excel 1900-system serial date or ISO date",
+    "spatial_test": "representative Lat/Lon point strictly inside fixed AOI bounding box; no buffer"
+  },
+  "counts": {
+    "aggregated_rows_scanned": 136642,
+    "rows_with_event_date_in_common_window": 504,
+    "study_areas": 16,
+    "areas_with_representative_points_in_aoi": 0,
+    "representative_points_in_all_areas": 0,
+    "nearby_representative_points_within_25km_all_areas": 0
+  },
+  "areas": [
+    {
+      "city": "Houston",
+      "region": "United States",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "Miami",
+      "region": "United States",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "Tampa",
+      "region": "United States",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "New Orleans",
+      "region": "United States",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "New York City",
+      "region": "United States",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "Sacramento",
+      "region": "United States",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "Atlanta",
+      "region": "United States",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "St. Louis",
+      "region": "United States",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "Jakarta",
+      "region": "International",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "Singapore",
+      "region": "International",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "Dubai",
+      "region": "International",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "Mumbai",
+      "region": "International",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "Bangkok",
+      "region": "International",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "Tokyo",
+      "region": "International",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "Manila",
+      "region": "International",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    },
+    {
+      "city": "São Paulo",
+      "region": "International",
+      "nominal_aoi_km2": 625,
+      "representative_event_points_in_fixed_bbox": 0,
+      "source_counts": {},
+      "events": [],
+      "representative_event_points_within_25km_of_bbox": 0,
+      "nearby_discovery_leads": []
+    }
+  ],
+  "interpretation_limits": [
+    "GFID aggregates event-impact records from source databases. It supplies independent event context, not per-pixel flood labels or mapped inundation boundaries.",
+    "A representative coordinate inside a 625 km² box does not prove the reported inundation occurred within that box; source geocoding precision and impact geometry must be checked per record.",
+    "Points within 25 km of a box are nearby discovery leads only; the buffer is not a substitute for the fixed-area intersection criterion.",
+    "Multiple records may describe duplicate or overlapping events. Source rows are retained and not counted as unique events without source-level review and duplicate reconciliation.",
+    "Reported impacts have source-specific definitions, coverage, and missingness; blanks are unknown, not zero.",
+    "This event discovery screen does not change confirmatory enrollment or the ATLAS score."
+  ]
+}
