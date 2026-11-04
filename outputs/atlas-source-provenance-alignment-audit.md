@@ -3,6 +3,14 @@
 **Date:** 2026-11-04  
 **Purpose:** verify whether the active private Site can be reproduced from the canonical private GitHub repository.
 
+
+## Current v61 alignment verification — 2026-11-04
+
+- Sites reports active v61 at the production URL with deployment `appgdep_6aeb0960487881919cdf41f78877eee8` succeeded from source commit `1bf4d1659270e6516235433259bf3b657361eb6b`. The access readback still shows the owner as the only allowed viewer and zero external visitors.
+- PR [#9](https://github.com/Shawdaimarie/atlas-water-screening/pull/9) merged as `0918a5cc00e3232c9f6e4e541894923d4d6fbb3c`. Both PR CI runs 41815923447 and 41815980306 passed tests/container/security jobs.
+- Current canonical GitHub main file blobs were compared to every file in the clean Site-source commit: **28/28 exact matches**, including `dist/index.html`, both SenForFlood report files, and `.openai/hosting.json`.
+- The earlier v56 provenance table below is retained as a historical snapshot. The v61 audit card and report add no confirmatory labels; the score remains 60/100 provisional and eligibility 0/16.
+
 ## Evidence
 
 | Check | Result |
