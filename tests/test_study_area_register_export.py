@@ -27,6 +27,10 @@ def test_full_evidence_register_csv_and_json_are_balanced_and_complete():
     assert {row["aoi_area_km2"] for row in rows} == {625}
     assert all(len(row["acquisition_dates"]) == row["unique_acquisition_dates"] for row in rows)
     assert all(row["evidence_url"].startswith("https://") for row in rows)
+    singapore = next(row for row in rows if row["city"] == "Singapore")
+    assert singapore["event_reference_date"] == "2025-05-22"
+    assert singapore["event_reference_url"].startswith("https://data.gov.sg/")
+    assert singapore["event_reference_audit"].endswith("atlas-singapore-pub-flood-alert-audit.json")
 
 
 def test_candidate_bounding_boxes_have_comparable_spherical_area():
