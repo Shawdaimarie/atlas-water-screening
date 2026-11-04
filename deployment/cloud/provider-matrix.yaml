@@ -68,7 +68,7 @@ release_contract:
     image_vulnerability_scan:
       action: aquasecurity/trivy-action
       action_commit: ed142fd0673e97e23eac54620cfb913e5ce36c25
-      scanner_version: 0.76.1
+      scanner_version: v0.76.1
       package_types: [os, library]
       blocked_severities: [HIGH, CRITICAL]
       unfixed_findings_are_blocking: true
