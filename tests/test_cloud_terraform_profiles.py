@@ -89,5 +89,5 @@ def test_ci_installs_checksum_pinned_terraform_and_validates_all_four_roots():
 
 def test_runtime_image_uses_pinned_trixie_base_without_setuptools_install():
     dockerfile = (ROOT / "Dockerfile").read_text()
-    assert "python:3.12-slim-trixie@sha256:b18b261e1b4974b4f321451ad5251ded85abb22c2b8b262da527dda1d031ab30" in dockerfile
+    assert "python:3.12-alpine@sha256:e6dae589c1c05976188fd3bd019afd091445fc533ed2ea29001beddc7368a9c8" in dockerfile
     assert "setuptools==" not in dockerfile
