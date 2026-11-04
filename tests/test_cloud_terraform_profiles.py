@@ -81,6 +81,6 @@ def test_ci_installs_checksum_pinned_terraform_and_validates_all_four_roots():
     assert "validate -no-color" in workflow
     assert "anchore/sbom-action@66cbf4bc1f1c0d2edc94016e65bc221b6bb0ad6c" in workflow
     assert "aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25" in workflow
-    assert "version: 0.76.1" in workflow
+    assert "version: v0.76.1" in workflow
     assert "severity: HIGH,CRITICAL" in workflow
     assert "upload-artifact: true" in workflow
