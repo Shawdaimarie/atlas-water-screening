@@ -163,7 +163,10 @@
       "value_dimensions": "drainage service continuity; capital-project prioritization; neighborhood-level exposure",
       "validation_path": "Overlay only city-published drainage project and channel/detention geodata available for the 25 km study box; compare event-period satellite classifications with city/USGS gauge records and dated official flood reports. Record geometry/date coverage before analysis.",
       "scope_limit": "CIP allocations are planned estimates, not measured reductions in flood loss; the plan cautions that receiving-system capacity can still cause flooding.",
-      "secondary_evidence_url": ""
+      "secondary_evidence_url": "",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "United States",
@@ -303,7 +306,10 @@
       "value_dimensions": "canal and drainage operations; groundwater-sensitive neighborhoods; equitable risk-management prioritization",
       "validation_path": "Use documented gauge/canal levels, rainfall timing, and independently mapped event reports for a held-out event; treat the NOAA 2020 experiment as contextual precedent, not as ATLAS ground truth or performance evidence.",
       "scope_limit": "The NOAA demonstration is county-scale and predates the current candidate window; it does not validate the 625 km² candidate box or ATLAS.",
-      "secondary_evidence_url": ""
+      "secondary_evidence_url": "",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "United States",
@@ -437,7 +443,10 @@
       "value_dimensions": "coastal water level; transport and utility access; recovery prioritization",
       "validation_path": "Match any candidate-box OPERA dates to USGS/NWS gauge time series and geolocated high-water marks or official event reports. Keep regional instruments outside the box as context and do not count them as local reference samples.",
       "scope_limit": "The cited sensors cover a regional coast and do not establish adequate independent labels inside the Tampa candidate box.",
-      "secondary_evidence_url": ""
+      "secondary_evidence_url": "",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "United States",
@@ -630,7 +639,10 @@
       "value_dimensions": "pump-dependent drainage service; road and emergency access; low-lying community exposure",
       "validation_path": "Pre-register one dated event and baseline, then compare eligible OPERA pixels with city pump/drainage records, NWS rainfall and river stages, and dated official street-flood reports where spatial precision is sufficient.",
       "scope_limit": "The historical event count is not a geocoded independent truth set, and the City notes limitations in the NOAA records; pump design capacity is not actual operating capacity during any event.",
-      "secondary_evidence_url": ""
+      "secondary_evidence_url": "",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "United States",
@@ -896,7 +908,10 @@
       "value_dimensions": "critical sewer and transport service; neighborhood drainage priorities; public sensor coverage",
       "validation_path": "Acquire dated FloodNet and NYC DEP records, independently review their spatial coverage against the 625 km² box, and validate a held-out event against municipal inundation or high-water labels rather than using capital-plan priority zones as truth.",
       "scope_limit": "The agency’s counts are citywide and do not imply that all sensors or priority areas fall within the candidate AOI.",
-      "secondary_evidence_url": ""
+      "secondary_evidence_url": "",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "United States",
@@ -1182,7 +1197,10 @@
       "value_dimensions": "levee-protected communities; transport and utility corridor exposure; risk communication",
       "validation_path": "Use local Sacramento River/American River gauge and levee incident records, DWR floodplain layers, and event-date reference extents; exclude regional counts from the local denominator.",
       "scope_limit": "These metrics describe the broader Central Valley program, not the city-center AOI, and the cited page does not provide a local event-label dataset.",
-      "secondary_evidence_url": ""
+      "secondary_evidence_url": "",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "United States",
@@ -1309,7 +1327,10 @@
       "value_dimensions": "watershed and drainage investment; road access; neighborhood service equity",
       "validation_path": "Map plan project and stormwater geographies in the candidate box; evaluate a predeclared event using NWS rainfall, USGS stream gauges, and dated city incident/closure reports with location-level inclusion rules.",
       "scope_limit": "Plan coverage and agency response do not establish customer demand, parcel-level impacts, or independent event accuracy.",
-      "secondary_evidence_url": ""
+      "secondary_evidence_url": "",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "United States",
@@ -1438,7 +1459,10 @@
       "value_dimensions": "river and floodwall exposure; regional transport continuity; long-term flood preparedness",
       "validation_path": "Use NOAA/NWS gauge records and recent dated event reports for actual validation; retain 1993 as contextual extreme-event history, not as a contemporaneous label for the 2024–2026 screen.",
       "scope_limit": "The headline evidence is historical and regional; it does not establish recent local flooding or current demand.",
-      "secondary_evidence_url": ""
+      "secondary_evidence_url": "",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "International",
@@ -1715,7 +1739,10 @@
       "value_dimensions": "pump and drainage operations; water quality and supply; cross-administration planning",
       "validation_path": "Obtain dated BPBD flood-event and pump-operation records, rainfall and river/gate levels, then spatially resolve them to the fixed AOI. Engage local technical partners to review translation, data licensing, and location bias.",
       "scope_limit": "Pump counts are response-capacity inventory, not utilization or measured effectiveness; Greater Jakarta evidence spans well beyond the selected box.",
-      "secondary_evidence_url": "https://www.worldbank.org/en/topic/water/publication/pathways-to-integrated-urban-water-management-for-greater-jakarta"
+      "secondary_evidence_url": "https://www.worldbank.org/en/topic/water/publication/pathways-to-integrated-urban-water-management-for-greater-jakarta",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "International",
@@ -1901,12 +1928,15 @@
       "last_acquisition_date": "2026-10-28",
       "returned_entries_complete": true,
       "status": "candidate; archive metadata screened; QA pixels and independent labels pending",
-      "need_evidence_type": "national drainage performance and current risk context",
-      "empirical_evidence": "PUB reports that flood-prone area fell from about 3,200 ha in the 1970s to less than 25 ha, a 99% reduction. Its 2 April 2025 national list names 36 flood-prone locations defined as low-lying areas with a history of flooding. These are Singapore-wide management and residual-risk context, not event-specific label data or ATLAS results.",
+      "need_evidence_type": "national drainage performance, current risk context, and exploratory event lead",
+      "empirical_evidence": "PUB reports that flood-prone area fell from about 3,200 ha in the 1970s to less than 25 ha, a 99% reduction. Its 2 April 2025 national list names 36 flood-prone locations defined as low-lying areas with a history of flooding. Separately, the data.gov.sg PUB Flood Alerts API returned an alert dated 2025-05-22 describing an observed flash flood at Wan Tho Ave (Pheng Geck Ave); the reported center falls inside the fixed Singapore AOI. The single point alert is an exploratory event lead, not a mapped flood extent, independent pixel label, or ATLAS result.",
       "value_dimensions": "drainage-service performance; urban transport and facility access; residual-risk hotspot prioritization",
-      "validation_path": "For a held-out event, obtain dated PUB flood alerts, water-level sensor or rainfall records, and official geospatial hotspot layers. The 2025 PDF supplies named locations but no event-specific extent geometry; verify licensing and geocode only from a suitable official or openly licensed source before testing intersection with the frozen common box.",
-      "scope_limit": "The national 1970s-to-current area trend and 36 named locations cannot be attributed to the 625 km² screen without geospatial intersection. The hotspot list is risk context, not an independent event label or pixel-level reference.",
-      "secondary_evidence_url": "https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/List-of-Flood-Prone-Areas-as-at-Apr-2025.pdf"
+      "validation_path": "For a held-out event, obtain dated PUB flood alerts, water-level sensor or rainfall records, and official geospatial hotspot layers. The alert supplies no event-specific extent geometry. Geocode and verify licensing before event intersection with the frozen common box; source an independent mapped extent or field reference and sample pixels under the common protocol before confirmatory testing.",
+      "scope_limit": "The national area trend and named locations cannot be attributed to the 625 km² screen without spatial validation. The 2025-05-22 alert is a single location lead, not a mapped flood extent, not an independent event label, and does not establish event frequency. Singapore remains candidate-only.",
+      "secondary_evidence_url": "https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/List-of-Flood-Prone-Areas-as-at-Apr-2025.pdf",
+      "event_reference_url": "https://data.gov.sg/datasets/d_f1404e08587ce555b9ea3f565e2eb9a3/view",
+      "event_reference_date": "2025-05-22",
+      "event_reference_audit": "atlas-singapore-pub-flood-alert-audit.json"
     },
     {
       "region": "International",
@@ -2315,7 +2345,10 @@
       "value_dimensions": "stormwater tunnel and network service; critical technology/logistics facilities; capital phasing and residual risk",
       "validation_path": "Acquire municipality project alignments, construction status, rainfall, and dated incident/road-closure records; stratify completed and under-construction assets before any exposure analysis.",
       "scope_limit": "Published capacity values are future program targets and cannot serve as observed flood truth or current system performance.",
-      "secondary_evidence_url": "https://www.dm.gov.ae/dubai-municipality-and-dubai-south-launch-stormwater-tunnel-project-for-sustainable-infrastructure/"
+      "secondary_evidence_url": "https://www.dm.gov.ae/dubai-municipality-and-dubai-south-launch-stormwater-tunnel-project-for-sustainable-infrastructure/",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "International",
@@ -2464,7 +2497,10 @@
       "value_dimensions": "drainage and flood-risk reduction; transport and public-service continuity; implementation equity across neighborhoods",
       "validation_path": "Use BMC/Maharashtra dated rainfall, drainage works, pump/gauge operations, and geocoded flood incident records; separately identify pre- and post-project dates and verify data translation and spatial resolution.",
       "scope_limit": "Approval and release establish program activity, not completed works, reduced flooding, or customer demand.",
-      "secondary_evidence_url": ""
+      "secondary_evidence_url": "",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "International",
@@ -2619,7 +2655,10 @@
       "value_dimensions": "urban drainage and river operations; commuter and utility access; upstream-to-city coordination",
       "validation_path": "Acquire Royal Irrigation Department and Bangkok Metropolitan Administration gauge, rainfall, pump, and event-closure records. Predefine local ground-truth sources and normalize Thai local time/date before matching satellite acquisitions.",
       "scope_limit": "The source is a planning/assessment report with historical context, not a current independent event label or an evaluation of ATLAS.",
-      "secondary_evidence_url": ""
+      "secondary_evidence_url": "",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "International",
@@ -2849,7 +2888,10 @@
       "value_dimensions": "storage and river-control infrastructure; dense transport and utility service; investment tracking",
       "validation_path": "Use Tokyo river/flood telemetry and rainfall with event reports and storage-facility service areas; assess source timestamps, datum and Japanese date/time conventions before event matching.",
       "scope_limit": "Capacity is metropolitan inventory/target, not proof of local flood absence or a satellite-classification accuracy measure.",
-      "secondary_evidence_url": "https://www.kasen-suibo.metro.tokyo.lg.jp/s/tsim0401g_en.html"
+      "secondary_evidence_url": "https://www.kasen-suibo.metro.tokyo.lg.jp/s/tsim0401g_en.html",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "International",
@@ -3280,7 +3322,10 @@
       "value_dimensions": "pump-station service; drainage and solid-waste interactions; population and neighborhood access",
       "validation_path": "Obtain project pump and drainage locations, PAGASA rainfall, city/BWSC incident reports, and independently reviewed event extents. Resolve Metro Manila boundaries against the fixed city-center box and report only in-AOI evidence.",
       "scope_limit": "Project beneficiaries and footprint are regional targets, not actual affected persons or performance inside the candidate box.",
-      "secondary_evidence_url": ""
+      "secondary_evidence_url": "",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     },
     {
       "region": "International",
@@ -3504,7 +3549,10 @@
       "value_dimensions": "stormwater works and maintenance; transport and community service; project priority and equity",
       "validation_path": "Join dated municipal flood incident and rainfall records to geocoded interventions; separate completed/active/planned works, and validate a held-out event against independently reviewed high-water or flood-extent data.",
       "scope_limit": "Municipal project totals are citywide, may span the candidate box unevenly, and are not measured reduction in risk or proof of ATLAS demand.",
-      "secondary_evidence_url": "https://prefeitura.sp.gov.br/web/obras/w/obras-refor%C3%A7am-o-combate-a-alagamentos-e-%C3%A1reas-de-risco-em-s%C3%A3o-paulo"
+      "secondary_evidence_url": "https://prefeitura.sp.gov.br/web/obras/w/obras-refor%C3%A7am-o-combate-a-alagamentos-e-%C3%A1reas-de-risco-em-s%C3%A3o-paulo",
+      "event_reference_url": "",
+      "event_reference_date": "",
+      "event_reference_audit": ""
     }
   ]
 }
