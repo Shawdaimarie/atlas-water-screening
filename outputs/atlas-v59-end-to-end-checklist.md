@@ -21,11 +21,15 @@ Sites returned `succeeded` for the private production deployment. The archive wa
 | Ledger and Site-card checks | **Pass** | Included in the full suite; 3 focused card tests and ledger consistency checks |
 | Static deployment packaging | **Pass** | Site workflow pushed commit `fa778eded93e614b8be36dbdbf56293afe177560` and produced `/tmp/atlas-v59.tar.gz` |
 | Production publication | **Pass** | Sites deployment status `succeeded`; private production URL returned |
-| Authenticated browser replay | **Not completed** | Browser automation returned `browser.user is unavailable`; native Mac app access reported the Mac locked |
+| Authenticated browser replay | **Pass** | Opened the published private Site in a fresh authenticated browser tab. Verified all 16 area profiles update and contain their common archive window, demand distinction, and validation path; verified scenario/event switching, quality-aware method switching, asset detail, reset, and CSV downloads. |
 | External AWS / Azure / GCP / OCI deployment | **Not run** | Provider accounts are still being created; no account credentials, projects, or paid cloud resources were used |
 | Apple native release | **Not run** | User selected their existing Apple Account. No native target, Xcode, Developer Program membership, or App Store Connect access was verified. |
 
 The full suite emitted one environment warning: the installed urllib3 build detected LibreSSL rather than OpenSSL. It did not fail any test.
+
+The browser replay confirmed that **Reset analysis** restores the single-observation method and default asset while retaining the currently selected Baton Rouge / Hurricane Ida scenario. Scenario and event selectors are independent controls, and both changed the scenario heading and evidence context as expected.
+
+The downloaded synthetic analysis CSV contained 12 data rows with the active Baton Rouge / Hurricane Ida scenario, aggregate method, observation windows, and `synthetic_fixture_no_live_NASA_data` marker. The downloaded area-register CSV parsed as 16 rows: 8 U.S. and 8 international areas, with 28 columns. The live GFID JSON endpoint contained the expected audit ID, 136,642 scanned-row count, 0 inside-AOI event points, and 0 nearby points.
 
 ## Guided walkthrough
 
