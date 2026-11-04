@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "audit_id": "singapore-pub-flood-alert-2025-05-22",
+  "status": "exploratory_event_lead_screen",
+  "area": "Singapore",
+  "query_date": "2025-05-22",
+  "retrieved_at_utc": "2026-11-04T09:22:28+00:00",
+  "source": {
+    "dataset": "Flood Alerts across Singapore",
+    "agency": "PUB, Singapore's national water agency",
+    "dataset_url": "https://data.gov.sg/datasets/d_f1404e08587ce555b9ea3f565e2eb9a3/view",
+    "api_url": "https://api-open.data.gov.sg/v2/real-time/api/weather/flood-alerts",
+    "license": "Singapore Open Data Licence (per data.gov.sg dataset page)",
+    "response_sha256": "c91679df48d714ed27e234bccadd2d1d660730de7d8cd598033b84a916c5c3c2",
+    "user_agent": "ATLAS-open-data-research/1.0"
+  },
+  "fixed_aoi_bbox_wgs84": [
+    103.70748,
+    1.239811,
+    103.93212,
+    1.464389
+  ],
+  "summary": {
+    "returned_records": 1,
+    "flood_readings": 1,
+    "flood_reading_centers_inside_aoi": 1,
+    "observed_certainty_inside_aoi": 1
+  },
+  "reports": [
+    {
+      "datetime": "2025-05-22T20:16:06+08:00",
+      "updated_timestamp": "2025-09-03T11:52:52+08:00",
+      "headline": "Flood Warning",
+      "description": "Flash flood at Wan Tho Ave (Pheng Geck Ave). Please avoid the area. PUB officers have been deployed to render assistance. Issued 1510 hours.",
+      "certainty": "Observed",
+      "status": null,
+      "sender_name": "PUB",
+      "area_description": "Wan Tho Ave (Pheng Geck Ave), Singapore",
+      "circle_as_reported": [
+        "1.33201",
+        "103.87015",
+        "1"
+      ],
+      "center_inside_fixed_aoi": true
+    }
+  ],
+  "interpretation_limits": [
+    "A point/circle in an official alert is an event-location lead, not a mapped flood extent.",
+    "A dated alert does not provide a contemporaneous independent pixel-label sample or water-depth truth.",
+    "This exploratory source query was performed after inspecting prior study evidence and is not confirmatory validation.",
+    "The query screens only the requested date; it does not estimate event frequency or complete temporal coverage.",
+    "No Singapore site becomes confirmatory-eligible from this alert alone."
+  ]
+}

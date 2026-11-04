@@ -16,6 +16,7 @@ FIELDS = [
     "value_integration_question", "evidence_url", "status",
     "need_evidence_type", "empirical_evidence", "value_dimensions",
     "validation_path", "scope_limit", "secondary_evidence_url",
+    "event_reference_url", "event_reference_date", "event_reference_audit",
 ]
 
 
@@ -33,6 +34,9 @@ def build_rows(areas: list[dict], evidence_records: list[dict]) -> list[dict]:
         row["validation_path"] = evidence["validation_path"]
         row["scope_limit"] = evidence["scope_limit"]
         row["secondary_evidence_url"] = evidence.get("secondary_evidence_url", "")
+        row["event_reference_url"] = evidence.get("event_reference_url", "")
+        row["event_reference_date"] = evidence.get("event_reference_date", "")
+        row["event_reference_audit"] = evidence.get("event_reference_audit", "")
         rows.append(row)
     return rows
 

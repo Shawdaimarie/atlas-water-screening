@@ -13,6 +13,7 @@ FIELDS = [
     "value_integration_question", "evidence_url", "status",
     "need_evidence_type", "empirical_evidence", "value_dimensions",
     "validation_path", "scope_limit", "secondary_evidence_url",
+    "event_reference_url", "event_reference_date", "event_reference_audit",
 ]
 VALUE_CHAIN_START = "<!-- GENERATED PUBLIC VALUE CHAIN START -->"
 VALUE_CHAIN_END = "<!-- GENERATED PUBLIC VALUE CHAIN END -->"
@@ -47,6 +48,9 @@ def update(html: str, areas: list[dict]) -> str:
         record["validation_path"] = e["validation_path"]
         record["scope_limit"] = e["scope_limit"]
         record["secondary_evidence_url"] = e.get("secondary_evidence_url", "")
+        record["event_reference_url"] = e.get("event_reference_url", "")
+        record["event_reference_date"] = e.get("event_reference_date", "")
+        record["event_reference_audit"] = e.get("event_reference_audit", "")
         embedded.append(record)
     data_literal = json.dumps(embedded, ensure_ascii=False, separators=(",", ":"))
     html = html[:start] + "const studyAreas=" + data_literal + html[end:]
@@ -66,7 +70,7 @@ def update(html: str, areas: list[dict]) -> str:
     )
     prior_schemas = [
         "const cols=" + "[" + ",".join("'" + field + "'" for field in schema_fields) + "];const rows=[cols,...studyAreas.map(a=>cols.map(k=>a[k]))];"
-        for schema_fields in (old_fields, FIELDS[:-6], FIELDS)
+        for schema_fields in (old_fields, FIELDS[:-3], FIELDS[:-6], FIELDS)
     ]
     schema_to_replace = next((schema for schema in prior_schemas if html.count(schema) == 1), None)
     if schema_to_replace is None:
@@ -86,7 +90,9 @@ def update(html: str, areas: list[dict]) -> str:
         raise ValueError("Expected an existing or already-updated candidate detail card")
     old_source = '<a class="study-source" href="${a.evidence_url}" target="_blank" rel="noopener">Open primary evidence ↗</a>'
     new_source = ('<a class="study-source" href="${a.evidence_url}" target="_blank" rel="noopener">Open primary evidence ↗</a>'
-                  '${a.secondary_evidence_url?` <a class="study-source" href="${a.secondary_evidence_url}" target="_blank" rel="noopener">Open supporting evidence ↗</a>`:""}')
+                  '${a.secondary_evidence_url?` <a class="study-source" href="${a.secondary_evidence_url}" target="_blank" rel="noopener">Open supporting evidence ↗</a>`:""}'
+                  '${a.event_reference_url?` <a class="study-source" href="${a.event_reference_url}" target="_blank" rel="noopener">Open event source ↗</a>`:""}'
+                  '${a.event_reference_audit?` <a class="study-source" href="${a.event_reference_audit}" target="_blank" rel="noopener">Open event audit ↗</a>`:""}')
     if html.count(new_source) == 0 and html.count(old_source) == 1:
         html = html.replace(old_source, new_source, 1)
     elif html.count(new_source) != 1:
