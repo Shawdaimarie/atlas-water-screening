@@ -93,6 +93,27 @@
       "screening_outcome": "returned_rows_are_outside_requested_window",
       "maximum_reported_state": 3,
       "request_url": "https://data.petabencana.id/floods/archive?start=2026-01-01T00%3A00%3A00%2B0700&end=2026-01-08T23%3A00%3A00%2B0700"
+    },
+    {
+      "label": "Jakarta BPBD 22-26 January 2026 event window",
+      "request_start": "2026-01-22T00:00:00+0700",
+      "request_end": "2026-01-26T03:00:00+0700",
+      "response_sha256": "b80fbf76ed846cb7111e754a296596dcfd375e3fb55421bfc7d94efd2931f3cb",
+      "returned_area_count": 5,
+      "returned_distinct_area_id_count": 5,
+      "returned_area_id_sample": [
+        "26212",
+        "26983",
+        "4157",
+        "5394",
+        "5671"
+      ],
+      "returned_update_date_min": "2022-10-07",
+      "returned_update_date_max": "2022-10-07",
+      "returned_rows_with_update_date_in_requested_window": 0,
+      "screening_outcome": "returned_rows_are_outside_requested_window",
+      "maximum_reported_state": 3,
+      "request_url": "https://data.petabencana.id/floods/archive?end=2026-01-26T03%3A00%3A00%2B0700&start=2026-01-22T00%3A00%3A00%2B0700"
     }
   ],
   "interpretation_limits": [
