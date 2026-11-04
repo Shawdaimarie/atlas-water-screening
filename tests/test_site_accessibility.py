@@ -23,3 +23,11 @@ def test_site_small_text_contrast_for_accessibility_statuses():
     assert contrast_ratio("#875c29", "#f7eddf") >= 4.5
     assert contrast_ratio("#0e6b5e", "#f7f9f7") >= 4.5
     assert contrast_ratio("#596861", "#ffffff") >= 4.5
+
+
+def test_site_has_a_keyboard_skip_link_and_minimum_content_link_targets():
+    site = (ROOT / "dist/index.html").read_text()
+    assert '<a class="skip-link" href="#mainContent">Skip to main content</a>' in site
+    assert '<main class="main" id="mainContent" tabindex="-1">' in site
+    assert ".skip-link:focus{top:12px}" in site
+    assert "a:not(.skip-link){display:inline-block;min-height:24px;line-height:1.4;padding:3px 2px}" in site
