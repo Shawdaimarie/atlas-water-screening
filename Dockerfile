@@ -8,7 +8,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 COPY requirements-runtime.lock ./requirements-runtime.lock
 RUN python -m pip install --no-cache-dir --require-hashes -r requirements-runtime.lock \
-    && printf '%s\\n' 'setuptools==78.1.1 --hash=sha256:c3a9c4211ff4c309edb8b8c4f1cbfa7ae324c4ba9f91ff254e3d305b9fd54561' > /tmp/setuptools.lock \
+    && printf '%s\n' 'setuptools==78.1.1 --hash=sha256:c3a9c4211ff4c309edb8b8c4f1cbfa7ae324c4ba9f91ff254e3d305b9fd54561' > /tmp/setuptools.lock \
     && python -m pip install --no-cache-dir --no-deps --require-hashes -r /tmp/setuptools.lock \
     && rm /tmp/setuptools.lock \
     && groupadd --gid 10001 atlas \
