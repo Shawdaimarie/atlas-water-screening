@@ -20,7 +20,7 @@ Previous release record: Site v46 deployed from source commit `43fed86571ee3c4de
 
 | Category | Points | Evidence and result |
 |---|---:|---|
-| Functionality | 15/20 | Three bounded demo criteria pass: supported scenario/area interaction; synthetic method comparison and asset inspection; labeled CSV exports. The 5-point real pinned historical-observation workflow is pending; no real raster or event has been reproduced. |
+| Functionality | 15/20 | Three bounded demo criteria pass: supported scenario/area interaction; synthetic method comparison and asset inspection; labeled CSV exports. The 5-point in-scope real historical-observation workflow remains pending. A six-raster NASA pilot processed a Kerrville-area AOI outside the registered 8+8 set and correctly withheld comparison because only two dates per period passed the 80% QA gate; Tampa EGIS audits are sparse point-return and coverage diagnostics, not a completed registered-site observation workflow. |
 | Reliability | 10/15 | Identical API analysis requests return identical results. Hash-verified backup and restore of a synthetic manifested run passed, including corruption and unsafe-archive rejection. Source inputs are excluded and production persistence remains absent. |
 | Security | 15/20 | Private Site access control (5), API input/body/host/CORS boundary checks (5), and hash-locked dependency plus secret scanning (5) pass. Production API authentication/isolation remains pending. |
 | Performance | 5/10 | Local fixture API sequential p95 target (<100 ms) passed; the separate throughput/cost criterion remains pending because there is no cost model for deployed raster workloads. |
