@@ -14,7 +14,7 @@
 
 ## Canonical score and unmet requirements
 
-The evidence-only score is now **55/100 provisional** after a stricter source-alignment review removed the 5-point exact-source clean-checkout criterion. Confirmatory enrollment remains **0/16**. The live Site is operational, but its source SHA is not present in the canonical private GitHub repository and this dirty local checkout cannot reproduce the exact published package.
+The exact source-alignment issue was resolved: the Site-linked clean checkout and canonical GitHub main contain byte-identical `dist` and `.openai` trees at main commit `8014d08be673c3ecc9501d7fcd1a36022e4695e5`. CI passed with 157 tests and container/security checks. The evidence-only score is **60/100 provisional**; confirmatory enrollment remains **0/16**.
 
 The 8+8 candidate frame and common sampling/measurement protocol exist, but comparable event/baseline OPERA observations and independent, licensed, adjudicated reference labels have not been established across the 16 areas. The score also lacks completed user-task/usability research, four-provider cloud deployments and their production security evidence, a deployed workload/cost capacity result, and independent reproduction. Therefore a 100/100 score cannot be claimed from current evidence.
 

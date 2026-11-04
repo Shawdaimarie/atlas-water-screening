@@ -26,7 +26,7 @@ Replayed the deployed page in the authenticated browser and inspected its render
 
 ## Interpretation
 
-The production walkthrough and its tested controls are operational. The tested analysis remains generated synthetic fixture data; this replay does not demonstrate NASA retrieval, validated flood classification, asset exposure in the 16 candidate areas, or the full scientific study. The current worktree full test suite separately passed **157 tests** on macOS/Python 3.9 (one existing urllib3/LibreSSL warning). After the later exact-source audit, the canonical score is **55/100 provisional** and confirmatory enrollment remains **0/16**.
+The production walkthrough and its tested controls are operational. The tested analysis remains generated synthetic fixture data; this replay does not demonstrate NASA retrieval, validated flood classification, asset exposure in the 16 candidate areas, or the full scientific study. The current worktree full test suite separately passed **157 tests** on macOS/Python 3.9 (one existing urllib3/LibreSSL warning). After the later exact-source audit, the canonical score is **60/100 provisional** after source recovery and passing CI; confirmatory enrollment remains **0/16**.
 
 ## Remaining gates
 
