@@ -101,6 +101,15 @@ account_baseline:
 
 providers:
   google_cloud:
+    terraform_profile:
+      directory: deployment/cloud/terraform/gke
+      schema_validated: true
+      schema_validation_platform: linux_arm64
+      provider_checksum_platforms: [linux_amd64, linux_arm64]
+      provider_version: "7.22.0"
+      resource_creation_authorized_default: false
+      remote_state_configured: false
+      cloud_resources_created: false
     display_name: Google Cloud
     cluster: GKE
     registry: Artifact Registry
@@ -122,6 +131,15 @@ providers:
       - cloud_kms_secret_manager_and_vpc_firewall_check
     readiness: pending_account_and_trust_configuration
   aws:
+    terraform_profile:
+      directory: deployment/cloud/terraform/eks
+      schema_validated: true
+      schema_validation_platform: linux_arm64
+      provider_checksum_platforms: [linux_amd64, linux_arm64]
+      provider_version: "6.21.0"
+      resource_creation_authorized_default: false
+      remote_state_configured: false
+      cloud_resources_created: false
     display_name: AWS
     cluster: EKS
     registry: ECR
@@ -143,6 +161,15 @@ providers:
       - kms_secrets_manager_and_security_group_check
     readiness: pending_account_and_trust_configuration
   microsoft_azure:
+    terraform_profile:
+      directory: deployment/cloud/terraform/aks
+      schema_validated: true
+      schema_validation_platform: linux_arm64
+      provider_checksum_platforms: [linux_amd64, linux_arm64]
+      provider_version: "4.62.0"
+      resource_creation_authorized_default: false
+      remote_state_configured: false
+      cloud_resources_created: false
     display_name: Microsoft Azure
     cluster: AKS
     registry: ACR
@@ -164,6 +191,15 @@ providers:
       - key_vault_managed_identity_and_network_policy_check
     readiness: pending_account_and_trust_configuration
   oracle_cloud:
+    terraform_profile:
+      directory: deployment/cloud/terraform/oke
+      schema_validated: true
+      schema_validation_platform: linux_arm64
+      provider_checksum_platforms: [linux_amd64, linux_arm64]
+      provider_version: "8.29.0"
+      resource_creation_authorized_default: false
+      remote_state_configured: false
+      cloud_resources_created: false
     display_name: Oracle Cloud Infrastructure
     cluster: OKE
     registry: OCI Container Registry

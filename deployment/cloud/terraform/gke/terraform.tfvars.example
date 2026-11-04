@@ -1,0 +1,12 @@
+project_id                 = "REPLACE_WITH_APPROVED_PROJECT_ID"
+region                     = "REPLACE_WITH_OWNER_APPROVED_REGION"
+cluster_name               = "atlas-staging"
+network                    = "REPLACE_WITH_VPC_SELF_LINK"
+subnetwork                 = "REPLACE_WITH_PRIVATE_SUBNET_SELF_LINK"
+pods_range_name            = "REPLACE_WITH_PODS_SECONDARY_RANGE_NAME"
+services_range_name        = "REPLACE_WITH_SERVICES_SECONDARY_RANGE_NAME"
+master_ipv4_cidr_block      = "10.254.0.0/28"
+node_service_account        = "REPLACE_WITH_LEAST_PRIVILEGE_NODE_SERVICE_ACCOUNT"
+node_machine_type           = "REVIEW_COST_AND_QUOTA_BEFORE_SELECTING"
+node_count                  = 2
+resource_creation_authorized = false

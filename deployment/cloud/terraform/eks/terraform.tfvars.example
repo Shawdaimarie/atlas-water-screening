@@ -1,0 +1,13 @@
+region                       = "REPLACE_WITH_OWNER_APPROVED_REGION"
+cluster_name                 = "atlas-staging"
+vpc_id                       = "REPLACE_WITH_VPC_ID"
+private_subnet_ids           = ["REPLACE_WITH_PRIVATE_SUBNET_A", "REPLACE_WITH_PRIVATE_SUBNET_B"]
+cluster_role_arn             = "REPLACE_WITH_PRECREATED_EKS_CLUSTER_ROLE_ARN"
+node_role_arn                = "REPLACE_WITH_PRECREATED_NODE_ROLE_ARN"
+kms_key_arn                  = "REPLACE_WITH_CUSTOMER_MANAGED_KMS_KEY_ARN"
+kubernetes_version           = "REPLACE_WITH_APPROVED_SUPPORTED_VERSION"
+instance_types               = ["REVIEW_COST_AND_QUOTA_BEFORE_SELECTING"]
+desired_size                 = 2
+tags                         = { Application = "ATLAS", Environment = "staging", ManagedBy = "Terraform" }
+release_operator_role_arn    = "REPLACE_WITH_PROTECTED_GITHUB_OIDC_DEPLOY_ROLE_ARN"
+resource_creation_authorized = false

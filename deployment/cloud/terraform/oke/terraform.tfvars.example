@@ -1,0 +1,12 @@
+compartment_id                 = "REPLACE_WITH_APPROVED_COMPARTMENT_OCID"
+region                         = "REPLACE_WITH_OWNER_APPROVED_REGION"
+cluster_name                   = "atlas-staging"
+vcn_id                         = "REPLACE_WITH_APPROVED_VCN_OCID"
+private_endpoint_subnet_id     = "REPLACE_WITH_PRIVATE_CONTROL_PLANE_SUBNET_OCID"
+private_endpoint_nsg_ids       = ["REPLACE_WITH_RESTRICTED_ENDPOINT_NSG_OCID"]
+private_node_subnet_ids_by_ad  = { "REPLACE_WITH_AVAILABILITY_DOMAIN_A" = "REPLACE_WITH_PRIVATE_NODE_SUBNET_OCID_A", "REPLACE_WITH_AVAILABILITY_DOMAIN_B" = "REPLACE_WITH_PRIVATE_NODE_SUBNET_OCID_B" }
+kubernetes_version             = "REPLACE_WITH_APPROVED_SUPPORTED_VERSION"
+node_shape                     = "REVIEW_COST_AND_QUOTA_BEFORE_SELECTING"
+node_image_id                  = "REPLACE_WITH_APPROVED_IMAGE_OCID"
+node_count                      = 2
+resource_creation_authorized    = false
