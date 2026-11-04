@@ -21,6 +21,24 @@ jobs:
         run: python -m pip install --require-hashes -r requirements-dev.lock -r requirements-reference-audit.lock
       - name: Run unit and fixture tests
         run: python -m pytest -q
+      - name: Install checksum-pinned Terraform 1.17.1
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/terraform_1.17.1_linux_amd64.zip"
+          curl --fail --silent --show-error --location --proto '=https' --tlsv1.2 \
+            https://releases.hashicorp.com/terraform/1.17.1/terraform_1.17.1_linux_amd64.zip \
+            --output "$archive"
+          echo "4638628058e71a55212b1c563712eac03b902128f40740f3dc8174df12135061  $archive" | sha256sum --check
+          unzip -q "$archive" -d "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP" >> "$GITHUB_PATH"
+      - name: Validate all provider cluster profiles without credentials
+        run: |
+          set -euo pipefail
+          terraform fmt -check -recursive deployment/cloud/terraform
+          for profile in gke eks aks oke; do
+            terraform -chdir="deployment/cloud/terraform/$profile" init -backend=false -input=false -lockfile=readonly
+            terraform -chdir="deployment/cloud/terraform/$profile" validate -no-color
+          done
       - name: Screen GEOID-Flood footprints against the 16 study areas
         run: |
           python scripts/audit_geoid_flood_overlap.py --output "$RUNNER_TEMP/atlas-geoid-flood-overlap-audit.json"

@@ -11,3 +11,13 @@ work/
 deployment/cloud/owner-inputs.local.yaml
 
 # Generated research deliverables are tracked intentionally.
+
+# Terraform working data and state. Provider lock files remain tracked.
+**/.terraform/**
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+terraform.tfvars
+*.auto.tfvars

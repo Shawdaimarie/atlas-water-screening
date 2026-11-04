@@ -1,0 +1,29 @@
+# Apply once through a separately approved cluster administrator identity.
+# Cloud-specific identity setup maps only the protected release operator to
+# the atlas-deployers group. The release identity cannot edit RBAC or secrets.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: atlas-release-deployer
+  namespace: atlas
+rules:
+  - apiGroups: ["apps"]
+    resources: ["deployments", "replicasets"]
+    verbs: ["get", "list", "watch", "create", "update", "patch"]
+  - apiGroups: [""]
+    resources: ["pods", "services", "configmaps"]
+    verbs: ["get", "list", "watch", "create", "update", "patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: atlas-release-deployer
+  namespace: atlas
+subjects:
+  - kind: Group
+    name: atlas-deployers
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: atlas-release-deployer
+  apiGroup: rbac.authorization.k8s.io
