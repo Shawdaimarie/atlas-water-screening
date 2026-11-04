@@ -98,6 +98,79 @@ def summarize(matches: list[dict[str, Any]], areas: list[dict[str, Any]]) -> lis
     return output
 
 
+def rank_acquisition_opportunities(
+    matches: list[dict[str, Any]], areas: list[dict[str, Any]], limit: int = 5,
+) -> list[dict[str, Any]]:
+    """Rank event-discovery leads against product-date metadata, without viewing values.
+
+    This is a date-level archive opportunity screen only. Groundsource intervals
+    are news-derived leads, and the register stores dates (not acquisition times
+    or quality masks), so no candidate here can pass the protocol's independent
+    event-reference or QA-valid observation gates.
+    """
+    ranked_areas = []
+    for area in areas:
+        acquisitions = sorted({
+            dt.date.fromisoformat(value[:10])
+            for value in area.get("acquisition_dates", [])
+            if _date(value)
+        })
+        candidates = []
+        seen = set()
+        for event in matches:
+            if event["city"] != area["city"] or not event.get("event_id"):
+                continue
+            key = event["event_id"]
+            if key in seen:
+                continue
+            seen.add(key)
+            start = dt.date.fromisoformat(event["start_date"])
+            end = dt.date.fromisoformat(event["end_date"])
+            start_nearest = min((abs((d - start).days) for d in acquisitions), default=None)
+            event_dates = [d for d in acquisitions if start <= d <= end]
+            baseline_start = start - dt.timedelta(days=30)
+            baseline_end = start - dt.timedelta(days=1)
+            baseline_dates = [d for d in acquisitions if baseline_start <= d <= baseline_end]
+            followup_start = end + dt.timedelta(days=1)
+            followup_end = end + dt.timedelta(days=30)
+            followup_dates = [d for d in acquisitions if followup_start <= d <= followup_end]
+            candidates.append({
+                "event_id": key,
+                "reported_start_date": event["start_date"],
+                "reported_end_date": event["end_date"],
+                "reported_interval_days": (end - start).days + 1,
+                "reported_area_km2": event.get("reported_area_km2"),
+                "nearest_product_date_offset_calendar_days": start_nearest,
+                "product_dates_within_reported_event_interval": [d.isoformat() for d in event_dates],
+                "pre_event_30d_product_dates": [d.isoformat() for d in baseline_dates],
+                "post_event_30d_product_dates": [d.isoformat() for d in followup_dates],
+                "has_calendar_date_match_within_1_day": start_nearest is not None and start_nearest <= 1,
+                "has_3_pre_event_metadata_dates": len(baseline_dates) >= 3,
+                "has_3_post_event_metadata_dates": len(followup_dates) >= 3,
+                "screen_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+            })
+        candidates.sort(key=lambda row: (
+            row["nearest_product_date_offset_calendar_days"] is None,
+            row["nearest_product_date_offset_calendar_days"] if row["nearest_product_date_offset_calendar_days"] is not None else 10**9,
+            -len(row["pre_event_30d_product_dates"]),
+            -len(row["post_event_30d_product_dates"]),
+            row["reported_start_date"],
+            row["event_id"],
+        ))
+        ranked_areas.append({
+            "city": area["city"],
+            "region": area["region"],
+            "candidate_event_count": len(candidates),
+            "events_with_product_date_within_1_day": sum(c["has_calendar_date_match_within_1_day"] for c in candidates),
+            "events_with_3_pre_and_post_metadata_dates": sum(
+                c["has_3_pre_event_metadata_dates"] and c["has_3_post_event_metadata_dates"]
+                for c in candidates
+            ),
+            "top_candidates": candidates[:limit],
+        })
+    return ranked_areas
+
+
 def audit(
     register_path: Path = REGISTER_PATH,
     api_get: Any | None = None,
@@ -144,7 +217,7 @@ def audit(
     matches = intersecting_records(rows, areas)
     area_results = summarize(matches, areas)
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "audit_id": "atlas-groundsource-event-coverage-audit",
         "generated_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
         "source": {
@@ -166,6 +239,11 @@ def audit(
             "source_max_available_event_date": WINDOW_END,
         },
         "spatial_test": "WKB event geometry intersects each fixed WGS84 AOI bounding envelope",
+        "acquisition_match_method": (
+            "Rank Groundsource event-discovery records using the closest OPERA metadata date to the reported start date, "
+            "then count acquisition dates in fixed 30-day pre-event and post-event windows. Date-only matching is not "
+            "a timestamp match and does not establish an independent event reference or QA-valid observation."
+        ),
         "interpretation_limit": (
             "Groundsource records are machine-extracted from news reports and geolocated for event discovery. "
             "Their geometries are not satellite-derived inundation boundaries, field observations, independent "
@@ -180,6 +258,16 @@ def audit(
             "distinct_event_ids_across_area_matches": len({m["event_id"] for m in matches if m["event_id"]}),
         },
         "areas": area_results,
+        "acquisition_opportunity_screen": {
+            "candidate_count_basis": "distinct intersecting Groundsource event IDs per fixed AOI",
+            "calendar_precision_limit": "OPERA register contains calendar dates only; exact granule timestamps were not matched here",
+            "interpretation_limit": (
+                "These are ranked archive-discovery leads only. News-derived event records are not official event verification, "
+                "inundation labels, gauge observations, independent truth, or evidence of QA-valid samples. Candidate ranking "
+                "uses acquisition metadata only and does not inspect product values."
+            ),
+            "areas": rank_acquisition_opportunities(matches, areas),
+        },
     }
 
 

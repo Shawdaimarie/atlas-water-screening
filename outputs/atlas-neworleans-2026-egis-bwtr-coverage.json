@@ -1,0 +1,86 @@
+{
+  "area": {
+    "city": "New Orleans",
+    "fixed_aoi_bbox_wgs84": [
+      -90.201096,
+      29.838811,
+      -89.941904,
+      30.063389
+    ],
+    "region": "United States",
+    "register_sha256": "c44f866942a2f99f01141fb6a7baeea09a9b61a57db1beafb77a7f686de646d6"
+  },
+  "audit": "NASA EGIS New Orleans Louisiana flood BWTR fixed-area coverage diagnostic",
+  "centre_point_crosscheck": {
+    "catalog_object_ids": [
+      22
+    ],
+    "latitude": 29.9511,
+    "longitude": -90.0715,
+    "value": "NoData"
+  },
+  "confirmatory_eligible": false,
+  "created_at_utc": "2026-11-04T07:58:38.740946+00:00",
+  "export": {
+    "class_counts": {
+      "255": 927369
+    },
+    "crs": "EPSG:3857",
+    "export_sha256": "a8fed071d2fbc307ec55f7d1c0466ff29010f83bd1b892d7f375498d66c42168",
+    "geotiff_nodata_tag": null,
+    "height": 963,
+    "invalid_mask_or_fill_pixels": 927369,
+    "pixel_count": 927369,
+    "pixel_size_m": [
+      29.961819094668606,
+      29.961819094669572
+    ],
+    "valid_bwtr_fraction": 0.0,
+    "valid_bwtr_pixels": 0,
+    "width": 963
+  },
+  "export_design": {
+    "bbox_3857": [
+      -10041140.075715186,
+      3482847.2816828797,
+      -10012286.954257496,
+      3511700.5134710465
+    ],
+    "height": 963,
+    "interpolation": "nearest-neighbor",
+    "locked_raster_id": 22,
+    "output_crs": "EPSG:3857",
+    "requested_image_format": "GeoTIFF",
+    "requested_pixel_type": "U8",
+    "sample_unit": "all raster grid cells returned over the registered bbox; not the product's native UTM grid",
+    "target_resolution_m": 29.97600242,
+    "width": 963
+  },
+  "interpretation": "The catalog item footprint intersects the registered New Orleans box, but the locked BWTR export returned no valid 0/1 classifications on the requested approximately 30 m EPSG:3857 grid; the city-centre identify request also returned NoData. This is missing product coverage, not evidence that the area was dry or that no flooding occurred.",
+  "limits": [
+    "The public response map is preliminary and unvalidated; it is not independent flood truth.",
+    "The catalog item name encodes a June 21\u201327 acquisition interval, not a per-pixel acquisition timestamp.",
+    "The interval is not demonstrably event-time matched to the City's June 18 report under the protocol's 24-hour primary rule.",
+    "One missing-data screen does not establish adequate temporal sampling, classification accuracy, asset exposure, or confirmatory eligibility.",
+    "No additional result is generalized from this single event or site."
+  ],
+  "schema_version": 1,
+  "source": {
+    "catalog_query_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202606_FLOOD_LA/202610_opera_dswx_s1/ImageServer/query",
+    "export_endpoint": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202606_FLOOD_LA/202610_opera_dswx_s1/ImageServer/exportImage",
+    "identify_endpoint": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202606_FLOOD_LA/202610_opera_dswx_s1/ImageServer/identify",
+    "independent_event_record": "https://nola.gov/next/mayors-office/news/articles/june/2026-06-18-city-of-new-orleans-provides-update-post-severe-weather-event/",
+    "independent_event_record_summary": "City of New Orleans reported flash flooding and a continuing flood watch in its June 18, 2026 update.",
+    "item": {
+      "aoi_center_inside_catalog_footprint": true,
+      "category": 1,
+      "name": "OPERA_L3_DSWx-S1_T15RYP_20260621T001010Z_20260627T005829Z_S1A_30_v1.0_B02_BWTR",
+      "object_id": 22,
+      "product_name": "Binary Water (BWTR)"
+    },
+    "response_interval_encoded_in_item_name": "2026-06-21T00:10:10Z to 2026-06-27T00:58:29Z",
+    "response_product": "OPERA DSWx-S1 BWTR",
+    "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202606_FLOOD_LA/202610_opera_dswx_s1/ImageServer",
+    "source_caveat": "NASA service describes rapid-response maps as preliminary and unvalidated."
+  }
+}

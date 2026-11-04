@@ -1,0 +1,204 @@
+{
+  "audit_id": "jakarta-bpbd-2026-01-fixed-aoi-administrative-context-v1",
+  "generated_at_utc": "2026-11-04T06:47:52.150356+00:00",
+  "study_area": {
+    "city": "Jakarta",
+    "region": "International",
+    "aoi_bbox_wgs84": "106.732649,-6.321089,106.958551,-6.096511",
+    "nominal_area_km2": 625
+  },
+  "event": {
+    "official_interval_local_dates": [
+      "2026-01-22",
+      "2026-01-24"
+    ],
+    "bpbd_as_of_reported_inundation": "2026-01-24T08:00:00+07:00",
+    "bpbd_reported_inundated_household_units": 90,
+    "bpbd_reported_inundated_road_segments": 10,
+    "bpbd_recession_update": "2026-01-26T03:00:00+07:00",
+    "bpbd_sources": [
+      "https://bpbd.jakarta.go.id/berita/Wkk2MjIwSnZEdjhUcklsb3gwVkh1Zz09/update-info-terkini-genangan-24-januari-2026-s-d-pukul-08-00-wib",
+      "https://bpbd.jakarta.go.id/berita/WUVyVWZ0ejhuNXRSaFNLSDl6WVNMQT09/update-info-terkini-genangan-26-januari-2026-s-d-pukul-03-00-wib"
+    ]
+  },
+  "boundary_source": {
+    "url": "https://gis-dpmptsp.jakarta.go.id/arcgis/rest/services/Hosted/Batas_Administrasi_Kelurahan_DKI_Jakarta/FeatureServer/85",
+    "layer_id": 85,
+    "layer_name": "Batas Administrasi Kelurahan DKI Jakarta",
+    "service_item_id": "b5502a02bdad4964a81eb93a1fb03597",
+    "spatial_reference": "EPSG:4326 requested from service layer EPSG:32748",
+    "query_response_sha256": "1d63c42d7990b91e3af776bef3307659e1762a90cc1149117f676a93a1241d3f",
+    "query_feature_count": 246
+  },
+  "spatial_screen": {
+    "reported_affected_kelurahan_count": 21,
+    "reported_areas_returned_by_aoi_intersection_query_count": 20,
+    "not_returned_by_aoi_intersection_query": [
+      {
+        "administrative_city": "JAKARTA BARAT",
+        "kelurahan": "DURI KOSAMBI"
+      }
+    ],
+    "positive_area_intersections": [
+      {
+        "administrative_city": "JAKARTA BARAT",
+        "kelurahan": "JELAMBAR",
+        "kecamatan": "GROGOL PETAMBURAN",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.0001288468860625824
+      },
+      {
+        "administrative_city": "JAKARTA BARAT",
+        "kelurahan": "JOGLO",
+        "kecamatan": "KEMBANGAN",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00023474000045248356
+      },
+      {
+        "administrative_city": "JAKARTA BARAT",
+        "kelurahan": "KAPUK",
+        "kecamatan": "CENGKARENG",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00042482456142434383
+      },
+      {
+        "administrative_city": "JAKARTA BARAT",
+        "kelurahan": "KEDAUNG KALI ANGKE",
+        "kecamatan": "CENGKARENG",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00024176713434428168
+      },
+      {
+        "administrative_city": "JAKARTA BARAT",
+        "kelurahan": "KEDOYA SELATAN",
+        "kecamatan": "KEBON JERUK",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00021279016792766445
+      },
+      {
+        "administrative_city": "JAKARTA BARAT",
+        "kelurahan": "KEDOYA UTARA",
+        "kecamatan": "KEBON JERUK",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.0002475137220028534
+      },
+      {
+        "administrative_city": "JAKARTA BARAT",
+        "kelurahan": "KEMBANGAN SELATAN",
+        "kecamatan": "KEMBANGAN",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00024183082188178448
+      },
+      {
+        "administrative_city": "JAKARTA BARAT",
+        "kelurahan": "KEMBANGAN UTARA",
+        "kecamatan": "KEMBANGAN",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00030342397207952607
+      },
+      {
+        "administrative_city": "JAKARTA BARAT",
+        "kelurahan": "MERUYA SELATAN",
+        "kecamatan": "KEMBANGAN",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00014819289717880952
+      },
+      {
+        "administrative_city": "JAKARTA BARAT",
+        "kelurahan": "RAWA BUAYA",
+        "kecamatan": "CENGKARENG",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00020307424527483527
+      },
+      {
+        "administrative_city": "JAKARTA SELATAN",
+        "kelurahan": "KEBON BARU",
+        "kecamatan": "TEBET",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.0001031040441485224
+      },
+      {
+        "administrative_city": "JAKARTA SELATAN",
+        "kelurahan": "PEJATEN TIMUR",
+        "kecamatan": "PASAR MINGGU",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00023570624737863385
+      },
+      {
+        "administrative_city": "JAKARTA SELATAN",
+        "kelurahan": "RAWA JATI",
+        "kecamatan": "PANCORAN",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00012074566693090834
+      },
+      {
+        "administrative_city": "JAKARTA TIMUR",
+        "kelurahan": "BIDARA CINA",
+        "kecamatan": "JATINEGARA",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00010187859126380203
+      },
+      {
+        "administrative_city": "JAKARTA TIMUR",
+        "kelurahan": "CAWANG",
+        "kecamatan": "KRAMAT JATI",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00015457246047911123
+      },
+      {
+        "administrative_city": "JAKARTA TIMUR",
+        "kelurahan": "CILILITAN",
+        "kecamatan": "KRAMAT JATI",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.0001444583059936547
+      },
+      {
+        "administrative_city": "JAKARTA TIMUR",
+        "kelurahan": "CIPINANG MELAYU",
+        "kecamatan": "MAKASAR",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00021147790306311927
+      },
+      {
+        "administrative_city": "JAKARTA TIMUR",
+        "kelurahan": "KAMPUNG MELAYU",
+        "kecamatan": "JATINEGARA",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 3.9201871915343934e-05
+      },
+      {
+        "administrative_city": "JAKARTA TIMUR",
+        "kelurahan": "RAWA TERATE",
+        "kecamatan": "CAKUNG",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.00033953645767085936
+      },
+      {
+        "administrative_city": "JAKARTA UTARA",
+        "kelurahan": "KAPUK MUARA",
+        "kecamatan": "PENJARINGAN",
+        "positive_area_intersection": true,
+        "intersection_area_degrees_squared": 0.0007481912454373067
+      }
+    ],
+    "positive_area_intersection_count": 20
+  },
+  "opera_dates_near_event": [
+    "2026-01-18",
+    "2026-01-21",
+    "2026-01-23",
+    "2026-01-25",
+    "2026-01-26",
+    "2026-01-30"
+  ],
+  "interpretation": {
+    "finding": "A positive-area intersection means an officially listed affected kelurahan polygon overlaps the fixed AOI; it does not locate the reported inundated RT, household, street, or water within that polygon.",
+    "not_returned_limit": "A listed area not returned by the boundary service's AOI-intersection query may lie outside the fixed box or reflect a name/boundary-source mismatch; it is not evidence that flooding did not occur.",
+    "independent_pixel_labels": false,
+    "opera_pixel_qa_performed": false,
+    "event_confirmed_for_followup": true,
+    "confirmatory_enrollment_eligible": false,
+    "score_credit": 0,
+    "next_gate": "Locate dated inundation points or licensed polygons inside the AOI, retrieve event and baseline DSWx-S1 rasters, run the preregistered BWTR QA gate, and obtain independent pixel reference labels."
+  }
+}

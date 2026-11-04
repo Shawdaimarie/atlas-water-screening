@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "atlas-raster-workload-performance",
+  "started_at_utc": "2026-11-04T06:24:02.073820+00:00",
+  "completed_at_utc": "2026-11-04T06:24:02.972625+00:00",
+  "contract": "outputs/atlas-raster-workload-performance-contract.md",
+  "python": "3.12.16 (main, Oct 28 2026, 04:37:24) [GCC 12.2.0]",
+  "platform": "Linux-7.0.14-linuxkit-aarch64-with-glibc2.36",
+  "machine": "aarch64",
+  "cpu_count_visible": 6,
+  "cgroup_cpu_max": "200000 100000",
+  "cgroup_memory_limit_bytes": "2147483648",
+  "packages": {
+    "numpy": "2.5.4",
+    "rasterio": "1.5.2"
+  },
+  "dataset": "NASA JPL/Caltech ARIA/OPERA Central Texas July 4, 2025 flood response DSWx-S1 BWTR mosaics",
+  "study_scope": "outside registered 8+8 candidate areas; technical pilot only",
+  "analysis_script_sha256": "649a96b0ca13dc6def52d2535900608757513e31e259bfb4c80ce65b444542d2",
+  "inputs": [
+    {
+      "path": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-06-17_mosaic.tif",
+      "bytes": 808967,
+      "sha256": "0eb881673a6c5a724241ad67b7f951627aff4c1d887db416f0c236d0e6f7216f"
+    },
+    {
+      "path": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-06-19_mosaic.tif",
+      "bytes": 250371,
+      "sha256": "901c1ed952808c62afb92aedf1297919276d7dd4d7aa281eb5c228519236c630"
+    },
+    {
+      "path": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-06-22_mosaic.tif",
+      "bytes": 617624,
+      "sha256": "5aba54fba7ea3510f085faa9e17b7c04e1027a81f3814b5530667be6af163980"
+    },
+    {
+      "path": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-07-01_mosaic.tif",
+      "bytes": 247526,
+      "sha256": "cef2903998ef56b846a96005dfa308c36d9dc36c8e69a2244e87ff37e7db4f97"
+    },
+    {
+      "path": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-07-04_mosaic.tif",
+      "bytes": 578772,
+      "sha256": "911df6de00d347ba6cde0ad4bc1d3fed671c2b75b9b3cdfef6ad3842a2f4f319"
+    },
+    {
+      "path": "rasters/OPERA_L3_DSWX-S1_V1_BWTR_2025-07-11_mosaic.tif",
+      "bytes": 1784905,
+      "sha256": "5aa315c6608ce69a15df91c860ce78162b6841519a5ae597658895985bf4d925"
+    }
+  ],
+  "targets": {
+    "max_latency_seconds": 10.0,
+    "max_peak_memory_bytes": 1073741824,
+    "min_serial_jobs_per_minute": 6.0,
+    "runs": 3
+  },
+  "runs": [
+    {
+      "wall_seconds": 0.302057,
+      "peak_rss_bytes": 104964096,
+      "observation_qa_sha256": "55b0abe836f8dc51b91b2f47b2ee29a010bd89930c45d1a2a371207461eb3fe5",
+      "comparison_sha256": "6cb70154410b698be219ad55b5f1fc5172ff519ed72d865dbdd3526ed3753716",
+      "qa_row_count": 6,
+      "comparison_status": "unknown_insufficient_qa_valid_dates",
+      "comparison_emitted": false
+    },
+    {
+      "wall_seconds": 0.297133,
+      "peak_rss_bytes": 102600704,
+      "observation_qa_sha256": "55b0abe836f8dc51b91b2f47b2ee29a010bd89930c45d1a2a371207461eb3fe5",
+      "comparison_sha256": "6cb70154410b698be219ad55b5f1fc5172ff519ed72d865dbdd3526ed3753716",
+      "qa_row_count": 6,
+      "comparison_status": "unknown_insufficient_qa_valid_dates",
+      "comparison_emitted": false
+    },
+    {
+      "wall_seconds": 0.298674,
+      "peak_rss_bytes": 101871616,
+      "observation_qa_sha256": "55b0abe836f8dc51b91b2f47b2ee29a010bd89930c45d1a2a371207461eb3fe5",
+      "comparison_sha256": "6cb70154410b698be219ad55b5f1fc5172ff519ed72d865dbdd3526ed3753716",
+      "qa_row_count": 6,
+      "comparison_status": "unknown_insufficient_qa_valid_dates",
+      "comparison_emitted": false
+    }
+  ],
+  "summary": {
+    "median_wall_seconds": 0.298674,
+    "max_wall_seconds": 0.302057,
+    "serial_jobs_per_minute": 200.476,
+    "max_peak_rss_bytes": 104964096,
+    "all_qa_outputs_identical": true,
+    "all_comparison_gates_identical": true
+  },
+  "passed_contract": true,
+  "limitations": [
+    "Local bounded performance check; no deployed service, concurrent-user, network, or production-scale raster test.",
+    "No metered cloud cost was incurred or estimated; this does not satisfy canonical performance or scalability criteria by itself.",
+    "Pilot mosaics are preliminary/unvalidated and outside the registered 8+8 sites; no scientific validation is implied."
+  ]
+}

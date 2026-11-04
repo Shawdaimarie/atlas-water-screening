@@ -1,0 +1,80 @@
+{
+  "audit": "ATLAS Jakarta 2024 administrative flood incident source screen",
+  "classification": {
+    "can_support": "Evidence that flood incidents were administratively reported in Jakarta districts/villages and months during 2024, subject to source-method review.",
+    "cannot_support": [
+      "Pixel-level flood extent or water-class validation.",
+      "Event-day matching to OPERA or Sentinel-1 scenes.",
+      "Fixed-AOI overlap until official administrative boundaries are crosswalked.",
+      "Comparable label coverage across all 16 study areas.",
+      "Distinct citywide event totals by summing locality-level rows.",
+      "ATLAS customer demand or measured risk reduction."
+    ],
+    "confirmatory_enrollment_eligible": false,
+    "lead_type": "Administrative incident record; nonspatial and coarsely timed.",
+    "score_credit": 0
+  },
+  "observed_data": {
+    "coordinate_or_geometry_field_present": false,
+    "csv_rows": 260,
+    "day_or_time_of_event_field_present": false,
+    "distinct_administrative_units": 138,
+    "distinct_kecamatan": 50,
+    "distinct_kelurahan": 138,
+    "distinct_reporting_periods": 4,
+    "event_count_sum_across_source_rows": 500,
+    "event_count_sum_is_distinct_regional_events": false,
+    "event_months_present": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12
+    ],
+    "period_unit_keys_with_multiple_rows": 60,
+    "quarterly_extracts": {
+      "202403": 119,
+      "202406": 51,
+      "202409": 44,
+      "202412": 46
+    },
+    "reported_water_depth_values_are_qualitative_ranges": true,
+    "unique_period_kecamatan_kelurahan_keys": 184
+  },
+  "reuse_and_quality_gates": {
+    "explicit_reuse_license_verified": false,
+    "fixed_aoi_boundary_overlap_verified": false,
+    "next_steps": [
+      "Request the data dictionary, incident aggregation method, and written reuse/commercial terms from BPBD DKI Jakarta.",
+      "Obtain a versioned official kelurahan boundary layer and perform a preregistered fixed-AOI overlay.",
+      "Obtain event-day or finer timestamped records before attempting scene matching.",
+      "Keep this source separate from pixel-reference labels unless independent spatial observations are provided."
+    ],
+    "package_isopen_flag": false,
+    "package_license_title": null,
+    "portal_describes_dataset_as_open": true,
+    "portal_notice_says_sdi_principles_are_still_being_fulfilled": true,
+    "raw_data_quality_and_collection_method_independently_reviewed": false,
+    "raw_source_redistributed": false
+  },
+  "source": {
+    "csv_resource_id": "c74119df-4e30-4873-8ef0-b2a8222566fd",
+    "csv_resource_url": "https://satudata.jakarta.go.id/backend/restapi/v1/datasets/export/ceaef86431726d799e14c6b9d5f60f49/data-kejadian-bencana-banjir-tahun-2024.csv",
+    "dataset_id": "01f3d0d2-c2d3-401e-9af5-f053ba0e93f6",
+    "dataset_modified": "2026-09-03",
+    "dataset_page": "https://data.go.id/dataset/dataset/data-kejadian-bencana-banjir-tahun-2024",
+    "dataset_title": "Data Kejadian Bencana Banjir Tahun 2024",
+    "official_portal_page": "https://satudata.jakarta.go.id/open-data/detail/data-kejadian-bencana-banjir-tahun-2024",
+    "publisher": "Badan Penanggulangan Bencana Daerah Provinsi DKI Jakarta (BPBD DKI Jakarta)",
+    "raw_csv_sha256": "679a1bdcee4d557c8244c7530f3c789f02605870bd7d6dae74018be1097859f8",
+    "resource_modified": "2026-06-03",
+    "retrieved_date": "2026-11-03",
+    "xlsx_resource_id": "1ed4f242-78f0-430a-bdd7-b5b443cae387"
+  }
+}

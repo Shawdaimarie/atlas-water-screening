@@ -1,0 +1,887 @@
+{
+  "areas": [
+    {
+      "all_opera_catalog_records": 0,
+      "city": "Houston",
+      "records": [],
+      "region": "United States",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 0
+    },
+    {
+      "all_opera_catalog_records": 6,
+      "city": "Miami",
+      "records": [
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1728259200000,
+            "date_utc": "2024-10-07",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx_HLS_WTR_20240927_20241007_mosaic",
+            "object_id": 1,
+            "product_name": "WTR mosaic"
+          },
+          "city": "Miami",
+          "region": "United States",
+          "service_folder": "DISASTERS_202410_HURRICANE_MILTON",
+          "service_name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": true,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1727913600000,
+            "date_utc": "2024-10-03",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx_S1_WTR_20241003_mosaic",
+            "object_id": 2,
+            "product_name": "WTR mosaic"
+          },
+          "city": "Miami",
+          "region": "United States",
+          "service_folder": "DISASTERS_202410_HURRICANE_MILTON",
+          "service_name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": true,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1728518400000,
+            "date_utc": "2024-10-10",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx_S1_WTR_20241010_mosaic",
+            "object_id": 4,
+            "product_name": "WTR mosaic"
+          },
+          "city": "Miami",
+          "region": "United States",
+          "service_folder": "DISASTERS_202410_HURRICANE_MILTON",
+          "service_name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": true,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1728604800000,
+            "date_utc": "2024-10-11",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx_S1_WTR_20241011_mosaic",
+            "object_id": 5,
+            "product_name": "WTR mosaic"
+          },
+          "city": "Miami",
+          "region": "United States",
+          "service_folder": "DISASTERS_202410_HURRICANE_MILTON",
+          "service_name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1727913600000,
+            "date_utc": "2024-10-03",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx-S1_BWTR_ChngMap_20241011-20241003",
+            "object_id": 6,
+            "product_name": "BWTR Change Map"
+          },
+          "city": "Miami",
+          "region": "United States",
+          "service_folder": "DISASTERS_202410_HURRICANE_MILTON",
+          "service_name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1728345600000,
+            "date_utc": "2024-10-08",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx-S1_BWTR_ChngMap_20241011-20241008",
+            "object_id": 7,
+            "product_name": "BWTR Change Map"
+          },
+          "city": "Miami",
+          "region": "United States",
+          "service_folder": "DISASTERS_202410_HURRICANE_MILTON",
+          "service_name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+        }
+      ],
+      "region": "United States",
+      "s1_water_catalog_dates": [
+        "2024-10-03",
+        "2024-10-10",
+        "2024-10-11"
+      ],
+      "s1_water_catalog_footprint_records": 3
+    },
+    {
+      "all_opera_catalog_records": 18,
+      "city": "Tampa",
+      "records": [
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": true,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1726272000000,
+            "date_utc": "2024-09-14",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "20240914_DSWx-S1_BWTR",
+            "object_id": 1,
+            "product_name": "Binary Water Detection"
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202409_HURRICANE_HELENE",
+          "service_name": "DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": true,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1726272000000,
+            "date_utc": "2024-09-14",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "20240914_DSWx-S1_WTR",
+            "object_id": 2,
+            "product_name": "Water Detection"
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202409_HURRICANE_HELENE",
+          "service_name": "DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": true,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1727308800000,
+            "date_utc": "2024-09-26",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "20240926_DSWx-S1_BWTR",
+            "object_id": 3,
+            "product_name": "Binary Water Detection"
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202409_HURRICANE_HELENE",
+          "service_name": "DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": true,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1727308800000,
+            "date_utc": "2024-09-26",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "20240926_DSWx-S1_WTR",
+            "object_id": 4,
+            "product_name": "Water Detection"
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202409_HURRICANE_HELENE",
+          "service_name": "DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1727308800000,
+            "date_utc": "2024-09-26",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx-S1_BWTR_ChngMap_20240926-20240914_v2",
+            "object_id": 5,
+            "product_name": "Change Map"
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202409_HURRICANE_HELENE",
+          "service_name": "DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1727308800000,
+            "date_utc": "2024-09-26",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_RTC_S1_20240926_mosaic_RGB_compressed",
+            "object_id": 7,
+            "product_name": null
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202409_HURRICANE_HELENE",
+          "service_name": "DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 2,
+            "date_basis": "unavailable",
+            "date_raw": null,
+            "date_utc": null,
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "",
+            "metadata_only": true,
+            "name": "Ov_i03_L04_R00000048_C00000017.tif",
+            "object_id": 15,
+            "product_name": null
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202409_HURRICANE_HELENE",
+          "service_name": "DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 2,
+            "date_basis": "unavailable",
+            "date_raw": null,
+            "date_utc": null,
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "",
+            "metadata_only": true,
+            "name": "Ov_i03_L05_R00000018_C00000007.tif",
+            "object_id": 21,
+            "product_name": null
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202409_HURRICANE_HELENE",
+          "service_name": "DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 2,
+            "date_basis": "unavailable",
+            "date_raw": null,
+            "date_utc": null,
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "",
+            "metadata_only": true,
+            "name": "Ov_i03_L06_R00000008_C00000002.tif",
+            "object_id": 25,
+            "product_name": null
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202409_HURRICANE_HELENE",
+          "service_name": "DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 2,
+            "date_basis": "unavailable",
+            "date_raw": null,
+            "date_utc": null,
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "",
+            "metadata_only": true,
+            "name": "Ov_i03_L07_R00000002_C00000000.tif",
+            "object_id": 26,
+            "product_name": null
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202409_HURRICANE_HELENE",
+          "service_name": "DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 2,
+            "date_basis": "unavailable",
+            "date_raw": null,
+            "date_utc": null,
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "",
+            "metadata_only": true,
+            "name": "Ov_i03_L08_R00000000_C00000000.tif",
+            "object_id": 27,
+            "product_name": null
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202409_HURRICANE_HELENE",
+          "service_name": "DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 2,
+            "date_basis": "unavailable",
+            "date_raw": null,
+            "date_utc": null,
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "",
+            "metadata_only": true,
+            "name": "Ov_i03_L09_R00000000_C00000000.tif",
+            "object_id": 28,
+            "product_name": null
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202409_HURRICANE_HELENE",
+          "service_name": "DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1728259200000,
+            "date_utc": "2024-10-07",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx_HLS_WTR_20240927_20241007_mosaic",
+            "object_id": 1,
+            "product_name": "WTR mosaic"
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202410_HURRICANE_MILTON",
+          "service_name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": true,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1727913600000,
+            "date_utc": "2024-10-03",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx_S1_WTR_20241003_mosaic",
+            "object_id": 2,
+            "product_name": "WTR mosaic"
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202410_HURRICANE_MILTON",
+          "service_name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": true,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1728345600000,
+            "date_utc": "2024-10-08",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx_S1_WTR_20241008_mosaic",
+            "object_id": 3,
+            "product_name": "WTR mosaic"
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202410_HURRICANE_MILTON",
+          "service_name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": true,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1728604800000,
+            "date_utc": "2024-10-11",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx_S1_WTR_20241011_mosaic",
+            "object_id": 5,
+            "product_name": "WTR mosaic"
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202410_HURRICANE_MILTON",
+          "service_name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1727913600000,
+            "date_utc": "2024-10-03",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx-S1_BWTR_ChngMap_20241011-20241003",
+            "object_id": 6,
+            "product_name": "BWTR Change Map"
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202410_HURRICANE_MILTON",
+          "service_name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1728345600000,
+            "date_utc": "2024-10-08",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx-S1_BWTR_ChngMap_20241011-20241008",
+            "object_id": 7,
+            "product_name": "BWTR Change Map"
+          },
+          "city": "Tampa",
+          "region": "United States",
+          "service_folder": "DISASTERS_202410_HURRICANE_MILTON",
+          "service_name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+        }
+      ],
+      "region": "United States",
+      "s1_water_catalog_dates": [
+        "2024-09-14",
+        "2024-09-26",
+        "2024-10-03",
+        "2024-10-08",
+        "2024-10-11"
+      ],
+      "s1_water_catalog_footprint_records": 7
+    },
+    {
+      "all_opera_catalog_records": 2,
+      "city": "New Orleans",
+      "records": [
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": true,
+            "category": 1,
+            "date_basis": "granule_name_interval_only",
+            "date_raw": null,
+            "date_utc": null,
+            "granule_name_interval_end_utc": "2026-06-27T00:58:29Z",
+            "granule_name_interval_start_utc": "2026-06-21T00:10:10Z",
+            "group_name": "",
+            "metadata_only": true,
+            "name": "OPERA_L3_DSWx-S1_T15RYP_20260621T001010Z_20260627T005829Z_S1A_30_v1.0_B01_WTR",
+            "object_id": 21,
+            "product_name": "Water (WTR)"
+          },
+          "city": "New Orleans",
+          "region": "United States",
+          "service_folder": "DISASTERS_202606_FLOOD_LA",
+          "service_name": "DISASTERS_202606_FLOOD_LA/202610_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202606_FLOOD_LA/202610_opera_dswx_s1/ImageServer"
+        },
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": true,
+            "category": 1,
+            "date_basis": "granule_name_interval_only",
+            "date_raw": null,
+            "date_utc": null,
+            "granule_name_interval_end_utc": "2026-06-27T00:58:29Z",
+            "granule_name_interval_start_utc": "2026-06-21T00:10:10Z",
+            "group_name": "",
+            "metadata_only": true,
+            "name": "OPERA_L3_DSWx-S1_T15RYP_20260621T001010Z_20260627T005829Z_S1A_30_v1.0_B02_BWTR",
+            "object_id": 22,
+            "product_name": "Binary Water (BWTR)"
+          },
+          "city": "New Orleans",
+          "region": "United States",
+          "service_folder": "DISASTERS_202606_FLOOD_LA",
+          "service_name": "DISASTERS_202606_FLOOD_LA/202610_opera_dswx_s1",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202606_FLOOD_LA/202610_opera_dswx_s1/ImageServer"
+        }
+      ],
+      "region": "United States",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 2
+    },
+    {
+      "all_opera_catalog_records": 0,
+      "city": "New York City",
+      "records": [],
+      "region": "United States",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 0
+    },
+    {
+      "all_opera_catalog_records": 0,
+      "city": "Sacramento",
+      "records": [],
+      "region": "United States",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 0
+    },
+    {
+      "all_opera_catalog_records": 1,
+      "city": "Atlanta",
+      "records": [
+        {
+          "catalog": {
+            "candidate_sentinel1_water_observation": false,
+            "category": 1,
+            "date_basis": "service_date_field",
+            "date_raw": 1728259200000,
+            "date_utc": "2024-10-07",
+            "granule_name_interval_end_utc": null,
+            "granule_name_interval_start_utc": null,
+            "group_name": "OPERA DSWx",
+            "metadata_only": true,
+            "name": "OPERA_DSWx_HLS_WTR_20240927_20241007_mosaic",
+            "object_id": 1,
+            "product_name": "WTR mosaic"
+          },
+          "city": "Atlanta",
+          "region": "United States",
+          "service_folder": "DISASTERS_202410_HURRICANE_MILTON",
+          "service_name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+          "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+        }
+      ],
+      "region": "United States",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 0
+    },
+    {
+      "all_opera_catalog_records": 0,
+      "city": "St. Louis",
+      "records": [],
+      "region": "United States",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 0
+    },
+    {
+      "all_opera_catalog_records": 0,
+      "city": "Jakarta",
+      "records": [],
+      "region": "International",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 0
+    },
+    {
+      "all_opera_catalog_records": 0,
+      "city": "Singapore",
+      "records": [],
+      "region": "International",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 0
+    },
+    {
+      "all_opera_catalog_records": 0,
+      "city": "Dubai",
+      "records": [],
+      "region": "International",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 0
+    },
+    {
+      "all_opera_catalog_records": 0,
+      "city": "Mumbai",
+      "records": [],
+      "region": "International",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 0
+    },
+    {
+      "all_opera_catalog_records": 0,
+      "city": "Bangkok",
+      "records": [],
+      "region": "International",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 0
+    },
+    {
+      "all_opera_catalog_records": 0,
+      "city": "Tokyo",
+      "records": [],
+      "region": "International",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 0
+    },
+    {
+      "all_opera_catalog_records": 0,
+      "city": "Manila",
+      "records": [],
+      "region": "International",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 0
+    },
+    {
+      "all_opera_catalog_records": 0,
+      "city": "S\u00e3o Paulo",
+      "records": [],
+      "region": "International",
+      "s1_water_catalog_dates": [],
+      "s1_water_catalog_footprint_records": 0
+    }
+  ],
+  "audit_id": "atlas-nasa-egis-opera-footprint-audit",
+  "counts": {
+    "area_service_query_errors": 0,
+    "areas_with_s1_water_footprint_records": 3,
+    "candidate_disaster_folders": 40,
+    "candidate_opera_dswx_image_services": 9,
+    "catalog_footprint_records": 27,
+    "service_metadata_errors": 0
+  },
+  "coverage_limit": "Catalog item footprints do not prove valid pixels, source raster availability, event relevance, independent flood truth, or confirmatory enrollment. Disaster-response maps may be preliminary; inspect each source description and product lineage before analysis.",
+  "errors": [],
+  "generated_at_utc": "2026-11-04T06:12:02.559890+00:00",
+  "schema_version": 1,
+  "services": [
+    {
+      "description": "<div style='text-align:Left;'><div><div><p><span>Date of Images:</span></p><p><span>During Event: 5/6/2024</span></p><p><span>Pre-Event: 4/21/2024</span></p><p><span>Summary:</span></p><p><span>The Advanced Rapid Imaging and Analysis (ARIA) and Observational Products for End-Users from Remote Sensing Analysis (OPERA) teams at NASA's Jet Propulsion Laboratory and California Institute of Technology derived the surface water extent flood maps using the OPERA Dynamic Surface Water Extent (DSWx) from NASA Harmonized Landsat Sentinel-2 (HLS) products.</span></p><p><span>The results posted here are preliminary and unvalidated results, primarily intended to aid the field response and people who wanted to have a rough first look at the inundation extent.</span></p><p><span>ARIA/OPERA flood map derived from DSWx-HLS</span></p><p><span>The ARIA/OPERA flood map is derived from two OPERA DSWx-HLS images taken on April 21, 2024 and May 06, 2024. These maps depict areas of new water detection that is interpreted as flood. The flood map was created by reclassifying the DSWx-HLS data into two new classes (1) water and (2) not water then taking the difference between the two images. The new water cl",
+      "extent": {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmax": -5510656.358100001,
+        "xmin": -6233806.358100001,
+        "ymax": -3116232.692400001,
+        "ymin": -3857952.692400001
+      },
+      "folder": "DISASTERS_202405_FLOOD_BRAZIL",
+      "name": "DISASTERS_202405_FLOOD_BRAZIL/2407_opera_dswx_hls",
+      "service_data_type": "esriImageServiceDataTypeGeneric",
+      "url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202405_FLOOD_BRAZIL/2407_opera_dswx_hls/ImageServer"
+    },
+    {
+      "description": "<div style='text-align:Left;'><div><div><p><span style='font-weight:bold;'>Date of Images:</span></p><p><span>May 5, 2024, August 9, 2024, August 21, 2024</span></p><p><span /></p><p><span style='font-weight:bold;'>Summary:</span></p><p><span>The Advanced Rapid Imaging and Analysis (ARIA) and Observational Products for End-Users from Remote Sensing Analysis (OPERA) teams at NASA's Jet Propulsion Laboratory and California Institute of Technology derived the surface water extent maps from Sentinel-1.</span></p><p><span>The results posted here are preliminary and unvalidated results, primarily intended to aid the field response and people who wanted to have a rough first look at the inundation extent. The ARIA-share website has always focused on posting preliminary results as fast as possible for disaster response.</span></p><p><span /></p><p><span style='font-weight:bold;'>Suggested Use:</span></p><p><span>The OPERA DSWx-S1 products classifies the OPERA Radiometric Terrain Corrected SAR backscatter from Sentinel-1 (RTC-S1) input imagery into: not water, water, and inundated vegetation with the masks such as layover/shadow mask and HAND mask. The WTR layer includes all classes. Open w",
+      "extent": {
+        "spatialReference": {
+          "latestWkid": 4326,
+          "wkid": 4326
+        },
+        "xmax": 92.17713963359131,
+        "xmin": 88.59932952000008,
+        "ymax": 26.10930595700006,
+        "ymin": 20.89943663522049
+      },
+      "folder": "DISASTERS_202408_FLOOD_BANGLADESH",
+      "name": "DISASTERS_202408_FLOOD_BANGLADESH/2423_opera_dswx_s1",
+      "service_data_type": "esriImageServiceDataTypeRGB",
+      "url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202408_FLOOD_BANGLADESH/2423_opera_dswx_s1/ImageServer"
+    },
+    {
+      "description": "<DIV STYLE=\"text-align:Left;\"><DIV><DIV><P><SPAN STYLE=\"font-weight:bold;\">Date of Images:</SPAN></P><P><SPAN STYLE=\"font-style:italic;\">Syn-Event: </SPAN><SPAN>2024-09-26 23:38:04 (UTC) or 7:38 PM EDT</SPAN></P><P><SPAN STYLE=\"font-style:italic;\">Pre-Event: </SPAN><SPAN>2024-09-14 23:37:54 (UTC) or 7:38 PM EDT</SPAN></P><P><SPAN STYLE=\"font-weight:bold;\">Summary:</SPAN></P><P><SPAN>The Advanced Rapid Imaging and Analysis (ARIA) and Observational Products for End-Users from Remote Sensing Analysis (OPERA) teams at NASA's Jet Propulsion Laboratory and California Institute of Technology derived the surface water extent maps using the OPERA Dynamic Surface Water eXtent from Sentinel-1 (DSWx-S1) products.</SPAN></P><P><SPAN>The results posted here are preliminary and unvalidated results, primarily intended to aid the field response and people who want to have a rough first look at the water extent. The ARIA-share website has always focused on posting preliminary results as fast as possible for disaster response.</SPAN></P><P><SPAN STYLE=\"font-style:italic;\">OPERA DSWx-S1</SPAN></P><P><SPAN>The OPERA DSWx-S1 data identifies surface water and inundated vegetation. We provide the Water (W",
+      "extent": {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmax": 1752.8266000002623,
+        "xmin": -9586586.1734,
+        "ymax": 3739205.0640999973,
+        "ymin": -1239.935900002718
+      },
+      "folder": "DISASTERS_202409_HURRICANE_HELENE",
+      "name": "DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1",
+      "service_data_type": "esriImageServiceDataTypeRGB",
+      "url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202409_HURRICANE_HELENE/202427_opera_dswx_s1/ImageServer"
+    },
+    {
+      "description": "<div style='text-align:Left;'><div><p><span style='font-weight:bold;'>Date of Images:</span></p><p><span>Pre-Landfall:</span></p><ul><li><p><span>HLS: 9/27/2024 - 10/7/2024</span></p></li><li><p><span>Sentinel-1: 10/3/2024, 10/8/2024</span></p></li></ul><p><span /></p><p><span>Post-Landfall:</span></p><ul><li><p><span>Sentinel-1: 10/10/2024, 10/11/2024</span></p><p><span /></p></li></ul><p><span style='font-weight:bold;'>Summary:</span></p><p><span>The Advanced Rapid Imaging and Analysis (ARIA) and Observational Products for End-Users from Remote Sensing Analysis (OPERA) teams at NASA's Jet Propulsion Laboratory and California Institute of Technology derived the surface water extent maps from the OPERA Dynamic Surface Water Extent (DSWx) from NASA Harmonized Landsat Sentinel-2 (HLS) and Sentinel-1 (DSWx-S1) products.</span></p><p><span>The results posted here are preliminary and unvalidated results, primarily intended to aid the field response and people who wanted to have a rough first look at the inundation extent. The ARIA-share website has always focused on posting preliminary results as fast as possible for disaster response.</span></p><p><span /></p><p><span>OPERA DSWx-S1</sp",
+      "extent": {
+        "spatialReference": {
+          "latestWkid": 4326,
+          "wkid": 4326
+        },
+        "xmax": -76.40188704461889,
+        "xmin": -89.97174789499996,
+        "ymax": 35.200881028000026,
+        "ymin": 23.660044909859714
+      },
+      "folder": "DISASTERS_202410_HURRICANE_MILTON",
+      "name": "DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls",
+      "service_data_type": "esriImageServiceDataTypeRGB",
+      "url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer"
+    },
+    {
+      "description": "<div style='text-align:Left;'><div><div><p><span style='font-weight:bold;'>Date of Images:</span></p><p><span>June 23, 2025; June 26, 2025; June 28, 2025</span></p><p><span /></p><p><span style='font-weight:bold;'>Date of Next Image:</span></p><p><span>Unknown</span></p><p><span /></p><p><span style='font-weight:bold;'>Summary:</span></p><p><span>The Advanced Rapid Imaging and Analysis (ARIA) and Observational Products for End-Users from Remote Sensing Analysis (OPERA) teams at NASA's Jet Propulsion Laboratory and California Institute of Technology created maps of surface water extent in a region of eastern/central New Mexico impacted by floods between June 20-28, 2025 using the OPERA Dynamic Surface Water Extent (DSWx) from NASA Harmonized Landsat Sentinel-2 (HLS) product.</span></p><p><span>The results posted here are preliminary and unvalidated results, primarily intended to aid the field response and people who wanted to have a rough first look at the inundation extent. The ARIA-share website has always focused on posting preliminary results as fast as possible for disaster response. All information is provisional for use under emergency response guidelines. These data are prov",
+      "extent": {
+        "spatialReference": {
+          "latestWkid": 4326,
+          "wkid": 4326
+        },
+        "xmax": -103.80644521747793,
+        "xmin": -107.17378005999996,
+        "ymax": 34.34166257100003,
+        "ymin": 31.52921707947863
+      },
+      "folder": "DISASTERS_202506_FIRE_NM",
+      "name": "DISASTERS_202506_FIRE_NM/2506_opera_dswx_hls",
+      "service_data_type": "esriImageServiceDataTypeRGB",
+      "url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202506_FIRE_NM/2506_opera_dswx_hls/ImageServer"
+    },
+    {
+      "description": "<div style='text-align:Left;'><div><div><p><span style='font-weight:bold;'>Date of Images</span></p><p><span style='font-style:italic;'>DSWx-HLS (Optical)</span></p><p><span>Pre-Event: June 27, 2025; June 29, 2025; July 2, 2025</span></p><p><span>Post-Event: July 5, 2025; July 6, 2025; July 7, 2025; July 8, 2025; July 9, 2025; July 10, 2025; July 12, 2025</span></p><p><span style='font-style:italic;'>DSWx-S1 (Radar)</span></p><p><span>Pre-Event: June 17, 2025; June 19, 2025; June 22, 2025; July 1, 2025; July 4, 2025</span></p><p><span>Post-Event: July 11, 2025</span></p><p><span style='font-weight:bold;'>Summary:</span></p><p><span>The Advanced Rapid Imaging and Analysis (ARIA) and Observational Products for End-Users from Remote Sensing Analysis (OPERA) teams at NASA's Jet Propulsion Laboratory and California Institute of Technology created maps of surface water extent impacted by the flooding in Central Texas on July 4, 2025 using the OPERA Dynamic Surface Water Extent (DSWx) from NASA Harmonized Landsat and Sentinel-2 (HLS) and Sentinel-1 (DSWx-S1) products. </span></p><p><span>The results posted here are preliminary and unvalidated results, primarily intended to aid the field r",
+      "extent": {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmax": -10653666.0706,
+        "xmin": -11255346.0706,
+        "ymax": 3834054.6116999984,
+        "ymin": 3123414.6116999984
+      },
+      "folder": "DISASTERS_202507_FLOOD_TX",
+      "name": "DISASTERS_202507_FLOOD_TX/202507_opera_dswx_hls",
+      "service_data_type": "esriImageServiceDataTypeRGB",
+      "url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202507_FLOOD_TX/202507_opera_dswx_hls/ImageServer"
+    },
+    {
+      "description": "<div style='text-align:Left;'><p style='margin-top:0px; margin-bottom:1.5rem; font-family:&quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size:16px;'><b>NOTE:\u00a0</b>The Disasters Team is currently revising the legend on this dataset. Visualization properties are not finalized. Please consult the metadata on this page for reference.<br /><br /><b>Date of Images</b></p><p style='margin-top:0px; margin-bottom:1.5rem; font-family:&quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size:16px;'><span style='font-family:inherit; font-style:italic;'>Pre-event</span><span style='font-family:inherit;'>: 2025-10-08, 2025-10-10</span></p><p style='margin-top:0px; margin-bottom:1.5rem; font-family:&quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size:16px;'><span style='font-family:inherit; font-style:italic;'>Co and Post-event:\u00a0</span><span style='font-family:inherit;'>2025-10-12, 2025-10-13, 2025-10-15</span></p><p style='margin-top:0px; ma",
+      "extent": {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmax": -17774277.6169,
+        "xmin": -18933567.6169,
+        "ymax": 10879227.600100003,
+        "ymin": 8073447.600100003
+      },
+      "folder": "DISASTERS_202510_FLOOD_AK",
+      "name": "DISASTERS_202510_FLOOD_AK/202510_opera_dswx_s1",
+      "service_data_type": "esriImageServiceDataTypeRGB",
+      "url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202510_FLOOD_AK/202510_opera_dswx_s1/ImageServer"
+    },
+    {
+      "description": "<DIV STYLE=\"text-align:Left;\"><DIV><DIV><P><SPAN>Date of Images</SPAN></P><P><SPAN>Post-event: 2026-06-21</SPAN></P><P><SPAN>Summary:</SPAN></P><P><SPAN>The Advanced Rapid Imaging and Analysis (ARIA) and Observational Products for End-Users from Remote Sensing Analysis (OPERA) teams at NASA's Jet Propulsion Laboratory (JPL) and the California Institute of Technology produced maps showing areas affected by flooding in Louisiana using the OPERA Dynamic Surface Water Extent from Sentinel-1 (DSWx-S1) product.</SPAN></P><P><SPAN>These maps provide an initial view of the surface water extent observed following the flood event. The results presented here are preliminary and unvalidated, intended primarily to support situational awareness and field response efforts. The ARIA-Share platform emphasizes rapid dissemination of satellite-based products for disaster response. All information is provisional and should be used under emergency response guidelines. These data are provided without warranty of any kind. Use at your own risk.</SPAN></P><P><SPAN>OPERA DSWx-S1</SPAN></P><P><SPAN>The OPERA DSWx-S1 was used to identify surface water for the flooding event. The images provided are a mosaic ",
+      "extent": {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmax": -9989321.9377,
+        "xmin": -10471301.9377,
+        "ymax": 3953796.610600002,
+        "ymin": 3350466.610600002
+      },
+      "folder": "DISASTERS_202606_FLOOD_LA",
+      "name": "DISASTERS_202606_FLOOD_LA/202610_opera_dswx_s1",
+      "service_data_type": "esriImageServiceDataTypeGeneric",
+      "url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202606_FLOOD_LA/202610_opera_dswx_s1/ImageServer"
+    },
+    {
+      "description": "<DIV STYLE=\"text-align:Left;\"><DIV><DIV><P STYLE=\"font-weight:bold;margin:0 0 0 0;\"><SPAN><SPAN>Date of Images:</SPAN></SPAN></P><P STYLE=\"margin:0 0 0 0;\"><SPAN>20260706T0042, 20260718T0042 (UTC) (YYYYMMDD: HHMM)</SPAN></P><P STYLE=\"font-weight:bold;margin:0 0 0 0;\"><SPAN><SPAN>Date of Next Image:</SPAN></SPAN></P><P STYLE=\"margin:0 0 0 0;\"><SPAN>No additional images are being delivered</SPAN></P><P STYLE=\"font-weight:bold;margin:0 0 0 0;\"><SPAN><SPAN>Summary: </SPAN></SPAN></P><P STYLE=\"margin:0 0 16 0;\"><SPAN><SPAN>The Advanced Rapid Imaging and Analysis (ARIA) and Observational Products for End-Users from Remote Sensing Analysis (OPERA) teams at the Jet Propulsion Laboratory, California Institute of Technology produced flood mapping products using the OPERA Dynamic Surface Water Extent from Sentinel-1 (DSWx-S1) dataset. These products provide a rapid assessment of surface water extent to support emergency response and situational awareness during flood events.</SPAN></SPAN></P><P STYLE=\"margin:16 0 0 0;\"><SPAN><SPAN>The dataset provided includes two products:</SPAN></SPAN></P><OL STYLE=\"margin:0 0 0 0;padding:0 0 0 0;\"><LI><P STYLE=\"margin:0 0 0 0;\"><SPAN><SPAN>Surface Water Ex",
+      "extent": {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmax": -11020645.3191,
+        "xmin": -11128585.3191,
+        "ymax": 3529391.708899997,
+        "ymin": 3385361.708899997
+      },
+      "folder": "DISASTERS_202607_FLOOD_TX",
+      "name": "DISASTERS_202607_FLOOD_TX/202616_opera_dswx_s1",
+      "service_data_type": "esriImageServiceDataTypeGeneric",
+      "url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202607_FLOOD_TX/202616_opera_dswx_s1/ImageServer"
+    }
+  ],
+  "source": {
+    "folder_filter": "folder name contains DISASTERS; ImageServer name contains OPERA and DSWx",
+    "register": "data/study_area_register.json",
+    "service_directory": "https://gis.earthdata.nasa.gov/portal/rest/services",
+    "spatial_test": "NASA ArcGIS ImageServer catalog query intersects each fixed AOI WGS84 envelope"
+  }
+}

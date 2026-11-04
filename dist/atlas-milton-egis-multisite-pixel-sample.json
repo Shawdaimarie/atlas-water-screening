@@ -1,0 +1,363 @@
+{
+  "areas": [
+    {
+      "all_samples_returned_for_every_overlapping_scene": true,
+      "aoi_bbox_wgs84": [
+        -80.316481,
+        25.649411,
+        -80.067119,
+        25.873989
+      ],
+      "city": "Miami",
+      "interpretation": "Access/availability only. Pre/post-landfall dates are not declared baseline/event windows; NASA marks response maps preliminary and unvalidated.",
+      "region": "United States",
+      "sample_design": {
+        "method": "Same seeded jittered equal-area points for all four catalog rasters within this area.",
+        "points_per_scene": 1024,
+        "seed": "ATLAS-Miami-Milton-EGIS-WTR-v1"
+      },
+      "scenes": [
+        {
+          "catalog_footprint_bbox_wgs84": [
+            -84.25959628299995,
+            24.29632139200004,
+            -78.71977727099994,
+            34.341572658000075
+          ],
+          "catalog_item": {
+            "category": 1,
+            "date": "2024-10-03",
+            "footprint_bbox_wgs84": [
+              -84.25959628299995,
+              24.29632139200004,
+              -78.71977727099994,
+              34.341572658000075
+            ],
+            "name": "OPERA_DSWx_S1_WTR_20241003_mosaic",
+            "objectid": 2,
+            "productname": "WTR mosaic"
+          },
+          "class_counts": {
+            "0": 506,
+            "1": 516,
+            "3": 2
+          },
+          "date_utc": "2024-10-03",
+          "interpretation": "Equal-area point-sample returns only; not full-AOI raster coverage or flood truth.",
+          "masked_or_fill_class_points": 0,
+          "name": "OPERA_DSWx_S1_WTR_20241003_mosaic",
+          "phase": "pre-landfall",
+          "raster_id": 2,
+          "recognized_nonmasked_class_points": 1024,
+          "sample_return_fraction": 1.0,
+          "samples_requested": 1024,
+          "samples_returned": 1024,
+          "sampling_error": null,
+          "sampling_status": "sampled"
+        },
+        {
+          "catalog_footprint_bbox_wgs84": [
+            -86.41938277699995,
+            24.19998914100006,
+            -80.41496751099999,
+            32.72736004300003
+          ],
+          "catalog_item": {
+            "category": 1,
+            "date": "2024-10-08",
+            "footprint_bbox_wgs84": [
+              -86.41938277699995,
+              24.19998914100006,
+              -80.41496751099999,
+              32.72736004300003
+            ],
+            "name": "OPERA_DSWx_S1_WTR_20241008_mosaic",
+            "objectid": 3,
+            "productname": "WTR mosaic"
+          },
+          "class_counts": {},
+          "date_utc": "2024-10-08",
+          "interpretation": "No points sampled because the catalog footprint does not intersect the fixed AOI.",
+          "masked_or_fill_class_points": 0,
+          "name": "OPERA_DSWx_S1_WTR_20241008_mosaic",
+          "phase": "pre-landfall",
+          "raster_id": 3,
+          "recognized_nonmasked_class_points": 0,
+          "sample_return_fraction": 0.0,
+          "samples_requested": 1024,
+          "samples_returned": 0,
+          "sampling_error": null,
+          "sampling_status": "outside_aoi_footprint"
+        },
+        {
+          "catalog_footprint_bbox_wgs84": [
+            -82.06530575299996,
+            24.311017941000046,
+            -78.76644732199998,
+            32.53728331800005
+          ],
+          "catalog_item": {
+            "category": 1,
+            "date": "2024-10-10",
+            "footprint_bbox_wgs84": [
+              -82.06530575299996,
+              24.311017941000046,
+              -78.76644732199998,
+              32.53728331800005
+            ],
+            "name": "OPERA_DSWx_S1_WTR_20241010_mosaic",
+            "objectid": 4,
+            "productname": "WTR mosaic"
+          },
+          "class_counts": {},
+          "date_utc": "2024-10-10",
+          "interpretation": "Equal-area point-sample returns only; not full-AOI raster coverage or flood truth.",
+          "masked_or_fill_class_points": 0,
+          "name": "OPERA_DSWx_S1_WTR_20241010_mosaic",
+          "phase": "post-landfall",
+          "raster_id": 4,
+          "recognized_nonmasked_class_points": 0,
+          "sample_return_fraction": 0.0,
+          "samples_requested": 1024,
+          "samples_returned": 0,
+          "sampling_error": {
+            "code": 400,
+            "message": "Invalid or missing input parameters."
+          },
+          "sampling_status": "service_error"
+        },
+        {
+          "catalog_footprint_bbox_wgs84": [
+            -85.26817774299997,
+            24.230834369000036,
+            -79.85339681199997,
+            30.733006355000043
+          ],
+          "catalog_item": {
+            "category": 1,
+            "date": "2024-10-11",
+            "footprint_bbox_wgs84": [
+              -85.26817774299997,
+              24.230834369000036,
+              -79.85339681199997,
+              30.733006355000043
+            ],
+            "name": "OPERA_DSWx_S1_WTR_20241011_mosaic",
+            "objectid": 5,
+            "productname": "WTR mosaic"
+          },
+          "class_counts": {},
+          "date_utc": "2024-10-11",
+          "interpretation": "Equal-area point-sample returns only; not full-AOI raster coverage or flood truth.",
+          "masked_or_fill_class_points": 0,
+          "name": "OPERA_DSWx_S1_WTR_20241011_mosaic",
+          "phase": "post-landfall",
+          "raster_id": 5,
+          "recognized_nonmasked_class_points": 0,
+          "sample_return_fraction": 0.0,
+          "samples_requested": 1024,
+          "samples_returned": 0,
+          "sampling_error": {
+            "code": 400,
+            "message": "Invalid or missing input parameters."
+          },
+          "sampling_status": "service_error"
+        }
+      ],
+      "scenes_with_any_returned_samples": 1
+    },
+    {
+      "all_samples_returned_for_every_overlapping_scene": false,
+      "aoi_bbox_wgs84": [
+        -82.584317,
+        27.838311,
+        -82.330083,
+        28.062889
+      ],
+      "city": "Tampa",
+      "interpretation": "Access/availability only. Pre/post-landfall dates are not declared baseline/event windows; NASA marks response maps preliminary and unvalidated.",
+      "region": "United States",
+      "sample_design": {
+        "method": "Same seeded jittered equal-area points for all four catalog rasters within this area.",
+        "points_per_scene": 1024,
+        "seed": "ATLAS-Tampa-Milton-EGIS-WTR-v1"
+      },
+      "scenes": [
+        {
+          "catalog_footprint_bbox_wgs84": [
+            -84.25959628299995,
+            24.29632139200004,
+            -78.71977727099994,
+            34.341572658000075
+          ],
+          "catalog_item": {
+            "category": 1,
+            "date": "2024-10-03",
+            "footprint_bbox_wgs84": [
+              -84.25959628299995,
+              24.29632139200004,
+              -78.71977727099994,
+              34.341572658000075
+            ],
+            "name": "OPERA_DSWx_S1_WTR_20241003_mosaic",
+            "objectid": 2,
+            "productname": "WTR mosaic"
+          },
+          "class_counts": {
+            "0": 661,
+            "1": 133,
+            "3": 3
+          },
+          "date_utc": "2024-10-03",
+          "interpretation": "Equal-area point-sample returns only; not full-AOI raster coverage or flood truth.",
+          "masked_or_fill_class_points": 0,
+          "name": "OPERA_DSWx_S1_WTR_20241003_mosaic",
+          "phase": "pre-landfall",
+          "raster_id": 2,
+          "recognized_nonmasked_class_points": 797,
+          "sample_return_fraction": 0.7783203125,
+          "samples_requested": 1024,
+          "samples_returned": 797,
+          "sampling_error": null,
+          "sampling_status": "sampled"
+        },
+        {
+          "catalog_footprint_bbox_wgs84": [
+            -86.41938277699995,
+            24.19998914100006,
+            -80.41496751099999,
+            32.72736004300003
+          ],
+          "catalog_item": {
+            "category": 1,
+            "date": "2024-10-08",
+            "footprint_bbox_wgs84": [
+              -86.41938277699995,
+              24.19998914100006,
+              -80.41496751099999,
+              32.72736004300003
+            ],
+            "name": "OPERA_DSWx_S1_WTR_20241008_mosaic",
+            "objectid": 3,
+            "productname": "WTR mosaic"
+          },
+          "class_counts": {
+            "0": 767,
+            "1": 252,
+            "3": 5
+          },
+          "date_utc": "2024-10-08",
+          "interpretation": "Equal-area point-sample returns only; not full-AOI raster coverage or flood truth.",
+          "masked_or_fill_class_points": 0,
+          "name": "OPERA_DSWx_S1_WTR_20241008_mosaic",
+          "phase": "pre-landfall",
+          "raster_id": 3,
+          "recognized_nonmasked_class_points": 1024,
+          "sample_return_fraction": 1.0,
+          "samples_requested": 1024,
+          "samples_returned": 1024,
+          "sampling_error": null,
+          "sampling_status": "sampled"
+        },
+        {
+          "catalog_footprint_bbox_wgs84": [
+            -82.06530575299996,
+            24.311017941000046,
+            -78.76644732199998,
+            32.53728331800005
+          ],
+          "catalog_item": {
+            "category": 1,
+            "date": "2024-10-10",
+            "footprint_bbox_wgs84": [
+              -82.06530575299996,
+              24.311017941000046,
+              -78.76644732199998,
+              32.53728331800005
+            ],
+            "name": "OPERA_DSWx_S1_WTR_20241010_mosaic",
+            "objectid": 4,
+            "productname": "WTR mosaic"
+          },
+          "class_counts": {},
+          "date_utc": "2024-10-10",
+          "interpretation": "No points sampled because the catalog footprint does not intersect the fixed AOI.",
+          "masked_or_fill_class_points": 0,
+          "name": "OPERA_DSWx_S1_WTR_20241010_mosaic",
+          "phase": "post-landfall",
+          "raster_id": 4,
+          "recognized_nonmasked_class_points": 0,
+          "sample_return_fraction": 0.0,
+          "samples_requested": 1024,
+          "samples_returned": 0,
+          "sampling_error": null,
+          "sampling_status": "outside_aoi_footprint"
+        },
+        {
+          "catalog_footprint_bbox_wgs84": [
+            -85.26817774299997,
+            24.230834369000036,
+            -79.85339681199997,
+            30.733006355000043
+          ],
+          "catalog_item": {
+            "category": 1,
+            "date": "2024-10-11",
+            "footprint_bbox_wgs84": [
+              -85.26817774299997,
+              24.230834369000036,
+              -79.85339681199997,
+              30.733006355000043
+            ],
+            "name": "OPERA_DSWx_S1_WTR_20241011_mosaic",
+            "objectid": 5,
+            "productname": "WTR mosaic"
+          },
+          "class_counts": {
+            "0": 777,
+            "1": 246,
+            "3": 1
+          },
+          "date_utc": "2024-10-11",
+          "interpretation": "Equal-area point-sample returns only; not full-AOI raster coverage or flood truth.",
+          "masked_or_fill_class_points": 0,
+          "name": "OPERA_DSWx_S1_WTR_20241011_mosaic",
+          "phase": "post-landfall",
+          "raster_id": 5,
+          "recognized_nonmasked_class_points": 1024,
+          "sample_return_fraction": 1.0,
+          "samples_requested": 1024,
+          "samples_returned": 1024,
+          "sampling_error": null,
+          "sampling_status": "sampled"
+        }
+      ],
+      "scenes_with_any_returned_samples": 3
+    }
+  ],
+  "audit": "ATLAS NASA EGIS Hurricane Milton matched-point availability screen",
+  "created_at_utc": "2026-11-04T07:40:25.914384+00:00",
+  "limits": [
+    "Only Miami and Tampa have catalog item footprints in the registered fixed AOIs for this service.",
+    "The NASA EGIS quick-response service is a separate, preliminary/unvalidated product screen.",
+    "Point returns do not establish full-AOI finite-pixel coverage, exact acquisition-time matching, or classification accuracy.",
+    "The four scenes are not a preregistered event/baseline sample; no change estimate is calculated.",
+    "No independent labels, asset intersection, probability sample adequacy, or precision gate was assessed."
+  ],
+  "register_sha256": "c44f866942a2f99f01141fb6a7baeea09a9b61a57db1beafb77a7f686de646d6",
+  "schema_version": 1,
+  "source": {
+    "catalog_item_url": "https://gis.earthdata.nasa.gov/portal/home/item.html?id=d20858f42cae4c6b8b4438e847266442",
+    "class_product": "OPERA DSWx-S1 WTR mosaics; raw classes are interpreted only as product classes.",
+    "event": "Hurricane Milton, October 2024",
+    "service_url": "https://gis.earthdata.nasa.gov/portal/rest/services/DISASTERS_202410_HURRICANE_MILTON/2428_opera_dswx_hls/ImageServer",
+    "source_caveat": "NASA identifies response-map results as preliminary and unvalidated."
+  },
+  "summary": {
+    "areas": 2,
+    "areas_with_catalog_footprint_samples": 2,
+    "confirmatory_eligible_areas": 0,
+    "scenes_with_any_returned_samples": 4,
+    "total_raw_points_returned": 3869
+  }
+}

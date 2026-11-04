@@ -1,0 +1,173 @@
+{
+  "areas": [
+    {
+      "city": "Houston",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "United States"
+    },
+    {
+      "city": "Miami",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "United States"
+    },
+    {
+      "city": "Tampa",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "United States"
+    },
+    {
+      "city": "New Orleans",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "United States"
+    },
+    {
+      "city": "New York City",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "United States"
+    },
+    {
+      "city": "Sacramento",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "United States"
+    },
+    {
+      "city": "Atlanta",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "United States"
+    },
+    {
+      "city": "St. Louis",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "United States"
+    },
+    {
+      "city": "Jakarta",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "International"
+    },
+    {
+      "city": "Singapore",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "International"
+    },
+    {
+      "city": "Dubai",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "International"
+    },
+    {
+      "city": "Mumbai",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "International"
+    },
+    {
+      "city": "Bangkok",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "International"
+    },
+    {
+      "city": "Tokyo",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "International"
+    },
+    {
+      "city": "Manila",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "International"
+    },
+    {
+      "city": "S\u00e3o Paulo",
+      "distinct_activations": 0,
+      "event_dates": [],
+      "intersecting_flood_aois": 0,
+      "region": "International"
+    }
+  ],
+  "audit_id": "atlas-cems-event-discovery-audit",
+  "counts": {
+    "areas_with_intersecting_flood_aois": 0,
+    "candidate_areas": 16,
+    "distinct_intersecting_activations": 0,
+    "intersecting_flood_aois": 0,
+    "intersecting_products": 0
+  },
+  "generated_at_utc": "2026-11-04T00:26:33+00:00",
+  "limits": [
+    "An AOI polygon overlap only establishes spatial relevance of a mapping activation.",
+    "CEMS products can be satellite-derived and are not independent ground truth by themselves.",
+    "No labels were extracted, adjudicated, or compared with ATLAS predictions in this audit.",
+    "Product imagery sensor provenance and use terms remain to be reviewed for any match."
+  ],
+  "matches": [],
+  "schema_version": 2,
+  "source": {
+    "catalog_codes_unique": 268,
+    "catalog_count_reported": 268,
+    "catalog_endpoint": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/",
+    "catalog_page_urls": [
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=10",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=20",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=30",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=40",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=50",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=60",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=70",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=80",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=90",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=100",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=110",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=120",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=130",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=140",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=150",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=160",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=170",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=180",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=190",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=200",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=210",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=220",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=230",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=240",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=250",
+      "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations-info/?limit=10&offset=260"
+    ],
+    "catalog_pages_retrieved": 27,
+    "detail_endpoint": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/",
+    "flood_activations_screened": 90,
+    "guide": "https://mapping.emergency.copernicus.eu/about/how-to-harvest-cems-mapping-data/emergency-response-data/",
+    "name": "Copernicus EMS Rapid Mapping public activations and detail API"
+  },
+  "spatial_test": "Exact Shapely WKT polygon intersection between each public CEMS flood AOI and the fixed study-area WGS84 bounding rectangle; approximate intersection area uses degree-squared conversion and is only a screening statistic."
+}

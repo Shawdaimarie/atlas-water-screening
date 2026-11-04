@@ -1,0 +1,105 @@
+{
+  "audit": "PetaBencana Jakarta archive date-window integrity screen",
+  "retrieved_utc": "2026-11-03T19:11:43.307775+00:00",
+  "api": "https://data.petabencana.id/floods/archive",
+  "documentation": "https://docs.petabencana.id/master-1/routes/flooded-area-archive",
+  "results": [
+    {
+      "label": "Jakarta March 2025 flood window",
+      "request_start": "2025-03-01T00:00:00+0700",
+      "request_end": "2025-03-08T23:00:00+0700",
+      "response_sha256": "b80fbf76ed846cb7111e754a296596dcfd375e3fb55421bfc7d94efd2931f3cb",
+      "returned_area_count": 5,
+      "returned_distinct_area_id_count": 5,
+      "returned_area_id_sample": [
+        "26212",
+        "26983",
+        "4157",
+        "5394",
+        "5671"
+      ],
+      "returned_update_date_min": "2022-10-07",
+      "returned_update_date_max": "2022-10-07",
+      "returned_rows_with_update_date_in_requested_window": 0,
+      "screening_outcome": "returned_rows_are_outside_requested_window",
+      "maximum_reported_state": 3,
+      "request_url": "https://data.petabencana.id/floods/archive?start=2025-03-01T00%3A00%3A00%2B0700&end=2025-03-08T23%3A00%3A00%2B0700"
+    },
+    {
+      "label": "January 2020 positive-control window",
+      "request_start": "2020-01-01T00:00:00+0700",
+      "request_end": "2020-01-08T23:00:00+0700",
+      "response_sha256": "55f9bcbadc082cb1489cfd63a3820f7e9cb4fcca9ba48aba9548be2b2eb773b8",
+      "returned_area_count": 520,
+      "returned_distinct_area_id_count": 520,
+      "returned_area_id_sample": [
+        "100",
+        "1003",
+        "101",
+        "1012",
+        "1016",
+        "1018",
+        "102",
+        "1028",
+        "103",
+        "1033"
+      ],
+      "returned_update_date_min": "2019-12-27",
+      "returned_update_date_max": "2020-01-07",
+      "returned_rows_with_update_date_in_requested_window": 519,
+      "screening_outcome": "has_returned_updates_within_requested_window",
+      "maximum_reported_state": 4,
+      "request_url": "https://data.petabencana.id/floods/archive?start=2020-01-01T00%3A00%3A00%2B0700&end=2020-01-08T23%3A00%3A00%2B0700"
+    },
+    {
+      "label": "October 2022 stale-control window",
+      "request_start": "2022-10-01T00:00:00+0700",
+      "request_end": "2022-10-15T23:00:00+0700",
+      "response_sha256": "57580eff162580373e3c1507a94bbaa0469eeb6c39eee239210c1b3b3e441b17",
+      "returned_area_count": 6,
+      "returned_distinct_area_id_count": 6,
+      "returned_area_id_sample": [
+        "2377",
+        "26212",
+        "26983",
+        "4157",
+        "5394",
+        "5671"
+      ],
+      "returned_update_date_min": "2022-10-07",
+      "returned_update_date_max": "2022-10-07",
+      "returned_rows_with_update_date_in_requested_window": 6,
+      "screening_outcome": "has_returned_updates_within_requested_window",
+      "maximum_reported_state": 3,
+      "request_url": "https://data.petabencana.id/floods/archive?start=2022-10-01T00%3A00%3A00%2B0700&end=2022-10-15T23%3A00%3A00%2B0700"
+    },
+    {
+      "label": "January 2026 current-window check",
+      "request_start": "2026-01-01T00:00:00+0700",
+      "request_end": "2026-01-08T23:00:00+0700",
+      "response_sha256": "b80fbf76ed846cb7111e754a296596dcfd375e3fb55421bfc7d94efd2931f3cb",
+      "returned_area_count": 5,
+      "returned_distinct_area_id_count": 5,
+      "returned_area_id_sample": [
+        "26212",
+        "26983",
+        "4157",
+        "5394",
+        "5671"
+      ],
+      "returned_update_date_min": "2022-10-07",
+      "returned_update_date_max": "2022-10-07",
+      "returned_rows_with_update_date_in_requested_window": 0,
+      "screening_outcome": "returned_rows_are_outside_requested_window",
+      "maximum_reported_state": 3,
+      "request_url": "https://data.petabencana.id/floods/archive?start=2026-01-01T00%3A00%3A00%2B0700&end=2026-01-08T23%3A00%3A00%2B0700"
+    }
+  ],
+  "interpretation_limits": [
+    "The archive returns reported neighborhood area IDs and maximum flood-state values, not water-pixel labels.",
+    "Rows whose last_updated timestamps fall outside the requested period are treated as stale or anomalous and cannot establish a matched event reference.",
+    "A date-window response does not establish fixed-AOI overlap, independent label quality, or confirmatory sampling adequacy."
+  ],
+  "score_credit": 0,
+  "confirmatory_enrollment_eligible": false
+}

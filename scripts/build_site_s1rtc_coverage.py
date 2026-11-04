@@ -13,7 +13,9 @@ HTML = ROOT / "dist/index.html"
 AUDIT = ROOT / "outputs/atlas-s1rtc-pixel-coverage-audit.json"
 UNIQUE_AUDIT = ROOT / "outputs/atlas-s1rtc-pixel-coverage-unique-audit.json"
 COMBINED_AUDIT = ROOT / "outputs/atlas-s1rtc-pixel-coverage-combined-audit.json"
+VALID_QUOTA_AUDIT = ROOT / "outputs/atlas-s1rtc-valid-quota-audit.json"
 ASSET = ROOT / "dist/s1rtc-pixel-coverage-unique.json"
+VALID_QUOTA_ASSET = ROOT / "dist/s1rtc-pixel-coverage-valid-quota.json"
 LEGACY_REPLICATE_ASSET = ROOT / "dist/s1rtc-pixel-coverage-replicates.json"
 
 
@@ -29,7 +31,7 @@ TABLE_START = "/* GENERATED S1RTC TABLE RENDERER START */"
 TABLE_END = "/* GENERATED S1RTC TABLE RENDERER END */"
 
 
-PANEL = f'''{PANEL_START}<section class="rtc-sample" aria-labelledby="rtcSampleTitle"><div class="rtc-head"><div><div class="eyebrow">Real raster availability samples · 2025</div><h3 id="rtcSampleTitle">Sentinel-1 coverage varies across the candidate areas</h3><p>Three unique RTC orbit groups per calendar quarter for each fixed 25 × 25 km area. Samples are selected without replacement within each area and quarter. The screen measures finite, non-nodata VV pixels only.</p></div><a class="rtc-download" href="s1rtc-pixel-coverage-unique.json" download="atlas-s1rtc-pixel-coverage-unique.json">Download the unique-group coverage audit ↗</a></div><div class="rtc-metrics"><span><b>169 / 192</b> selected groups at or above 80%</span><span><b>10 / 16</b> areas at or above 80% in all 12 selected groups</span></div><details class="rtc-details" open><summary>Compare 12 unique sampled dates for all 16 areas</summary><div class="rtc-table-wrap"><table class="rtc-table"><caption>Valid VV pixel coverage for three distinct sample groups per quarter and study area</caption><thead><tr><th scope="col">Study area</th><th scope="col">Q1 · A / B / C</th><th scope="col">Q2 · A / B / C</th><th scope="col">Q3 · A / B / C</th><th scope="col">Q4 · A / B / C</th></tr></thead><tbody id="rtcCoverageRows"></tbody></table></div></details><p class="rtc-footnote"><b>Interpretation:</b> the 80% per-scene floor is a spatial-coverage feasibility screen. All 12 selected area/orbit groups are distinct within each area; one group is sampled for each slot, and duplicate slots from the initial seeded draws were deterministically replaced from the remaining candidates. Low samples need review; other candidate groups require the same QA. This is not flood classification, OPERA validation, event/baseline adequacy, ground truth, or proof of comparability. <a href="https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc" target="_blank" rel="noopener">Open collection metadata ↗</a></p></section>{PANEL_END}'''
+PANEL = f'''{PANEL_START}<section class="rtc-sample" aria-labelledby="rtcSampleTitle"><div class="rtc-head"><div><div class="eyebrow">Sentinel-1 RTC spatial availability · 2025</div><h3 id="rtcSampleTitle">Matched valid-pixel coverage quota across 16 candidate areas</h3><p>Three unique 10 m VV orbit groups per quarter for each fixed 25 × 25 km area. The acceptance screen requires at least 80% finite, non-nodata pixels.</p></div><div><a class="rtc-download" href="s1rtc-pixel-coverage-valid-quota.json" download="atlas-s1rtc-pixel-coverage-valid-quota.json">Download the matched-quota audit ↗</a><br><a class="rtc-download" href="s1rtc-pixel-coverage-unique.json" download="atlas-s1rtc-pixel-coverage-initial-sample.json">Download the initial random sample ↗</a></div></div><div class="rtc-metrics"><span><b>192 / 192</b> selected groups meet the 80% screen</span><span><b>16 / 16</b> areas meet the same 12-group quota</span><span><b>34</b> additional groups screened · 23 accepted · 11 below floor</span></div><details class="rtc-details" open><summary>Compare 12 accepted sampled dates for all 16 areas</summary><div class="rtc-table-wrap"><table class="rtc-table"><caption>Valid VV pixel coverage for three distinct accepted sample groups per quarter and study area</caption><thead><tr><th scope="col">Study area</th><th scope="col">Q1 · A / B / C</th><th scope="col">Q2 · A / B / C</th><th scope="col">Q3 · A / B / C</th><th scope="col">Q4 · A / B / C</th></tr></thead><tbody id="rtcCoverageRows"></tbody></table></div></details><p class="rtc-footnote"><b>Interpretation:</b> this is a coverage-conditioned availability sample: 169 passing groups from the initial distinct draw were retained, then 34 additional same-quarter groups were screened to fill 23 slots; 11 screened candidates fell below the floor. Every selected group is distinct within its area. The matched quota improves comparability of spatial coverage only. It is not a flood-classification result, OPERA validation, event/baseline adequacy, independent truth, or confirmatory study enrollment. It is not an unconditional sample for estimating the fraction of all archive scenes with adequate coverage. <a href="https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc" target="_blank" rel="noopener">Open collection metadata ↗</a></p></section>{PANEL_END}'''
 
 
 CSS = f'''{CSS_START}.rtc-sample{{margin:14px 0 12px;padding:13px;background:#f8faf8;border:1px solid #dfe7e1;border-radius:7px}}.rtc-head{{display:flex;align-items:flex-start;gap:12px;justify-content:space-between}}.rtc-head h3{{font-size:13px;margin:4px 0}}.rtc-head p{{font-size:10px;line-height:1.45;color:#596861;margin:4px 0}}.rtc-download{{flex:none;color:#167568;font-size:10px}}.rtc-metrics{{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}}.rtc-metrics span{{padding:6px 8px;background:#fff;border:1px solid #e0e7e2;border-radius:5px;color:#596861;font-size:9px}}.rtc-metrics b{{color:#1a4f46;font-size:11px}}.rtc-details{{background:#fff;border:1px solid #e3e9e4;border-radius:5px}}.rtc-details summary{{padding:8px 10px;color:#34483f;font-size:10px;font-weight:650;cursor:pointer;min-height:36px}}.rtc-table-wrap{{overflow:auto;max-height:440px}}.rtc-table{{width:100%;border-collapse:collapse;min-width:610px;font-size:9px}}.rtc-table caption{{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}}.rtc-table th,.rtc-table td{{border-top:1px solid #edf0ed;padding:7px 8px;text-align:left;vertical-align:middle}}.rtc-table thead th{{position:sticky;top:0;background:#f4f7f4;color:#64736c;z-index:1}}.rtc-table tbody th{{min-width:120px;color:#263a32;font-size:9px}}.rtc-table tbody th small{{display:block;color:#77867e;font-weight:450;margin-top:2px}}.rtc-cell{{display:flex;flex-direction:column;gap:3px;white-space:nowrap}}.rtc-cell span{{color:#68776f}}.rtc-pass{{color:#176c5d}}.rtc-review{{color:#9d542c}}.rtc-footnote{{font-size:9px;line-height:1.55;color:#596861;margin:9px 0 0}}.rtc-footnote a{{color:#167568}}.rtc-area-readout{{margin:10px 0;padding:9px;background:#f3f7f4;border:1px solid #dfe7e1;border-radius:5px;font-size:9px;line-height:1.5}}.rtc-area-readout b{{color:#34483f}}@media(max-width:700px){{.rtc-head{{display:block}}.rtc-download{{display:inline-block;margin-top:7px}}}}{CSS_END}'''
@@ -57,6 +59,7 @@ def replace_marked(text: str, start: str, end: str, replacement: str, *, before:
 
 def build() -> None:
     audit = json.loads(UNIQUE_AUDIT.read_text())
+    quota_audit = json.loads(VALID_QUOTA_AUDIT.read_text())
     summary = audit["summary"]
     if (summary.get("areas") != 16 or summary.get("us_areas") != 8 or
             summary.get("international_areas") != 8 or len(audit.get("areas", [])) != 16):
@@ -65,15 +68,25 @@ def build() -> None:
             summary.get("unique_area_orbit_groups") != 192 or
             summary.get("duplicate_selections") != 0):
         raise ValueError("Unique coverage audit does not contain 192 distinct area/orbit groups")
+    quota_summary = quota_audit["summary"]
+    if (quota_summary.get("areas") != 16 or quota_summary.get("us_areas") != 8 or
+            quota_summary.get("international_areas") != 8 or
+            quota_summary.get("valid_groups_selected") != 192 or
+            quota_summary.get("target_valid_groups") != 192 or
+            quota_summary.get("areas_meeting_12_group_quota") != 16):
+        raise ValueError("Valid-quota audit must meet the common 12-group 8+8 coverage screen")
     data = []
-    for area in audit["areas"]:
+    for area in quota_audit["areas"]:
         if len(area["quarter_results"]) != 4 or any(len(q["samples"]) != 3 for q in area["quarter_results"]):
             raise ValueError(f"Expected three samples in each quarter for {area['city']}")
+        if any(not q["quota_met"] or any(s.get("valid_fraction") is None or s["valid_fraction"] < 0.8 for s in q["samples"])
+               for q in area["quarter_results"]):
+            raise ValueError(f"Quota audit contains a missing or below-floor sample for {area['city']}")
         data.append({
             "region": area["region"], "city": area["city"],
-            "sampled_quarter_pixel_passes": area["sampled_groups_passing_80pct"],
-            "sampled_group_count": area["sampled_group_count"],
-            "all_sampled_groups_meet_pixel_screen": area["all_12_sampled_groups_meet_pixel_screen"],
+            "sampled_quarter_pixel_passes": area["selected_valid_groups"],
+            "sampled_group_count": area["quota"],
+            "all_sampled_groups_meet_pixel_screen": area["all_quarter_quotas_met"],
             "quarter_results": area["quarter_results"],
         })
     combined = {
@@ -129,6 +142,7 @@ def build() -> None:
     html = replace_marked(html, TABLE_START, TABLE_END, TABLE_RENDERER_MULTI, before="drawStudyAreas();")
     HTML.write_text(html)
     shutil.copyfile(COMBINED_AUDIT, ASSET)
+    shutil.copyfile(VALID_QUOTA_AUDIT, VALID_QUOTA_ASSET)
     LEGACY_REPLICATE_ASSET.unlink(missing_ok=True)
 
 
