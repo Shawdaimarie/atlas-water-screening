@@ -27,7 +27,7 @@
 | Check | Result | Scope |
 |---|---|---|
 | Full hash-locked Python 3.12 suite | **139 passed in 18.16s** | Current worktree; dependencies installed from both lock files with `--require-hashes`. Author-run software checks, not independent reproduction. |
-| GitHub Actions on synchronized PR commit `2290477f514432a0594c46983731a094d035074d` | **139 passed in 3.46s; all jobs succeeded** | Run [41776210906](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41776210906) also passed the 16-area GEOID-Flood screen, container build/runtime audit, 11/11 HTTP smoke checks, and dependency-security scan. |
+| GitHub Actions on current PR head `26e5a6d0b3d599d4b2c124d3bac205ccab7cb15b` | **139 passed in 3.81s; all jobs succeeded** | Run [41776500087](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41776500087) also passed the 16-area GEOID-Flood screen, container build/runtime audit, 11/11 HTTP smoke checks, and dependency-security scan. |
 | Local page references | **12 checked; 0 missing** | Relative `href` and `src` references in `dist/index.html`; includes the complete JSON evidence register. |
 | `git diff --check` | Passed | Current worktree. |
 | Live production response without sign-in | **401** | Confirms private access behavior; does not exercise authenticated UI workflows. |
