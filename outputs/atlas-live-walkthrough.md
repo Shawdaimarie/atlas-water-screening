@@ -2,9 +2,9 @@
 
 ## Current deployment
 
-The private production Site is [ATLAS | Water Exposure Screening](https://atlas-water-screening.shawdaimarie.chatgpt.site/), **v50**, active with owner-only access. Sign in with `shawdaimarie@gmail.com` and refresh to view the current release. The browser Site is hosted on the existing Sites deployment; Apple does not host this web application. The v50 release and test record is in [the v50 end-to-end checklist](atlas-v50-end-to-end-checklist.md).
+The private production Site is [ATLAS | Water Exposure Screening](https://atlas-water-screening.shawdaimarie.chatgpt.site/), **v61**, active with owner-only access. Sign in with `shawdaimarie@gmail.com` and refresh to view the current release. The browser Site is hosted on the existing Sites deployment; Apple does not host this web application. The latest [v61 live revalidation](atlas-v61-live-revalidation-2026-11-04.md) records the deployment and authenticated interaction checks.
 
-The canonical score is **60/100 provisional**. The study register contains 8 U.S. and 8 international candidate areas, but no area passes the complete independent-reference and sampling gates (**0/16 confirmatory eligible**). The analysis panel uses synthetic fixture values. The matched Sentinel-1 RTC panel measures spatial availability only; it does not validate flood accuracy.
+The canonical score is **60/100 provisional**. The study register contains 8 U.S. and 8 international candidate areas, but no area passes the complete independent-reference and sampling gates (**0/16 confirmatory eligible**). The analysis panel uses synthetic fixture values. The matched Sentinel-1 RTC panel measures spatial availability only; it does not validate flood accuracy. The current v61 walkthrough was replayed on 2026-11-04; report and source-link reachability checks are linked below.
 
 ## Guided walkthrough
 
@@ -43,6 +43,12 @@ Authenticated browser replay on the deployed page passed all 16 candidate profil
 ## Current release — v50
 
 Sites readback confirms v50 deployed successfully and is active with owner-only access. The production replay verified the new Jakarta administrative-event context and JSON audit, the 8+8 frame, Jakarta profile, Baton Rouge/Ida scenario, quality-aware method, Southeast Water Plant detail, exports, and reset. The pinned Python 3.12 suite passed **143 tests**. The live analysis values remain synthetic; no area is confirmatory-eligible. The canonical score remains **60/100 provisional**. See [the v50 end-to-end checklist](atlas-v50-end-to-end-checklist.md) for deployment identifiers, archive hashes, tests, and limitations.
+
+## Current release — v61 (2026-11-04)
+
+The private Sites deployment is active and owner-only. A fresh authenticated replay checked the 16 candidate profiles, the shared public-value framework, the matched Sentinel-1 RTC availability screen, and the Singapore, Dubai, and Mumbai evidence profiles. For the separate illustrative workflow, the replay selected Baton Rouge / Hurricane Ida, changed to quality-aware aggregation, inspected Southeast Water Plant, confirmed the synthetic CSV export, and reset to the single-observation baseline. Example fixture results changed from 4 to 3 elevated assets and from 7.7% to 6.8% median overlap when the method changed; they are not measurements. The locked Python 3.12 suite passed **171 tests**. See [the v61 live revalidation](atlas-v61-live-revalidation-2026-11-04.md) for the complete run record and [the study-area source-link audit](atlas-study-area-source-link-audit-2026-11-04.md) for URL reachability checks.
+
+To reproduce the visible walkthrough, open the production link above and sign in, choose **Singapore**, **Dubai**, then **Mumbai** in the 16-area evidence screen, and review each profile's need evidence, shared value dimensions, comparable validation path, and evidence limits. In the separate **Study setup** controls, choose **Baton Rouge / Hurricane Ida**, switch between the single-observation and quality-aware methods, select **Southeast Water Plant**, use **Export evidence**, then **Reset analysis**. The candidate selector does not change the synthetic scenario. Exported fixture records remain labeled synthetic. The v61 replay confirms the export action and page confirmation; it did not inspect the downloaded CSV bytes during that replay.
 
 - [v40 deployment and end-to-end checklist](atlas-v40-end-to-end-checklist.md)
 - [Canonical scorecard](atlas-scorecard.md)
