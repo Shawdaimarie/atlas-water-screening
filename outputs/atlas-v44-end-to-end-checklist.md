@@ -38,7 +38,7 @@ The page explicitly states that overlap alone does not establish damage, service
 | Archive structure | Passed | Contains the static page, configured Sites manifest, and evidence JSON/CSV assets; 17 files. |
 | `git diff --check` | Passed | Current worktree and Site source checkout. |
 
-GitHub Actions run `41752413472` passed both the test/container and dependency-security jobs on private PR commit `14b5a1e2734fea5882631123ce5b5c0b647527e4`. That run predates the v44 value-framework addition and is not counted as verification of it.
+GitHub Actions run [41759266690](https://github.com/Shawdaimarie/atlas-water-screening/actions/runs/41759266690) passed on synchronized private PR commit `d7ec493fa407378713395b42e36ff7eb7dd0771b`: **138 tests in 3.07s**, GEOID-Flood 16-area footprint screen, container build, 11/11 HTTP smoke checks, runtime image audit, and dependency-security scan with no known vulnerabilities. This covers the v44 public-value framework source and generator regression test. It is not an independent reproduction or an empirical scientific validation.
 
 ## Production workflow coverage and limits
 
