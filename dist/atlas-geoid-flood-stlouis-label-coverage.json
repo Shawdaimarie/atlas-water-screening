@@ -1,0 +1,84 @@
+{
+  "audit_id": "atlas-geoid-flood-stlouis-label-coverage",
+  "created_at_utc": "2026-11-04T08:13:25.619039+00:00",
+  "area": {
+    "region": "United States",
+    "city": "St. Louis",
+    "fixed_aoi_bbox_wgs84": [
+      -90.343134,
+      38.514711,
+      -90.055666,
+      38.739289
+    ],
+    "register_sha256": "c44f866942a2f99f01141fb6a7baeea09a9b61a57db1beafb77a7f686de646d6"
+  },
+  "source": {
+    "dataset": "links-ads/geoid-flood",
+    "revision": "15db1cc0babbe3e570aa9fb582823c533504c971",
+    "catalog_sha256": "8599287a1a8cffc73014938a72698acd360414e47fbc54cdaa953b4ce3ab0e6d",
+    "catalog_rows_intersecting_aoi": 12,
+    "event_id": "EMSR203",
+    "event_date": "2017-04-28",
+    "benchmark_split": "train",
+    "label_shard_path": "geoid-flood/shards/train/label/train-label-00000-of-00001.tar",
+    "label_shard_bytes": 74137600,
+    "label_shard_sha256": "fc68e4cfbbf95db0e466552bf572b3fc7050d83bdfdeeef3f5deee3e3dab58ab",
+    "label_license": "CC BY 4.0; retain dataset and Copernicus attribution",
+    "label_classes": {
+      "0": "background",
+      "1": "permanent water",
+      "2": "flooded water",
+      "255": "outside mapped area / ignore"
+    }
+  },
+  "raster": {
+    "chip_count": 12,
+    "bbox_ids": [
+      34,
+      35,
+      36,
+      37,
+      42,
+      43,
+      44,
+      45,
+      50,
+      51,
+      52,
+      53
+    ],
+    "crs": "EPSG:32615",
+    "pixel_size_m": 10,
+    "mosaic_shape": [
+      1,
+      4096,
+      3072
+    ],
+    "grid_transform": [
+      10.000000000000455,
+      0.0,
+      727039.9999999997,
+      0.0,
+      -10.0,
+      4300800.000000001
+    ],
+    "pixel_count": 6244762,
+    "class_counts": {
+      "0": 4507775,
+      "1": 317922,
+      "2": 26280,
+      "255": 1392785
+    },
+    "mapped_label_pixels": 4851977,
+    "mapped_label_fraction": 0.776967480906398,
+    "flooded_water_pixels": 26280,
+    "flooded_water_fraction_of_all_aoi_pixels": 0.004208326914620605,
+    "outside_map_pixels": 1392785
+  },
+  "interpretation_limits": [
+    "The label chips belong to the GEOID-Flood training split and a 2017 event outside the common ATLAS 2024-2026 window.",
+    "Catalog tile-footprint union coverage is not the same as in-AOI mapped-label coverage; class 255 pixels are outside mapped areas and excluded from label assessment.",
+    "This is an operational expert reference, not absolute ground truth; no OPERA comparison, independent adjudication, sample frame, or confirmatory enrollment was performed.",
+    "This source result adds no score points and does not change 0/16 confirmatory eligibility."
+  ]
+}
