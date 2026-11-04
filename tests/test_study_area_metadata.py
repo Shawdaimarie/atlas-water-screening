@@ -135,7 +135,8 @@ def test_site_discloses_independent_reference_coverage_gaps():
     assert "no current area passes the independent-label gate" in site_html
     assert 'href="https://registry.opendata.aws/c2smsfloods/"' in site_html
     assert 'href="https://zenodo.org/records/23426661"' in site_html
-    assert site_html.count('<article class="reference-card">') == 11
+    assert site_html.count('<article class="reference-card">') == 12
+    assert "SenForFlood · global mask-chip screen" in site_html
     assert "Miami and Tampa · Hurricane Milton raw WTR samples" in site_html
     assert 'href="atlas-milton-egis-multisite-pixel-sample.json"' in site_html
     assert "not full-AOI coverage" in site_html
