@@ -5,7 +5,8 @@ schema_version: 1
 
 owner:
   contact_email: null
-  apple_account_role: undecided
+  # Separate from cloud hosting; account membership and App Store Connect access are unverified.
+  apple_account_role: app_store_testflight_distribution
   data_residency_decision: pending
   staging_production_boundary: pending
   approved_api_hostname: null

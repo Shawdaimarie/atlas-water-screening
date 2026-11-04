@@ -1,0 +1,50 @@
+{
+  "audit": "ATLAS Mumbai independent reference lead discovery",
+  "status": "discovery_only_not_validated",
+  "candidate_area": "Mumbai",
+  "event": {
+    "name": "Heavy rain and flooding in parts of Mumbai and Thane",
+    "event_id": "08-FL-2021-MH",
+    "imagery_date": "2021-07-18",
+    "map_issue_date": "2021-07-19",
+    "mapped_tiles": [
+      {
+        "map_id": "2021/01",
+        "url": "https://bhuvan-app1.nrsc.gov.in/disaster/usrtasks/flood/doc/Mumbai_floods_18jul_VAP_tile1.pdf",
+        "named_locations": ["Bharanipada", "Sanjeevani Mithaghar"]
+      },
+      {
+        "map_id": "2021/02",
+        "url": "https://bhuvan-app1.nrsc.gov.in/disaster/usrtasks/flood/doc/Mumbai_floods_18jul_VAP_tile2.pdf",
+        "named_locations": ["Wadhiv Saravali", "Kandre Bhure Bus Stop", "Tembhi Khodave"]
+      }
+    ],
+    "issuing_agency": "National Remote Sensing Centre (NRSC), Indian Department of Space",
+    "imagery": "Resourcesat-2 L4FMX, acquired 2021-07-18; pre-flood comparison image acquired 2019-04-12",
+    "interpretation": "Official flood response map titled Heavy Rain Affected Areas; identifies water logging and mapped affected areas in parts of Mumbai and Thane."
+  },
+  "coverage_and_use": {
+    "fixed_aoi_overlap_verified": false,
+    "machine_readable_geospatial_geometry_available": false,
+    "reuse_license_verified": false,
+    "source_marks_maps_for_official_use": true,
+    "independent_label_sample_available": false,
+    "decision": "Do not count as validation labels or confirmatory coverage. Seek NRSC permission or an openly licensed geospatial source, obtain georeferenced extent geometry, and verify overlap with the frozen Mumbai AOI before any analysis."
+  },
+  "discovery_method": "Reviewed NRSC/Bhuvan flood portal entries and opened the two linked official event-map PDFs; extracted map IDs, event ID, image and issue dates, sensor, mapped-place labels, and use marking from the documents.",
+  "created_at": "2026-11-03",
+  "sources": [
+    {
+      "title": "NRSC/Bhuvan flood portal: Mumbai Heavy Rains 2021 entries",
+      "url": "https://bhuvan-app1.nrsc.gov.in/disaster/usrtasks/flood/flood.php?uname=empty"
+    },
+    {
+      "title": "NRSC event map 2021/01",
+      "url": "https://bhuvan-app1.nrsc.gov.in/disaster/usrtasks/flood/doc/Mumbai_floods_18jul_VAP_tile1.pdf"
+    },
+    {
+      "title": "NRSC event map 2021/02",
+      "url": "https://bhuvan-app1.nrsc.gov.in/disaster/usrtasks/flood/doc/Mumbai_floods_18jul_VAP_tile2.pdf"
+    }
+  ]
+}

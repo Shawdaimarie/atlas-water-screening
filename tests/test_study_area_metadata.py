@@ -5,6 +5,7 @@ from pathlib import Path
 import yaml
 
 from scripts.audit_temporal_overlap import summarize
+from scripts.build_site_tampa_egis_card import build as build_tampa_egis_card
 from scripts.update_site_study_register import update as update_site_register
 
 
@@ -39,6 +40,10 @@ def test_validation_protocol_has_equal_8_plus_8_design_and_no_false_adequacy_cla
     assert protocol["study_areas"]["united_states"] == 8
     assert protocol["study_areas"]["international"] == 8
     assert protocol["state"] == "proposed_not_externally_preregistered"
+    assert protocol["version"] == 2
+    assert protocol["exploratory_findings_excluded_from_confirmatory"] is True
+    assert "exploratory" in protocol["exploratory_history"].casefold()
+    assert "externally timestamped" in protocol["confirmatory_freeze_record"]
     assert discovery["feasibility_floors_establish_statistical_adequacy"] is False
     assert PROTOCOL["enrollment"]["current_confirmatory_areas"] == 0
     assert PROTOCOL["reference_labels"]["independent_labelers"] == 2
@@ -53,6 +58,15 @@ def test_validation_precision_planning_value_is_reproducible():
         / sampling["target_half_width_proportion"] ** 2
     )
     assert n0 == sampling["simple_random_sample_n0"] == 385
+    assert sampling["n0_scope"] == "per_area_per_period_overall_accuracy_or_proportion"
+    planned = (
+        PROTOCOL["study_areas"]["total_candidates"]
+        * sampling["planning_periods_per_area"]
+        * n0
+    )
+    assert planned == sampling["planning_area_period_reference_assessments_for_8_plus_8"] == 12320
+    assert sampling["paired_locations_may_be_reused_across_periods"] is True
+    assert sampling["class_specific_precision_requires_separate_allocation"] is True
 
 
 def test_metadata_intersection_is_coarse_not_same_day_coverage():
@@ -80,6 +94,34 @@ def test_site_evidence_register_is_complete_and_idempotent():
     assert sum(area["region"] == "International" for area in profiles) == 8
     assert all(area["empirical_evidence"] and area["validation_path"] for area in profiles)
     assert updated.count("Demand distinction:") == 1
+    assert updated.count("GENERATED PUBLIC VALUE CHAIN START") == 1
+    assert updated.count("GENERATED PUBLIC VALUE CHAIN END") == 1
+    value_chain = updated.split("GENERATED PUBLIC VALUE CHAIN START", 1)[1].split("GENERATED PUBLIC VALUE CHAIN END", 1)[0]
+    for stage in ("Hazard observation", "Asset exposure", "Service consequence", "Distributional equity", "Decision usefulness"):
+        assert value_chain.count(stage) == 1
+    assert "Water overlap alone does not establish damage" in value_chain
+    assert "stakeholder-approved weights and sensitivity analysis" in value_chain
+
+
+def test_singapore_priority_profile_uses_current_official_context_and_excludes_test_series():
+    evidence = json.loads((ROOT / "data/study_area_evidence.json").read_text())
+    singapore = next(row for row in evidence["records"] if row["city"] == "Singapore")
+    assert "36 flood-prone locations" in singapore["empirical_evidence"]
+    assert singapore["secondary_evidence_url"] == (
+        "https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/"
+        "List-of-Flood-Prone-Areas-as-at-Apr-2025.pdf"
+    )
+    assert "no event-specific extent geometry" in singapore["validation_path"]
+    assert "not an independent event label" in singapore["scope_limit"]
+    site_html = update_site_register((ROOT / "dist/index.html").read_text(), AREAS)
+    embedded = site_html.split("const studyAreas=", 1)[1].split(";let selectedStudyArea=", 1)[0]
+    profiles = json.loads(embedded)
+    singapore_profile = next(row for row in profiles if row["city"] == "Singapore")
+    assert singapore_profile["secondary_evidence_url"] == singapore["secondary_evidence_url"]
+    assert "data.gov.sg" not in site_html
+    evidence_register = json.loads((ROOT / "outputs/atlas-study-area-evidence-register.json").read_text())
+    singapore_export = next(row for row in evidence_register["results"] if row["city"] == "Singapore")
+    assert singapore_export["secondary_evidence_url"] == singapore["secondary_evidence_url"]
 
 
 def test_site_discloses_independent_reference_coverage_gaps():
@@ -92,7 +134,10 @@ def test_site_discloses_independent_reference_coverage_gaps():
     assert "no current area passes the independent-label gate" in site_html
     assert 'href="https://registry.opendata.aws/c2smsfloods/"' in site_html
     assert 'href="https://zenodo.org/records/23426661"' in site_html
-    assert site_html.count('<article class="reference-card">') == 6
+    assert site_html.count('<article class="reference-card">') == 8
+    assert "Copernicus EMS Rapid Mapping · live AOI screen" in site_html
+    assert "268 activations · 90 floods · 0/16 fixed-area AOI overlaps" in site_html
+    assert 'href="atlas-cems-event-discovery-audit.json" download=' in site_html
     assert "16-area evidence-readiness ledger" in site_html
     assert "Download 16-area JSON" in site_html
     assert "SpaceNet 8 · Hurricane Ida" in site_html
@@ -104,6 +149,19 @@ def test_site_discloses_independent_reference_coverage_gaps():
     assert "all 12 records are in the benchmark training split" in site_html
     assert "not held-out validation" in site_html
     assert 'href="https://huggingface.co/datasets/links-ads/geoid-flood"' in site_html
+    assert "Tampa · NASA EGIS OPERA BWTR sample" in site_html
+    assert "237/1,024 on 2024-09-14 and 243/1,024 on 2024-09-26" in site_html
+    assert "preliminary and unvalidated" in site_html
+    assert "no independent labels were compared" in site_html
+
+
+def test_tampa_egis_site_card_build_is_idempotent_and_caveated():
+    site_html = (ROOT / "dist/index.html").read_text()
+    updated = build_tampa_egis_card(site_html)
+    assert build_tampa_egis_card(updated) == updated
+    assert updated.count("GENERATED TAMPA EGIS SAMPLE CARD START") == 1
+    assert "not full-area water fractions" in updated
+    assert "fails the three-date feasibility floor" in updated
 
 
 def test_site_protocol_panel_matches_proposed_validation_contract():
@@ -113,7 +171,9 @@ def test_site_protocol_panel_matches_proposed_validation_contract():
     assert "Proposed design—not externally preregistered" in site_html
     assert "three valid scenes and 80% scene validity are feasibility checks only" in site_html
     assert "Confirmatory enrollment: 0 / 16" in site_html
-    assert "385 independent units" in site_html
+    assert "385 effective independent reference units per site-period" in site_html
+    assert "12,320 area-period reference assessments" in site_html
+    assert "Class-specific accuracy requires separate sample allocation" in site_html
     assert "Invalid masks and no-data are missing, never dry" in site_html
     assert "the 3-date/80% thresholds as final criteria" not in site_html
     assert "Final enrollment requires 3 QA-valid scenes in each event and baseline period" not in site_html
@@ -139,15 +199,17 @@ def test_s1rtc_real_pixel_coverage_audit_is_balanced_and_clearly_limited():
 
 def test_live_site_source_exposes_s1rtc_sample_table_and_download():
     site_html = (ROOT / "dist/index.html").read_text()
-    assert "Sentinel-1 coverage varies across the candidate areas" in site_html
-    assert "169 / 192" in site_html
-    assert "10 / 16" in site_html
-    assert "Compare 12 unique sampled dates" in site_html
+    assert "Matched valid-pixel coverage quota across 16 candidate areas" in site_html
+    assert "192 / 192" in site_html
+    assert "16 / 16" in site_html
+    assert "34</b> additional groups screened · 23 accepted · 11 below floor" in site_html
+    assert "Compare 12 accepted sampled dates" in site_html
     assert "A / B / C" in site_html
     assert "A / B / C / C" not in site_html
     assert 'id="rtcCoverageRows"' in site_html
     assert "renderS1rtcAreaCoverage" in site_html
     assert 'href="s1rtc-pixel-coverage-unique.json"' in site_html
+    assert 'href="s1rtc-pixel-coverage-valid-quota.json"' in site_html
     assert 'href="https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc"' in site_html
     combined = json.loads((ROOT / "outputs/atlas-s1rtc-pixel-coverage-combined-audit.json").read_text())
     assert combined["measurement"]["source_declared_nodata_values"] == [-32768]
@@ -169,6 +231,19 @@ def test_live_site_source_exposes_s1rtc_sample_table_and_download():
     assert (ROOT / "dist/s1rtc-pixel-coverage-unique.json").read_bytes() == (
         ROOT / "outputs/atlas-s1rtc-pixel-coverage-combined-audit.json").read_bytes()
     assert not (ROOT / "dist/s1rtc-pixel-coverage-replicates.json").exists()
+
+
+def test_site_matched_quota_asset_preserves_all_screening_attempts_and_limits():
+    report = json.loads((ROOT / "dist/s1rtc-pixel-coverage-valid-quota.json").read_text())
+    assert report["summary"]["valid_groups_selected"] == 192
+    assert report["summary"]["areas_meeting_12_group_quota"] == 16
+    assert report["summary"]["supplemental_groups_screened"] == 34
+    assert len(report["areas"]) == 16
+    assert all(area["all_quarter_quotas_met"] for area in report["areas"])
+    assert all(len(q["supplemental_attempts"]) == q["supplemental_groups_screened"]
+               for area in report["areas"] for q in area["quarter_results"])
+    assert any("water classification or flood accuracy" in limit for limit in report["interpretation_limits"])
+    assert any("does not provide a regional population estimate" in limit for limit in report["interpretation_limits"])
 
 
 def test_evidence_export_includes_selected_scenario_and_measurement_provenance():
