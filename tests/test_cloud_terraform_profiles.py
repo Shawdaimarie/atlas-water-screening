@@ -86,7 +86,8 @@ def test_ci_installs_checksum_pinned_terraform_and_validates_all_four_roots():
     assert "upload-artifact: true" in workflow
 
 
-def test_runtime_image_pins_fixed_setuptools_with_pypi_hash():
+
+def test_runtime_image_uses_pinned_trixie_base_without_setuptools_install():
     dockerfile = (ROOT / "Dockerfile").read_text()
-    assert "setuptools==84.2.1" in dockerfile
-    assert "ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2" in dockerfile
+    assert "python:3.12-slim-trixie@sha256:b18b261e1b4974b4f321451ad5251ded85abb22c2b8b262da527dda1d031ab30" in dockerfile
+    assert "setuptools==" not in dockerfile
