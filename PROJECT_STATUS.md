@@ -118,3 +118,8 @@ Private owner-only Site v43 is active at https://atlas-water-screening.shawdaima
 ## 2026-11-04 UTC — v44 shared public-value framework
 
 Private owner-only Site v44 is active at the same URL. Deployment `appgdep_6aea91ded74c8191a68b51b722cc4512` succeeded from source commit `de08838d4e03332177008b9cf3b49a981a7c1caa`, with archive SHA-256 `d4eb0d480a709130fd87d3c6c3ce3b923e60a4ed881113e0ea51c5061f7e8c66` and 17 packaged files. It applies a common five-step public-value framework equally across the 16 candidate areas. The current hash-locked full worktree suite passed 138 tests in 22.09s; local page script syntax, 11 relative references, current source-package alignment, and `git diff --check` passed. Sites readback confirms owner-only access and an unauthenticated HTTP 401. The CUA bridge did not reconnect, so the full authenticated interaction evidence remains the v43 replay. The study remains 0/16 confirmatory-eligible and the canonical score remains 60/100 provisional. Four-cloud deployment and Apple native distribution are not verified. See `outputs/atlas-v44-end-to-end-checklist.md`.
+
+
+## 2026-11-04 — Jakarta event-specific reference-source check
+
+A PetaBencana archive request for the BPBD-reported 22–26 January 2026 flood window returned five neighborhood records last updated 2022-10-07, with the same response hash as unrelated 2025 and 2026 request windows. These are stale and are not accepted as event references. The exact query, controls, hash, and tests are in `outputs/atlas-petabencana-january-2026-event-window.md` and `outputs/atlas-petabencana-archive-screen.json`; the updated query is reproduced by `scripts/audit_petabencana_archive.py`. No area becomes confirmatory-eligible, and the score remains 60/100 provisional.
