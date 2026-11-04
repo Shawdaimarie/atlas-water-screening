@@ -1902,11 +1902,11 @@
       "returned_entries_complete": true,
       "status": "candidate; archive metadata screened; QA pixels and independent labels pending",
       "need_evidence_type": "national drainage performance and current risk context",
-      "empirical_evidence": "PUB reports that flood-prone area fell from about 3,200 ha in the 1970s to less than 25 ha, a 99% reduction, while also identifying continuing flash-flood and coastal-flood risks and named hotspots. The historical reduction is a national management outcome, not an ATLAS result.",
+      "empirical_evidence": "PUB reports that flood-prone area fell from about 3,200 ha in the 1970s to less than 25 ha, a 99% reduction. Its 2 April 2025 national list names 36 flood-prone locations defined as low-lying areas with a history of flooding. These are Singapore-wide management and residual-risk context, not event-specific label data or ATLAS results.",
       "value_dimensions": "drainage-service performance; urban transport and facility access; residual-risk hotspot prioritization",
-      "validation_path": "Use PUB’s dated flood alerts, water-level sensor or rainfall records, and official hotspot polygons for a held-out event; spatially check each source against the common box and retain national statistics only as context.",
-      "scope_limit": "National before/after flood-prone area figures cannot be attributed to the 625 km² screen or to satellite detection.",
-      "secondary_evidence_url": ""
+      "validation_path": "For a held-out event, obtain dated PUB flood alerts, water-level sensor or rainfall records, and official geospatial hotspot layers. The 2025 PDF supplies named locations but no event-specific extent geometry; verify licensing and geocode only from a suitable official or openly licensed source before testing intersection with the frozen common box.",
+      "scope_limit": "The national 1970s-to-current area trend and 36 named locations cannot be attributed to the 625 km² screen without geospatial intersection. The hotspot list is risk context, not an independent event label or pixel-level reference.",
+      "secondary_evidence_url": "https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/List-of-Flood-Prone-Areas-as-at-Apr-2025.pdf"
     },
     {
       "region": "International",

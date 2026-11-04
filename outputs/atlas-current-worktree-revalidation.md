@@ -1,5 +1,15 @@
 # ATLAS current-worktree revalidation
 
+## Fresh full-worktree and live-release check — 2026-11-03 America/Chicago
+
+- Re-ran the complete repository suite in the digest-pinned Python 3.12 Bookworm image with both dependency lock files installed using `--require-hashes`: **139 passed in 18.16s**. `git diff --check` passed. A local HTML reference audit found **12** relative `href`/`src` references and **0** missing files, including the JSON evidence register.
+- Sites readback confirms private Site **v45** is active, owner-only, and has zero external visitors. Version 45 is tied to source commit `a3718a6043d131fc989e1d172d41a90e839f6cf7`, deployment `appgdep_6aeaa307a37c8191ad760a055e109dfd`, archive SHA-256 `7338d6ac98da75340468209d10d89b2dbfa3cb0e958279c7e6a6b94fcc649c2e`, and 17 packaged files. A direct unauthenticated production request returned **HTTP 401**.
+- A new authenticated browser replay could not be completed. CUA `getState` returned `Browsers: Error: transport closed before response`; a Chrome app-access attempt then returned `Sky Computer Use service startup request failed`. Per Sites preview guidance, browser QA is skipped when the computer-use service is unavailable. The complete authenticated replay remains the v43 record; v45's deployment and current UI package are verified, but v45-specific controls are not freshly observed.
+- The 8+8 evidence register remains **16 candidate areas: 8 U.S. and 8 international**. It includes the new official Singapore PUB 36-location national context, with no claim of fixed-box overlap. The evidence matrix reports **0/16 confirmatory-eligible**; matched RTC quota is spatial availability evidence, not flood validation. The analysis values remain synthetic. The canonical score remains **60/100 provisional**.
+- The four-cloud release preflight still fails closed with **29 missing or invalid release requirements** and creates no resources. No GCP, AWS, Azure, or OCI deployment is verified. Apple Developer membership/App Store Connect access, full Xcode, and a native app target are still unverified.
+
+This revalidation confirms v45 production deployment, private access, package references, and the full local test suite. It does not claim a fresh v45 browser E2E run, cloud-provider deployment, scientific validation, or independent reproduction. Detailed release evidence is in `atlas-v45-end-to-end-checklist.md`.
+
 **Run date:** 2026-11-03  
 **Purpose:** revalidate the current source and release evidence against the active ATLAS goal. This is a local verification record, not a claim of independent reproduction or a new production deployment.
 

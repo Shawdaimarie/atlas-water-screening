@@ -103,6 +103,27 @@ def test_site_evidence_register_is_complete_and_idempotent():
     assert "stakeholder-approved weights and sensitivity analysis" in value_chain
 
 
+def test_singapore_priority_profile_uses_current_official_context_and_excludes_test_series():
+    evidence = json.loads((ROOT / "data/study_area_evidence.json").read_text())
+    singapore = next(row for row in evidence["records"] if row["city"] == "Singapore")
+    assert "36 flood-prone locations" in singapore["empirical_evidence"]
+    assert singapore["secondary_evidence_url"] == (
+        "https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/"
+        "List-of-Flood-Prone-Areas-as-at-Apr-2025.pdf"
+    )
+    assert "no event-specific extent geometry" in singapore["validation_path"]
+    assert "not an independent event label" in singapore["scope_limit"]
+    site_html = update_site_register((ROOT / "dist/index.html").read_text(), AREAS)
+    embedded = site_html.split("const studyAreas=", 1)[1].split(";let selectedStudyArea=", 1)[0]
+    profiles = json.loads(embedded)
+    singapore_profile = next(row for row in profiles if row["city"] == "Singapore")
+    assert singapore_profile["secondary_evidence_url"] == singapore["secondary_evidence_url"]
+    assert "data.gov.sg" not in site_html
+    evidence_register = json.loads((ROOT / "outputs/atlas-study-area-evidence-register.json").read_text())
+    singapore_export = next(row for row in evidence_register["results"] if row["city"] == "Singapore")
+    assert singapore_export["secondary_evidence_url"] == singapore["secondary_evidence_url"]
+
+
 def test_site_discloses_independent_reference_coverage_gaps():
     site_html = (ROOT / "dist/index.html").read_text()
     assert 'aria-labelledby="referenceAuditTitle"' in site_html

@@ -352,11 +352,15 @@ DKI Jakarta reported 580 stationary pumps across 202 locations and 557 mobile pu
 
 PUB reports that flood-prone area fell from about 3,200 ha in the 1970s to less than 25 ha, a 99% reduction, while also identifying continuing flash-flood and coastal-flood risks and named hotspots. The historical reduction is a national management outcome, not an ATLAS result. [Primary evidence](https://www.pub.gov.sg/Public/KeyInitiatives/Flood-Resilience/About-Floods).
 
+PUB’s official [2025 flood-prone-area list](https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/List-of-Flood-Prone-Areas-as-at-Apr-2025.pdf) names 36 locations and defines flood-prone areas as low-lying locations with a history of flooding. The PDF provides named places, not event-specific flood polygons; no intersection with the fixed 625 km² screen is claimed. A separate data.gov.sg page showing a 2010–2021 hectare series is explicitly marked as staging/test-only and is excluded from the evidence register.
+
 **Fixed screen:** 231 CMR granule metadata hits, 163 distinct dates, 625 km² nominal AOI, 2024-09-01 through 2026-11-02 UTC. **Value dimensions:** drainage-service performance, urban transport and facility access, residual-risk hotspot prioritization.
 
 **Comparable validation path:** Use PUB’s dated flood alerts, water-level sensor or rainfall records, and official hotspot polygons for a held-out event; spatially check each source against the common box and retain national statistics only as context.
 
 **Scope limit:** National before/after flood-prone area figures cannot be attributed to the 625 km² screen or to satellite detection. The candidate still has no demonstrated pixel-QA pass or independent-label accuracy result.
+
+See the [Singapore source-quality audit](atlas-singapore-source-audit.md) for the source distinction and verification record.
 
 #### Dubai — funded infrastructure program (planned targets)
 

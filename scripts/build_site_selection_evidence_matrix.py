@@ -281,6 +281,7 @@ def render_site_card(matrix: dict[str, Any]) -> str:
         "Metadata and news-derived event leads are discovery only. Confirmatory enrollment also requires event-specific QA-valid OPERA scenes, "
         "independent licensed labels, probability sampling, and the predeclared precision gate. "
         f'<a href="{DEFAULT_JSON.name}" target="_blank" rel="noopener">Open full selection and readiness matrix ↗</a> '
+        f'<a href="atlas-study-area-evidence-register.json" target="_blank" rel="noopener">Open complete 8+8 area evidence register ↗</a> '
         f'<a href="{DEFAULT_CSV.name}" download="{DEFAULT_CSV.name}">Download 8+8 evidence matrix CSV ↧</a></div>{CARD_END}'
     )
 

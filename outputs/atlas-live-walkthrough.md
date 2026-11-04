@@ -2,7 +2,7 @@
 
 ## Current deployment
 
-The private production Site is [ATLAS | Water Exposure Screening](https://atlas-water-screening.shawdaimarie.chatgpt.site/), **v44**, active with owner-only access. Sign in with the authorized account to view it. The browser Site is hosted on the existing Sites deployment; Apple does not host this web application.
+The private production Site is [ATLAS | Water Exposure Screening](https://atlas-water-screening.shawdaimarie.chatgpt.site/), **v45**, active with owner-only access. Sign in with `shawdaimarie@gmail.com` and refresh to view the current release. The browser Site is hosted on the existing Sites deployment; Apple does not host this web application. The v45 release and test record is in [the v45 end-to-end checklist](atlas-v45-end-to-end-checklist.md).
 
 The canonical score is **60/100 provisional**. The study register contains 8 U.S. and 8 international candidate areas, but no area passes the complete independent-reference and sampling gates (**0/16 confirmatory eligible**). The analysis panel uses synthetic fixture values. The matched Sentinel-1 RTC panel measures spatial availability only; it does not validate flood accuracy.
 
@@ -10,6 +10,7 @@ The canonical score is **60/100 provisional**. The study register contains 8 U.S
 
 1. Open the Site and read the visible synthetic-data disclosure. Candidate-area profiles and the synthetic analysis scenario are separate controls; selecting a study candidate does not change the synthetic portfolio.
 2. In **16-area evidence and coverage screen**, select **Jakarta**, **Dubai**, **Singapore**, and **Mumbai** in turn, then compare **Houston**. Review each fixed footprint, empirical public-need evidence, value-integration question and dimensions, comparable validation path, source links, and metadata count. Every profile remains candidate-only until its QA and independent-label gates pass.
+   - For Singapore, the official PUB list records 36 named flood-prone locations as national research/management context. The list has no event polygons, and no overlap with the fixed ATLAS box is claimed. Open the full [machine-readable 8+8 evidence register](atlas-study-area-evidence-register.json) for all 16 profiles and their scope notes.
 3. Read the **Shared public-value framework** beneath the selection matrix. It applies the same sequence to every area: hazard observation, asset exposure, service consequence, distributional equity, and decision usefulness. It keeps observations separate from consequences and states that water overlap alone does not show damage, failure, loss, or benefit.
 4. Expand **Compare 12 accepted sampled dates for all 16 areas**. The table shows three Sentinel-1 RTC VV orbit groups per quarter in each fixed area. The coverage-conditioned matched quota reports **192/192 selected groups**, **16/16 areas**, and **34 additional candidates screened** (23 accepted and 11 below the 80% floor). The card separately reports 169/192 passing groups in the initial random draw and warns that matched selection is conditional, not an archive-wide pass-rate estimate. This is spatial availability only.
 5. Expand **Raster-level candidate-date availability · Copernicus GFM**. The 16-area table summarizes 48 baseline/event/post-event date slots: 39 have a matching raster, and 8/39 selected rasters meet the 80% valid-pixel floor. Houston and Jakarta pass on their single candidate-event sample. GFM shares Sentinel-1 lineage with OPERA, so it is not independent flood truth.
@@ -38,6 +39,10 @@ These are passed demo/deployment workflows, not flood-validation results. The re
 ## Previous production walkthrough — v43 (2026-11-04)
 
 Authenticated browser replay on the deployed page passed all 16 candidate profiles and their evidence fields, Baton Rouge/Hurricane Ida selection, quality-aware aggregate update, Southeast Water Plant detail, reset to the single-scene baseline, and completed synthetic CSV export. The live CEMS panel displays 268 activations, 90 floods, and 0/16 fixed-area overlaps. The full hash-locked Python suite passed 138 tests in the current worktree. See [the v43 checklist](atlas-v43-end-to-end-checklist.md) for deployment IDs, archive hash, observed values, and limitations. Analysis values remain synthetic; the evidence register is candidate readiness, with 0/16 confirmatory eligibility and a 60/100 provisional score.
+
+## Current release — v45
+
+Sites readback confirms v45 deployed successfully and is active with owner-only access. The release adds the Singapore PUB source context and a link to the complete 8+8 JSON evidence register. The latest full hash-locked worktree run reports **139 passed**; this validates source behavior and fixtures, not the production browser click-through. The browser bridge is currently unavailable, so the authenticated v43 replay above is the latest observed end-to-end UI run. The canonical score remains 60/100 provisional; no area is confirmatory-eligible, and all scenario analysis values remain synthetic.
 
 - [v40 deployment and end-to-end checklist](atlas-v40-end-to-end-checklist.md)
 - [Canonical scorecard](atlas-scorecard.md)
