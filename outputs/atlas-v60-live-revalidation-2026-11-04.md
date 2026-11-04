@@ -30,4 +30,4 @@ The canonical score remains **60/100 provisional**. The v60 accessibility improv
 
 ## Source alignment
 
-The Sites release is proven to use source commit `73207c38e528e8e0fd2552d300637c61e8ee8257`. The current local Git checkout is an older base with substantial uncommitted work; this record does not imply that the whole local worktree is committed or aligned with GitHub. The accessible v60 UI/test delta is proposed separately for canonical GitHub review.
+The Sites release is proven to use source commit `73207c38e528e8e0fd2552d300637c61e8ee8257`. The accessible v60 UI/test delta was merged into canonical GitHub main in PR #8 (merge commit `b731570dbda7021fa18a84fb791b90de04a9ce9d`). The local checkout remains an older base with substantial uncommitted work; this does not imply that the entire worktree is committed or aligned with GitHub.
