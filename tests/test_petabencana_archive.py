@@ -47,16 +47,6 @@ def test_archive_screen_accepts_control_dates_inside_requested_window() -> None:
     assert result["screening_outcome"] == "has_returned_updates_within_requested_window"
 
 
-def test_archive_screen_rejects_invalid_response_envelope() -> None:
-    window = {"label": "bad", "start": "2025-03-01T00:00:00+0700", "end": "2025-03-08T23:00:00+0700"}
-    try:
-        summarize_window(window, {"statusCode": 500, "result": []}, "0" * 64)
-    except ValueError as exc:
-        assert "unexpected response envelope" in str(exc)
-    else:
-        raise AssertionError("invalid response envelope should fail closed")
-
-
 def test_archive_screen_flags_stale_rows_for_jakarta_january_2026_event() -> None:
     window = {
         "label": "Jakarta BPBD 22-26 January 2026 event window",
@@ -76,3 +66,13 @@ def test_archive_screen_flags_stale_rows_for_jakarta_january_2026_event() -> Non
     assert result["returned_rows_with_update_date_in_requested_window"] == 0
     assert result["returned_update_date_min"] == "2022-10-07"
     assert result["screening_outcome"] == "returned_rows_are_outside_requested_window"
+
+
+def test_archive_screen_rejects_invalid_response_envelope() -> None:
+    window = {"label": "bad", "start": "2025-03-01T00:00:00+0700", "end": "2025-03-08T23:00:00+0700"}
+    try:
+        summarize_window(window, {"statusCode": 500, "result": []}, "0" * 64)
+    except ValueError as exc:
+        assert "unexpected response envelope" in str(exc)
+    else:
+        raise AssertionError("invalid response envelope should fail closed")

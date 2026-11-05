@@ -1,13 +1,13 @@
 {
   "screening_protocol": {
-    "aoi": "25 km \u00d7 25 km city-center screening box; approximate WGS84 bounding box, ~625 km\u00b2",
+    "aoi": "25 km × 25 km city-center screening box; approximate WGS84 bounding box, ~625 km²",
     "period": [
       "2024-09-01T00:00:00Z",
       "2026-11-02T23:59:59Z"
     ],
     "collection": "OPERA_L3_DSWX-S1_V1",
     "screening_gate": "At least 90 distinct acquisition dates for metadata discovery. Passing this gate does not establish valid pixels, flood events, independent reference labels, or inclusion in final analyses.",
-    "balanced_design": "For enrolled event studies: same 25 km \u00d7 25 km (~625 km\u00b2) analysis footprint and prespecified event/baseline rules; require at least 3 QA-valid acquisition dates in each period, each with at least 80% unmasked pixels in the fixed AOI and each asset footprint. When more than 3 dates qualify, select the same number per area using a consistent temporal rule and report all exclusions/missingness. If any area cannot meet the minimum, defer it or reselect before analysis; do not impute. Independent labels must be collected from government/field records not derived from the same satellite product."
+    "balanced_design": "For enrolled event studies: same 25 km × 25 km (~625 km²) analysis footprint and prespecified event/baseline rules; require at least 3 QA-valid acquisition dates in each period, each with at least 80% unmasked pixels in the fixed AOI and each asset footprint. When more than 3 dates qualify, select the same number per area using a consistent temporal rule and report all exclusions/missingness. If any area cannot meet the minimum, defer it or reselect before analysis; do not impute. Independent labels must be collected from government/field records not derived from the same satellite product."
   },
   "results": [
     {
@@ -17,7 +17,7 @@
       "lon": -95.3698,
       "screening_rationale": "Gulf coastal compound rainfall, river, and surge flooding; critical infrastructure exposure is well documented.",
       "value_integration_question": "Use as a high-hazard coastal baseline and test how observed-water overlap aligns with infrastructure and watershed planning.",
-      "evidence_url": "https://prod-01-asg-toolkit-climate.woc.noaa.gov/action-plan/resilient-houston",
+      "evidence_url": "https://www.houstontx.gov/cip/26cipadopt/e_storm.pdf",
       "aoi_bbox_wgs84": "-95.499149,29.648111,-95.240451,29.872689",
       "aoi_area_km2": 625,
       "collection": "OPERA_L3_DSWX-S1_V1",
@@ -156,7 +156,8 @@
       "first_acquisition_date": "2024-09-04",
       "last_acquisition_date": "2026-10-24",
       "returned_entries_complete": true,
-      "status": "candidate; archive metadata screened; QA pixels and independent labels pending"
+      "status": "candidate; archive metadata screened; QA pixels and independent labels pending",
+      "secondary_evidence_url": "https://prod-01-asg-toolkit-climate.woc.noaa.gov/action-plan/resilient-houston"
     },
     {
       "region": "United States",
@@ -299,7 +300,7 @@
       "lon": -82.4572,
       "screening_rationale": "USGS documented widespread Milton flooding in its Tampa coverage area, major-stage rivers, and field measurements/gage repairs.",
       "value_integration_question": "Test an event with independent hydrologic measurements and coastal/river flood context.",
-      "evidence_url": "https://water.usgs.gov/alerts/item_2024-10-11_20%3A05%3A00.html",
+      "evidence_url": "https://www.usgs.gov/news/national-news-release/usgs-deploys-sensors-along-floridas-gulf-coast-measure-impacts-hurricane",
       "aoi_bbox_wgs84": "-82.584317,27.838311,-82.330083,28.062889",
       "aoi_area_km2": 625,
       "collection": "OPERA_L3_DSWX-S1_V1",
@@ -418,7 +419,8 @@
       "first_acquisition_date": "2024-09-02",
       "last_acquisition_date": "2026-10-24",
       "returned_entries_complete": true,
-      "status": "candidate; archive metadata screened; QA pixels and independent labels pending"
+      "status": "candidate; archive metadata screened; QA pixels and independent labels pending",
+      "secondary_evidence_url": "https://water.usgs.gov/alerts/item_2024-10-11_20%3A05%3A00.html"
     },
     {
       "region": "United States",
@@ -427,7 +429,7 @@
       "lon": -90.0715,
       "screening_rationale": "Low elevation, levees, pumps, and a large catch-basin network create a documented urban rainfall-flood management problem.",
       "value_integration_question": "Test satellite screening in a pump-dependent, leveed urban drainage environment.",
-      "evidence_url": "https://marinedebris.noaa.gov/removal/preventing-pervasive-floating-litter-new-orleans-storm-drains",
+      "evidence_url": "https://ready.nola.gov/hazard-mitigation/hazards/flooding/",
       "aoi_bbox_wgs84": "-90.201096,29.838811,-89.941904,30.063389",
       "aoi_area_km2": 625,
       "collection": "OPERA_L3_DSWX-S1_V1",
@@ -605,7 +607,8 @@
       "first_acquisition_date": "2024-09-06",
       "last_acquisition_date": "2026-10-27",
       "returned_entries_complete": true,
-      "status": "candidate; archive metadata screened; QA pixels and independent labels pending"
+      "status": "candidate; archive metadata screened; QA pixels and independent labels pending",
+      "secondary_evidence_url": "https://marinedebris.noaa.gov/removal/preventing-pervasive-floating-litter-new-orleans-storm-drains"
     },
     {
       "region": "United States",
@@ -614,7 +617,7 @@
       "lon": -74.006,
       "screening_rationale": "NOAA-hosted research maps present/future flood adaptation areas; infrastructure and power-system exposure are documented.",
       "value_integration_question": "Test dense coastal infrastructure and compare pluvial/coastal water exposure across an urban asset portfolio.",
-      "evidence_url": "https://repository.library.noaa.gov/view/noaa/77144",
+      "evidence_url": "https://www.nyc.gov/site/dep/news/25-031/mayor-adams-nyc-department-environmental-protection-delivered-historic-progress-climate",
       "aoi_bbox_wgs84": "-74.154141,40.600511,-73.857859,40.825089",
       "aoi_area_km2": 625,
       "collection": "OPERA_L3_DSWX-S1_V1",
@@ -872,9 +875,9 @@
       "city": "Sacramento",
       "lat": 38.5816,
       "lon": -121.4944,
-      "screening_rationale": "The Sacramento region relies on levees along major rivers; USGS maintains streamgages and studies flood processes in California\u2019s Central Valley.",
-      "value_integration_question": "Add an inland river/levee comparator and assess whether water observations can complement gauge-based context.",
-      "evidence_url": "https://www.usgs.gov/centers/california-water-science-center/science/science-topics/floods",
+      "screening_rationale": "The City of Sacramento's 2024 flood-management plan documents riverine and stormwater hazards and describes the city's 2017 event response; the City's levee-break maps support scenario-planning relevance but are not observations.",
+      "value_integration_question": "Test whether validated satellite water observations add timely spatial context to municipal incident records, river gauges, levee information, and public-infrastructure priorities.",
+      "evidence_url": "https://www.cityofsacramento.gov/content/dam/portal/dou/utilities/stormwater/flood-preparedness/documents/CFMP%202024%20with%20Appendix%20%281%29_Final.pdf",
       "aoi_bbox_wgs84": "-121.638043,38.469311,-121.350757,38.693889",
       "aoi_area_km2": 625,
       "collection": "OPERA_L3_DSWX-S1_V1",
@@ -1145,16 +1148,17 @@
       "first_acquisition_date": "2024-09-02",
       "last_acquisition_date": "2026-10-25",
       "returned_entries_complete": true,
-      "status": "candidate; archive metadata screened; QA pixels and independent labels pending"
+      "status": "candidate; archive metadata screened; QA pixels and independent labels pending",
+      "secondary_evidence_url": "https://www.cityofsacramento.gov/utilities/flood-preparedness/flood-maps"
     },
     {
       "region": "United States",
       "city": "Atlanta",
       "lat": 33.749,
       "lon": -84.388,
-      "screening_rationale": "The City\u2019s 2025 comprehensive plan calls for stormwater management and flooding mitigation, including capital and watershed actions.",
+      "screening_rationale": "The City’s 2025 comprehensive plan calls for stormwater management and flooding mitigation, including capital and watershed actions.",
       "value_integration_question": "Test an inland urban-runoff case and connect exposure evidence to watershed and public-infrastructure planning.",
-      "evidence_url": "https://www.atlantaga.gov/home/showpublisheddocument/66053/638884420075030000",
+      "evidence_url": "https://atlantawatershed.org/watershedimprovementplans/",
       "aoi_bbox_wgs84": "-84.523047,33.636711,-84.252953,33.861289",
       "aoi_area_km2": 625,
       "collection": "OPERA_L3_DSWX-S1_V1",
@@ -1275,7 +1279,7 @@
       "lon": -90.1994,
       "screening_rationale": "NOAA/NWS river gauge documentation defines flood stages and describes levee/floodwall impacts along the Mississippi.",
       "value_integration_question": "Test a major-river and levee comparator with official river-stage context.",
-      "evidence_url": "https://water.noaa.gov/gauges/eadm7",
+      "evidence_url": "https://www.weather.gov/lsx/1993_flood",
       "aoi_bbox_wgs84": "-90.343134,38.514711,-90.055666,38.739289",
       "aoi_area_km2": 625,
       "collection": "OPERA_L3_DSWX-S1_V1",
@@ -1389,7 +1393,8 @@
       "first_acquisition_date": "2024-09-06",
       "last_acquisition_date": "2026-10-27",
       "returned_entries_complete": true,
-      "status": "candidate; archive metadata screened; QA pixels and independent labels pending"
+      "status": "candidate; archive metadata screened; QA pixels and independent labels pending",
+      "secondary_evidence_url": "https://water.noaa.gov/gauges/eadm7"
     },
     {
       "region": "International",
@@ -1398,7 +1403,7 @@
       "lon": 106.8456,
       "screening_rationale": "Greater Jakarta faces regular widespread flooding alongside water-supply deficits and water-quality challenges; the World Bank calls for integrated urban water management.",
       "value_integration_question": "Study cross-jurisdictional water exposure and the integration of flood, water-supply, sanitation, and infrastructure planning.",
-      "evidence_url": "https://www.worldbank.org/en/topic/water/publication/pathways-to-integrated-urban-water-management-for-greater-jakarta",
+      "evidence_url": "https://www.jakarta.go.id/siaran-pers/4685-SP-HMS-03-2024",
       "aoi_bbox_wgs84": "106.732649,-6.321089,106.958551,-6.096511",
       "aoi_area_km2": 625,
       "collection": "OPERA_L3_DSWX-S1_V1",
@@ -1660,7 +1665,8 @@
       "first_acquisition_date": "2024-09-01",
       "last_acquisition_date": "2026-10-28",
       "returned_entries_complete": true,
-      "status": "candidate; archive metadata screened; QA pixels and independent labels pending"
+      "status": "candidate; archive metadata screened; QA pixels and independent labels pending",
+      "secondary_evidence_url": "https://www.worldbank.org/en/topic/water/publication/pathways-to-integrated-urban-water-management-for-greater-jakarta"
     },
     {
       "region": "International",
@@ -1669,7 +1675,7 @@
       "lon": 103.8198,
       "screening_rationale": "PUB documents flash/coastal flood risks, investments in drainage, a national flood-resilience program, and extensive sensor monitoring.",
       "value_integration_question": "Test a data-rich, highly urbanized setting where satellite screening can be compared with agency sensors and flood reports.",
-      "evidence_url": "https://www.pub.gov.sg/Public/KeyInitiatives/Flood-Resilience",
+      "evidence_url": "https://www.pub.gov.sg/Public/KeyInitiatives/Flood-Resilience/About-Floods",
       "aoi_bbox_wgs84": "103.707480,1.239811,103.932120,1.464389",
       "aoi_area_km2": 625,
       "collection": "OPERA_L3_DSWX-S1_V1",
@@ -1845,14 +1851,15 @@
       "first_acquisition_date": "2024-09-06",
       "last_acquisition_date": "2026-10-28",
       "returned_entries_complete": true,
-      "status": "candidate; archive metadata screened; QA pixels and independent labels pending"
+      "status": "candidate; archive metadata screened; QA pixels and independent labels pending",
+      "secondary_evidence_url": "https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/List-of-Flood-Prone-Areas-as-at-Nov-2025.pdf"
     },
     {
       "region": "International",
       "city": "Dubai",
       "lat": 25.2048,
       "lon": 55.2708,
-      "screening_rationale": "Dubai Municipality\u2019s AED 30bn Tasreef program expands stormwater collection and drainage; contracts cover critical urban areas.",
+      "screening_rationale": "Dubai Municipality’s AED 30bn Tasreef program expands stormwater collection and drainage; contracts cover critical urban areas.",
       "value_integration_question": "Test rapid urban growth and major drainage investment, while treating dry-climate extreme rainfall as an event-based case.",
       "evidence_url": "https://www.dm.gov.ae/aed-1-439-billion-contracts-awarded-for-four-tasreef-project-phases/",
       "aoi_bbox_wgs84": "55.146695,25.092511,55.394905,25.317089",
@@ -2248,7 +2255,8 @@
       "first_acquisition_date": "2024-09-01",
       "last_acquisition_date": "2026-10-27",
       "returned_entries_complete": true,
-      "status": "candidate; archive metadata screened; QA pixels and independent labels pending"
+      "status": "candidate; archive metadata screened; QA pixels and independent labels pending",
+      "secondary_evidence_url": "https://www.dm.gov.ae/dubai-municipality-and-dubai-south-launch-stormwater-tunnel-project-for-sustainable-infrastructure/"
     },
     {
       "region": "International",
@@ -2256,7 +2264,7 @@
       "lat": 19.076,
       "lon": 72.8777,
       "screening_rationale": "India approved an urban flood risk mitigation program that includes Mumbai; city planning and IFLOWS document substantial flood research and warning needs.",
-      "value_integration_question": "Test monsoon, coastal, drainage, and asset exposure; join satellite screening to the city\u2019s flood-warning and mitigation evidence.",
+      "value_integration_question": "Test monsoon, coastal, drainage, and asset exposure; join satellite screening to the city’s flood-warning and mitigation evidence.",
       "evidence_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2297625&lang=1&reg=3",
       "aoi_bbox_wgs84": "72.758887,18.963711,72.996513,19.188289",
       "aoi_area_km2": 625,
@@ -2549,7 +2557,7 @@
       "lon": 139.6503,
       "screening_rationale": "World Bank work documents Tokyo-region urban flood risk management practice and the need to integrate risk into urban planning and investment.",
       "value_integration_question": "Test a mature infrastructure context and evaluate water-screening evidence alongside risk-informed planning and engineered controls.",
-      "evidence_url": "https://www.worldbank.org/en/programs/tokyo-development-learning-center/tdd/tdd_on_urban_flood_management",
+      "evidence_url": "https://www.kensetsu.metro.tokyo.lg.jp/river/chusho_seibi/ike",
       "aoi_bbox_wgs84": "139.512069,35.563911,139.788531,35.788489",
       "aoi_area_km2": 625,
       "collection": "OPERA_L3_DSWX-S1_V1",
@@ -2764,7 +2772,8 @@
       "first_acquisition_date": "2024-09-02",
       "last_acquisition_date": "2026-10-25",
       "returned_entries_complete": true,
-      "status": "candidate; archive metadata screened; QA pixels and independent labels pending"
+      "status": "candidate; archive metadata screened; QA pixels and independent labels pending",
+      "secondary_evidence_url": "https://www.kasen-suibo.metro.tokyo.lg.jp/s/tsim0401g_en.html"
     },
     {
       "region": "International",
@@ -3193,12 +3202,12 @@
     },
     {
       "region": "International",
-      "city": "S\u00e3o Paulo",
+      "city": "São Paulo",
       "lat": -23.5505,
       "lon": -46.6333,
       "screening_rationale": "World Bank case material documents urban flood exposure, drainage constraints, and the need to combine structural and nonstructural measures.",
       "value_integration_question": "Test an inland megacity and connect observed-water evidence with drainage, land-use, and asset planning.",
-      "evidence_url": "https://documents1.worldbank.org/curated/en/659161468182066104/pdf/709820PUB0EPI0067926B09780821389621.pdf",
+      "evidence_url": "https://prefeitura.sp.gov.br/web/obras/w/prefeitura-de-s%C3%A3o-paulo-publica-3%C2%AA-edi%C3%A7%C3%A3o-do-plano-diretor-de-drenagem-com-201-interven%C3%A7%C3%B5es-que-visam-a-redu%C3%A7%C3%A3o-de-alagamentos",
       "aoi_bbox_wgs84": "-46.755791,-23.662789,-46.510809,-23.438211",
       "aoi_area_km2": 625,
       "collection": "OPERA_L3_DSWX-S1_V1",
@@ -3407,7 +3416,8 @@
       "first_acquisition_date": "2024-09-03",
       "last_acquisition_date": "2026-10-25",
       "returned_entries_complete": true,
-      "status": "candidate; archive metadata screened; QA pixels and independent labels pending"
+      "status": "candidate; archive metadata screened; QA pixels and independent labels pending",
+      "secondary_evidence_url": "https://prefeitura.sp.gov.br/web/obras/w/obras-refor%C3%A7am-o-combate-a-alagamentos-e-%C3%A1reas-de-risco-em-s%C3%A3o-paulo"
     }
   ]
 }

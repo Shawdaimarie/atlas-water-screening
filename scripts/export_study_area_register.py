@@ -15,7 +15,7 @@ FIELDS = [
     "last_acquisition_date", "returned_entries_complete", "screening_rationale",
     "value_integration_question", "evidence_url", "status",
     "need_evidence_type", "empirical_evidence", "value_dimensions",
-    "validation_path", "scope_limit", "secondary_evidence_url",
+    "validation_path", "scope_limit", "secondary_evidence_url", "current_official_hotspot_url",
     "event_reference_url", "event_reference_date", "event_reference_audit",
 ]
 
@@ -28,12 +28,18 @@ def build_rows(areas: list[dict], evidence_records: list[dict]) -> list[dict]:
     for area in areas:
         row = dict(area)
         evidence = evidence_by_city[row["city"]]
+        if row.get("evidence_url") != evidence.get("evidence_url"):
+            raise ValueError(f"Primary source URL mismatch for {row['city']}")
+        if evidence.get("secondary_evidence_url") == evidence.get("evidence_url"):
+            raise ValueError(f"Primary and secondary source URLs must differ for {row['city']}")
+        row["secondary_evidence_url"] = evidence.get("secondary_evidence_url", "")
         row["need_evidence_type"] = evidence["evidence_type"]
         row["empirical_evidence"] = evidence["empirical_evidence"]
         row["value_dimensions"] = "; ".join(evidence["value_dimensions"])
         row["validation_path"] = evidence["validation_path"]
         row["scope_limit"] = evidence["scope_limit"]
         row["secondary_evidence_url"] = evidence.get("secondary_evidence_url", "")
+        row["current_official_hotspot_url"] = evidence.get("current_official_hotspot_url", "")
         row["event_reference_url"] = evidence.get("event_reference_url", "")
         row["event_reference_date"] = evidence.get("event_reference_date", "")
         row["event_reference_audit"] = evidence.get("event_reference_audit", "")

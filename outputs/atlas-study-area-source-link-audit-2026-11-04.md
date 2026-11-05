@@ -2,18 +2,20 @@
 
 **Run:** 2026-11-04  
 **Source register:** `data/study_area_evidence.json`  
-**Records checked:** 16 area-level primary evidence URLs
+**Areas:** 16  
+**Primary, secondary, and official hotspot URLs checked:** 16 + 10 + 1
 
 ## Results
 
-- **15/16** URLs returned a 2xx response to a direct HTTPS GET from the audit environment.
-- California DWR's Sacramento source returned **HTTP 403** to the scripted client. Search indexing returned the official [DWR Flood Risk Notification](https://water.ca.gov/Programs/Flood-Management/Community-Resources/Flood-Risk) page and its relevant content. Treat this as an audit-client access restriction; it does not show that the official page is missing.
-- No DNS, timeout, or other HTTP failures occurred.
+- Primary evidence URLs returning HTTP 2xx: **16/16**.
+- Secondary evidence URLs returning HTTP 2xx: **10/10**.
+- Current official hotspot-list URLs returning HTTP 2xx: **1/1**.
+- No result is treated as evidence of flood truth, AOI coverage, or scientific validation.
 
-The indexed DWR page reports more than 1,600 miles of State-Federal levees in the Central Valley, more than 70 overtoppings or breaches since 1983, and annual risk notices for at-risk properties across 17 counties. This is regional context: the Sacramento area record itself says those counts are not local to its fixed AOI and the page does not provide local event labels.
+## Interpretation limits
 
-## Limits
+Reachability checks do not validate the truth, date, spatial scope, completeness, local applicability, or licensing of each empirical claim. They do not establish flood observations, independent labels, confirmatory eligibility, or customer demand.
 
-This audit tests URL reachability and a single Sacramento page's indexed content. It does **not** verify every empirical statement, publication date, source completeness, local spatial overlap, independent flood truth, or customer demand. It does not change study enrollment or the score. All 16 areas remain candidates; the shared observation, independent-label, probability-sample, and precision gates still apply.
+The Sacramento City flood-management plan documents 2017 event response outside the shared 2024–2026 observation window. The City's levee-break maps are modeled planning scenarios. Neither source supplies reference pixels for the fixed ATLAS AOI.
 
-Machine-readable responses, final URLs, sampled response headers, and the limitation record are in [the JSON audit](atlas-study-area-source-link-audit-2026-11-04.json).
+Machine-readable responses and source checksum: [JSON audit](atlas-study-area-source-link-audit-2026-11-04.json).

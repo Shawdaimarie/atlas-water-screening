@@ -252,7 +252,7 @@ def write_outputs(matrix: dict[str, Any], json_path: Path = DEFAULT_JSON,
     rows = matrix["rows"]
     fieldnames = [key for key, value in rows[0].items() if not isinstance(value, dict)]
     with csv_path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows({key: row[key] for key in fieldnames} for row in rows)
 

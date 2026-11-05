@@ -45,7 +45,8 @@ def valid_onboarding_inputs():
                 "compartment_ocid": "ocid1.compartment.oc1..bbbbbb",
                 "billing_confirmed": True,
                 "home_region": "us-ashburn-1",
-                "github_oidc_and_registry_identity_ready": False,
+                "github_oidc_rpst_identity_ready": False,
+                "registry_publish_identity_ready": False,
             },
         },
     }
@@ -61,13 +62,14 @@ def test_cloud_onboarding_is_independent_of_apple_distribution_choice():
     assert validate_inputs(data) == []
 
 
-def test_release_readiness_requires_all_four_federated_identities():
+def test_release_readiness_requires_all_provider_identities_and_separate_oci_registry_identity():
     errors = validate_inputs(valid_onboarding_inputs(), release_ready=True)
-    assert len(errors) == 4
+    assert len(errors) == 5
     assert any("google_cloud.workload_identity_provider_ready" in error for error in errors)
     assert any("aws.github_oidc_role_ready" in error for error in errors)
     assert any("microsoft_azure.entra_federated_identity_ready" in error for error in errors)
-    assert any("oracle_cloud.github_oidc_and_registry_identity_ready" in error for error in errors)
+    assert any("oracle_cloud.github_oidc_rpst_identity_ready" in error for error in errors)
+    assert any("oracle_cloud.registry_publish_identity_ready" in error for error in errors)
 
 
 def test_malformed_provider_identifier_is_rejected():

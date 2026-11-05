@@ -1,18 +1,24 @@
-# ATLAS Scoped Specification (pre-implementation)
+# ATLAS Scoped Specification
 
-Blueprint: shared v1.1 clarification. Status: this specification describes the intended bounded study; a synthetic demonstration was implemented and privately deployed, while research implementation gates remain open.
+Blueprint: shared v1.1 clarification. Status: a private synthetic-data walkthrough is deployed. The 8+8 areas below are evidence-screened candidates; comparable observation and independent-validation gates remain open. The canonical current score is recorded in `SCORECARD.md`.
 
 ## Product statement
 
 ATLAS is a research/demo workflow for screening infrastructure assets against observed surface-water extent in a selected historical event. It reports observed spatial overlap and data quality/coverage with traceable source evidence. It does not determine damage, service disruption, structural failure, loss, or causality.
 
-## Initial study design
+## 8+8 candidate study design
 
-- Texas case: Houston/Harris County area as candidate only; select event/date only after OPERA archive query confirms coverage and a defensible independent label source. Prefer a documented event/time with enough acquisitions to compare a single scene and temporal aggregation.
-- Held-out validation: a distinct US region and event, selected before parameter tuning based on equivalent data and independent label availability. No random neighboring-pixel split.
-- Singapore/Dubai: later coverage assessment only; no supported coverage claim.
-- Asset data: start with explicitly synthetic points/lines/polygons. Replace with a small public dataset only after license, attribution, redistribution, update date and completeness review.
-- Observations: OPERA DSWx-S1 or HLS selected according to event conditions and collection coverage, pinned to exact V1 collection/product and software version. Do not combine sources without a declared harmonization protocol. NISAR and DSWx-NI excluded from initial scope.
+The current purposive, stratified candidate set comprises eight U.S. areas—Houston, Miami, Tampa, New Orleans, New York City, Sacramento, Atlanta, and St. Louis—and eight international areas—Jakarta, Singapore, Dubai, Mumbai, Bangkok, Tokyo, Manila, and São Paulo. The register and `STUDY_AREA_PROGRAM.md` document for each area its empirical public need, research rationale, value-integration question, validation path, and evidence limits. Selection prioritizes verifiable flood-management or research need, urban infrastructure relevance, and discoverable metadata in one common 25 × 25 km footprint; technology-hub status is context, not proof of hydrologic need or customer demand.
+
+All candidates use the same nominal 625 km² footprint, OPERA DSWx-S1 V1 metadata window, quality definitions, measurement units, reporting fields, and enrollment rules. Metadata discovery and auxiliary Sentinel-1 RTC coverage are not observations of inundation. The temporal audit found no acquisition date common to all 16 areas. For any confirmatory cross-area comparison, choose event-relative windows from an independently defined event frame, require QA-valid event and baseline scenes in every enrolled area, select an equal number of qualifying scenes per area, preserve missingness, and withhold the comparison if any area fails. The current feasibility floor of at least three scenes per period with at least 80% valid pixels is not a claim of statistical power; report sensitivity to stricter coverage and achieved sampling precision.
+
+Enrollment additionally requires a spatially representative probability sample of the fixed AOI and evaluated assets, independent and appropriately licensed reference labels, two blinded labelers with adjudication, a frozen protocol before confirmatory outcomes are inspected, and a held-out event/area design. Exclude same-sensor or otherwise dependent sources from independent-truth claims. If labels or usable scenes are missing, report feasibility and data coverage only; do not infer flood accuracy, damage, loss, buyer demand, or operational impact. See `data/validation_protocol.yaml` and `outputs/atlas-independent-reference-data-plan.md`.
+
+Asset data begin as explicitly synthetic fixtures. Any public or partner data require documented geometry/date completeness, license, attribution, redistribution terms, and provenance before analysis. Do not combine observation products or label sources without a declared harmonization and lineage protocol.
+
+## Value integration
+
+Keep the public-value chain distinct and evidence-backed: (1) observed hazard class and quality; (2) asset exposure and geometry completeness; (3) service criticality, population served, and dependencies only when supported by licensed, attributable data and relevant agency/community review; (4) distributional coverage and missingness only where lawful, privacy-preserving, and locally governed; and (5) documented decision usefulness. Unknown values stay unknown. Do not apply stakeholder-weighted composite scores without approved weights and sensitivity analysis. The candidate register records location-specific integration questions and limitations; public investment or management need does not establish ATLAS purchasing demand.
 
 ## Workflow and outputs
 
@@ -46,8 +52,8 @@ The shared 100-point scorecard is adopted with criteria pending. Before implemen
 - Documentation/reproducibility 15: clean-checkout reproduction; API/operator docs; complete evidence provenance.
 - Scalability 10: declared workload/load test and capacity/cost model within stated bounds.
 
-Current score: 55/100, author-verified and provisional. See SCORECARD.md for per-item evidence, exact test command, environment and outstanding criteria. The deployed demo uses synthetic fixtures; no score implies scientific validity or commercial confidence.
+Current score: 60/100, author-verified and provisional, as detailed in `SCORECARD.md`. The deployed demo uses synthetic fixtures. No score implies scientific validity, independent reproduction, customer demand, or commercial readiness.
 
 ## Release criteria and gaps
 
-G0 complete only when both reviews, evidence register, bounded scope and rubric are committed. G1 requires local vertical slice and required tests from TECHNICAL_REVIEW. G2 requires held-out evaluation and independent reproduction. Cloud deployment remains gated on current docs, cost/account verification and authorization. No release claim of global coverage, operational response, asset damage, loss estimation, validated temporal superiority, customer demand or institutional endorsement.
+G0 requires both reviews, the 8+8 evidence register, bounded scope, and rubric. G1 requires the local vertical slice and tests from `TECHNICAL_REVIEW.md`. G2 requires adequately sampled, held-out event evaluation and independent reproduction. Google Cloud, AWS, Azure, and Oracle deployments require verified owner account/billing/region choices, federated release identity, common security controls, private staging, recovery, workload/cost evidence, and provider-hosted end-to-end checks. Apple app distribution is a separate release target from the private browser Site and cloud backend; it requires a native app target, full Xcode, verified Apple Developer Program/App Store Connect access, signing, and TestFlight/device checks. No release claim of global coverage, operational response, asset damage, loss estimation, validated temporal superiority, customer demand, or institutional endorsement.

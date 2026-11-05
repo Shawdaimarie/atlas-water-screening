@@ -43,4 +43,5 @@ providers:
     compartment_ocid: null
     billing_confirmed: false
     home_region: null
-    github_oidc_and_registry_identity_ready: false
+    github_oidc_rpst_identity_ready: false
+    registry_publish_identity_ready: false

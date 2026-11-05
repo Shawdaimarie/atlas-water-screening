@@ -25,6 +25,8 @@ def test_build_site_links_and_packages_the_complete_json(tmp_path):
     assert "id=\"downloadStudyRegister\"" in html
     assert 'href="atlas-study-area-evidence-register.json" download=' in html
     assert json.loads(json_path.read_text(encoding="utf-8"))["results"][0]["city"] == "Mumbai"
+    csv_path = tmp_path / "dist/atlas-study-area-register.csv"
+    assert csv_path.read_bytes() == (ROOT / "outputs/atlas-study-area-register.csv").read_bytes()
     assert builder["update_html"](html) == html
 
 

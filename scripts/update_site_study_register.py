@@ -12,7 +12,7 @@ FIELDS = [
     "last_acquisition_date", "returned_entries_complete", "screening_rationale",
     "value_integration_question", "evidence_url", "status",
     "need_evidence_type", "empirical_evidence", "value_dimensions",
-    "validation_path", "scope_limit", "secondary_evidence_url",
+    "validation_path", "scope_limit", "secondary_evidence_url", "current_official_hotspot_url",
     "event_reference_url", "event_reference_date", "event_reference_audit",
 ]
 VALUE_CHAIN_START = "<!-- GENERATED PUBLIC VALUE CHAIN START -->"
@@ -42,6 +42,12 @@ def update(html: str, areas: list[dict]) -> str:
         record = dict(area)
         record["acquisition_dates"] = ";".join(record["acquisition_dates"])
         e = evidence_by_city[record["city"]]
+        if record.get("evidence_url") != e.get("evidence_url"):
+            raise ValueError(f"Primary source URL mismatch for {record['city']}")
+        if e.get("secondary_evidence_url") == e.get("evidence_url"):
+            raise ValueError(f"Primary and secondary source URLs must differ for {record['city']}")
+        record["secondary_evidence_url"] = e.get("secondary_evidence_url", "")
+        record["current_official_hotspot_url"] = e.get("current_official_hotspot_url", "")
         record["need_evidence_type"] = e["evidence_type"]
         record["empirical_evidence"] = e["empirical_evidence"]
         record["value_dimensions"] = "; ".join(e["value_dimensions"])
@@ -68,9 +74,18 @@ def update(html: str, areas: list[dict]) -> str:
         "const cols=[" + ",".join("'" + field + "'" for field in FIELDS)
         + "];const rows=[cols,...studyAreas.map(a=>cols.map(k=>a[k]))];"
     )
+    previous_fields = [field for field in FIELDS if field != "current_official_hotspot_url"]
     prior_schemas = [
         "const cols=" + "[" + ",".join("'" + field + "'" for field in schema_fields) + "];const rows=[cols,...studyAreas.map(a=>cols.map(k=>a[k]))];"
-        for schema_fields in (old_fields, FIELDS[:-3], FIELDS[:-6], FIELDS)
+        for schema_fields in (
+            old_fields,
+            previous_fields[:-3],
+            previous_fields[:-6],
+            previous_fields,
+            FIELDS[:-3],
+            FIELDS[:-6],
+            FIELDS,
+        )
     ]
     schema_to_replace = next((schema for schema in prior_schemas if html.count(schema) == 1), None)
     if schema_to_replace is None:
@@ -89,13 +104,21 @@ def update(html: str, areas: list[dict]) -> str:
     elif new_detail not in html:
         raise ValueError("Expected an existing or already-updated candidate detail card")
     old_source = '<a class="study-source" href="${a.evidence_url}" target="_blank" rel="noopener">Open primary evidence ↗</a>'
-    new_source = ('<a class="study-source" href="${a.evidence_url}" target="_blank" rel="noopener">Open primary evidence ↗</a>'
-                  '${a.secondary_evidence_url?` <a class="study-source" href="${a.secondary_evidence_url}" target="_blank" rel="noopener">Open supporting evidence ↗</a>`:""}'
-                  '${a.event_reference_url?` <a class="study-source" href="${a.event_reference_url}" target="_blank" rel="noopener">Open event source ↗</a>`:""}'
-                  '${a.event_reference_audit?` <a class="study-source" href="${a.event_reference_audit}" target="_blank" rel="noopener">Open event audit ↗</a>`:""}')
-    if html.count(new_source) == 0 and html.count(old_source) == 1:
-        html = html.replace(old_source, new_source, 1)
-    elif html.count(new_source) != 1:
+    secondary_source = '${a.secondary_evidence_url?` <a class="study-source" href="${a.secondary_evidence_url}" target="_blank" rel="noopener">Open supporting evidence ↗</a>`:""}'
+    current_hotspot_source = '${a.current_official_hotspot_url?` <a class="study-source" href="${a.current_official_hotspot_url}" target="_blank" rel="noopener">Open current PUB hotspot list ↗</a>`:""}'
+    primary_source = '<a class="study-source" href="${a.evidence_url}" target="_blank" rel="noopener">Open primary evidence ↗</a>'
+    event_sources = ('${a.event_reference_url?` <a class="study-source" href="${a.event_reference_url}" target="_blank" rel="noopener">Open event source ↗</a>`:""}'
+                     + '${a.event_reference_audit?` <a class="study-source" href="${a.event_reference_audit}" target="_blank" rel="noopener">Open event audit ↗</a>`:""}')
+    previous_source = primary_source + secondary_source + event_sources
+    new_source = primary_source + secondary_source + current_hotspot_source + event_sources
+    # Older generated pages accidentally appended the supporting link twice.
+    html = html.replace(new_source + secondary_source, new_source)
+    if html.count(new_source) == 0:
+        if html.count(previous_source) == 1:
+            html = html.replace(previous_source, new_source, 1)
+        elif html.count(old_source) == 1:
+            html = html.replace(old_source, new_source, 1)
+    if html.count(new_source) != 1:
         raise ValueError("Expected the primary evidence link exactly once")
     public_need_label = '<div class="study-status">Candidate only · metadata screening passed. OPERA pixel-level QA, event-matched scenes, asset geometry, and independent labels remain pending.</div>'
     demand_note = '<p><b>Demand distinction:</b> documented public management need does not establish ATLAS customer demand or purchase intent.</p>'
