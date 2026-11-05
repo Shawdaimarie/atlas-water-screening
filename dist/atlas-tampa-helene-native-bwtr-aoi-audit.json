@@ -1,0 +1,192 @@
+{
+  "audit": "Native OPERA DSWx-S1 V1 BWTR pixel audit for the fixed Tampa Hurricane Helene candidate AOI",
+  "created_at_utc": "2026-11-04T14:39:49.846539+00:00",
+  "eligibility_result": "not eligible for confirmatory enrollment: fewer than three QA-valid dates per period and no independent reference-label comparison",
+  "product": {
+    "band": "BWTR_Binary_water",
+    "class_interpretation": {
+      "0": "valid non-water",
+      "1": "valid water",
+      "250": "invalid",
+      "251": "invalid",
+      "255": "nodata/invalid"
+    },
+    "name": "OPERA_L3_DSWX-S1_V1",
+    "source_limit": "NASA/JPL service metadata describes these products as preliminary and unvalidated.",
+    "validation_limit": "Two single scenes do not constitute event/baseline sampling, independent reference labels, or an estimate of classification accuracy."
+  },
+  "scenes": [
+    {
+      "acquisition_date": "2024-09-14",
+      "aoi_sampling": {
+        "aoi_pixel_count": 497316,
+        "bbox_wgs84": [
+          -82.584317,
+          27.838311,
+          -82.330083,
+          28.062889
+        ],
+        "class_counts": {
+          "0": 385407,
+          "1": 111909
+        },
+        "invalid_classes": [
+          250,
+          251,
+          255
+        ],
+        "invalid_pixel_count": 0,
+        "passes_80_percent_valid_pixel_floor": true,
+        "pixel_rule": "pixel center within densified projected AOI polygon (all_touched=false)",
+        "unexpected_class_counts": {},
+        "valid_classes_0_nonwater_1_water": [
+          0,
+          1
+        ],
+        "valid_fraction": 1.0,
+        "valid_pixel_count": 497316,
+        "water_fraction_of_valid_pixels": 0.22502593924185024,
+        "window": {
+          "column_offset": 10995,
+          "height": 843,
+          "row_offset": 13510,
+          "width": 847
+        }
+      },
+      "asset_name": "20240914_DSWx-S1_BWTR.tif",
+      "full_source_sha256": null,
+      "full_source_sha256_note": "Full GeoTIFF was not downloaded; integrity metadata records server ETag and a SHA-256 of the first 1 KiB range response.",
+      "raster": {
+        "band": 1,
+        "band_count": 1,
+        "crs": "EPSG:32617",
+        "driver": "GTiff",
+        "dtype": "uint8",
+        "height_pixels": 24177,
+        "nodata": 255.0,
+        "pixel_size_m": [
+          29.97600241630804,
+          29.97600241630804
+        ],
+        "selected_metadata_tags": {
+          "DSWX_PRODUCT_VERSION": "1.0",
+          "PROCESSING_DATETIME": "*",
+          "PRODUCT_SOURCE": "OPERA_RTC_S1",
+          "PRODUCT_TYPE": "DSWx-S1",
+          "RTC_ABSOLUTE_ORBIT_NUMBER": "55668",
+          "RTC_ORBIT_PASS_DIRECTION": "ascending",
+          "RTC_TRACK_NUMBER": "121",
+          "SOFTWARE_VERSION": "1.1",
+          "SPATIAL_COVERAGE": "*"
+        },
+        "width_pixels": 16527
+      },
+      "source_headers_and_range_probe": {
+        "content_length_bytes": 399877194,
+        "content_type": "image/tiff",
+        "etag": "\"eba2f1b5f162807e4ee245c7603924a6-48\"",
+        "http_status": 200,
+        "last_modified": "Mon, 30 Sep 2024 03:28:42 GMT",
+        "range_probe": {
+          "bytes_read": 1024,
+          "content_range": "bytes 0-1023/399877194",
+          "first_1024_bytes_sha256": "bc2f3f47efa79e4edf9f1eae5e23857b18aee6875c541587c4ea45bf722b27df",
+          "http_status": 206
+        }
+      },
+      "source_url": "https://aria-share.jpl.nasa.gov/20240926-Hurricane_Helene/DSWx/20240914_DSWx-S1_BWTR.tif"
+    },
+    {
+      "acquisition_date": "2024-09-26",
+      "aoi_sampling": {
+        "aoi_pixel_count": 497316,
+        "bbox_wgs84": [
+          -82.584317,
+          27.838311,
+          -82.330083,
+          28.062889
+        ],
+        "class_counts": {
+          "0": 383987,
+          "1": 113329
+        },
+        "invalid_classes": [
+          250,
+          251,
+          255
+        ],
+        "invalid_pixel_count": 0,
+        "passes_80_percent_valid_pixel_floor": true,
+        "pixel_rule": "pixel center within densified projected AOI polygon (all_touched=false)",
+        "unexpected_class_counts": {},
+        "valid_classes_0_nonwater_1_water": [
+          0,
+          1
+        ],
+        "valid_fraction": 1.0,
+        "valid_pixel_count": 497316,
+        "water_fraction_of_valid_pixels": 0.22788126663931987,
+        "window": {
+          "column_offset": 10995,
+          "height": 843,
+          "row_offset": 13510,
+          "width": 847
+        }
+      },
+      "asset_name": "20240926_DSWx-S1_BWTR.tif",
+      "full_source_sha256": null,
+      "full_source_sha256_note": "Full GeoTIFF was not downloaded; integrity metadata records server ETag and a SHA-256 of the first 1 KiB range response.",
+      "raster": {
+        "band": 1,
+        "band_count": 1,
+        "crs": "EPSG:32617",
+        "driver": "GTiff",
+        "dtype": "uint8",
+        "height_pixels": 24177,
+        "nodata": 255.0,
+        "pixel_size_m": [
+          29.97600241630804,
+          29.97600241630804
+        ],
+        "selected_metadata_tags": {
+          "DSWX_PRODUCT_VERSION": "1.0",
+          "PROCESSING_DATETIME": "*",
+          "PRODUCT_SOURCE": "OPERA_RTC_S1",
+          "PRODUCT_TYPE": "DSWx-S1",
+          "RTC_ABSOLUTE_ORBIT_NUMBER": "55843",
+          "RTC_ORBIT_PASS_DIRECTION": "ascending",
+          "RTC_TRACK_NUMBER": "121",
+          "SOFTWARE_VERSION": "1.1",
+          "SPATIAL_COVERAGE": "*"
+        },
+        "width_pixels": 16527
+      },
+      "source_headers_and_range_probe": {
+        "content_length_bytes": 399877194,
+        "content_type": "image/tiff",
+        "etag": "\"6249151a4d70b721dda4b0eb528f9cbf-48\"",
+        "http_status": 200,
+        "last_modified": "Mon, 30 Sep 2024 03:28:42 GMT",
+        "range_probe": {
+          "bytes_read": 1024,
+          "content_range": "bytes 0-1023/399877194",
+          "first_1024_bytes_sha256": "bc2f3f47efa79e4edf9f1eae5e23857b18aee6875c541587c4ea45bf722b27df",
+          "http_status": 206
+        }
+      },
+      "source_url": "https://aria-share.jpl.nasa.gov/20240926-Hurricane_Helene/DSWx/20240926_DSWx-S1_BWTR.tif"
+    }
+  ],
+  "study_area": {
+    "aoi_area_km2_nominal": 625,
+    "aoi_bbox_wgs84": [
+      -82.584317,
+      27.838311,
+      -82.330083,
+      28.062889
+    ],
+    "city": "Tampa",
+    "region": "United States"
+  },
+  "study_area_register_sha256": "8bfd303099c63dfa99433a80e9aaaa45bf2c8514c8496e0edd63fdae38554bdc"
+}
