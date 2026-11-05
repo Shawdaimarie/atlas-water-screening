@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "audit_id": "atlas-cems-risk-recovery-aoi-audit",
+  "retrieved_at_utc": "2026-11-04T16:35:30+00:00",
+  "source": {
+    "name": "Copernicus EMS Risk & Recovery public activation catalog",
+    "catalog_url": "https://riskandrecovery.emergency.copernicus.eu/api/public-activations/",
+    "documentation_url": "https://mapping.emergency.copernicus.eu/about/how-to-harvest-cems-mapping-data/preparedness-and-recovery-data/",
+    "page_urls": [
+      "https://riskandrecovery.emergency.copernicus.eu/api/public-activations/",
+      "https://riskandrecovery.emergency.copernicus.eu/api/public-activations/?limit=10&offset=10&page_size=20",
+      "https://riskandrecovery.emergency.copernicus.eu/api/public-activations/?limit=10&offset=20&page_size=20",
+      "https://riskandrecovery.emergency.copernicus.eu/api/public-activations/?limit=10&offset=30&page_size=20",
+      "https://riskandrecovery.emergency.copernicus.eu/api/public-activations/?limit=10&offset=40&page_size=20"
+    ],
+    "activation_count": 43,
+    "flood_activation_count": 15,
+    "flood_activation_codes": [
+      "EMSN186",
+      "EMSN189",
+      "EMSN190",
+      "EMSN191",
+      "EMSN193",
+      "EMSN194",
+      "EMSN199",
+      "EMSN205",
+      "EMSN221",
+      "EMSN222",
+      "EMSN224",
+      "EMSN225",
+      "EMSN228",
+      "EMSN232",
+      "EMSN238"
+    ]
+  },
+  "study_frame": {
+    "area_count": 16,
+    "us_area_count": 8,
+    "international_area_count": 8,
+    "footprint": "Fixed 25 km x 25 km WGS84 screening bounding boxes in data/study_area_register.json"
+  },
+  "counts": {
+    "product_aoi_intersections": 0,
+    "intersecting_flood_product_aois": 0,
+    "areas_with_any_intersection": 0,
+    "areas_with_flood_intersection": 0
+  },
+  "areas": [
+    {
+      "city": "Houston",
+      "region": "United States",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "Miami",
+      "region": "United States",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "Tampa",
+      "region": "United States",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "New Orleans",
+      "region": "United States",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "New York City",
+      "region": "United States",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "Sacramento",
+      "region": "United States",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "Atlanta",
+      "region": "United States",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "St. Louis",
+      "region": "United States",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "Jakarta",
+      "region": "International",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "Singapore",
+      "region": "International",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "Dubai",
+      "region": "International",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "Mumbai",
+      "region": "International",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "Bangkok",
+      "region": "International",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "Tokyo",
+      "region": "International",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "Manila",
+      "region": "International",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    },
+    {
+      "city": "São Paulo",
+      "region": "International",
+      "intersecting_product_aois": 0,
+      "distinct_activations": 0,
+      "flood_activations": 0
+    }
+  ],
+  "matches": [],
+  "limits": [
+    "Catalog AOI polygons were intersected with ATLAS fixed bounding boxes; this is a geographic discovery screen.",
+    "A non-match does not prove no useful product exists outside the currently published catalog.",
+    "Product AOI overlap is not an independent reference label or field observation; imagery lineage, class semantics, resolution, licensing, event-time suitability, and pixel-level coverage require review.",
+    "No study-area eligibility or score is awarded by this screen."
+  ]
+}

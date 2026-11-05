@@ -1,0 +1,3469 @@
+{
+  "audit": "Multi-date Copernicus GFM raster availability screen for ATLAS 8+8 candidate AOIs",
+  "generated_at_utc": "2026-11-04T15:05:46.903979+00:00",
+  "source": "Copernicus Global Flood Monitoring STAC collection GFM",
+  "endpoint": "https://stac.eodc.eu/api/v1/search",
+  "input_sha256": {
+    "atlas-study-area-register.csv": "d4142294b619bebd505b8b3feed325f900c24e69baebbfee37f21a552efef9dd",
+    "atlas-groundsource-event-coverage-audit.json": "3ec6e77a34750bb10dc76ea23dfcefc98cb3988815cfbb85f6278a1c8c52a3bf",
+    "atlas-gfm-raster-coverage-audit.json": "86427b379c6c0b6c05bfa1e7bc726ecaa2d04d5d4795322a0e570996e22135de"
+  },
+  "date_selection": "Three nearest distinct OPERA metadata dates in the 30 days before and after the first Groundsource candidate lead, plus all OPERA metadata dates within the reported lead interval. Dates are candidate sampling windows, not verified flood-event dates.",
+  "validity_rule": "A selected same-day COG is the intersecting item with the greatest fixed-AOI valid fraction; duplicates are not mosaicked. Each date passes at >=80% non-nodata pixels.",
+  "independence_limit": "GFM and OPERA DSWx-S1 share Sentinel-1 lineage; GFM is not independent validation truth.",
+  "enrollment_limit": "This diagnostic does not verify events, measure OPERA pixels, provide independent labels, or establish confirmatory eligibility.",
+  "areas": [
+    {
+      "region": "United States",
+      "city": "Houston",
+      "bbox_wgs84": [
+        -95.499149,
+        29.648111,
+        -95.240451,
+        29.872689
+      ],
+      "candidate_event_id": "5a99475ed9b4488d9fabf7bef1ed4a85",
+      "candidate_event_interval": [
+        "2025-05-26",
+        "2025-05-26"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-05-07",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250507T002647_VV_NA020M_E084N021T3",
+                "datetime": "2025-05-07T00:26:47Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/07/ENSEMBLE_FLOOD_20250507T002647_VV_NA020M_E084N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 806182,
+                "valid_pixels": 765819,
+                "valid_fraction": 0.9499331416479158,
+                "class_counts": {
+                  "0": 765819
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 5,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-05-14",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250514T122315_VV_NA020M_E084N024T3",
+                "datetime": "2025-05-14T12:23:15Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/14/ENSEMBLE_FLOOD_20250514T122315_VV_NA020M_E084N024T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 873145,
+                "valid_pixels": 831194,
+                "valid_fraction": 0.9519541427826993,
+                "class_counts": {
+                  "0": 831036,
+                  "1": 158
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 6,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-05-19",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250519T002646_VV_NA020M_E084N021T3",
+                "datetime": "2025-05-19T00:26:46Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/19/ENSEMBLE_FLOOD_20250519T002646_VV_NA020M_E084N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 806182,
+                "valid_pixels": 765819,
+                "valid_fraction": 0.9499331416479158,
+                "class_counts": {
+                  "0": 765788,
+                  "1": 31
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 3,
+          "meets_three_date_80_percent_screen": true,
+          "valid_fraction_by_date": {
+            "2025-05-07": 0.9499331416479158,
+            "2025-05-14": 0.9519541427826993,
+            "2025-05-19": 0.9499331416479158
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2025-05-26",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250526T122314_VV_NA020M_E084N024T3",
+                "datetime": "2025-05-26T12:23:14Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/26/ENSEMBLE_FLOOD_20250526T122314_VV_NA020M_E084N024T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 873145,
+                "valid_pixels": 831194,
+                "valid_fraction": 0.9519541427826993,
+                "class_counts": {
+                  "0": 831131,
+                  "1": 63
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 1,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-05-26": 0.9519541427826993
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-05-31",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250531T002646_VV_NA020M_E084N021T3",
+                "datetime": "2025-05-31T00:26:46Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/31/ENSEMBLE_FLOOD_20250531T002646_VV_NA020M_E084N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 806182,
+                "valid_pixels": 765819,
+                "valid_fraction": 0.9499331416479158,
+                "class_counts": {
+                  "0": 765819
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-06-07",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250607T122314_VV_NA020M_E084N024T3",
+                "datetime": "2025-06-07T12:23:14Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/06/07/ENSEMBLE_FLOOD_20250607T122314_VV_NA020M_E084N024T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 873145,
+                "valid_pixels": 831194,
+                "valid_fraction": 0.9519541427826993,
+                "class_counts": {
+                  "0": 831111,
+                  "1": 83
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 6,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-06-12",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250612T002645_VV_NA020M_E084N021T3",
+                "datetime": "2025-06-12T00:26:45Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/06/12/ENSEMBLE_FLOOD_20250612T002645_VV_NA020M_E084N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 806182,
+                "valid_pixels": 765819,
+                "valid_fraction": 0.9499331416479158,
+                "class_counts": {
+                  "0": 765819
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 5,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 3,
+          "meets_three_date_80_percent_screen": true,
+          "valid_fraction_by_date": {
+            "2025-05-31": 0.9499331416479158,
+            "2025-06-07": 0.9519541427826993,
+            "2025-06-12": 0.9499331416479158
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": true,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "United States",
+      "city": "Miami",
+      "bbox_wgs84": [
+        -80.316481,
+        25.649411,
+        -80.067119,
+        25.873989
+      ],
+      "candidate_event_id": "8f25be86830e4a81aca246dbde81413e",
+      "candidate_event_interval": [
+        "2025-09-04",
+        "2025-09-04"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-08-18",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250818T232030_VV_NA020M_E099N021T3",
+                "datetime": "2025-08-18T23:20:30Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/08/18/ENSEMBLE_FLOOD_20250818T232030_VV_NA020M_E099N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2251480,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-08-23",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250823T232812_VV_NA020M_E099N021T3",
+                "datetime": "2025-08-23T23:28:12Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/08/23/ENSEMBLE_FLOOD_20250823T232812_VV_NA020M_E099N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2251480,
+                "valid_pixels": 813878,
+                "valid_fraction": 0.3614857782436442,
+                "class_counts": {
+                  "0": 813878
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-08-30",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250830T232030_VV_NA020M_E099N021T3",
+                "datetime": "2025-08-30T23:20:30Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/08/30/ENSEMBLE_FLOOD_20250830T232030_VV_NA020M_E099N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2251480,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-08-18": 0.0,
+            "2025-08-23": 0.3614857782436442,
+            "2025-08-30": 0.0
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2025-09-04",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250904T232812_VV_NA020M_E099N021T3",
+                "datetime": "2025-09-04T23:28:12Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/09/04/ENSEMBLE_FLOOD_20250904T232812_VV_NA020M_E099N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2251480,
+                "valid_pixels": 813234,
+                "valid_fraction": 0.36119974416828043,
+                "class_counts": {
+                  "0": 813201,
+                  "1": 33
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-04": 0.36119974416828043
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-09-11",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250911T232030_VV_NA020M_E099N021T3",
+                "datetime": "2025-09-11T23:20:30Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/09/11/ENSEMBLE_FLOOD_20250911T232030_VV_NA020M_E099N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2251480,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-16",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250916T232812_VV_NA020M_E099N021T3",
+                "datetime": "2025-09-16T23:28:12Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/09/16/ENSEMBLE_FLOOD_20250916T232812_VV_NA020M_E099N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2251480,
+                "valid_pixels": 815318,
+                "valid_fraction": 0.36212535754259423,
+                "class_counts": {
+                  "0": 815263,
+                  "1": 55
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-23",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250923T232030_VV_NA020M_E099N021T3",
+                "datetime": "2025-09-23T23:20:30Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/09/23/ENSEMBLE_FLOOD_20250923T232030_VV_NA020M_E099N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2251480,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-11": 0.0,
+            "2025-09-16": 0.36212535754259423,
+            "2025-09-23": 0.0
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "United States",
+      "city": "Tampa",
+      "bbox_wgs84": [
+        -82.584317,
+        27.838311,
+        -82.330083,
+        28.062889
+      ],
+      "candidate_event_id": "81e5c029589e41cc9799a92e06e45abc",
+      "candidate_event_interval": [
+        "2024-10-08",
+        "2024-10-14"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2024-09-21",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20240921T232912_VV_NA020M_E096N021T3",
+                "datetime": "2024-09-21T23:29:12Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/09/21/ENSEMBLE_FLOOD_20240921T232912_VV_NA020M_E096N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2165310,
+                "valid_pixels": 1094364,
+                "valid_fraction": 0.5054075397979966,
+                "class_counts": {
+                  "0": 1094364
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2024-09-26",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20240926T233707_VV_NA020M_E096N021T3",
+                "datetime": "2024-09-26T23:37:07Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/09/26/ENSEMBLE_FLOOD_20240926T233707_VV_NA020M_E096N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2165310,
+                "valid_pixels": 1300179,
+                "valid_fraction": 0.6004585948432326,
+                "class_counts": {
+                  "0": 1300179
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2024-10-03",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241003T232912_VV_NA020M_E096N021T3",
+                "datetime": "2024-10-03T23:29:12Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/03/ENSEMBLE_FLOOD_20241003T232912_VV_NA020M_E096N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2165310,
+                "valid_pixels": 1089637,
+                "valid_fraction": 0.5032244805593656,
+                "class_counts": {
+                  "0": 1089508,
+                  "1": 129
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2024-09-21": 0.5054075397979966,
+            "2024-09-26": 0.6004585948432326,
+            "2024-10-03": 0.5032244805593656
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2024-10-08",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241008T233708_VV_NA020M_E096N021T3",
+                "datetime": "2024-10-08T23:37:08Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/08/ENSEMBLE_FLOOD_20241008T233708_VV_NA020M_E096N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2165310,
+                "valid_pixels": 1290074,
+                "valid_fraction": 0.5957918265744858,
+                "class_counts": {
+                  "0": 1289938,
+                  "1": 136
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2024-10-11",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 2,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2024-10-08": 0.5957918265744858,
+            "2024-10-11": null
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2024-10-15",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241015T232912_VV_NA020M_E096N021T3",
+                "datetime": "2024-10-15T23:29:12Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/15/ENSEMBLE_FLOOD_20241015T232912_VV_NA020M_E096N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2165310,
+                "valid_pixels": 1084960,
+                "valid_fraction": 0.5010645127025691,
+                "class_counts": {
+                  "0": 1084716,
+                  "1": 244
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2024-10-20",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241020T233707_VV_NA020M_E096N021T3",
+                "datetime": "2024-10-20T23:37:07Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/20/ENSEMBLE_FLOOD_20241020T233707_VV_NA020M_E096N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2165310,
+                "valid_pixels": 1287147,
+                "valid_fraction": 0.5944400570818958,
+                "class_counts": {
+                  "0": 1287046,
+                  "1": 101
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2024-10-27",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241027T232912_VV_NA020M_E096N021T3",
+                "datetime": "2024-10-27T23:29:12Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/27/ENSEMBLE_FLOOD_20241027T232912_VV_NA020M_E096N021T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2165310,
+                "valid_pixels": 1090809,
+                "valid_fraction": 0.5037657425495656,
+                "class_counts": {
+                  "0": 1090559,
+                  "1": 250
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2024-10-15": 0.5010645127025691,
+            "2024-10-20": 0.5944400570818958,
+            "2024-10-27": 0.5037657425495656
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "United States",
+      "city": "New Orleans",
+      "bbox_wgs84": [
+        -90.201096,
+        29.838811,
+        -89.941904,
+        30.063389
+      ],
+      "candidate_event_id": "91c4b71cab7b46e9832eedec3f7e7834",
+      "candidate_event_interval": [
+        "2025-10-13",
+        "2025-10-13"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-10-01",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251001T235443_VV_NA020M_E090N024T3",
+                "datetime": "2025-10-01T23:54:43Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/10/01/ENSEMBLE_FLOOD_20251001T235443_VV_NA020M_E090N024T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 861513,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-10-07",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251007T000227_VV_NA020M_E090N024T3",
+                "datetime": "2025-10-07T00:02:27Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/10/07/ENSEMBLE_FLOOD_20251007T000227_VV_NA020M_E090N024T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 861513,
+                "valid_pixels": 682203,
+                "valid_fraction": 0.7918661703305696,
+                "class_counts": {
+                  "0": 682201,
+                  "1": 2
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 6,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-10-12",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251012T001118_VV_NA020M_E087N024T3",
+                "datetime": "2025-10-12T00:11:18Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/10/12/ENSEMBLE_FLOOD_20251012T001118_VV_NA020M_E087N024T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 1016667,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-10-01": 0.0,
+            "2025-10-07": 0.7918661703305696,
+            "2025-10-12": 0.0
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2025-10-13",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251013T235443_VV_NA020M_E090N024T3",
+                "datetime": "2025-10-13T23:54:43Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/10/13/ENSEMBLE_FLOOD_20251013T235443_VV_NA020M_E090N024T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 861513,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-10-13": 0.0
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-10-19",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251019T000227_VV_NA020M_E090N024T3",
+                "datetime": "2025-10-19T00:02:27Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/10/19/ENSEMBLE_FLOOD_20251019T000227_VV_NA020M_E090N024T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 861513,
+                "valid_pixels": 682136,
+                "valid_fraction": 0.7917884001750409,
+                "class_counts": {
+                  "0": 682120,
+                  "1": 16
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-10-24",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251024T001126_VV_NA020M_E087N024T3",
+                "datetime": "2025-10-24T00:11:26Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/10/24/ENSEMBLE_FLOOD_20251024T001126_VV_NA020M_E087N024T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 1016667,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 4,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-10-25",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251025T235443_VV_NA020M_E090N024T3",
+                "datetime": "2025-10-25T23:54:43Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/10/25/ENSEMBLE_FLOOD_20251025T235443_VV_NA020M_E090N024T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 861513,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-10-19": 0.7917884001750409,
+            "2025-10-24": 0.0,
+            "2025-10-25": 0.0
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "United States",
+      "city": "New York City",
+      "bbox_wgs84": [
+        -74.154141,
+        40.600511,
+        -73.857859,
+        40.825089
+      ],
+      "candidate_event_id": "6d64543b4db1401b9288f5e079f501e3",
+      "candidate_event_interval": [
+        "2025-02-10",
+        "2025-02-11"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-02-04",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250204T225925_VV_NA020M_E102N039T3",
+                "datetime": "2025-02-04T22:59:25Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/02/04/ENSEMBLE_FLOOD_20250204T225925_VV_NA020M_E102N039T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2494610,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 1,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-02-05",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250205T105757_VV_NA020M_E102N039T3",
+                "datetime": "2025-02-05T10:57:57Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/02/05/ENSEMBLE_FLOOD_20250205T105757_VV_NA020M_E102N039T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2494610,
+                "valid_pixels": 1396116,
+                "valid_fraction": 0.5596530118936427,
+                "class_counts": {
+                  "0": 1396116
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": false,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-02-06",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250206T224340_VV_NA020M_E102N039T3",
+                "datetime": "2025-02-06T22:43:40Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/02/06/ENSEMBLE_FLOOD_20250206T224340_VV_NA020M_E102N039T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2494610,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-02-04": 0.0,
+            "2025-02-05": 0.5596530118936427,
+            "2025-02-06": 0.0
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2025-02-10",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250210T110620_VV_NA020M_E102N039T3",
+                "datetime": "2025-02-10T11:06:20Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/02/10/ENSEMBLE_FLOOD_20250210T110620_VV_NA020M_E102N039T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2494610,
+                "valid_pixels": 1397372,
+                "valid_fraction": 0.5601564974084126,
+                "class_counts": {
+                  "0": 1397109,
+                  "1": 263
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": false,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-02-11",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250211T225124_VV_NA020M_E102N039T3",
+                "datetime": "2025-02-11T22:51:24Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/02/11/ENSEMBLE_FLOOD_20250211T225124_VV_NA020M_E102N039T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2494610,
+                "valid_pixels": 1429784,
+                "valid_fraction": 0.5731493099121706,
+                "class_counts": {
+                  "0": 1429784
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 2,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-02-10": 0.5601564974084126,
+            "2025-02-11": 0.5731493099121706
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-02-16",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250216T225925_VV_NA020M_E102N039T3",
+                "datetime": "2025-02-16T22:59:25Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/02/16/ENSEMBLE_FLOOD_20250216T225925_VV_NA020M_E102N039T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2494610,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-02-17",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250217T105748_VV_NA020M_E102N039T3",
+                "datetime": "2025-02-17T10:57:48Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/02/17/ENSEMBLE_FLOOD_20250217T105748_VV_NA020M_E102N039T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2494610,
+                "valid_pixels": 7210,
+                "valid_fraction": 0.0028902313387663804,
+                "class_counts": {
+                  "0": 7210
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": false,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-02-18",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250218T224339_VV_NA020M_E102N039T3",
+                "datetime": "2025-02-18T22:43:39Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/02/18/ENSEMBLE_FLOOD_20250218T224339_VV_NA020M_E102N039T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2494610,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-02-16": 0.0,
+            "2025-02-17": 0.0028902313387663804,
+            "2025-02-18": 0.0
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "United States",
+      "city": "Sacramento",
+      "bbox_wgs84": [
+        -121.638043,
+        38.469311,
+        -121.350757,
+        38.693889
+      ],
+      "candidate_event_id": "c3f1a6cde0a2489e80ab9e2824be7831",
+      "candidate_event_interval": [
+        "2025-05-08",
+        "2025-05-08"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-05-01",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-05-02",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250502T020003_VV_NA020M_E060N036T3",
+                "datetime": "2025-05-02T02:00:03Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/02/ENSEMBLE_FLOOD_20250502T020003_VV_NA020M_E060N036T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2505633,
+                "valid_pixels": 1597000,
+                "valid_fraction": 0.6373638916792683,
+                "class_counts": {
+                  "0": 1596004,
+                  "1": 996
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 5,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-05-07",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250507T140802_VV_NA020M_E060N036T3",
+                "datetime": "2025-05-07T14:08:02Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/07/ENSEMBLE_FLOOD_20250507T140802_VV_NA020M_E060N036T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2505633,
+                "valid_pixels": 1597000,
+                "valid_fraction": 0.6373638916792683,
+                "class_counts": {
+                  "0": 1595069,
+                  "1": 1931
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-05-01": null,
+            "2025-05-02": 0.6373638916792683,
+            "2025-05-07": 0.6373638916792683
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2025-05-08",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 0,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-05-08": null
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-05-12",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250512T141601_VV_NA020M_E060N036T3",
+                "datetime": "2025-05-12T14:16:01Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/12/ENSEMBLE_FLOOD_20250512T141601_VV_NA020M_E060N036T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2505633,
+                "valid_pixels": 940117,
+                "valid_fraction": 0.3752013962140505,
+                "class_counts": {
+                  "0": 939748,
+                  "1": 369
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-05-13",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-05-14",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250514T020003_VV_NA020M_E060N036T3",
+                "datetime": "2025-05-14T02:00:03Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2025/05/14/ENSEMBLE_FLOOD_20250514T020003_VV_NA020M_E060N036T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2505633,
+                "valid_pixels": 1597000,
+                "valid_fraction": 0.6373638916792683,
+                "class_counts": {
+                  "0": 1594051,
+                  "1": 2949
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 5,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-05-12": 0.3752013962140505,
+            "2025-05-13": null,
+            "2025-05-14": 0.6373638916792683
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "United States",
+      "city": "Atlanta",
+      "bbox_wgs84": [
+        -84.523047,
+        33.636711,
+        -84.252953,
+        33.861289
+      ],
+      "candidate_event_id": "9aa12f7b94f7484db437d846e9a4589e",
+      "candidate_event_interval": [
+        "2024-10-08",
+        "2024-10-09"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2024-09-21",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20240921T233027_VV_NA020M_E093N027T3",
+                "datetime": "2024-09-21T23:30:27Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/09/21/ENSEMBLE_FLOOD_20240921T233027_VV_NA020M_E093N027T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2090915,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 1,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2024-09-26",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20240926T233847_VV_NA020M_E093N027T3",
+                "datetime": "2024-09-26T23:38:47Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/09/26/ENSEMBLE_FLOOD_20240926T233847_VV_NA020M_E093N027T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2090915,
+                "valid_pixels": 1592315,
+                "valid_fraction": 0.7615398043440312,
+                "class_counts": {
+                  "0": 1592315
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2024-10-03",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241003T233027_VV_NA020M_E093N027T3",
+                "datetime": "2024-10-03T23:30:27Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/03/ENSEMBLE_FLOOD_20241003T233027_VV_NA020M_E093N027T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2090915,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2024-09-21": 0.0,
+            "2024-09-26": 0.7615398043440312,
+            "2024-10-03": 0.0
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2024-10-08",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241008T233848_VV_NA020M_E093N027T3",
+                "datetime": "2024-10-08T23:38:48Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/08/ENSEMBLE_FLOOD_20241008T233848_VV_NA020M_E093N027T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2090915,
+                "valid_pixels": 1592315,
+                "valid_fraction": 0.7615398043440312,
+                "class_counts": {
+                  "0": 1592315
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2024-10-08": 0.7615398043440312
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2024-10-15",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241015T233027_VV_NA020M_E093N027T3",
+                "datetime": "2024-10-15T23:30:27Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/15/ENSEMBLE_FLOOD_20241015T233027_VV_NA020M_E093N027T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2090915,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2024-10-20",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241020T233847_VV_NA020M_E093N027T3",
+                "datetime": "2024-10-20T23:38:47Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/20/ENSEMBLE_FLOOD_20241020T233847_VV_NA020M_E093N027T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2090915,
+                "valid_pixels": 1592315,
+                "valid_fraction": 0.7615398043440312,
+                "class_counts": {
+                  "0": 1592315
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2024-10-27",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241027T233052_VV_NA020M_E093N027T3",
+                "datetime": "2024-10-27T23:30:52Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/27/ENSEMBLE_FLOOD_20241027T233052_VV_NA020M_E093N027T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 2090915,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2024-10-15": 0.0,
+            "2024-10-20": 0.7615398043440312,
+            "2024-10-27": 0.0
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "United States",
+      "city": "St. Louis",
+      "bbox_wgs84": [
+        -90.343134,
+        38.514711,
+        -90.055666,
+        38.739289
+      ],
+      "candidate_event_id": "1398ebae55a24eb9b2638729a2922841",
+      "candidate_event_interval": [
+        "2024-11-05",
+        "2024-11-05"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2024-10-18",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241018T235633_VV_NA020M_E087N033T3",
+                "datetime": "2024-10-18T23:56:33Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/18/ENSEMBLE_FLOOD_20241018T235633_VV_NA020M_E087N033T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 1865947,
+                "valid_pixels": 1576442,
+                "valid_fraction": 0.8448482191616375,
+                "class_counts": {
+                  "0": 1576442
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2024-10-24",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241024T000440_VV_NA020M_E087N033T3",
+                "datetime": "2024-10-24T00:04:40Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/24/ENSEMBLE_FLOOD_20241024T000440_VV_NA020M_E087N033T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 1865947,
+                "valid_pixels": 387275,
+                "valid_fraction": 0.2075487674623127,
+                "class_counts": {
+                  "0": 387275
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2024-10-30",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241030T235633_VV_NA020M_E087N033T3",
+                "datetime": "2024-10-30T23:56:33Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/10/30/ENSEMBLE_FLOOD_20241030T235633_VV_NA020M_E087N033T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 1865947,
+                "valid_pixels": 1576442,
+                "valid_fraction": 0.8448482191616375,
+                "class_counts": {
+                  "0": 1576442
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 2,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2024-10-18": 0.8448482191616375,
+            "2024-10-24": 0.2075487674623127,
+            "2024-10-30": 0.8448482191616375
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2024-11-05",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241105T000441_VV_NA020M_E087N033T3",
+                "datetime": "2024-11-05T00:04:41Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/11/05/ENSEMBLE_FLOOD_20241105T000441_VV_NA020M_E087N033T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 1865947,
+                "valid_pixels": 386539,
+                "valid_fraction": 0.20715432967817413,
+                "class_counts": {
+                  "0": 386539
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2024-11-05": 0.20715432967817413
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2024-11-11",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241111T235632_VV_NA020M_E087N033T3",
+                "datetime": "2024-11-11T23:56:32Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/11/11/ENSEMBLE_FLOOD_20241111T235632_VV_NA020M_E087N033T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 1865947,
+                "valid_pixels": 1576442,
+                "valid_fraction": 0.8448482191616375,
+                "class_counts": {
+                  "0": 1576365,
+                  "1": 77
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2024-11-17",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241117T000440_VV_NA020M_E087N033T3",
+                "datetime": "2024-11-17T00:04:40Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/11/17/ENSEMBLE_FLOOD_20241117T000440_VV_NA020M_E087N033T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 1865947,
+                "valid_pixels": 384999,
+                "valid_fraction": 0.20632901148853638,
+                "class_counts": {
+                  "0": 384999
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2024-11-23",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20241123T235631_VV_NA020M_E087N033T3",
+                "datetime": "2024-11-23T23:56:31Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/NA020M/2024/11/23/ENSEMBLE_FLOOD_20241123T235631_VV_NA020M_E087N033T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27705",
+                "aoi_pixels": 1865947,
+                "valid_pixels": 1576442,
+                "valid_fraction": 0.8448482191616375,
+                "class_counts": {
+                  "0": 1576442
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 2,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2024-11-11": 0.8448482191616375,
+            "2024-11-17": 0.20632901148853638,
+            "2024-11-23": 0.8448482191616375
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "International",
+      "city": "Jakarta",
+      "bbox_wgs84": [
+        106.732649,
+        -6.321089,
+        106.958551,
+        -6.096511
+      ],
+      "candidate_event_id": "109e9bf35d7b4660981e25cc8c1f1cd1",
+      "candidate_event_interval": [
+        "2026-01-26",
+        "2026-01-29"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2026-01-21",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20260121T222605_VV_OC020M_E042N087T3",
+                "datetime": "2026-01-21T22:26:05Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2026/01/21/ENSEMBLE_FLOOD_20260121T222605_VV_OC020M_E042N087T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1928421,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2026-01-23",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2026-01-25",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20260125T110700_VV_OC020M_E042N087T3",
+                "datetime": "2026-01-25T11:07:00Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2026/01/25/ENSEMBLE_FLOOD_20260125T110700_VV_OC020M_E042N087T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1928421,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2026-01-21": 0.0,
+            "2026-01-23": null,
+            "2026-01-25": 0.0
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2026-01-26",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20260126T223355_VV_OC020M_E042N087T3",
+                "datetime": "2026-01-26T22:33:55Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2026/01/26/ENSEMBLE_FLOOD_20260126T223355_VV_OC020M_E042N087T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1928421,
+                "valid_pixels": 1559556,
+                "valid_fraction": 0.8087217469629298,
+                "class_counts": {
+                  "0": 1559556
+                },
+                "gfm_version": "v4.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 1,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2026-01-26": 0.8087217469629298
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2026-01-30",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20260130T111520_VV_OC020M_E042N087T3",
+                "datetime": "2026-01-30T11:15:20Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2026/01/30/ENSEMBLE_FLOOD_20260130T111520_VV_OC020M_E042N087T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1928421,
+                "valid_pixels": 1566523,
+                "valid_fraction": 0.812334547279873,
+                "class_counts": {
+                  "0": 1566523
+                },
+                "gfm_version": "v4.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2026-02-02",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20260202T222604_VV_OC020M_E042N087T3",
+                "datetime": "2026-02-02T22:26:04Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2026/02/02/ENSEMBLE_FLOOD_20260202T222604_VV_OC020M_E042N087T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1928421,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2026-02-04",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 1,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2026-01-30": 0.812334547279873,
+            "2026-02-02": 0.0,
+            "2026-02-04": null
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "International",
+      "city": "Singapore",
+      "bbox_wgs84": [
+        103.70748,
+        1.239811,
+        103.93212,
+        1.464389
+      ],
+      "candidate_event_id": "c5e6600430794002b724b7fc11728aa3",
+      "candidate_event_interval": [
+        "2025-03-18",
+        "2025-03-23"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-03-06",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250306T224811_VV_OC020M_E036N096T3",
+                "datetime": "2025-03-06T22:48:11Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/03/06/ENSEMBLE_FLOOD_20250306T224811_VV_OC020M_E036N096T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1912092,
+                "valid_pixels": 1305975,
+                "valid_fraction": 0.6830084535681338,
+                "class_counts": {
+                  "0": 1305975
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-03-12",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250312T111735_VV_OC020M_E036N096T3",
+                "datetime": "2025-03-12T11:17:35Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/03/12/ENSEMBLE_FLOOD_20250312T111735_VV_OC020M_E036N096T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1912092,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-03-17",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250317T112535_VV_OC020M_E036N096T3",
+                "datetime": "2025-03-17T11:25:35Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/03/17/ENSEMBLE_FLOOD_20250317T112535_VV_OC020M_E036N096T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1912092,
+                "valid_pixels": 1347267,
+                "valid_fraction": 0.7046036487784061,
+                "class_counts": {
+                  "0": 1347267
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-03-06": 0.6830084535681338,
+            "2025-03-12": 0.0,
+            "2025-03-17": 0.7046036487784061
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2025-03-18",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250318T224811_VV_OC020M_E036N096T3",
+                "datetime": "2025-03-18T22:48:11Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/03/18/ENSEMBLE_FLOOD_20250318T224811_VV_OC020M_E036N096T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1912092,
+                "valid_pixels": 1310986,
+                "valid_fraction": 0.6856291433675785,
+                "class_counts": {
+                  "0": 1310986
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-03-18": 0.6856291433675785
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-03-24",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250324T111735_VV_OC020M_E036N096T3",
+                "datetime": "2025-03-24T11:17:35Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/03/24/ENSEMBLE_FLOOD_20250324T111735_VV_OC020M_E036N096T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1912092,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-03-29",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250329T112536_VV_OC020M_E036N096T3",
+                "datetime": "2025-03-29T11:25:36Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/03/29/ENSEMBLE_FLOOD_20250329T112536_VV_OC020M_E036N096T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1912092,
+                "valid_pixels": 1333651,
+                "valid_fraction": 0.6974826525083521,
+                "class_counts": {
+                  "0": 1333651
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-03-30",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250330T224811_VV_OC020M_E036N096T3",
+                "datetime": "2025-03-30T22:48:11Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/03/30/ENSEMBLE_FLOOD_20250330T224811_VV_OC020M_E036N096T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1912092,
+                "valid_pixels": 1307986,
+                "valid_fraction": 0.68406018120467,
+                "class_counts": {
+                  "0": 1307986
+                },
+                "gfm_version": "GFM v3.1.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 3,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-03-24": 0.0,
+            "2025-03-29": 0.6974826525083521,
+            "2025-03-30": 0.68406018120467
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "International",
+      "city": "Dubai",
+      "bbox_wgs84": [
+        55.146695,
+        25.092511,
+        55.394905,
+        25.317089
+      ],
+      "candidate_event_id": "06ae3a685c884ff7a397d6bc18c947c1",
+      "candidate_event_interval": [
+        "2025-10-23",
+        "2025-10-24"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-10-19",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251019T021543_VV_AF020M_E090N078T3",
+                "datetime": "2025-10-19T02:15:43Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AF020M/2025/10/19/ENSEMBLE_FLOOD_20251019T021543_VV_AF020M_E090N078T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27701",
+                "aoi_pixels": 1470740,
+                "valid_pixels": 848064,
+                "valid_fraction": 0.5766240124019201,
+                "class_counts": {
+                  "0": 848064
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-10-20",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-10-22",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-10-19": 0.5766240124019201,
+            "2025-10-20": null,
+            "2025-10-22": null
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2025-10-23",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251023T141627_VV_AF020M_E090N078T3",
+                "datetime": "2025-10-23T14:16:27Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AF020M/2025/10/23/ENSEMBLE_FLOOD_20251023T141627_VV_AF020M_E090N078T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27701",
+                "aoi_pixels": 1470740,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-10-23": 0.0
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-10-25",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-10-26",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251026T020753_VV_AF020M_E090N078T3",
+                "datetime": "2025-10-26T02:07:53Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AF020M/2025/10/26/ENSEMBLE_FLOOD_20251026T020753_VV_AF020M_E090N078T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27701",
+                "aoi_pixels": 1470740,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-10-28",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251028T142503_VV_AF020M_E090N078T3",
+                "datetime": "2025-10-28T14:25:03Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AF020M/2025/10/28/ENSEMBLE_FLOOD_20251028T142503_VV_AF020M_E090N078T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27701",
+                "aoi_pixels": 1470740,
+                "valid_pixels": 846109,
+                "valid_fraction": 0.5752947495818431,
+                "class_counts": {
+                  "0": 845914,
+                  "1": 195
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 4,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-10-25": null,
+            "2025-10-26": 0.0,
+            "2025-10-28": 0.5752947495818431
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "International",
+      "city": "Mumbai",
+      "bbox_wgs84": [
+        72.758887,
+        18.963711,
+        72.996513,
+        19.188289
+      ],
+      "candidate_event_id": "5aff35db93b04c45b6f424eae314d2b5",
+      "candidate_event_interval": [
+        "2025-09-16",
+        "2025-09-17"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-09-04",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250904T010320_VV_AS020M_E018N018T3",
+                "datetime": "2025-09-04T01:03:20Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/04/ENSEMBLE_FLOOD_20250904T010320_VV_AS020M_E018N018T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 2313216,
+                "valid_pixels": 1014018,
+                "valid_fraction": 0.4383585449867198,
+                "class_counts": {
+                  "0": 1013585,
+                  "1": 433
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-09",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-11",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250911T005543_VV_AS020M_E018N018T3",
+                "datetime": "2025-09-11T00:55:43Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/11/ENSEMBLE_FLOOD_20250911T005543_VV_AS020M_E018N018T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 2313216,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-04": 0.4383585449867198,
+            "2025-09-09": null,
+            "2025-09-11": 0.0
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2025-09-16",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250916T010320_VV_AS020M_E018N018T3",
+                "datetime": "2025-09-16T01:03:20Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/16/ENSEMBLE_FLOOD_20250916T010320_VV_AS020M_E018N018T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 2313216,
+                "valid_pixels": 1007378,
+                "valid_fraction": 0.43548808239265163,
+                "class_counts": {
+                  "0": 1006048,
+                  "1": 1330
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-16": 0.43548808239265163
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-09-23",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250923T005543_VV_AS020M_E018N018T3",
+                "datetime": "2025-09-23T00:55:43Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/23/ENSEMBLE_FLOOD_20250923T005543_VV_AS020M_E018N018T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 2313216,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-28",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250928T010320_VV_AS020M_E018N018T3",
+                "datetime": "2025-09-28T01:03:20Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/28/ENSEMBLE_FLOOD_20250928T010320_VV_AS020M_E018N018T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 2313216,
+                "valid_pixels": 1009552,
+                "valid_fraction": 0.4364278995130589,
+                "class_counts": {
+                  "0": 1008753,
+                  "1": 799
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-10-03",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-23": 0.0,
+            "2025-09-28": 0.4364278995130589,
+            "2025-10-03": null
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "International",
+      "city": "Bangkok",
+      "bbox_wgs84": [
+        100.386195,
+        13.644011,
+        100.617405,
+        13.868589
+      ],
+      "candidate_event_id": "0a15548ed8744639968f2bfb6dfde45f",
+      "candidate_event_interval": [
+        "2025-09-05",
+        "2025-09-08"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-08-24",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250824T230943_VV_AS020M_E048N009T3",
+                "datetime": "2025-08-24T23:09:43Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/08/24/ENSEMBLE_FLOOD_20250824T230943_VV_AS020M_E048N009T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 1847538,
+                "valid_pixels": 1103859,
+                "valid_fraction": 0.5974756676182033,
+                "class_counts": {
+                  "0": 1103856,
+                  "1": 3
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-08-30",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-01",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250901T112852_VV_AS020M_E048N009T3",
+                "datetime": "2025-09-01T11:28:52Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/01/ENSEMBLE_FLOOD_20250901T112852_VV_AS020M_E048N009T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 1847538,
+                "valid_pixels": 1645976,
+                "valid_fraction": 0.8909023792744722,
+                "class_counts": {
+                  "0": 1645975,
+                  "1": 1
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 1,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-08-24": 0.5974756676182033,
+            "2025-08-30": null,
+            "2025-09-01": 0.8909023792744722
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2025-09-05",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250905T230943_VV_AS020M_E048N009T3",
+                "datetime": "2025-09-05T23:09:43Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/05/ENSEMBLE_FLOOD_20250905T230943_VV_AS020M_E048N009T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 1847538,
+                "valid_pixels": 1105874,
+                "valid_fraction": 0.5985663082437276,
+                "class_counts": {
+                  "0": 1105871,
+                  "1": 3
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-05": 0.5985663082437276
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-09-11",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-13",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250913T112853_VV_AS020M_E048N009T3",
+                "datetime": "2025-09-13T11:28:53Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/13/ENSEMBLE_FLOOD_20250913T112853_VV_AS020M_E048N009T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 1847538,
+                "valid_pixels": 1645976,
+                "valid_fraction": 0.8909023792744722,
+                "class_counts": {
+                  "0": 1645935,
+                  "1": 41
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-17",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250917T230943_VV_AS020M_E048N009T3",
+                "datetime": "2025-09-17T23:09:43Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/17/ENSEMBLE_FLOOD_20250917T230943_VV_AS020M_E048N009T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 1847538,
+                "valid_pixels": 1106261,
+                "valid_fraction": 0.598775776195131,
+                "class_counts": {
+                  "0": 1106249,
+                  "1": 12
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 1,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-11": null,
+            "2025-09-13": 0.8909023792744722,
+            "2025-09-17": 0.598775776195131
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "International",
+      "city": "Tokyo",
+      "bbox_wgs84": [
+        139.512069,
+        35.563911,
+        139.788531,
+        35.788489
+      ],
+      "candidate_event_id": "2443e698062646f1a00afbde0959ef03",
+      "candidate_event_interval": [
+        "2025-09-10",
+        "2025-09-11"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-09-04",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250904T204345_VV_AS020M_E081N045T3",
+                "datetime": "2025-09-04T20:43:45Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/04/ENSEMBLE_FLOOD_20250904T204345_VV_AS020M_E081N045T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 3141996,
+                "valid_pixels": 1637249,
+                "valid_fraction": 0.5210856411020256,
+                "class_counts": {
+                  "0": 1637249
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-05",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-09",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250909T205207_VV_AS020M_E081N045T3",
+                "datetime": "2025-09-09T20:52:07Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/09/ENSEMBLE_FLOOD_20250909T205207_VV_AS020M_E081N045T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 3141996,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-04": 0.5210856411020256,
+            "2025-09-05": null,
+            "2025-09-09": 0.0
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2025-09-10",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 0,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-10": null
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-09-16",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250916T204346_VV_AS020M_E081N045T3",
+                "datetime": "2025-09-16T20:43:46Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/16/ENSEMBLE_FLOOD_20250916T204346_VV_AS020M_E081N045T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 3141996,
+                "valid_pixels": 1636636,
+                "valid_fraction": 0.5208905421903783,
+                "class_counts": {
+                  "0": 1636636
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-17",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-21",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250921T205207_VV_AS020M_E081N045T3",
+                "datetime": "2025-09-21T20:52:07Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/AS020M/2025/09/21/ENSEMBLE_FLOOD_20250921T205207_VV_AS020M_E081N045T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27703",
+                "aoi_pixels": 3141996,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-16": 0.5208905421903783,
+            "2025-09-17": null,
+            "2025-09-21": 0.0
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "International",
+      "city": "Manila",
+      "bbox_wgs84": [
+        120.868164,
+        14.487211,
+        121.100236,
+        14.711789
+      ],
+      "candidate_event_id": "dccc5469ebeb414eb2a2fd49eea97bc2",
+      "candidate_event_interval": [
+        "2025-09-10",
+        "2025-09-10"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-09-06",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250906T095818_VV_OC020M_E057N111T3",
+                "datetime": "2025-09-06T09:58:18Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/09/06/ENSEMBLE_FLOOD_20250906T095818_VV_OC020M_E057N111T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 134100,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-08",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250908T215455_VV_OC020M_E057N114T3",
+                "datetime": "2025-09-08T21:54:55Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/09/08/ENSEMBLE_FLOOD_20250908T215455_VV_OC020M_E057N114T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1590426,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-09",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-06": 0.0,
+            "2025-09-08": 0.0,
+            "2025-09-09": null
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2025-09-10",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250910T213945_VV_OC020M_E057N111T3",
+                "datetime": "2025-09-10T21:39:45Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/09/10/ENSEMBLE_FLOOD_20250910T213945_VV_OC020M_E057N111T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 134100,
+                "valid_pixels": 0,
+                "valid_fraction": 0.0,
+                "class_counts": {},
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-10": 0.0
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-09-12",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-14",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-15",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250915T214705_VV_OC020M_E057N114T3",
+                "datetime": "2025-09-15T21:47:05Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/OC020M/2025/09/15/ENSEMBLE_FLOOD_20250915T214705_VV_OC020M_E057N114T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27706",
+                "aoi_pixels": 1590426,
+                "valid_pixels": 983122,
+                "valid_fraction": 0.6181501056949522,
+                "class_counts": {
+                  "0": 982896,
+                  "1": 226
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 6,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 1,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-12": null,
+            "2025-09-14": null,
+            "2025-09-15": 0.6181501056949522
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    },
+    {
+      "region": "International",
+      "city": "S\u00e3o Paulo",
+      "bbox_wgs84": [
+        -46.755791,
+        -23.662789,
+        -46.510809,
+        -23.438211
+      ],
+      "candidate_event_id": "2b840211dde049cc867ee9388a3a01f5",
+      "candidate_event_interval": [
+        "2025-10-05",
+        "2025-10-05"
+      ],
+      "candidate_lead_status": "discovery lead; exact timestamps, official event verification, QA-valid pixels, and independent labels pending",
+      "periods": {
+        "pre_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-09-28",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-09-29",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20250929T083110_VV_SA020M_E084N042T3",
+                "datetime": "2025-09-29T08:31:10Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/SA020M/2025/09/29/ENSEMBLE_FLOOD_20250929T083110_VV_SA020M_E084N042T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27707",
+                "aoi_pixels": 1826480,
+                "valid_pixels": 1576342,
+                "valid_fraction": 0.8630491437081161,
+                "class_counts": {
+                  "0": 1576342
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-10-04",
+              "status": "raster sampled (reused prior audit)",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251004T083907_VV_SA020M_E084N042T3",
+                "datetime": "2025-10-04T08:39:07Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/SA020M/2025/10/04/ENSEMBLE_FLOOD_20251004T083907_VV_SA020M_E084N042T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27707",
+                "aoi_pixels": 1826480,
+                "valid_pixels": 825,
+                "valid_fraction": 0.00045168849371468616,
+                "class_counts": {
+                  "0": 825
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": null,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 1,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-09-28": null,
+            "2025-09-29": 0.8630491437081161,
+            "2025-10-04": 0.00045168849371468616
+          }
+        },
+        "candidate_event": {
+          "observations": [
+            {
+              "target_date": "2025-10-05",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 1,
+          "readable_rasters": 0,
+          "rasters_at_or_above_80_percent": 0,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-10-05": null
+          }
+        },
+        "post_event_30d": {
+          "observations": [
+            {
+              "target_date": "2025-10-10",
+              "status": "no GFM item",
+              "best_coverage_item": null,
+              "gfm_item_count": 0,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-10-11",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251011T083111_VV_SA020M_E084N042T3",
+                "datetime": "2025-10-11T08:31:11Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/SA020M/2025/10/11/ENSEMBLE_FLOOD_20251011T083111_VV_SA020M_E084N042T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27707",
+                "aoi_pixels": 1826480,
+                "valid_pixels": 1576342,
+                "valid_fraction": 0.8630491437081161,
+                "class_counts": {
+                  "0": 1576342
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 2,
+              "other_raster_errors": []
+            },
+            {
+              "target_date": "2025-10-16",
+              "status": "raster sampled",
+              "best_coverage_item": {
+                "id": "ENSEMBLE_FLOOD_20251016T083907_VV_SA020M_E084N042T3",
+                "datetime": "2025-10-16T08:39:07Z",
+                "asset": "https://data.eodc.eu/collections/GFM_LAYERS/flood_extent/SA020M/2025/10/16/ENSEMBLE_FLOOD_20251016T083907_VV_SA020M_E084N042T3.tif",
+                "asset_nodata": 255.0,
+                "asset_crs": "EPSG:27707",
+                "aoi_pixels": 1826480,
+                "valid_pixels": 618,
+                "valid_fraction": 0.00033835574438263765,
+                "class_counts": {
+                  "0": 618
+                },
+                "gfm_version": "v4.0.0",
+                "constellation": "sentinel-1",
+                "flood_members": {
+                  "DLR": true,
+                  "TUW": true,
+                  "LIST": true
+                }
+              },
+              "gfm_item_count": 3,
+              "other_raster_errors": []
+            }
+          ],
+          "date_slots": 3,
+          "readable_rasters": 2,
+          "rasters_at_or_above_80_percent": 1,
+          "meets_three_date_80_percent_screen": false,
+          "valid_fraction_by_date": {
+            "2025-10-10": null,
+            "2025-10-11": 0.8630491437081161,
+            "2025-10-16": 0.00033835574438263765
+          }
+        }
+      },
+      "pre_post_matched_three_date_screen": false,
+      "confirmatory_eligible": false,
+      "confirmatory_reason": "Event verification, three QA-valid target-product dates per period, independent licensed reference labels, probability sampling, and precision gates remain unmet."
+    }
+  ],
+  "summary": {
+    "candidate_areas": 16,
+    "us_areas": 8,
+    "international_areas": 8,
+    "date_slots_screened": 114,
+    "areas_with_at_least_one_80_percent_candidate_event_raster": 2,
+    "areas_passing_three_pre_and_three_post_dates": 1,
+    "confirmatory_eligible_areas": 0
+  }
+}

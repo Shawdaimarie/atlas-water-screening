@@ -65,7 +65,7 @@
       "jakarta_bpbd_2026_reported_affected_kelurahan_count": null,
       "nominal_aoi_km2": 625,
       "official_event_admin_area_context_present": false,
-      "public_evidence_url": "https://www.atlantaga.gov/home/showpublisheddocument/66053/638884420075030000",
+      "public_evidence_url": "https://atlantawatershed.org/watershedimprovementplans/",
       "reference_lead_counts_by_source": {
         "C2S sparse labels": 0,
         "CEMS rapid-mapping flood AOI overlaps": 0,
@@ -106,7 +106,7 @@
       "jakarta_bpbd_2026_reported_affected_kelurahan_count": null,
       "nominal_aoi_km2": 625,
       "official_event_admin_area_context_present": false,
-      "public_evidence_url": "https://prod-01-asg-toolkit-climate.woc.noaa.gov/action-plan/resilient-houston",
+      "public_evidence_url": "https://www.houstontx.gov/cip/26cipadopt/e_storm.pdf",
       "reference_lead_counts_by_source": {
         "C2S sparse labels": 1,
         "CEMS rapid-mapping flood AOI overlaps": 0,
@@ -188,7 +188,7 @@
       "jakarta_bpbd_2026_reported_affected_kelurahan_count": null,
       "nominal_aoi_km2": 625,
       "official_event_admin_area_context_present": false,
-      "public_evidence_url": "https://marinedebris.noaa.gov/removal/preventing-pervasive-floating-litter-new-orleans-storm-drains",
+      "public_evidence_url": "https://ready.nola.gov/hazard-mitigation/hazards/flooding/",
       "reference_lead_counts_by_source": {
         "C2S sparse labels": 0,
         "CEMS rapid-mapping flood AOI overlaps": 0,
@@ -229,7 +229,7 @@
       "jakarta_bpbd_2026_reported_affected_kelurahan_count": null,
       "nominal_aoi_km2": 625,
       "official_event_admin_area_context_present": false,
-      "public_evidence_url": "https://repository.library.noaa.gov/view/noaa/77144",
+      "public_evidence_url": "https://www.nyc.gov/site/dep/news/25-031/mayor-adams-nyc-department-environmental-protection-delivered-historic-progress-climate",
       "reference_lead_counts_by_source": {
         "C2S sparse labels": 0,
         "CEMS rapid-mapping flood AOI overlaps": 0,
@@ -270,7 +270,7 @@
       "jakarta_bpbd_2026_reported_affected_kelurahan_count": null,
       "nominal_aoi_km2": 625,
       "official_event_admin_area_context_present": false,
-      "public_evidence_url": "https://www.usgs.gov/centers/california-water-science-center/science/science-topics/floods",
+      "public_evidence_url": "https://www.cityofsacramento.gov/content/dam/portal/dou/utilities/stormwater/flood-preparedness/documents/CFMP%202024%20with%20Appendix%20%281%29_Final.pdf",
       "reference_lead_counts_by_source": {
         "C2S sparse labels": 0,
         "CEMS rapid-mapping flood AOI overlaps": 0,
@@ -289,10 +289,10 @@
       "rtc_valid_quota_groups_selected": 12,
       "rtc_valid_quota_met": true,
       "rtc_valid_quota_supplemental_groups_screened": 3,
-      "screening_rationale": "The Sacramento region relies on levees along major rivers; USGS maintains streamgages and studies flood processes in California’s Central Valley.",
+      "screening_rationale": "The City of Sacramento's 2024 flood-management plan documents riverine and stormwater hazards and describes the city's 2017 event response; the City's levee-break maps support scenario-planning relevance but are not observations.",
       "temporal_end": "2026-11-02T23:59:59Z",
       "temporal_start": "2024-09-01T00:00:00Z",
-      "value_integration_question": "Add an inland river/levee comparator and assess whether water observations can complement gauge-based context."
+      "value_integration_question": "Test whether validated satellite water observations add timely spatial context to municipal incident records, river gauges, levee information, and public-infrastructure priorities."
     },
     {
       "candidate_status": "documented_candidate",
@@ -311,7 +311,7 @@
       "jakarta_bpbd_2026_reported_affected_kelurahan_count": null,
       "nominal_aoi_km2": 625,
       "official_event_admin_area_context_present": false,
-      "public_evidence_url": "https://water.noaa.gov/gauges/eadm7",
+      "public_evidence_url": "https://www.weather.gov/lsx/1993_flood",
       "reference_lead_counts_by_source": {
         "C2S sparse labels": 0,
         "CEMS rapid-mapping flood AOI overlaps": 0,
@@ -352,7 +352,7 @@
       "jakarta_bpbd_2026_reported_affected_kelurahan_count": null,
       "nominal_aoi_km2": 625,
       "official_event_admin_area_context_present": false,
-      "public_evidence_url": "https://water.usgs.gov/alerts/item_2024-10-11_20%3A05%3A00.html",
+      "public_evidence_url": "https://www.usgs.gov/news/national-news-release/usgs-deploys-sensors-along-floridas-gulf-coast-measure-impacts-hurricane",
       "reference_lead_counts_by_source": {
         "C2S sparse labels": 0,
         "CEMS rapid-mapping flood AOI overlaps": 0,
@@ -475,7 +475,7 @@
       "jakarta_bpbd_2026_reported_affected_kelurahan_count": 21,
       "nominal_aoi_km2": 625,
       "official_event_admin_area_context_present": true,
-      "public_evidence_url": "https://www.worldbank.org/en/topic/water/publication/pathways-to-integrated-urban-water-management-for-greater-jakarta",
+      "public_evidence_url": "https://www.jakarta.go.id/siaran-pers/4685-SP-HMS-03-2024",
       "reference_lead_counts_by_source": {
         "C2S sparse labels": 0,
         "CEMS rapid-mapping flood AOI overlaps": 0,
@@ -598,7 +598,7 @@
       "jakarta_bpbd_2026_reported_affected_kelurahan_count": null,
       "nominal_aoi_km2": 625,
       "official_event_admin_area_context_present": false,
-      "public_evidence_url": "https://www.pub.gov.sg/Public/KeyInitiatives/Flood-Resilience",
+      "public_evidence_url": "https://www.pub.gov.sg/Public/KeyInitiatives/Flood-Resilience/About-Floods",
       "reference_lead_counts_by_source": {
         "C2S sparse labels": 0,
         "CEMS rapid-mapping flood AOI overlaps": 0,
@@ -639,7 +639,7 @@
       "jakarta_bpbd_2026_reported_affected_kelurahan_count": null,
       "nominal_aoi_km2": 625,
       "official_event_admin_area_context_present": false,
-      "public_evidence_url": "https://documents1.worldbank.org/curated/en/659161468182066104/pdf/709820PUB0EPI0067926B09780821389621.pdf",
+      "public_evidence_url": "https://prefeitura.sp.gov.br/web/obras/w/prefeitura-de-s%C3%A3o-paulo-publica-3%C2%AA-edi%C3%A7%C3%A3o-do-plano-diretor-de-drenagem-com-201-interven%C3%A7%C3%B5es-que-visam-a-redu%C3%A7%C3%A3o-de-alagamentos",
       "reference_lead_counts_by_source": {
         "C2S sparse labels": 0,
         "CEMS rapid-mapping flood AOI overlaps": 0,
@@ -680,7 +680,7 @@
       "jakarta_bpbd_2026_reported_affected_kelurahan_count": null,
       "nominal_aoi_km2": 625,
       "official_event_admin_area_context_present": false,
-      "public_evidence_url": "https://www.worldbank.org/en/programs/tokyo-development-learning-center/tdd/tdd_on_urban_flood_management",
+      "public_evidence_url": "https://www.kensetsu.metro.tokyo.lg.jp/river/chusho_seibi/ike",
       "reference_lead_counts_by_source": {
         "C2S sparse labels": 0,
         "CEMS rapid-mapping flood AOI overlaps": 0,
@@ -708,8 +708,8 @@
   "schema_version": 1,
   "site_selection_policy": "Purposive, stratified 8+8 candidate frame. Public research/management relevance and common archive discovery support candidate status only. No composite relevance/value score is used. Confirmatory enrollment is a separate fail-closed gate.",
   "source_sha256": {
-    "data/study_area_register.json": "c44f866942a2f99f01141fb6a7baeea09a9b61a57db1beafb77a7f686de646d6",
-    "outputs/atlas-reference-readiness-ledger.json": "36c81e94d7ade895c33f04453ac00d67aa3b25125d6b0c0e8d0ac6291fbcd639",
+    "data/study_area_register.json": "8a27639e2722ba9be36a93c9b832efa29d9ebd66ef7d0fb93566ecaf49912dab",
+    "outputs/atlas-reference-readiness-ledger.json": "77b8cba80bb213509ea3d465656974aa3a6d812e216c78153b759632fe263c32",
     "outputs/atlas-s1rtc-pixel-coverage-unique-audit.json": "807747caaf547bc793ba00db9a7cfb1ed2209ac299003176afed89e3d49d9dd6",
     "outputs/atlas-s1rtc-valid-quota-audit.json": "8e883d7086aff6e8d627c1b7c695a0c30f6f2714a88842d5209c76ff0ff4c376"
   },
