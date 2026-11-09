@@ -69,4 +69,6 @@ Build the local image with `docker build -t atlas-api:local .`. Do not deploy th
 
 See `STUDY_AREA_PROGRAM.md`, `EVIDENCE_REGISTER.md`, `TECHNICAL_REVIEW.md`, `COMPETITIVE_REVIEW.md`, and `SPECIFICATION.md`. `scripts/screen_study_areas.py` reproduces the common 25 km × 25 km CMR metadata screen and writes candidate counts; metadata hits are not QA-valid scenes or independent flood labels. OPERA product metadata and schema references do not make the fixture data real. NASA Earthdata credentials were not supplied. Do not interpret observed water as proof of damage, service interruption, structural failure, or financial loss.
 
+The [ATLAS AI systems and longevity blueprint](docs/ATLAS_AI_SYSTEMS_LONGEVITY_BLUEPRINT.md) defines the next evidence gates, model-selection order, sustainable architecture, language roles, and release-maintenance cycle. It is a proposal; it does not change the synthetic-data status or count as validation.
+
 The 16-area public-value and data-governance controls are documented in [`STUDY_AREA_PROGRAM.md`](STUDY_AREA_PROGRAM.md) and the [data-governance standard](outputs/atlas-data-governance-and-public-value-standard.md). All local governance, benefit, and community/agency review gates remain pending; the proposed framework is not evidence of endorsement or realized benefit.
