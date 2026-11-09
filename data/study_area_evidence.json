@@ -13,7 +13,8 @@
         "neighborhood-level exposure"
       ],
       "validation_path": "Overlay only city-published drainage project and channel/detention geodata available for the 25 km study box; compare event-period satellite classifications with city/USGS gauge records and dated official flood reports. Record geometry/date coverage before analysis.",
-      "scope_limit": "CIP allocations are planned estimates, not measured reductions in flood loss; the plan cautions that receiving-system capacity can still cause flooding."
+      "scope_limit": "CIP allocations are planned estimates, not measured reductions in flood loss; the plan cautions that receiving-system capacity can still cause flooding.",
+      "secondary_evidence_url": "https://prod-01-asg-toolkit-climate.woc.noaa.gov/action-plan/resilient-houston"
     },
     {
       "city": "Miami",
@@ -39,7 +40,8 @@
         "recovery prioritization"
       ],
       "validation_path": "Match any candidate-box OPERA dates to USGS/NWS gauge time series and geolocated high-water marks or official event reports. Keep regional instruments outside the box as context and do not count them as local reference samples.",
-      "scope_limit": "The cited sensors cover a regional coast and do not establish adequate independent labels inside the Tampa candidate box."
+      "scope_limit": "The cited sensors cover a regional coast and do not establish adequate independent labels inside the Tampa candidate box.",
+      "secondary_evidence_url": "https://water.usgs.gov/alerts/item_2024-10-11_20%3A05%3A00.html"
     },
     {
       "city": "New Orleans",
@@ -52,7 +54,8 @@
         "low-lying community exposure"
       ],
       "validation_path": "Pre-register one dated event and baseline, then compare eligible OPERA pixels with city pump/drainage records, NWS rainfall and river stages, and dated official street-flood reports where spatial precision is sufficient.",
-      "scope_limit": "The historical event count is not a geocoded independent truth set, and the City notes limitations in the NOAA records; pump design capacity is not actual operating capacity during any event."
+      "scope_limit": "The historical event count is not a geocoded independent truth set, and the City notes limitations in the NOAA records; pump design capacity is not actual operating capacity during any event.",
+      "secondary_evidence_url": "https://marinedebris.noaa.gov/removal/preventing-pervasive-floating-litter-new-orleans-storm-drains"
     },
     {
       "city": "New York City",
@@ -69,16 +72,17 @@
     },
     {
       "city": "Sacramento",
-      "evidence_type": "state flood-risk and levee context",
-      "empirical_evidence": "California DWR describes more than 1,600 miles of State and federal levees in the Central Valley and more than 70 overtoppings or breaches since 1983; its flood-risk communication program sends notices to at-risk parcel owners across 17 counties.",
-      "evidence_url": "https://water.ca.gov/Programs/Flood-Management/Community-Resources/Flood-Risk",
+      "evidence_type": "city flood-management planning and historical event context",
+      "empirical_evidence": "The City of Sacramento's May 2024 Comprehensive Flood Management Plan describes riverine and localized stormwater risk and records its 2017 response, including flood impacts at Garcia Bend Park, I Street Bridge, NEMDC, and Magpie Creek. The City also publishes hypothetical levee-break maps for a 200-year flood scenario. The 2017 event is historical context outside the shared 2024–2026 observation window; the planning maps are modeled scenarios, not observed flood labels.",
+      "evidence_url": "https://www.cityofsacramento.gov/content/dam/portal/dou/utilities/stormwater/flood-preparedness/documents/CFMP%202024%20with%20Appendix%20%281%29_Final.pdf",
+      "secondary_evidence_url": "https://www.cityofsacramento.gov/utilities/flood-preparedness/flood-maps",
       "value_dimensions": [
         "levee-protected communities",
         "transport and utility corridor exposure",
         "risk communication"
       ],
-      "validation_path": "Use local Sacramento River/American River gauge and levee incident records, DWR floodplain layers, and event-date reference extents; exclude regional counts from the local denominator.",
-      "scope_limit": "These metrics describe the broader Central Valley program, not the city-center AOI, and the cited page does not provide a local event-label dataset."
+      "validation_path": "For a held-out event inside the shared observation window, obtain dated City incident/closure records, Sacramento and American River gauge data, local levee records, and independent inundation extents. Geospatially verify each source against the frozen 25 km box, then apply the same three-scene-per-period, 80%-valid-pixel, probability-sampling, and dual-labeler protocol used for every other area.",
+      "scope_limit": "The 2017 locations are city-reported historical context outside the shared 2024–2026 observation window and are not asserted to intersect the fixed box. The City's levee-break maps are hypothetical scenarios. Neither source provides reference pixels; Sacramento remains candidate-only until event-specific QA-valid observations and independent labels pass the common gate."
     },
     {
       "city": "Atlanta",
@@ -104,7 +108,8 @@
         "long-term flood preparedness"
       ],
       "validation_path": "Use NOAA/NWS gauge records and recent dated event reports for actual validation; retain 1993 as contextual extreme-event history, not as a contemporaneous label for the 2024–2026 screen.",
-      "scope_limit": "The headline evidence is historical and regional; it does not establish recent local flooding or current demand."
+      "scope_limit": "The headline evidence is historical and regional; it does not establish recent local flooding or current demand.",
+      "secondary_evidence_url": "https://water.noaa.gov/gauges/eadm7"
     },
     {
       "city": "Jakarta",
@@ -123,16 +128,17 @@
     {
       "city": "Singapore",
       "evidence_type": "national drainage performance, current risk context, and exploratory event lead",
-      "empirical_evidence": "PUB reports that flood-prone area fell from about 3,200 ha in the 1970s to less than 25 ha, a 99% reduction. Its 2 April 2025 national list names 36 flood-prone locations defined as low-lying areas with a history of flooding. Separately, the data.gov.sg PUB Flood Alerts API returned an alert dated 2025-05-22 describing an observed flash flood at Wan Tho Ave (Pheng Geck Ave); the reported center falls inside the fixed Singapore AOI. The single point alert is an exploratory event lead, not a mapped flood extent, independent pixel label, or ATLAS result.",
+      "empirical_evidence": "PUB reports that flood-prone area fell from about 3,200 ha in the 1970s to less than 25 ha, a 99% reduction. Its current public page links a November 2025 list of 36 flood-prone locations and a 19-location hotspot list dated 2 February 2026. Separately, the data.gov.sg PUB Flood Alerts API returned an alert dated 2025-05-22 describing an observed flash flood at Wan Tho Ave (Pheng Geck Ave); the reported center falls inside the fixed Singapore AOI. The single point alert is an exploratory event lead, not a mapped flood extent, independent pixel label, or ATLAS result.",
       "evidence_url": "https://www.pub.gov.sg/Public/KeyInitiatives/Flood-Resilience/About-Floods",
-      "secondary_evidence_url": "https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/List-of-Flood-Prone-Areas-as-at-Apr-2025.pdf",
+      "secondary_evidence_url": "https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/List-of-Flood-Prone-Areas-as-at-Nov-2025.pdf",
+      "current_official_hotspot_url": "https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/List-of-Hotspots-in-Singapore_Feb-2026.pdf",
       "value_dimensions": [
         "drainage-service performance",
         "urban transport and facility access",
         "residual-risk hotspot prioritization"
       ],
-      "validation_path": "For a held-out event, obtain dated PUB flood alerts, water-level sensor or rainfall records, and official geospatial hotspot layers. The alert supplies no event-specific extent geometry. Geocode and verify licensing before event intersection with the frozen common box; source an independent mapped extent or field reference and sample pixels under the common protocol before confirmatory testing.",
-      "scope_limit": "The national area trend and named locations cannot be attributed to the 625 km² screen without spatial validation. The 2025-05-22 alert is a single location lead, not a mapped flood extent, not an independent event label, and does not establish event frequency. Singapore remains candidate-only.",
+      "validation_path": "For a held-out event, obtain dated PUB flood alerts, water-level sensor or rainfall records, and geospatial versions of the official hotspot/location lists. The published lists are named-location context, not event extents, and the alert supplies no event-specific extent geometry. Geocode and verify licensing before event intersection with the frozen common box; source an independent mapped extent or field reference and sample pixels under the common protocol before confirmatory testing.",
+      "scope_limit": "The national area trend and citywide named-location lists cannot be attributed to the 625 km² screen without spatial validation. The 2025-05-22 alert is a single location lead, not a mapped flood extent, not an independent event label, and does not establish event frequency. Singapore remains candidate-only.",
       "event_reference_url": "https://data.gov.sg/datasets/d_f1404e08587ce555b9ea3f565e2eb9a3/view",
       "event_reference_date": "2025-05-22",
       "event_reference_audit": "atlas-singapore-pub-flood-alert-audit.json"

@@ -48,6 +48,10 @@ def test_reference_readiness_ledger_balances_all_areas_and_preserves_unknowns():
     assert ledger["summary"]["usgs_gfid_rows_in_common_window"] == 504
     assert ledger["summary"]["areas_with_usgs_gfid_representative_points_in_aoi"] == 0
     assert ledger["summary"]["usgs_gfid_representative_event_points_within_25km"] == 0
+    assert ledger["summary"]["noaa_storm_events_us_areas_with_point_reports"] == 7
+    assert ledger["summary"]["noaa_storm_events_us_area_event_pairs"] == 136
+    assert ledger["summary"]["noaa_storm_events_us_location_report_points"] == 532
+    assert ledger["summary"]["noaa_storm_events_international_areas_outside_scope"] == 8
     assert all(x["usgs_gfid_representative_event_points_in_aoi"] == 0 for x in ledger["areas"])
     tampa = next(x for x in ledger["areas"] if x["city"] == "Tampa")
     assert tampa["nasa_egis_s1_water_catalog_dates"] == [
@@ -121,6 +125,11 @@ def test_reference_ledger_card_reports_limits_and_both_downloads():
     assert "atlas-groundsource-event-coverage-audit.json" in html
     assert 'target="_blank" rel="noopener">Open event/date opportunity JSON' in html
     assert 'download="atlas-groundsource-event-coverage-audit.json">Download event/date opportunity JSON' in html
+    assert "NOAA/NWS U.S. event-location screen" in html
+    assert "136 area-event records; 532 points" in html
+    assert "international set is outside its coverage" in html
+    assert "atlas-noaa-storm-events-coverage-audit.json" in html
+    assert "atlas-noaa-storm-events-coverage-audit.md" in html
 
 
 def test_groundsource_opportunities_remain_discovery_only_and_include_each_area():
@@ -147,4 +156,6 @@ def test_generated_reference_ledger_matches_current_source_snapshot():
     assert (root / "dist/atlas-geoid-flood-stlouis-label-coverage.json").read_bytes() == (root / "outputs/atlas-geoid-flood-stlouis-label-coverage.json").read_bytes()
     assert (root / "dist/atlas-usgs-gfid-aoi-event-audit.json").read_bytes() == (root / "outputs/atlas-usgs-gfid-aoi-event-audit.json").read_bytes()
     assert (root / "dist/atlas-usgs-gfid-aoi-event-audit.md").read_bytes() == (root / "outputs/atlas-usgs-gfid-aoi-event-audit.md").read_bytes()
+    assert (root / "dist/atlas-noaa-storm-events-coverage-audit.json").read_bytes() == (root / "outputs/atlas-noaa-storm-events-coverage-audit.json").read_bytes()
+    assert (root / "dist/atlas-noaa-storm-events-coverage-audit.md").read_bytes() == (root / "outputs/atlas-noaa-storm-events-coverage-audit.md").read_bytes()
     assert "GENERATED REFERENCE READINESS LEDGER START" in (root / "dist/index.html").read_text()

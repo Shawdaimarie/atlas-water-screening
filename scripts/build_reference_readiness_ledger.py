@@ -31,6 +31,7 @@ INPUTS = {
     "jakarta_bpb_event": "atlas-jakarta-bpbd-jan2026-aoi-context.json",
     "nasa_egis": "atlas-nasa-egis-opera-footprint-audit.json",
     "usgs_gfid": "atlas-usgs-gfid-aoi-event-audit.json",
+    "noaa_storm_events": "atlas-noaa-storm-events-coverage-audit.json",
 }
 JSON_OUT = OUT / "atlas-reference-readiness-ledger.json"
 CSV_OUT = OUT / "atlas-reference-readiness-ledger.csv"
@@ -41,6 +42,8 @@ DIST_JAKARTA_EVENT_AUDIT = DIST / INPUTS["jakarta_bpb_event"]
 DIST_NASA_EGIS_AUDIT = DIST / INPUTS["nasa_egis"]
 DIST_GEOID_LABEL_AUDIT = DIST / INPUTS["geoid_labels"]
 DIST_USGS_GFID_AUDIT = DIST / INPUTS["usgs_gfid"]
+DIST_NOAA_STORM_EVENTS_AUDIT = DIST / INPUTS["noaa_storm_events"]
+DIST_NOAA_STORM_EVENTS_REPORT = DIST / "atlas-noaa-storm-events-coverage-audit.md"
 HTML = DIST / "index.html"
 START = "<!-- GENERATED REFERENCE READINESS LEDGER START -->"
 END = "<!-- GENERATED REFERENCE READINESS LEDGER END -->"
@@ -85,6 +88,10 @@ def build_ledger() -> dict:
         area_key(x["region"], x["city"]): x
         for x in load_json(INPUTS["usgs_gfid"])["areas"]
     }
+    noaa_storm_events = load_json(INPUTS["noaa_storm_events"])
+    noaa_by_area = {
+        area_key(x["region"], x["city"]): x for x in noaa_storm_events["areas"]
+    }
     nrsc_present = mumbai_nrsc.get("candidate_area") == "Mumbai"
     nrsc_documents = len(mumbai_nrsc.get("event", {}).get("mapped_tiles", [])) if nrsc_present else 0
     nrsc_use = mumbai_nrsc.get("coverage_and_use", {})
@@ -110,6 +117,7 @@ def build_ledger() -> dict:
         c2s_dates = c2s_area.get("distinct_s1_acquisition_dates", [])
         egis_area = nasa_egis[key]
         gfid_area = usgs_gfid[key]
+        noaa_area = noaa_by_area[key]
         egis_s1 = [
             x for x in egis_area.get("records", [])
             if (x.get("catalog") or {}).get("candidate_sentinel1_water_observation") is True
@@ -189,6 +197,9 @@ def build_ledger() -> dict:
             "nasa_egis_disaster_services": sorted({x["service_folder"] for x in egis_s1}),
             "usgs_gfid_representative_event_points_in_aoi": gfid_area["representative_event_points_in_fixed_bbox"],
             "usgs_gfid_representative_event_points_within_25km": gfid_area["representative_event_points_within_25km_of_bbox"],
+            "noaa_storm_events_dataset_status": noaa_area["status"],
+            "noaa_storm_events_unique_event_ids": noaa_area["unique_event_ids"],
+            "noaa_storm_events_location_report_points": noaa_area["location_reports"],
             "jakarta_bpbd_2026_reported_affected_kelurahan_count": (
                 jakarta_event["spatial_screen"]["reported_affected_kelurahan_count"]
                 if city == "Jakarta" else None
@@ -248,6 +259,11 @@ def build_ledger() -> dict:
         "usgs_gfid_rows_scanned": load_json(INPUTS["usgs_gfid"])["counts"]["aggregated_rows_scanned"],
         "usgs_gfid_rows_in_common_window": load_json(INPUTS["usgs_gfid"])["counts"]["rows_with_event_date_in_common_window"],
         "areas_with_usgs_gfid_representative_points_in_aoi": sum(bool(r["usgs_gfid_representative_event_points_in_aoi"]) for r in rows),
+        "noaa_storm_events_us_areas_with_point_reports": noaa_storm_events["summary"]["us_areas_with_nws_flood_location_reports"],
+        "noaa_storm_events_us_area_event_pairs": noaa_storm_events["summary"]["us_unique_area_event_pairs"],
+        "noaa_storm_events_us_location_report_points": noaa_storm_events["summary"]["us_location_report_points"],
+        "noaa_storm_events_international_areas_outside_scope": noaa_storm_events["summary"]["international_areas_outside_dataset_scope"],
+        "noaa_storm_events_data_latest_flood_date": "2026-07-31",
         "usgs_gfid_representative_event_points_in_aoi": sum(r["usgs_gfid_representative_event_points_in_aoi"] for r in rows),
         "usgs_gfid_representative_event_points_within_25km": sum(r["usgs_gfid_representative_event_points_within_25km"] for r in rows),
         "nrsc_official_map_documents": sum(r["nrsc_official_map_documents"] for r in rows),
@@ -316,6 +332,7 @@ def build_ledger() -> dict:
             "The Jakarta BPBD 2024 incident extract is a nonspatial administrative lead with quarter-coded reporting and no event-day coordinates; it is not a pixel label and cannot establish fixed-AOI overlap or confirmatory eligibility.",
             "For Jakarta's January 2026 event, 20 of 21 BPBD-reported affected kelurahan polygons positively intersect the fixed AOI. This administrative-area context does not locate inundation within the overlapping polygon portions, prove event-day satellite classes, supply independent pixel labels, or qualify the site for confirmatory enrollment.",
             "NASA EGIS catalog footprint intersections are same-product OPERA discovery leads; they do not establish complete-scene pixel coverage or independent reference truth. Record counts may include multiple product layers for one acquisition.",
+            "The NCEI Storm Events point-location screen is a U.S.-only event-context layer, not flood extent labels; its international areas are outside dataset scope, and its 2026 release has no records for the remainder of the common window after July 31.",
         ],
         "areas": rows,
     }
@@ -346,6 +363,7 @@ def render_card(ledger: dict) -> str:
         'Mumbai’s two NRSC maps are separately flagged as official-use leads with unverified overlap and reuse terms. Jakarta also has a 2024 BPBD administrative incident extract (260 rows across four reporting periods); it has no coordinates or event-day timestamps, and its reuse license is unverified. These source counts have different meanings and do not establish comparable flood labels or adequate event/baseline sampling.</p>'
         f'<p><b>Jakarta official-event context:</b> BPBD reported 90 inundated RT and 10 roads during the 22–24 January 2026 event; {jakarta_event["positive_area_intersections_with_fixed_aoi"]}/{jakarta_event["reported_affected_kelurahan_count"]} named affected kelurahan boundary polygons positively overlap the fixed box. This supports event relevance only; it does not locate the reported water inside the AOI, provide pixel labels, or pass QA. <a href="{INPUTS["jakarta_bpb_event"]}" target="_blank" rel="noopener">Open Jakarta event/AOI audit ↗</a></p>'
         f'<p><b>Event acquisition opportunities:</b> the three top metadata-ranked Groundsource event leads for each of {s["areas_with_three_groundsource_top_metadata_opportunities"]}/16 areas have an OPERA metadata date within one calendar day and at least three metadata dates in each 30-day pre/post window. Calendar dates do not establish an exact 24-hour match; source events need official verification, and QA-valid pixels and independent labels remain unverified. News coverage is geographically uneven.</p>'
+        f'<p><b>NOAA/NWS U.S. event-location screen:</b> NCEI Storm Events has flood/flash-flood location points in {s["noaa_storm_events_us_areas_with_point_reports"]}/8 U.S. boxes ({s["noaa_storm_events_us_area_event_pairs"]} area-event records; {s["noaa_storm_events_us_location_report_points"]} points). Its pinned 2026 file has records through July 31; the international set is outside its coverage. These are official event-location leads, not mapped flood extents or reference pixels. <a href="atlas-noaa-storm-events-coverage-audit.md" target="_blank" rel="noopener">Read NOAA/NWS scope and methods ↗</a> <a href="{INPUTS["noaa_storm_events"]}" target="_blank" rel="noopener">Open NOAA/NWS event-location JSON ↗</a> <a href="{INPUTS["noaa_storm_events"]}" download="{INPUTS["noaa_storm_events"]}">Download NOAA/NWS event-location JSON ↧</a></p>'
         f'<p><b>NASA EGIS same-product discovery:</b> catalog footprints show OPERA S1-water layers in {s["areas_with_nasa_egis_s1_water_catalog_leads"]}/16 areas. These are event-product discovery leads, not independent labels or QA-valid pixel coverage; area-specific temporal fields and records are included in the register.{granule_interval_note}</p>'
         f'<p><b>USGS GFID independent event-context screen:</b> {s["usgs_gfid_rows_in_common_window"]} of {s["usgs_gfid_rows_scanned"]:,} aggregated impact rows fall in the shared date window; representative geocodes fall inside {s["areas_with_usgs_gfid_representative_points_in_aoi"]}/16 fixed AOIs, with {s["usgs_gfid_representative_event_points_within_25km"]} within 25 km. This database supplies no pixel labels, and no local point is not evidence that flooding did not occur. <a href="{INPUTS["usgs_gfid"]}" target="_blank" rel="noopener">Open USGS GFID screen ↗</a> · <a href="{INPUTS["usgs_gfid"]}" download="{INPUTS["usgs_gfid"]}">Download audit ↧</a></p>'
         f'<p><b>Historical reference-pixel coverage:</b> the St. Louis GEOID-Flood 2017 training event has 12 intersecting tile footprints, but the audited labels map {next(row["geoid_mapped_label_fraction"] for row in ledger["areas"] if row["city"] == "St. Louis"):.2%} of the fixed AOI pixels; the rest are outside mapped labels. This is not held-out validation and sits outside the common 2024–2026 window. The other 15 AOIs have no measured GEOID-Flood label-pixel fraction. <a href="{INPUTS["geoid_labels"]}" target="_blank" rel="noopener">Open St. Louis label-coverage audit ↗</a></p>'
@@ -368,6 +386,8 @@ def build() -> dict:
     DIST_NASA_EGIS_AUDIT.write_bytes((OUT / INPUTS["nasa_egis"]).read_bytes())
     DIST_GEOID_LABEL_AUDIT.write_bytes((OUT / INPUTS["geoid_labels"]).read_bytes())
     DIST_USGS_GFID_AUDIT.write_bytes((OUT / INPUTS["usgs_gfid"]).read_bytes())
+    DIST_NOAA_STORM_EVENTS_AUDIT.write_bytes((OUT / INPUTS["noaa_storm_events"]).read_bytes())
+    DIST_NOAA_STORM_EVENTS_REPORT.write_bytes((OUT / "atlas-noaa-storm-events-coverage-audit.md").read_bytes())
     (DIST / INPUTS["usgs_gfid"].replace(".json", ".md")).write_bytes(
         (OUT / INPUTS["usgs_gfid"].replace(".json", ".md")).read_bytes()
     )

@@ -1,10 +1,12 @@
 import json
 import math
 from pathlib import Path
+from unittest.mock import patch
 
 import yaml
 
 from scripts.audit_temporal_overlap import summarize
+from scripts.audit_study_area_source_links import build_audit
 from scripts.build_site_tampa_egis_card import build as build_tampa_egis_card
 from scripts.update_site_study_register import update as update_site_register
 
@@ -83,6 +85,23 @@ def test_saved_audit_matches_recomputed_result():
     assert saved == expected
 
 
+def test_all_primary_and_secondary_evidence_links_are_aligned_and_distinct():
+    evidence = json.loads((ROOT / "data/study_area_evidence.json").read_text())
+    evidence_by_city = {record["city"]: record for record in evidence["records"]}
+    assert set(evidence_by_city) == {area["city"] for area in AREAS}
+
+    for area in AREAS:
+        profile = evidence_by_city[area["city"]]
+        assert area["evidence_url"] == profile["evidence_url"]
+        assert area.get("secondary_evidence_url", "") == profile.get("secondary_evidence_url", "")
+        assert area["evidence_url"]
+        assert profile.get("secondary_evidence_url") != profile["evidence_url"]
+
+    jakarta = evidence_by_city["Jakarta"]
+    assert "jakarta.go.id" in jakarta["evidence_url"]
+    assert "worldbank.org" in jakarta["secondary_evidence_url"]
+
+
 def test_site_evidence_register_is_complete_and_idempotent():
     site_html = (ROOT / "dist/index.html").read_text()
     updated = update_site_register(site_html, AREAS)
@@ -93,6 +112,7 @@ def test_site_evidence_register_is_complete_and_idempotent():
     assert sum(area["region"] == "United States" for area in profiles) == 8
     assert sum(area["region"] == "International" for area in profiles) == 8
     assert all(area["empirical_evidence"] and area["validation_path"] for area in profiles)
+    assert updated.count("Open supporting evidence ↗") == 1
     assert updated.count("Demand distinction:") == 1
     assert updated.count("GENERATED PUBLIC VALUE CHAIN START") == 1
     assert updated.count("GENERATED PUBLIC VALUE CHAIN END") == 1
@@ -107,9 +127,13 @@ def test_singapore_priority_profile_uses_current_official_context_and_excludes_t
     evidence = json.loads((ROOT / "data/study_area_evidence.json").read_text())
     singapore = next(row for row in evidence["records"] if row["city"] == "Singapore")
     assert "36 flood-prone locations" in singapore["empirical_evidence"]
+    assert "19-location hotspot list dated 2 February 2026" in singapore["empirical_evidence"]
     assert singapore["secondary_evidence_url"] == (
         "https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/"
-        "List-of-Flood-Prone-Areas-as-at-Apr-2025.pdf"
+        "List-of-Flood-Prone-Areas-as-at-Nov-2025.pdf"
+    )
+    assert singapore["current_official_hotspot_url"].endswith(
+        "List-of-Hotspots-in-Singapore_Feb-2026.pdf"
     )
     assert "no event-specific extent geometry" in singapore["validation_path"]
     assert "not an independent event label" in singapore["scope_limit"]
@@ -118,11 +142,51 @@ def test_singapore_priority_profile_uses_current_official_context_and_excludes_t
     profiles = json.loads(embedded)
     singapore_profile = next(row for row in profiles if row["city"] == "Singapore")
     assert singapore_profile["secondary_evidence_url"] == singapore["secondary_evidence_url"]
+    assert singapore_profile["current_official_hotspot_url"] == singapore["current_official_hotspot_url"]
+    assert "Open current PUB hotspot list ↗" in site_html
     assert "data.gov.sg" in site_html
     assert "Open event source ↗" in site_html
     evidence_register = json.loads((ROOT / "outputs/atlas-study-area-evidence-register.json").read_text())
     singapore_export = next(row for row in evidence_register["results"] if row["city"] == "Singapore")
     assert singapore_export["secondary_evidence_url"] == singapore["secondary_evidence_url"]
+    assert singapore_export["current_official_hotspot_url"] == singapore["current_official_hotspot_url"]
+
+
+def test_sacramento_priority_profile_uses_city_plan_with_event_and_model_limits():
+    evidence = json.loads((ROOT / "data/study_area_evidence.json").read_text())
+    sacramento = next(row for row in evidence["records"] if row["city"] == "Sacramento")
+    assert "May 2024 Comprehensive Flood Management Plan" in sacramento["empirical_evidence"]
+    assert "I Street Bridge" in sacramento["empirical_evidence"]
+    assert "modeled scenarios, not observed flood labels" in sacramento["empirical_evidence"]
+    assert "outside the shared 2024–2026 observation window" in sacramento["scope_limit"]
+    assert "independent labels" in sacramento["scope_limit"]
+    assert sacramento["evidence_url"].endswith("CFMP%202024%20with%20Appendix%20%281%29_Final.pdf")
+    assert sacramento["secondary_evidence_url"].endswith("/flood-maps")
+    site_html = update_site_register((ROOT / "dist/index.html").read_text(), AREAS)
+    embedded = site_html.split("const studyAreas=", 1)[1].split(";let selectedStudyArea=", 1)[0]
+    profiles = json.loads(embedded)
+    sacramento_profile = next(row for row in profiles if row["city"] == "Sacramento")
+    assert sacramento_profile["empirical_evidence"] == sacramento["empirical_evidence"]
+    assert sacramento_profile["scope_limit"] == sacramento["scope_limit"]
+    assert sacramento_profile["secondary_evidence_url"] == sacramento["secondary_evidence_url"]
+
+
+def test_source_link_audit_uses_only_reachability_as_evidence():
+    source = json.loads((ROOT / "data/study_area_evidence.json").read_text())
+    raw = json.dumps(source).encode()
+
+    def fake_check(city, kind, url):
+        return {"city": city, "kind": kind, "url": url, "status": 200}
+
+    with patch("scripts.audit_study_area_source_links.check_url", side_effect=fake_check):
+        audit = build_audit(source, raw)
+    assert audit["area_count"] == 16
+    assert audit["primary_url_count"] == 16
+    assert audit["official_hotspot_url_count"] == 1
+    assert audit["reachability_summary"]["primary_http_2xx"] == 16
+    assert audit["reachability_summary"]["secondary_http_2xx"] == audit["secondary_url_count"]
+    assert audit["reachability_summary"]["official_hotspot_http_2xx"] == 1
+    assert "do not establish" in audit["interpretation"]
 
 
 def test_site_discloses_independent_reference_coverage_gaps():
@@ -135,7 +199,12 @@ def test_site_discloses_independent_reference_coverage_gaps():
     assert "no current area passes the independent-label gate" in site_html
     assert 'href="https://registry.opendata.aws/c2smsfloods/"' in site_html
     assert 'href="https://zenodo.org/records/23426661"' in site_html
-    assert site_html.count('<article class="reference-card">') == 12
+    assert site_html.count('<article class="reference-card">') == 15
+    assert "Copernicus GFM · 16-area temporal coverage" in site_html
+    assert 'href="atlas-gfm-temporal-coverage-screen.md"' in site_html
+    assert 'href="atlas-gfm-temporal-coverage-audit.json"' in site_html
+    assert "Tampa · native OPERA BWTR pixels" in site_html
+    assert 'href="atlas-tampa-helene-native-bwtr-aoi-audit.json"' in site_html
     assert "SenForFlood · global mask-chip screen" in site_html
     assert "Miami and Tampa · Hurricane Milton raw WTR samples" in site_html
     assert 'href="atlas-milton-egis-multisite-pixel-sample.json"' in site_html

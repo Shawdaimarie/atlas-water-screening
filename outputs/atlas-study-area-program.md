@@ -25,6 +25,10 @@ The evidence register records the evidence class, an attributable empirical fact
 
 ## Independent reference-data lead
 
+An additional 2026-11-04 query of NASA's public EGIS catalog for the optical OPERA DSWx-HLS `B01_WTR` product found 228–425 distinct metadata acquisition dates in the same 2024-09-01 to 2026-11-03 window for each of the 16 fixed AOI boxes. This is a cross-sensor metadata discovery result only: it does not validate DSWx-S1, prove pixel-level coverage, or supply independent ground truth. Dated Jakarta exports returned all nodata, and a direct unauthenticated GET of a cataloged source granule redirected to Earthdata Login and returned HTTP 401; no pixel-level HLS observation has yet passed QA. See the [16-area HLS metadata audit](atlas-opera-hls-egis-coverage-audit.md) and [dated export pilot](atlas-opera-hls-egis-pixel-export-pilot-2026-11-04.md).
+
+The supplementary [NOAA/NWS Storm Events screen](atlas-noaa-storm-events-coverage-audit.md) finds official flood/flash-flood location points in 7/8 U.S. candidate boxes in pinned 2024–2026 records through July 31, 2026. This is U.S.-only point-event context; points are not inundation polygons or reference pixels, and the source cannot provide a comparable international measure. The screen adds no eligibility or score.
+
 SpaceNet 8 adds a complementary, event-specific label lead for **New Orleans**. The reproducible exact-geometry screen found 160 public Louisiana-East annotation tiles intersecting that fixed AOI, containing 4,500 unique building/road objects; only 14 are labeled `flooded=yes`, and 4,486 null flood states remain unknown. These manually interpreted Maxar optical labels are from Hurricane Ida in August 2021; a flooded building means water nearby, and flooded roads can include rubble. This is not a 30 m surface-water reference map or a representative sample, and it does not close the common validation gate. Full method and limits: [independent reference-data plan](atlas-independent-reference-data-plan.md); machine output: [SpaceNet 8 audit](atlas-spacenet8-louisiana-coverage-audit.json).
 
 NASA/JPL's OPERA DSWx-S1 CalVal Database V1 is another candidate source of reference classifications. The anonymous CMR record reports one ZIP granule (~181.6 MB) covering September 2021 and links it to a `podaac-ops-cumulus-protected` object; NASA's data-access documentation requires an Earthdata Login account to download/stream DAAC files. The database's global metadata envelope includes the candidate cities, but no per-city label coverage, provenance, dates, or licensing has been verified. Treat it as a lead only until the package is retrieved and its reference sources are audited; it adds no validation result.
@@ -42,6 +46,8 @@ The analysis follows a five-step public-value chain and keeps each quantity sepa
 Every candidate follows the same screening contract: fixed 625 km² nominal footprint; same product/version/time window; disclose every acquisition date and valid-pixel fraction; retain source/processing provenance; and do not impute missing observations. The ≥80% per-scene floor and three dates per event/baseline period permit only a feasibility screen. Confirmatory site enrollment requires the same number of matched observations across sites, independent event labels, and adequate effective sample size for the predeclared confidence-interval target. No registered area has passed the event-matched OPERA DSWx-S1 and independent-label gates; current cross-area flood-study coverage is not established and no event effect is estimated. See the [preregistered validation protocol](atlas-preregistered-validation-protocol.md). The initial unconditional 2025 Sentinel-1 RTC sample showed 3/8 U.S. areas versus 7/8 international areas passing all 12 at the 80% spatial-pixel screen (78/96 versus 91/96 groups). A deterministic supplementary coverage-conditioned screen then achieved a matched auxiliary RTC quota: 12 groups per area, 3 per quarter, all 192 meeting the spatial threshold. This only aligns RTC pixel availability for the selected sample; it does not establish comparable OPERA observations, event matching, or validation. See the [regional comparability screen](atlas-s1rtc-region-comparability-screen.md).
 
 An exploratory NASA EGIS extraction now provides a second real-source access check for Tampa: 1,024 fixed equal-area sample points on each of one 2024-09-14 and one 2024-09-26 BWTR layer returned raw classes 0/1. NASA marks the response maps preliminary/unvalidated; the single date per period fails the three-date feasibility floor, and no independent event labels were compared. This neither enrolls Tampa nor satisfies comparable observational coverage. Full method, raw point table, and caveats: [Tampa EGIS pilot](atlas-tampa-helene-egis-pixel-sample.md).
+
+A follow-up read directly accessed the original JPL ARIA-share 30 m GeoTIFFs by HTTP range and evaluated every pixel center in the same frozen Tampa AOI for 2024-09-14 and 2024-09-26. Both scenes had 497,316 AOI pixels and 100% valid class coverage; classified-water shares were 22.5026% and 22.7881%. This is a reproducible full-AOI raw-product pixel read for two scenes, not two periods of adequate sample size or independent validation. It adds a feasible native-data path but leaves Tampa and all 16 candidates confirmatory-ineligible. Methods and source identifiers: [native Tampa audit](atlas-tampa-helene-native-bwtr-aoi-audit.json) and [audit script](../scripts/audit_tampa_helene_raw_bwtr.py).
 
 ## Candidate coverage
 
@@ -124,11 +130,11 @@ NOAA-hosted research maps present/future flood adaptation areas; infrastructure 
 
 ### United States — Sacramento
 
-The Sacramento region relies on levees along major rivers; USGS maintains streamgages and studies flood processes in California’s Central Valley.
+The City's May 2024 Comprehensive Flood Management Plan describes riverine and localized stormwater risk and records its response to the 2017 event, including reported flooding at Garcia Bend Park, I Street Bridge, NEMDC, and Magpie Creek. The City also publishes hypothetical levee-break maps for a 200-year flood scenario. The 2017 event is historical context outside the shared 2024–2026 observation window; the maps are planning scenarios, not observed labels.
 
-**Integration question:** Add an inland river/levee comparator and assess whether water observations can complement gauge-based context.
+**Integration question:** Test whether validated satellite water observations add timely spatial context to municipal incident records, river gauges, levee information, and public-infrastructure priorities.
 
-**Standardized archive screen:** 472 granule metadata hits; 258 distinct acquisition dates (2024-09-02–2026-10-25) for a 625 km² nominal AOI. **Candidate only:** QA-valid coverage and independent labels are pending. [Evidence source](https://www.usgs.gov/centers/california-water-science-center/science/science-topics/floods)
+**Standardized archive screen:** 472 granule metadata hits; 258 distinct acquisition dates (2024-09-02–2026-10-25) for a 625 km² nominal AOI. **Candidate only:** QA-valid coverage and independent labels are pending. [City flood-management plan](https://www.cityofsacramento.gov/content/dam/portal/dou/utilities/stormwater/flood-preparedness/documents/CFMP%202024%20with%20Appendix%20%281%29_Final.pdf) · [hypothetical levee-break maps](https://www.cityofsacramento.gov/utilities/flood-preparedness/flood-maps)
 
 ### United States — Atlanta
 
@@ -306,15 +312,15 @@ NYC DEP’s December 2025 report identifies 86 priority drainage areas in its 20
 
 **Scope limit:** The agency’s counts are citywide and do not imply that all sensors or priority areas fall within the candidate AOI. The candidate still has no demonstrated pixel-QA pass or independent-label accuracy result.
 
-#### Sacramento — state flood-risk and levee context
+#### Sacramento — city flood-management planning and event context
 
-California DWR describes more than 1,600 miles of State and federal levees in the Central Valley and more than 70 overtoppings or breaches since 1983; its flood-risk communication program sends notices to at-risk parcel owners across 17 counties. [Primary evidence](https://water.ca.gov/Programs/Flood-Management/Community-Resources/Flood-Risk).
+The City's May 2024 Comprehensive Flood Management Plan identifies riverine risk at the Sacramento/American River confluence and localized stormwater hazards. It records 2017 response actions and reported flooding locations in the city; the event is outside the shared observation window and those narrative locations have not been independently geospatially verified against the ATLAS box. The City's separate hypothetical levee-break maps are scenario products, not observations. [Primary plan](https://www.cityofsacramento.gov/content/dam/portal/dou/utilities/stormwater/flood-preparedness/documents/CFMP%202024%20with%20Appendix%20%281%29_Final.pdf) · [City flood maps](https://www.cityofsacramento.gov/utilities/flood-preparedness/flood-maps).
 
 **Fixed screen:** 472 CMR granule metadata hits, 258 distinct dates, 625 km² nominal AOI, 2024-09-01 through 2026-11-02 UTC. **Value dimensions:** levee-protected communities, transport and utility corridor exposure, risk communication.
 
-**Comparable validation path:** Use local Sacramento River/American River gauge and levee incident records, DWR floodplain layers, and event-date reference extents; exclude regional counts from the local denominator.
+**Comparable validation path:** For a held-out event inside the common window, geospatially verify municipal incident/closure records, Sacramento and American River gauge data, local levee records, and independent flood extents against the fixed box; then apply the common image QA, probability sampling, and dual-labeler rules.
 
-**Scope limit:** These metrics describe the broader Central Valley program, not the city-center AOI, and the cited page does not provide a local event-label dataset. The candidate still has no demonstrated pixel-QA pass or independent-label accuracy result.
+**Scope limit:** The 2017 record is historical city context outside the shared window, and the cited materials do not provide reference pixels for the fixed AOI. Sacramento remains candidate-only pending event-specific QA-valid imagery and independent labels.
 
 #### Atlanta — municipal watershed planning and event response
 
@@ -352,7 +358,7 @@ DKI Jakarta reported 580 stationary pumps across 202 locations and 557 mobile pu
 
 PUB reports that flood-prone area fell from about 3,200 ha in the 1970s to less than 25 ha, a 99% reduction, while also identifying continuing flash-flood and coastal-flood risks and named hotspots. The historical reduction is a national management outcome, not an ATLAS result. [Primary evidence](https://www.pub.gov.sg/Public/KeyInitiatives/Flood-Resilience/About-Floods).
 
-PUB’s official [2025 flood-prone-area list](https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/List-of-Flood-Prone-Areas-as-at-Apr-2025.pdf) names 36 locations and defines flood-prone areas as low-lying locations with a history of flooding. The PDF provides named places, not event-specific flood polygons; no intersection with the fixed 625 km² screen is claimed. A separate data.gov.sg page showing a 2010–2021 hectare series is explicitly marked as staging/test-only and is excluded from the evidence register.
+PUB’s official [November 2025 flood-prone-area list](https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/List-of-Flood-Prone-Areas-as-at-Nov-2025.pdf) names 36 locations and defines flood-prone areas as low-lying locations with a history of flooding. PUB’s current [flood-resilience page](https://www.pub.gov.sg/Public/KeyInitiatives/Flood-Resilience/About-Floods) also links a [19-location hotspot list dated 2 February 2026](https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/List-of-Hotspots-in-Singapore_Feb-2026.pdf). These are citywide named-place lists, not event-specific flood polygons; no intersection with the fixed 625 km² screen is claimed. A separate data.gov.sg page showing a 2010–2021 hectare series is explicitly marked as staging/test-only and is excluded from the evidence register.
 
 **Fixed screen:** 231 CMR granule metadata hits, 163 distinct dates, 625 km² nominal AOI, 2024-09-01 through 2026-11-02 UTC. **Value dimensions:** drainage-service performance, urban transport and facility access, residual-risk hotspot prioritization.
 

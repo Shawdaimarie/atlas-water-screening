@@ -38,7 +38,10 @@ PROVIDER_FIELDS = {
         "identifiers": ("tenancy_ocid", "compartment_ocid"),
         "billing": "billing_confirmed",
         "region": "home_region",
-        "identity": "github_oidc_and_registry_identity_ready",
+        "identities": (
+            "github_oidc_rpst_identity_ready",
+            "registry_publish_identity_ready",
+        ),
     },
 }
 IDENTIFIER_PATTERNS = {
@@ -160,8 +163,11 @@ def validate_inputs(data: Any, release_ready: bool = False) -> list[str]:
             errors.append(f"providers.{provider}.{fields['billing']} must be true")
         if not _filled(entry.get(fields["region"])):
             errors.append(f"providers.{provider}.{fields['region']} is required")
-        if release_ready and entry.get(fields["identity"]) is not True:
-            errors.append(f"providers.{provider}.{fields['identity']} must be true for release readiness")
+        identity_fields = fields.get("identities", (fields.get("identity"),))
+        if release_ready:
+            for identity in identity_fields:
+                if entry.get(identity) is not True:
+                    errors.append(f"providers.{provider}.{identity} must be true for release readiness")
 
     return errors
 

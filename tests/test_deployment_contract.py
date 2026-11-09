@@ -48,9 +48,22 @@ def test_owner_handoff_template_is_unprovisioned_and_nonsecret():
     assert OWNER_INPUTS["providers"]["aws"]["account_ready"] is False
     assert OWNER_INPUTS["providers"]["microsoft_azure"]["account_ready"] is False
     assert OWNER_INPUTS["providers"]["oracle_cloud"]["account_ready"] is False
+    assert OWNER_INPUTS["providers"]["oracle_cloud"]["github_oidc_rpst_identity_ready"] is False
+    assert OWNER_INPUTS["providers"]["oracle_cloud"]["registry_publish_identity_ready"] is False
+    assert "github_oidc_and_registry_identity_ready" not in OWNER_INPUTS["providers"]["oracle_cloud"]
     serialized = (ROOT / "deployment/cloud/owner-inputs.example.yaml").read_text().lower()
     for forbidden in ("password:", "private_key:", "access_key:", "auth_token:", "recovery_code:"):
         assert forbidden not in serialized
+
+
+def test_oci_release_matrix_separates_rpst_exchange_from_registry_publish():
+    oracle = MATRIX["providers"]["oracle_cloud"]
+    assert "JWT exchanged for short-lived RPST" in oracle["ci_identity"]
+    assert "exact_github_repository_id" in oracle["trust_restrictions"]
+    assert "protected_workflow" in oracle["trust_restrictions"]
+    assert "github_oidc_to_rpst_allow_deny_log" in oracle["security_evidence"]
+    assert "separate_registry_publish_identity_proof" in oracle["security_evidence"]
+    assert oracle["registry_authentication_gate"].startswith("must_use_verified_short_lived_authentication")
 
 
 def test_ci_actions_use_full_sha_pinned_node24_releases():
